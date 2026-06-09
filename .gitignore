@@ -1,5 +1,6 @@
 # PropelIQ-Copilot Framework
 .env
+.enviroment.txt
 .github/*
 .env.*
 !.env.example
