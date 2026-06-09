@@ -1,0 +1,79 @@
+// Global styles — design tokens extracted from Hi-Fi wireframes (SCR-001, SCR-005, SCR-016, SCR-022)
+:root {
+  // Brand / primary
+  --cp:  #0F6B6B;
+  --cph: #0A5050;
+  --cps: #E6F2F2;
+
+  // Surface
+  --cs0: #FFFFFF;
+  --cs1: #F5F5F5;
+  --cs2: #EBEBEB;
+  --cb:  #D0D0D0;
+
+  // Text
+  --ct1: #1A1A1A;
+  --ct2: #5A5A5A;
+  --ctd: #9A9A9A;
+  --cti: #FFFFFF;
+
+  // Semantic states
+  --ce:  #C0392B;
+  --ceb: #FDECEA;
+  --cw:  #D4820A;
+  --cwb: #FEF5E7;
+  --cok: #1A7A4A;
+  --cokb:#E8F5EE;
+  --ci:  #1C6EA4;
+  --cib: #E8F0F8;
+
+  // Typography
+  --ff:  system-ui, 'IBM Plex Sans', -apple-system, sans-serif;
+
+  // Border radius
+  --r1: 2px;
+  --r2: 4px;
+  --r3: 8px;
+
+  // Layout
+  --nh: 56px;   // navbar height
+  --sw: 240px;  // sidebar width
+
+  // Spacing scale
+  --sp1:  4px;
+  --sp2:  8px;
+  --sp3:  12px;
+  --sp4:  16px;
+  --sp5:  20px;
+  --sp6:  24px;
+  --sp8:  32px;
+  --sp10: 40px;
+  --sp12: 48px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: 14px;
+  color: var(--ct1);
+  background: var(--cs1);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--cp);
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 107, 107, 0.35);
+    border-radius: var(--r1);
+  }
+}

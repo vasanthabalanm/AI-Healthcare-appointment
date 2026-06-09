@@ -1,0 +1,34 @@
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div class="navbar-user">
+    @if (userInitials()) {
+      <span class="user-chip" [attr.aria-label]="'User: ' + userName()">{{ userInitials() }}</span>
+      <span>{{ userName() }}</span>
+    }
+    @if (currentRole()) {
+      <span class="role-badge role-badge--{{ currentRole() }}">{{ currentRole() | titlecase }}</span>
+    }
+    <button class="logout-btn" type="button" (click)="signOut()">Sign out</button>
+  </div>
+</nav>
+
+<aside class="sidebar" [attr.aria-label]="(currentRole() ?? 'App') + ' navigation'">
+  <nav>
+    @for (item of navItems(); track item.route) {
+      <a class="nav-item"
+         [routerLink]="item.route"
+         routerLinkActive="active"
+         #rla="routerLinkActive"
+         [attr.aria-current]="rla.isActive ? 'page' : null">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" [attr.d]="item.icon" clip-rule="evenodd" />
+        </svg>
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</aside>
+
+<main class="page" id="main-content">
+  <router-outlet />
+</main>

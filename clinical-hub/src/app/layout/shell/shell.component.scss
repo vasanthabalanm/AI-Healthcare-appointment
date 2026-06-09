@@ -1,0 +1,123 @@
+// Shell layout — tokens match wireframes SCR-005, SCR-016, SCR-022
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nh);
+  background: var(--cs0);
+  border-bottom: 1px solid var(--cb);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--sp6);
+  justify-content: space-between;
+  z-index: 300;
+
+  .logo {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cp);
+    letter-spacing: -0.02em;
+  }
+
+  .navbar-user {
+    display: flex;
+    align-items: center;
+    gap: var(--sp3);
+    font-size: 14px;
+    color: var(--ct2);
+  }
+}
+
+.user-chip {
+  background: var(--cp);
+  color: var(--cti);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.role-badge {
+  font-size: 12px;
+  padding: 2px var(--sp3);
+  border-radius: var(--r2);
+  font-weight: 500;
+
+  &--patient { background: var(--cps);  color: var(--cp); }
+  &--staff   { background: var(--cps);  color: var(--cp); }
+  &--admin   { background: #E8D5F5;     color: #5A0A7A;   }
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid var(--cb);
+  border-radius: var(--r2);
+  padding: 4px var(--sp3);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ct2);
+  font-family: var(--ff);
+
+  &:hover { background: var(--cs1); }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 107, 107, 0.35);
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: var(--nh);
+  left: 0;
+  bottom: 0;
+  width: var(--sw);
+  background: var(--cs0);
+  border-right: 1px solid var(--cb);
+  overflow-y: auto;
+  z-index: 200;
+  padding: var(--sp4) 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+  padding: var(--sp2) var(--sp4);
+  font-size: 14px;
+  color: var(--ct2);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+
+  &:hover { background: var(--cs1); color: var(--ct1); }
+
+  &.active {
+    border-left-color: var(--cp);
+    background: var(--cps);
+    color: var(--cp);
+    font-weight: 500;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 107, 107, 0.35) inset;
+  }
+}
+
+.page {
+  margin-top: var(--nh);
+  margin-left: var(--sw);
+  padding: var(--sp8);
+  min-height: calc(100vh - var(--nh));
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .page    { margin-left: 0; padding: var(--sp4); }
+}
