@@ -1,0 +1,12 @@
+{
+  "testDocument": "clinical-report.pdf",
+  "fileSizeKb": 512,
+  "oversizedFileMb": 26,
+  "maxAllowedMb": 25,
+  "expectedScanResult": "Pass",
+  "virusScanMockResult": "Fail",
+  "ocrPollMaxSeconds": 30,
+  "codeGenPollMaxSeconds": 30,
+  "mockOcrText": "Chief complaint: Headache. Medications: Aspirin 81mg. Allergies: Sulfa drugs.",
+  "mockConfidence": 0.90
+}

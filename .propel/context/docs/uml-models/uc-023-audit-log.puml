@@ -1,0 +1,18 @@
+@startuml uc-023-audit-log
+left to right direction
+skinparam actorStyle awesome
+
+actor Admin as A
+
+rectangle "Audit Log Review" {
+  usecase "View Audit Log" as UC1
+  usecase "Filter Audit Entries" as UC2
+  usecase "Export Audit Results" as UC3
+  usecase "Block Audit Modification Attempt" as UC4
+}
+
+A --> UC1
+A --> UC2
+A --> UC3
+UC4 ..> UC1 : <<extend>>
+@enduml

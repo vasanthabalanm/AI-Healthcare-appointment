@@ -1,0 +1,11 @@
+{
+  "patientId": 19,
+  "verificationStatus": 1,
+  "expectedIcd10Min": 1,
+  "expectedCptMin": 1,
+  "manualModification": {
+    "code": "J06.9",
+    "description": "Acute upper respiratory infection, unspecified"
+  },
+  "trustFirstError": "verifiedBy is required"
+}

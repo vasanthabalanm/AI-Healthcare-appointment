@@ -1,0 +1,1548 @@
+2026-05-31 03:58:10.943 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:44:21.312 +05:30 [INF]  Executed DbCommand (14ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:44:24.233 +05:30 [INF]  Executed DbCommand (1,040ms) [Parameters=[@__appointmentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."BookedAt", a."CancellationLinkExpiry", a."CancellationLinkTokenHash", a."CancellationLinkUsed", a."EmailReminderJobId", a."EmailReminderSentAt", a."IsHighRisk", a."NoShowRiskScore", a."PatientId", a."ReminderJobId", a."RowVersion", a."SlotId", a."SmsReminderJobId2h", a."SmsReminderJobId48h", a."Status", t."Id", t."CodingStatus", t."CreatedAt", t."DateOfBirth", t."Email", t."FailedLoginAttempts", t."FirstName", t."IsActive", t."IsDeleted", t."LastName", t."LockoutEnd", t."PasswordHash", t."PasswordResetTokenExpiry", t."PasswordResetTokenHash", t."PasswordResetTokenIssuedAt", t."PasswordResetTokenUsed", t."PhoneNumber", t."RetainUntil", t."Role", t."VerificationStatus", t."VerificationTokenExpiry", t."VerificationTokenHash", t."VerifiedAt", t."VerifiedById", t."WalkIn", s."Id", s."DurationMinutes", s."IsAvailable", s."RowVersion", s."SlotTime"
+FROM "Appointments" AS a
+INNER JOIN (
+    SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON a."PatientId" = t."Id"
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Id" = @__appointmentId_0
+LIMIT 1
+2026-05-31 11:44:24.801 +05:30 [WRN]  SendSmsReminderJob [T-2h]: patient 3 has no valid phone number (raw: '(null)') — skipping SMS.
+2026-05-31 11:45:06.596 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:46:06.612 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:47:06.704 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:48:06.790 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:49:07.002 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:50:07.358 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:51:07.086 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:52:07.183 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:53:07.292 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:54:07.368 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:55:07.646 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:56:07.687 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:57:07.752 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:58:07.821 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 11:59:07.904 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:00:08.236 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:01:08.283 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:02:08.359 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:03:08.490 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:04:08.566 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:05:08.943 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:06:08.957 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:07:09.018 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:08:09.085 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:09:09.249 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:10:09.436 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:11:09.493 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:12:09.535 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:13:09.611 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:14:09.749 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:15:09.906 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:16:09.940 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:17:09.994 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:18:10.077 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:19:10.184 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:20:10.466 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:21:10.563 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:22:10.678 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:23:10.768 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:24:10.876 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:25:11.177 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:26:11.219 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:27:11.319 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:28:11.384 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:29:11.488 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:30:11.745 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:31:11.842 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:32:12.009 +05:30 [INF]  Executed DbCommand (50ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:33:12.079 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:33:26.914 +05:30 [INF]  Removed 4 outdated record(s) from 'aggregatedcounter' table.
+2026-05-31 12:33:27.952 +05:30 [INF]  Removed 239 outdated record(s) from 'job' table.
+2026-05-31 12:34:12.290 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:35:12.396 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:36:12.460 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:37:12.522 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:38:12.604 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:39:12.796 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:40:13.048 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:41:13.153 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:42:13.252 +05:30 [INF]  Executed DbCommand (9ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:43:13.336 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:44:13.565 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:45:13.609 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:46:13.689 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:47:13.771 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:48:13.827 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:49:13.925 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:50:14.216 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:51:14.240 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:52:14.345 +05:30 [INF]  Executed DbCommand (15ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:53:14.397 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:54:14.536 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:55:14.626 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:56:14.661 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:57:14.715 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:58:14.786 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 12:59:14.893 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:00:15.121 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:01:00.127 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:02:00.213 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:03:00.263 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:04:00.352 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:05:00.424 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:06:00.511 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:07:00.604 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:08:00.632 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:09:00.799 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:10:00.944 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:11:00.984 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:12:01.077 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:13:01.145 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:14:01.285 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:15:01.413 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:16:01.484 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:17:01.571 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:18:01.655 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:19:01.731 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:20:01.942 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:21:02.037 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:22:02.112 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:23:02.187 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:24:02.271 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:25:02.409 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:26:02.477 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:27:02.571 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:28:02.662 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:29:02.762 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:30:02.948 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:31:03.009 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:32:03.092 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:33:03.171 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:33:29.003 +05:30 [INF]  Removed 1 outdated record(s) from 'aggregatedcounter' table.
+2026-05-31 13:33:30.051 +05:30 [INF]  Removed 60 outdated record(s) from 'job' table.
+2026-05-31 13:34:03.261 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:35:03.375 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:36:03.437 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:37:03.505 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:38:03.582 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:39:03.695 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:40:03.829 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:41:03.872 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:42:03.957 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:43:04.034 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:44:04.195 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:45:04.307 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:46:04.393 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:47:04.450 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:48:04.522 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:49:04.677 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:50:04.763 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:51:04.859 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:52:04.949 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:53:05.052 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:54:05.204 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:55:05.410 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:56:05.494 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:57:05.574 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:58:05.642 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 13:59:05.747 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:00:05.903 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:01:05.950 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:02:05.999 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:03:06.062 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:04:06.147 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:05:06.320 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:06:06.350 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:07:06.434 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:08:06.509 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:09:06.594 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:10:06.746 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:11:06.828 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:12:06.885 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:13:06.970 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:14:07.099 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:15:07.192 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:16:07.249 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:17:07.336 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:18:07.398 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:19:07.494 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:20:07.662 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:21:07.720 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:22:07.788 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:23:07.900 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:24:08.105 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:25:08.180 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:26:08.282 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:27:08.377 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:28:08.465 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:29:08.617 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:30:08.669 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:31:08.764 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:32:08.834 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:33:08.975 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:33:31.111 +05:30 [INF]  Removed 1 outdated record(s) from 'aggregatedcounter' table.
+2026-05-31 14:33:32.157 +05:30 [INF]  Removed 60 outdated record(s) from 'job' table.
+2026-05-31 14:34:09.109 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:35:09.233 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:36:09.339 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:37:09.424 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:38:09.487 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:39:09.578 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:40:09.774 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:41:09.871 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:42:09.938 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:43:10.016 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:44:10.101 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:45:10.262 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:46:10.337 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:47:10.378 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:48:10.448 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:49:10.482 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:50:10.665 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:51:10.710 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:52:10.787 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:53:10.855 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:54:10.996 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:55:11.145 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:56:11.246 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:57:11.310 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:58:11.379 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 14:59:11.534 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:00:11.685 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:01:11.751 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:02:11.845 +05:30 [INF]  Executed DbCommand (33ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:03:11.943 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:04:12.061 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:05:12.209 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:06:12.277 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:07:12.388 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:08:12.484 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:09:12.623 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:10:12.810 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:11:12.864 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:12:12.953 +05:30 [INF]  Executed DbCommand (15ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:13:13.013 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:14:13.142 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:15:13.254 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:16:13.367 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:17:13.464 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:18:13.547 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:19:13.701 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:20:13.843 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:21:13.894 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:22:13.961 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:23:14.042 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:24:14.133 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:25:14.253 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:26:14.333 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:27:14.398 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:28:14.476 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:29:14.582 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:30:14.717 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:31:14.830 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:32:14.907 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:33:14.951 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:33:33.232 +05:30 [INF]  Removed 1 outdated record(s) from 'aggregatedcounter' table.
+2026-05-31 15:33:34.284 +05:30 [INF]  Removed 41 outdated record(s) from 'job' table.
+2026-05-31 15:34:00.058 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:35:00.118 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:36:00.217 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:37:00.276 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:38:00.351 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:39:00.541 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:40:00.659 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:41:00.759 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:42:00.848 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:43:00.945 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:44:01.051 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:45:01.098 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:46:01.296 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:47:01.342 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:48:01.425 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:49:01.532 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:50:01.623 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:51:01.735 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:52:01.845 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:53:01.936 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:54:02.045 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:55:02.102 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:56:02.456 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:57:02.502 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:58:02.588 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 15:59:02.697 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:00:02.777 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:01:02.897 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:02:02.971 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:03:03.054 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:04:03.119 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:05:03.206 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:06:03.440 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:07:03.446 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:08:03.532 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:09:03.731 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:10:03.782 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:11:03.882 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:12:03.954 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:13:04.009 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:14:04.176 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:15:04.227 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:16:04.353 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:17:04.446 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:18:04.530 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:19:04.668 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:20:04.744 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:21:04.928 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:22:05.011 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:23:05.084 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:24:05.305 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:25:05.331 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:26:05.585 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:27:05.686 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:28:05.745 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:29:05.889 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:30:05.921 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:31:06.132 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:32:06.200 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:33:06.289 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:33:35.318 +05:30 [INF]  Removed 1 outdated record(s) from 'aggregatedcounter' table.
+2026-05-31 16:33:36.394 +05:30 [INF]  Removed 59 outdated record(s) from 'job' table.
+2026-05-31 16:34:06.514 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:35:06.545 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:36:06.762 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:37:07.029 +05:30 [INF]  Executed DbCommand (157ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:38:07.055 +05:30 [INF]  Executed DbCommand (96ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:39:07.158 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:40:07.196 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:41:07.405 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:42:07.473 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:43:07.558 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:44:07.701 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:45:08.034 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:46:08.255 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:47:08.299 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:48:08.388 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:49:08.528 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:50:08.518 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:51:08.608 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:52:08.688 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:53:08.870 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:54:08.929 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:55:09.085 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:56:09.478 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:57:09.521 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:58:09.585 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 16:59:09.757 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:00:09.855 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:01:09.963 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:02:10.042 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:03:10.166 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:04:10.380 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:05:10.485 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:06:12.978 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:07:13.073 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:08:13.172 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:09:13.410 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:10:13.461 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:11:13.640 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:12:13.721 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:13:13.846 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:14:13.923 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:15:14.067 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:16:14.161 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:17:14.224 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:18:14.319 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:19:14.527 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:20:14.497 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:21:14.659 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:22:14.763 +05:30 [INF]  Executed DbCommand (30ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:23:14.844 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:24:15.085 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:25:00.124 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:26:00.336 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:27:00.412 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:28:00.500 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:29:00.686 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:30:00.686 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:31:00.880 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:32:00.948 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:33:00.989 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:33:37.470 +05:30 [INF]  Removed 1 outdated record(s) from 'aggregatedcounter' table.
+2026-05-31 17:33:38.545 +05:30 [INF]  Removed 60 outdated record(s) from 'job' table.
+2026-05-31 17:34:01.063 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:35:01.150 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:36:01.334 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:37:01.414 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:38:01.463 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:39:01.672 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:40:01.706 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:41:01.822 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:42:01.875 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:43:01.975 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:44:02.100 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:45:02.258 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:46:02.366 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:47:02.471 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:48:02.565 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:49:03.124 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:50:03.173 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:51:03.430 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:52:03.559 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:53:03.682 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:54:03.919 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:55:03.997 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:56:04.215 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:57:04.282 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:58:04.372 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 17:59:04.464 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 18:00:04.551 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 18:01:04.959 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 18:02:05.018 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-31 18:03:05.105 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0

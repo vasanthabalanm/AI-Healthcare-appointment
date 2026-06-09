@@ -1,0 +1,24 @@
+@startuml uc-021-code-generation
+left to right direction
+skinparam actorStyle awesome
+
+actor Staff as S
+actor "AI Coding Engine" as AI
+
+rectangle "ICD-10 & CPT Code Generation" {
+  usecase "Trigger Code Generation" as UC1
+  usecase "Map to ICD-10 Codes" as UC2
+  usecase "Map to CPT Codes" as UC3
+  usecase "Flag Low-Confidence Suggestions" as UC4
+  usecase "Queue on Engine Unavailable" as UC5
+}
+
+S --> UC1
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC4 ..> UC2 : <<extend>>
+UC4 ..> UC3 : <<extend>>
+UC5 ..> UC1 : <<extend>>
+AI --> UC2
+AI --> UC3
+@enduml

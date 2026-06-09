@@ -1,0 +1,23 @@
+@startuml uc-003-admin-user-mgmt
+left to right direction
+skinparam actorStyle awesome
+
+actor Admin as A
+actor "Email Service" as ES
+
+rectangle "Admin User Account Management" {
+  usecase "Create User Account" as UC1
+  usecase "Edit User Account" as UC2
+  usecase "Deactivate Account" as UC3
+  usecase "Reactivate Account" as UC4
+  usecase "Send Credential Setup Email" as UC5
+}
+
+A --> UC1
+A --> UC2
+A --> UC3
+A --> UC4
+UC1 ..> UC5 : <<include>>
+ES --> UC5 : delivers email
+UC3 ..> UC3 : <<extend>>\nguard: last admin
+@enduml

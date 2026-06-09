@@ -1,0 +1,21 @@
+@startuml uc-019-conflict-detection
+left to right direction
+skinparam actorStyle awesome
+
+actor Staff as S
+
+rectangle "Data De-Duplication & Conflict Detection" {
+  usecase "Compare Extracted Fields Across Documents" as UC1
+  usecase "De-Duplicate Records" as UC2
+  usecase "Flag Critical Conflicts" as UC3
+  usecase "Staff Resolves Conflict" as UC4
+  usecase "Staff Dismisses Conflict" as UC5
+}
+
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC3 : <<extend>>
+S --> UC4
+S --> UC5
+UC4 ..> UC3 : <<extend>>
+UC5 ..> UC3 : <<extend>>
+@enduml

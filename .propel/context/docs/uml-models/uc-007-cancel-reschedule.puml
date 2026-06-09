@@ -1,0 +1,26 @@
+@startuml uc-007-cancel-reschedule
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+actor "Email Service" as ES
+
+rectangle "Cancel or Reschedule Appointment" {
+  usecase "View My Appointments" as UC1
+  usecase "Cancel Appointment" as UC2
+  usecase "Reschedule Appointment" as UC3
+  usecase "Check Cutoff Window" as UC4
+  usecase "Release Slot to Pool" as UC5
+  usecase "Send Cancellation Confirmation" as UC6
+}
+
+P --> UC1
+P --> UC2
+P --> UC3
+UC2 ..> UC4 : <<include>>
+UC3 ..> UC4 : <<include>>
+UC2 ..> UC5 : <<include>>
+UC3 ..> UC5 : <<include>>
+UC2 ..> UC6 : <<include>>
+ES --> UC6
+@enduml

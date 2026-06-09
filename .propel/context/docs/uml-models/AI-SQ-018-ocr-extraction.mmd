@@ -1,0 +1,41 @@
+sequenceDiagram
+    participant Hangfire as Hangfire Job Worker
+    participant DocSvc as Document Service
+    participant FS as Encrypted Filesystem
+    participant Tess as Tesseract 5.x (P/Invoke)
+    participant NLP as NLP Extraction Logic (.NET)
+    participant PG as PostgreSQL
+
+    Note over Hangfire,PG: UC-018 — OCR Clinical Data Extraction (background)
+
+    Hangfire->>DocSvc: ExecuteOcrJob(documentId)
+    DocSvc->>FS: ReadEncryptedBlob(documentId)
+    FS-->>DocSvc: decrypted bytes
+    DocSvc->>Tess: ExtractText(pdfBytes)
+    Tess-->>DocSvc: {text, pageConfidences[]}
+
+    DocSvc->>DocSvc: EvaluateConfidence(pageConfidences)
+
+    alt All pages confidence ≥ 0.75
+        DocSvc->>NLP: ExtractStructuredFields(text)
+        NLP-->>DocSvc: [ExtractedClinicalField...]
+        DocSvc->>PG: INSERT ExtractedClinicalField[] (status=Extracted)
+        DocSvc->>PG: UPDATE ClinicalDocument status=Extracted
+    else Any page confidence < 0.75
+        DocSvc->>PG: INSERT ExtractedClinicalField[] (confidence scores stored)
+        DocSvc->>PG: UPDATE ClinicalDocument status=LowConfidence
+        Note over DocSvc,PG: Staff dashboard flagged for manual review
+    end
+
+    opt No clinical fields recognized
+        DocSvc->>PG: UPDATE ClinicalDocument status=NoData
+    end
+
+    opt OCR engine unavailable (P/Invoke failure)
+        DocSvc->>Hangfire: RetryWithBackoff(attempt, maxRetries=3)
+        Note over Hangfire: Exponential backoff: 30s, 60s, 120s
+        alt Max retries exhausted
+            DocSvc->>PG: UPDATE ClinicalDocument status=Failed
+            Note over DocSvc: Dead-letter queue; Staff dashboard alert
+        end
+    end

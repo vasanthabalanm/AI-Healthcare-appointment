@@ -1,0 +1,40 @@
+sequenceDiagram
+    participant U as User (Browser)
+    participant API as .NET 8 Web API
+    participant AuthSvc as Auth Service
+    participant SQL as SQL Server
+    participant Redis as Upstash Redis
+
+    Note over U,Redis: UC-002 — Login & Session Management
+
+    U->>API: POST /auth/login {email, password}
+    API->>AuthSvc: Login(email, password)
+    AuthSvc->>SQL: SELECT UserAccount WHERE email=?
+    SQL-->>AuthSvc: user record
+    AuthSvc->>AuthSvc: VerifyPassword(hash)
+    AuthSvc->>AuthSvc: GenerateJWT(userId, role, exp=15min)
+    AuthSvc->>Redis: SET token:{jti} userId EX 900
+    AuthSvc-->>API: 200 {jwt, role}
+    API-->>U: 200 {token, dashboard-redirect}
+
+    Note over U,Redis: Session activity monitoring
+    U->>API: Any authenticated request (Authorization: Bearer jwt)
+    API->>Redis: GET token:{jti}
+    alt Token in Redis (valid session)
+        Redis-->>API: userId
+        API->>Redis: EXPIRE token:{jti} 900 (reset TTL)
+        API-->>U: 200 response
+    else Token not in Redis (expired or logged out)
+        Redis-->>API: nil
+        API-->>U: 401 Unauthorized
+    end
+
+    alt Invalid credentials
+        AuthSvc-->>API: 401 {error:"Invalid credentials"}
+        Note over AuthSvc: Increment failure counter; lock after 5 failures for 15min
+    end
+
+    opt Cross-role URL access attempt
+        API->>API: CheckRoleAuthorization(token.role, endpoint.requiredRole)
+        API-->>U: 403 Forbidden
+    end

@@ -1,0 +1,27 @@
+{
+  "name": "clinical-healthcare-e2e",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for Clinical Healthcare Platform",
+  "scripts": {
+    "test": "playwright test",
+    "test:features": "playwright test tests/features/",
+    "test:journeys": "playwright test tests/journeys/",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:security": "playwright test --grep @security",
+    "test:p0": "playwright test --grep @P0",
+    "test:coverage": "playwright test --project=chromium && npx nyc report --reporter=html --reporter=text-summary",
+    "coverage:report": "npx nyc report --reporter=html && start coverage/index.html",
+    "codegen": "playwright codegen http://localhost:4200"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.19.41",
+    "nyc": "^18.0.0",
+    "typescript": "^5.4.0"
+  }
+}

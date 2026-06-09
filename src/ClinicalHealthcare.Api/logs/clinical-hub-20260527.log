@@ -1,0 +1,1237 @@
+2026-05-27 08:02:18.787 +05:30 [INF]  Executed DbCommand (58ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:03:02.294 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:04:02.326 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:05:02.380 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:06:02.738 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:07:02.706 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:08:02.725 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:09:02.794 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:10:02.849 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:11:02.926 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:12:03.017 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 08:12:14.208 +05:30 [WRN]  Stopping the server due to DomainUnload or ProcessExit event...
+2026-05-27 08:12:14.212 +05:30 [INF]  Server kanini-ltp-511:38916:d0afadb9 caught stopping signal...
+2026-05-27 08:12:14.219 +05:30 [INF]  Server kanini-ltp-511:38916:d0afadb9 caught stopped signal...
+2026-05-27 08:12:14.231 +05:30 [WRN]  Server kanini-ltp-511:38916:d0afadb9 caught shutdown signal...
+2026-05-27 08:12:14.240 +05:30 [WRN]  Server kanini-ltp-511:38916:d0afadb9 stopped non-gracefully due to ServerWatchdog. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-05-27 08:12:14.857 +05:30 [INF]  Server kanini-ltp-511:38916:d0afadb9 successfully reported itself as stopped in 592.572 ms
+2026-05-27 08:12:14.858 +05:30 [INF]  Server kanini-ltp-511:38916:d0afadb9 has been stopped in total 639.9298 ms
+2026-05-27 11:33:03.471 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 11:33:03.683 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 11:33:05.264 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:33:05.268 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:33:05.270 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:33:05.274 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:33:05.850 +05:30 [INF]  Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-27 11:33:05.870 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-27 11:33:05.876 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-27 11:33:05.880 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-27 11:33:05.912 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-27 11:33:06.550 +05:30 [INF]  Now listening on: https://localhost:7089
+2026-05-27 11:33:06.677 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-27 11:33:06.753 +05:30 [INF]  No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-27 11:33:06.833 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-27 11:33:06.835 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-27 11:33:06.837 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-27 11:33:06.839 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-27 11:33:06.847 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-27 11:33:06.857 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-27 11:33:06.916 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-27 11:33:06.925 +05:30 [INF]  Hosting environment: Development
+2026-05-27 11:33:06.969 +05:30 [INF]  Server kanini-ltp-511:48320:1d13c46d successfully announced in 50.2673 ms
+2026-05-27 11:33:06.970 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-27 11:33:07.005 +05:30 [INF]  Server kanini-ltp-511:48320:1d13c46d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-27 11:33:07.368 +05:30 [INF]  Removed 10 outdated record(s) from 'aggregatedcounter' table.
+2026-05-27 11:33:08.798 +05:30 [INF]  Server kanini-ltp-511:48320:1d13c46d all the dispatchers started
+2026-05-27 11:33:09.452 +05:30 [INF]  Request starting HTTP/2 GET https://localhost:7089/health - null null
+2026-05-27 11:33:09.474 +05:30 [INF]  Removed 334 outdated record(s) from 'job' table.
+2026-05-27 11:33:11.297 +05:30 [INF] 6e4fbfce-4558-4d06-8cc4-1840f9a30b3a Executing endpoint 'Health checks'
+2026-05-27 11:33:11.407 +05:30 [INF] 6e4fbfce-4558-4d06-8cc4-1840f9a30b3a Executed endpoint 'Health checks'
+2026-05-27 11:33:11.459 +05:30 [INF] 6e4fbfce-4558-4d06-8cc4-1840f9a30b3a HTTP GET /health responded 200 in 162.2897 ms
+2026-05-27 11:33:11.483 +05:30 [INF]  Request finished HTTP/2 GET https://localhost:7089/health - 200 null application/json 2061.3875ms
+2026-05-27 11:33:34.907 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 11:33:35.080 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 11:35:02.416 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 11:35:02.807 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 11:43:57.144 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 11:43:57.501 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 11:44:00.304 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:44:00.310 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:44:00.315 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:44:00.320 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 11:44:01.596 +05:30 [INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-27 11:44:01.645 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-27 11:44:01.674 +05:30 [INF]  Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-27 11:44:01.687 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-27 11:44:01.762 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-27 11:44:02.959 +05:30 [INF]  Now listening on: https://localhost:7089
+2026-05-27 11:44:03.008 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-27 11:44:03.182 +05:30 [INF]  No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-27 11:44:03.449 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-27 11:44:03.450 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-27 11:44:03.452 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-27 11:44:03.454 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-27 11:44:03.455 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-27 11:44:03.456 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-27 11:44:03.742 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-27 11:44:03.790 +05:30 [INF]  Hosting environment: Development
+2026-05-27 11:44:03.797 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-27 11:44:04.168 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a successfully announced in 385.6642 ms
+2026-05-27 11:44:04.314 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-27 11:44:04.820 +05:30 [INF]  1 servers were removed due to timeout
+2026-05-27 11:44:05.071 +05:30 [INF]  Request starting HTTP/2 GET https://localhost:7089/health - null null
+2026-05-27 11:44:06.969 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a all the dispatchers started
+2026-05-27 11:44:07.093 +05:30 [INF]  Removed 12 outdated record(s) from 'job' table.
+2026-05-27 11:44:07.978 +05:30 [INF] f46f0683-cf2d-4b06-8416-1d29aa5e17bb Executing endpoint 'Health checks'
+2026-05-27 11:44:08.157 +05:30 [INF] f46f0683-cf2d-4b06-8416-1d29aa5e17bb Executed endpoint 'Health checks'
+2026-05-27 11:44:08.168 +05:30 [INF] f46f0683-cf2d-4b06-8416-1d29aa5e17bb HTTP GET /health responded 200 in 185.7836 ms
+2026-05-27 11:44:08.192 +05:30 [INF]  Request finished HTTP/2 GET https://localhost:7089/health - 200 null application/json 3405.211ms
+2026-05-27 11:44:14.498 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:45:14.163 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:46:14.197 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:47:14.292 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:47:30.848 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/forgot-password - null null
+2026-05-27 11:47:30.874 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:47:30.928 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/forgot-password - 204 null null 79.8685ms
+2026-05-27 11:47:30.946 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/forgot-password - application/json 46
+2026-05-27 11:47:30.963 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:47:30.969 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 Executing endpoint 'HTTP: POST /auth/forgot-password => HandleForgotPassword'
+2026-05-27 11:47:31.075 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__normalizedEmail_0 AND u."IsActive"
+LIMIT 1
+2026-05-27 11:47:32.016 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 Executed DbCommand (4ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "UserAccounts" SET "PasswordResetTokenExpiry" = @p0, "PasswordResetTokenHash" = @p1, "PasswordResetTokenIssuedAt" = @p2
+WHERE "Id" = @p3;
+2026-05-27 11:47:32.071 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 
+╔══════════════════════════════════════════════════════════════╗
+║  [DevEmail] Email captured (not sent)                        ║
+╠══════════════════════════════════════════════════════════════╣
+║  To      : vasanthabalan.murugesan@kanini.com
+║  Subject : Reset your ClinicalHub password
+╠══════════════════════════════════════════════════════════════╣
+║  ACTION URL (copy and open in browser):
+║  http://localhost:4200/reset-password?email=vasanthabalan.murugesan%40kanini.com&token=bzQcrY1K0rqz1XPtO09cTQa_wy9pDuabu4bi5c6BFXY
+╚══════════════════════════════════════════════════════════════╝
+2026-05-27 11:47:32.093 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 Setting HTTP status code 200.
+2026-05-27 11:47:32.103 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 Writing value of type '<>f__AnonymousType20`1' as Json.
+2026-05-27 11:47:32.116 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 Executed endpoint 'HTTP: POST /auth/forgot-password => HandleForgotPassword'
+2026-05-27 11:47:32.123 +05:30 [INF] 81273ee1-af71-4b7f-a240-f1029dd0fc01 HTTP POST /auth/forgot-password responded 200 in 1153.9015 ms
+2026-05-27 11:47:32.140 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/forgot-password - 200 null application/json; charset=utf-8 1194.2286ms
+2026-05-27 11:48:04.756 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/reset-password - null null
+2026-05-27 11:48:04.765 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:04.769 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/reset-password - 204 null null 13.014ms
+2026-05-27 11:48:04.794 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/reset-password - application/json 129
+2026-05-27 11:48:04.808 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:04.817 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 Executing endpoint 'HTTP: POST /auth/reset-password => HandleResetPassword'
+2026-05-27 11:48:04.848 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 Executed DbCommand (15ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__normalizedEmail_0 AND u."IsActive"
+LIMIT 1
+2026-05-27 11:48:05.564 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 Executed DbCommand (17ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = DateTime), @p11='?' (DbType = Int32), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AuditLogs" ("Action", "ActorId", "AfterValue", "BeforeValue", "CorrelationId", "EntityId", "EntityType", "OccurredAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+UPDATE "UserAccounts" SET "PasswordHash" = @p8, "PasswordResetTokenExpiry" = @p9, "PasswordResetTokenUsed" = @p10
+WHERE "Id" = @p11;
+2026-05-27 11:48:05.636 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 Setting HTTP status code 200.
+2026-05-27 11:48:05.642 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 Writing value of type '<>f__AnonymousType20`1' as Json.
+2026-05-27 11:48:05.646 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 Executed endpoint 'HTTP: POST /auth/reset-password => HandleResetPassword'
+2026-05-27 11:48:05.650 +05:30 [INF] df723d6f-e0c6-48dd-beef-1902a2a219c2 HTTP POST /auth/reset-password responded 200 in 832.9975 ms
+2026-05-27 11:48:05.659 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/reset-password - 200 null application/json; charset=utf-8 864.5005ms
+2026-05-27 11:48:14.372 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-27 11:48:14.384 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:14.388 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 16.2326ms
+2026-05-27 11:48:14.398 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 71
+2026-05-27 11:48:14.408 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:14.413 +05:30 [INF] a0982d9a-6dcc-4670-967a-d4ee8bfc2fc8 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-27 11:48:14.464 +05:30 [INF] a0982d9a-6dcc-4670-967a-d4ee8bfc2fc8 Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-27 11:48:14.619 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:48:14.762 +05:30 [INF] a0982d9a-6dcc-4670-967a-d4ee8bfc2fc8 Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "UserAccounts" SET "FailedLoginAttempts" = @p0
+WHERE "Id" = @p1;
+2026-05-27 11:48:14.770 +05:30 [INF] a0982d9a-6dcc-4670-967a-d4ee8bfc2fc8 Setting HTTP status code 401.
+2026-05-27 11:48:14.773 +05:30 [INF] a0982d9a-6dcc-4670-967a-d4ee8bfc2fc8 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-27 11:48:14.775 +05:30 [INF] a0982d9a-6dcc-4670-967a-d4ee8bfc2fc8 HTTP POST /auth/login responded 401 in 362.3371 ms
+2026-05-27 11:48:14.780 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 401 0 null 381.4242ms
+2026-05-27 11:48:20.603 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-27 11:48:20.612 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:20.616 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 13.1074ms
+2026-05-27 11:48:20.634 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 72
+2026-05-27 11:48:20.647 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:20.651 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-27 11:48:20.665 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af Executed DbCommand (4ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-27 11:48:21.085 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af Executed DbCommand (17ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "UserAccounts" SET "FailedLoginAttempts" = @p0
+WHERE "Id" = @p1;
+2026-05-27 11:48:21.272 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af Setting HTTP status code 200.
+2026-05-27 11:48:21.274 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af Writing value of type 'LoginResponse' as Json.
+2026-05-27 11:48:21.278 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-27 11:48:21.281 +05:30 [INF] e640623b-875b-4d2c-8d49-259a91e134af HTTP POST /auth/login responded 200 in 630.1958 ms
+2026-05-27 11:48:21.283 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 649.6885ms
+2026-05-27 11:48:21.418 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-27 11:48:21.425 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:21.428 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 9.5325ms
+2026-05-27 11:48:21.436 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-27 11:48:21.446 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:21.585 +05:30 [INF] ce2736b0-cd51-431c-b4ca-9011834b5249 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:48:21.829 +05:30 [INF] ce2736b0-cd51-431c-b4ca-9011834b5249 Executed DbCommand (7ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-27 11:48:21.894 +05:30 [INF] ce2736b0-cd51-431c-b4ca-9011834b5249 Setting HTTP status code 200.
+2026-05-27 11:48:22.069 +05:30 [INF] ce2736b0-cd51-431c-b4ca-9011834b5249 Writing value of type 'List`1' as Json.
+2026-05-27 11:48:22.097 +05:30 [INF] ce2736b0-cd51-431c-b4ca-9011834b5249 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:48:22.099 +05:30 [INF] ce2736b0-cd51-431c-b4ca-9011834b5249 HTTP GET /appointments/mine responded 200 in 513.8092 ms
+2026-05-27 11:48:22.105 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 669.3104ms
+2026-05-27 11:48:33.367 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - null null
+2026-05-27 11:48:33.381 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:33.384 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - 204 null null 17.0832ms
+2026-05-27 11:48:33.391 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/start - application/json 2
+2026-05-27 11:48:33.400 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:33.408 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Executing endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-27 11:48:33.493 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-27 11:48:33.499 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-27 11:48:34.152 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Received HTTP response headers after 639.9645ms - 200
+2026-05-27 11:48:34.159 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 End processing HTTP request after 669.396ms - 200
+2026-05-27 11:48:34.185 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Setting HTTP status code 200.
+2026-05-27 11:48:34.192 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Writing value of type '<>f__AnonymousType36`2' as Json.
+2026-05-27 11:48:34.200 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 Executed endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-27 11:48:34.203 +05:30 [INF] 036ecd0f-2eb3-47d6-8c78-77faed5c2008 HTTP POST /intake/ai/start responded 200 in 794.7575 ms
+2026-05-27 11:48:34.209 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/start - 200 null application/json; charset=utf-8 818.615ms
+2026-05-27 11:48:37.461 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/message - null null
+2026-05-27 11:48:37.464 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:37.469 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/message - 204 null null 7.5929ms
+2026-05-27 11:48:37.479 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/message - application/json 66
+2026-05-27 11:48:37.488 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:37.495 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Executing endpoint 'HTTP: POST /intake/ai/message => HandleSendAiMessage'
+2026-05-27 11:48:37.510 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-27 11:48:37.516 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-27 11:48:37.848 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Received HTTP response headers after 326.6382ms - 200
+2026-05-27 11:48:37.853 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 End processing HTTP request after 343.3217ms - 200
+2026-05-27 11:48:37.860 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Setting HTTP status code 200.
+2026-05-27 11:48:37.870 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Writing value of type '<>f__AnonymousType35`5' as Json.
+2026-05-27 11:48:37.878 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 Executed endpoint 'HTTP: POST /intake/ai/message => HandleSendAiMessage'
+2026-05-27 11:48:37.884 +05:30 [INF] 2fe5995d-79a9-446f-a12a-6e81a421d8a9 HTTP POST /intake/ai/message responded 200 in 388.3264 ms
+2026-05-27 11:48:37.891 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/message - 200 null application/json; charset=utf-8 412.3207ms
+2026-05-27 11:48:49.011 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 11:48:49.020 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:49.025 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 13.7349ms
+2026-05-27 11:48:49.040 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/me/documents - null null
+2026-05-27 11:48:49.053 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:48:49.057 +05:30 [INF] bd0fde46-7c6d-453b-9fad-4107337633b4 Executing endpoint '405 HTTP Method Not Supported'
+2026-05-27 11:48:49.063 +05:30 [INF] bd0fde46-7c6d-453b-9fad-4107337633b4 Executed endpoint '405 HTTP Method Not Supported'
+2026-05-27 11:48:49.068 +05:30 [INF] bd0fde46-7c6d-453b-9fad-4107337633b4 HTTP GET /patients/me/documents responded 405 in 10.6297 ms
+2026-05-27 11:48:49.076 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/me/documents - 405 0 null 36.1792ms
+2026-05-27 11:49:02.556 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 11:49:02.873 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:02.915 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 358.7568ms
+2026-05-27 11:49:02.994 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/patients/me/documents - multipart/form-data; boundary=----WebKitFormBoundaryla94sAtNem5xpUXb 974228
+2026-05-27 11:49:03.007 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:03.011 +05:30 [INF] 8ce23196-e40e-4c12-b25d-5fd591347949 HTTP POST /patients/me/documents responded 404 in 0.1474 ms
+2026-05-27 11:49:03.016 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/patients/me/documents - 404 0 null 21.8717ms
+2026-05-27 11:49:03.026 +05:30 [INF]  Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5153/patients/me/documents, Response status code: 404
+2026-05-27 11:49:07.675 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - null null
+2026-05-27 11:49:07.683 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:07.685 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - 204 null null 9.9028ms
+2026-05-27 11:49:07.692 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/start - application/json 2
+2026-05-27 11:49:07.699 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:07.703 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Executing endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-27 11:49:07.708 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-27 11:49:07.712 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-27 11:49:08.155 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Received HTTP response headers after 437.7809ms - 200
+2026-05-27 11:49:08.160 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb End processing HTTP request after 452.2262ms - 200
+2026-05-27 11:49:08.166 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Setting HTTP status code 200.
+2026-05-27 11:49:08.171 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Writing value of type '<>f__AnonymousType36`2' as Json.
+2026-05-27 11:49:08.176 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb Executed endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-27 11:49:08.180 +05:30 [INF] 6e62c3fd-8dc3-49b5-b645-49d70a8f8ebb HTTP POST /intake/ai/start responded 200 in 477.1178 ms
+2026-05-27 11:49:08.189 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/start - 200 null application/json; charset=utf-8 497.2805ms
+2026-05-27 11:49:08.809 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-27 11:49:08.818 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:08.820 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 10.6444ms
+2026-05-27 11:49:08.830 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-27 11:49:08.839 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:08.841 +05:30 [INF] 529d6a76-f56b-4b4e-b771-bba9fca786fa Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:49:08.851 +05:30 [INF] 529d6a76-f56b-4b4e-b771-bba9fca786fa Executed DbCommand (3ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-27 11:49:08.859 +05:30 [INF] 529d6a76-f56b-4b4e-b771-bba9fca786fa Setting HTTP status code 200.
+2026-05-27 11:49:08.861 +05:30 [INF] 529d6a76-f56b-4b4e-b771-bba9fca786fa Writing value of type 'List`1' as Json.
+2026-05-27 11:49:08.864 +05:30 [INF] 529d6a76-f56b-4b4e-b771-bba9fca786fa Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:49:08.866 +05:30 [INF] 529d6a76-f56b-4b4e-b771-bba9fca786fa HTTP GET /appointments/mine responded 200 in 25.1369 ms
+2026-05-27 11:49:08.872 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 42.0725ms
+2026-05-27 11:49:14.046 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26&allSlots=true - null null
+2026-05-27 11:49:14.047 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27&allSlots=true - null null
+2026-05-27 11:49:14.049 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-28&allSlots=true - null null
+2026-05-27 11:49:14.079 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.098 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.050 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-29&allSlots=true - null null
+2026-05-27 11:49:14.106 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27&allSlots=true - 204 null null 58.833ms
+2026-05-27 11:49:14.108 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-28&allSlots=true - 204 null null 59.3212ms
+2026-05-27 11:49:14.130 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.052 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-30&allSlots=true - null null
+2026-05-27 11:49:14.058 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.053 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:14.153 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27&allSlots=true - null null
+2026-05-27 11:49:14.161 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-28&allSlots=true - null null
+2026-05-27 11:49:14.162 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-29&allSlots=true - 204 null null 112.3075ms
+2026-05-27 11:49:14.172 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.173 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26&allSlots=true - 204 null null 129.9174ms
+2026-05-27 11:49:14.182 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.191 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.202 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.212 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-29&allSlots=true - null null
+2026-05-27 11:49:14.215 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-30&allSlots=true - 204 null null 162.1335ms
+2026-05-27 11:49:14.226 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26&allSlots=true - null null
+2026-05-27 11:49:14.229 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27 - 204 null null 176.1317ms
+2026-05-27 11:49:14.235 +05:30 [INF] 80b88b1a-ae03-4939-99a0-5776f6236144 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.235 +05:30 [INF] e2829818-9acd-4ef7-abe8-2f834f66f918 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.246 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.256 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-30&allSlots=true - null null
+2026-05-27 11:49:14.261 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.272 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:14.282 +05:30 [INF] c27ff40d-d5c1-4b1b-b830-3e7c2f3196da Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.295 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.298 +05:30 [INF] 1482ec7f-d80b-44fd-aafd-06085ac582d0 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.306 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:14.329 +05:30 [INF] e2829818-9acd-4ef7-abe8-2f834f66f918 Executed DbCommand (1ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes", s."IsAvailable"
+FROM "Slots" AS s
+WHERE s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-27 11:49:14.318 +05:30 [INF] 158c9ce0-2999-497a-8d26-67d72743317c Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.373 +05:30 [INF] e2829818-9acd-4ef7-abe8-2f834f66f918 Setting HTTP status code 200.
+2026-05-27 11:49:14.341 +05:30 [INF] 535d0036-71cd-417b-b6ae-66abe69c9a29 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.414 +05:30 [INF] 158c9ce0-2999-497a-8d26-67d72743317c Executed DbCommand (15ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes", s."IsAvailable"
+FROM "Slots" AS s
+WHERE s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-27 11:49:14.444 +05:30 [INF] e2829818-9acd-4ef7-abe8-2f834f66f918 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:14.473 +05:30 [INF] 158c9ce0-2999-497a-8d26-67d72743317c Setting HTTP status code 200.
+2026-05-27 11:49:14.333 +05:30 [INF] 80b88b1a-ae03-4939-99a0-5776f6236144 Executed DbCommand (5ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes", s."IsAvailable"
+FROM "Slots" AS s
+WHERE s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-27 11:49:14.522 +05:30 [INF] e2829818-9acd-4ef7-abe8-2f834f66f918 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.507 +05:30 [INF] 158c9ce0-2999-497a-8d26-67d72743317c Writing value of type 'List`1' as Json.
+2026-05-27 11:49:14.551 +05:30 [INF] e2829818-9acd-4ef7-abe8-2f834f66f918 HTTP GET /slots responded 200 in 316.1554 ms
+2026-05-27 11:49:14.535 +05:30 [INF] 80b88b1a-ae03-4939-99a0-5776f6236144 Setting HTTP status code 200.
+2026-05-27 11:49:14.514 +05:30 [INF] 535d0036-71cd-417b-b6ae-66abe69c9a29 Executed DbCommand (34ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime), @__now_2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1 AND s."SlotTime" > @__now_2
+ORDER BY s."SlotTime"
+2026-05-27 11:49:14.557 +05:30 [INF] 158c9ce0-2999-497a-8d26-67d72743317c Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.567 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-28&allSlots=true - 200 null application/json; charset=utf-8 406.057ms
+2026-05-27 11:49:14.575 +05:30 [INF] 80b88b1a-ae03-4939-99a0-5776f6236144 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:14.584 +05:30 [INF] 158c9ce0-2999-497a-8d26-67d72743317c HTTP GET /slots responded 200 in 266.3440 ms
+2026-05-27 11:49:14.582 +05:30 [INF] 535d0036-71cd-417b-b6ae-66abe69c9a29 Setting HTTP status code 200.
+2026-05-27 11:49:14.607 +05:30 [INF] 80b88b1a-ae03-4939-99a0-5776f6236144 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.615 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-30&allSlots=true - 200 null application/json; charset=utf-8 359.1718ms
+2026-05-27 11:49:14.616 +05:30 [INF] 535d0036-71cd-417b-b6ae-66abe69c9a29 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:14.623 +05:30 [INF] 80b88b1a-ae03-4939-99a0-5776f6236144 HTTP GET /slots responded 200 in 388.2388 ms
+2026-05-27 11:49:14.634 +05:30 [INF] 535d0036-71cd-417b-b6ae-66abe69c9a29 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.640 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27&allSlots=true - 200 null application/json; charset=utf-8 486.659ms
+2026-05-27 11:49:14.644 +05:30 [INF] 535d0036-71cd-417b-b6ae-66abe69c9a29 HTTP GET /slots responded 200 in 302.9815 ms
+2026-05-27 11:49:14.661 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:49:14.661 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - 200 null application/json; charset=utf-8 389.3197ms
+2026-05-27 11:49:14.856 +05:30 [INF] 1482ec7f-d80b-44fd-aafd-06085ac582d0 Executed DbCommand (3ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes", s."IsAvailable"
+FROM "Slots" AS s
+WHERE s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-27 11:49:14.865 +05:30 [INF] 1482ec7f-d80b-44fd-aafd-06085ac582d0 Setting HTTP status code 200.
+2026-05-27 11:49:14.869 +05:30 [INF] 1482ec7f-d80b-44fd-aafd-06085ac582d0 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:14.875 +05:30 [INF] 1482ec7f-d80b-44fd-aafd-06085ac582d0 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:14.882 +05:30 [INF] 1482ec7f-d80b-44fd-aafd-06085ac582d0 HTTP GET /slots responded 200 in 584.1970 ms
+2026-05-27 11:49:14.890 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26&allSlots=true - 200 null application/json; charset=utf-8 663.795ms
+2026-05-27 11:49:15.081 +05:30 [INF] c27ff40d-d5c1-4b1b-b830-3e7c2f3196da Executed DbCommand (2ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes", s."IsAvailable"
+FROM "Slots" AS s
+WHERE s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-27 11:49:15.091 +05:30 [INF] c27ff40d-d5c1-4b1b-b830-3e7c2f3196da Setting HTTP status code 200.
+2026-05-27 11:49:15.096 +05:30 [INF] c27ff40d-d5c1-4b1b-b830-3e7c2f3196da Writing value of type 'List`1' as Json.
+2026-05-27 11:49:15.098 +05:30 [INF] c27ff40d-d5c1-4b1b-b830-3e7c2f3196da Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:15.100 +05:30 [INF] c27ff40d-d5c1-4b1b-b830-3e7c2f3196da HTTP GET /slots responded 200 in 818.9192 ms
+2026-05-27 11:49:15.111 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-29&allSlots=true - 200 null application/json; charset=utf-8 899.4124ms
+2026-05-27 11:49:17.134 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:17.150 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:17.165 +05:30 [INF] cda709d0-b7ca-4ebb-b065-66f68abd1b18 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:17.175 +05:30 [INF] cda709d0-b7ca-4ebb-b065-66f68abd1b18 Setting HTTP status code 200.
+2026-05-27 11:49:17.181 +05:30 [INF] cda709d0-b7ca-4ebb-b065-66f68abd1b18 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:17.186 +05:30 [INF] cda709d0-b7ca-4ebb-b065-66f68abd1b18 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:17.192 +05:30 [INF] cda709d0-b7ca-4ebb-b065-66f68abd1b18 HTTP GET /slots responded 200 in 26.6835 ms
+2026-05-27 11:49:17.199 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - 200 null application/json; charset=utf-8 65.5049ms
+2026-05-27 11:49:20.723 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-28 - null null
+2026-05-27 11:49:20.732 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:20.735 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-28 - 204 null null 11.6981ms
+2026-05-27 11:49:20.745 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-28 - null null
+2026-05-27 11:49:20.755 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:20.760 +05:30 [INF] 779c69ec-cea5-42e0-83a9-ef486313fc88 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:20.774 +05:30 [INF] 779c69ec-cea5-42e0-83a9-ef486313fc88 Executed DbCommand (5ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime), @__now_2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1 AND s."SlotTime" > @__now_2
+ORDER BY s."SlotTime"
+2026-05-27 11:49:20.784 +05:30 [INF] 779c69ec-cea5-42e0-83a9-ef486313fc88 Setting HTTP status code 200.
+2026-05-27 11:49:20.789 +05:30 [INF] 779c69ec-cea5-42e0-83a9-ef486313fc88 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:20.790 +05:30 [INF] 779c69ec-cea5-42e0-83a9-ef486313fc88 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:20.793 +05:30 [INF] 779c69ec-cea5-42e0-83a9-ef486313fc88 HTTP GET /slots responded 200 in 33.6253 ms
+2026-05-27 11:49:20.801 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-28 - 200 null application/json; charset=utf-8 56.0629ms
+2026-05-27 11:49:24.794 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:24.803 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:24.805 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27 - 204 null null 11.1451ms
+2026-05-27 11:49:24.818 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:24.829 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:24.836 +05:30 [INF] f9597d65-9b05-40fa-a29c-a2309493a551 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:24.842 +05:30 [INF] f9597d65-9b05-40fa-a29c-a2309493a551 Setting HTTP status code 200.
+2026-05-27 11:49:24.850 +05:30 [INF] f9597d65-9b05-40fa-a29c-a2309493a551 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:24.856 +05:30 [INF] f9597d65-9b05-40fa-a29c-a2309493a551 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:24.861 +05:30 [INF] f9597d65-9b05-40fa-a29c-a2309493a551 HTTP GET /slots responded 200 in 25.1363 ms
+2026-05-27 11:49:24.870 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - 200 null application/json; charset=utf-8 51.7797ms
+2026-05-27 11:49:25.626 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26 - null null
+2026-05-27 11:49:25.634 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:25.639 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26 - 204 null null 13.336ms
+2026-05-27 11:49:25.649 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26 - null null
+2026-05-27 11:49:25.657 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:25.659 +05:30 [INF] 0d9dc9e8-a511-4022-bd13-4b45fe1daede Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:25.668 +05:30 [INF] 0d9dc9e8-a511-4022-bd13-4b45fe1daede Executed DbCommand (3ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime), @__now_2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1 AND s."SlotTime" > @__now_2
+ORDER BY s."SlotTime"
+2026-05-27 11:49:25.681 +05:30 [INF] 0d9dc9e8-a511-4022-bd13-4b45fe1daede Setting HTTP status code 200.
+2026-05-27 11:49:25.683 +05:30 [INF] 0d9dc9e8-a511-4022-bd13-4b45fe1daede Writing value of type 'List`1' as Json.
+2026-05-27 11:49:25.688 +05:30 [INF] 0d9dc9e8-a511-4022-bd13-4b45fe1daede Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:25.693 +05:30 [INF] 0d9dc9e8-a511-4022-bd13-4b45fe1daede HTTP GET /slots responded 200 in 33.3420 ms
+2026-05-27 11:49:25.697 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26 - 200 null application/json; charset=utf-8 48.6889ms
+2026-05-27 11:49:27.870 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:27.877 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:27.880 +05:30 [INF] cb5b8bd9-85ac-4ef8-bffd-ca1623ba9ba0 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:27.885 +05:30 [INF] cb5b8bd9-85ac-4ef8-bffd-ca1623ba9ba0 Setting HTTP status code 200.
+2026-05-27 11:49:27.889 +05:30 [INF] cb5b8bd9-85ac-4ef8-bffd-ca1623ba9ba0 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:27.894 +05:30 [INF] cb5b8bd9-85ac-4ef8-bffd-ca1623ba9ba0 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:27.896 +05:30 [INF] cb5b8bd9-85ac-4ef8-bffd-ca1623ba9ba0 HTTP GET /slots responded 200 in 16.7320 ms
+2026-05-27 11:49:27.903 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - 200 null application/json; charset=utf-8 33.6679ms
+2026-05-27 11:49:29.415 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-27 11:49:29.426 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:29.430 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 15.1225ms
+2026-05-27 11:49:29.441 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-27 11:49:29.460 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:29.463 +05:30 [INF] 981e2baa-155e-4594-953e-b312c1c4cf5d Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:49:29.474 +05:30 [INF] 981e2baa-155e-4594-953e-b312c1c4cf5d Executed DbCommand (3ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-27 11:49:29.492 +05:30 [INF] 981e2baa-155e-4594-953e-b312c1c4cf5d Setting HTTP status code 200.
+2026-05-27 11:49:29.497 +05:30 [INF] 981e2baa-155e-4594-953e-b312c1c4cf5d Writing value of type 'List`1' as Json.
+2026-05-27 11:49:29.501 +05:30 [INF] 981e2baa-155e-4594-953e-b312c1c4cf5d Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:49:29.504 +05:30 [INF] 981e2baa-155e-4594-953e-b312c1c4cf5d HTTP GET /appointments/mine responded 200 in 40.7234 ms
+2026-05-27 11:49:29.511 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 70.602ms
+2026-05-27 11:49:34.361 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26&allSlots=true - null null
+2026-05-27 11:49:34.362 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27&allSlots=true - null null
+2026-05-27 11:49:34.362 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-28&allSlots=true - null null
+2026-05-27 11:49:34.363 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-30&allSlots=true - null null
+2026-05-27 11:49:34.363 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-29&allSlots=true - null null
+2026-05-27 11:49:34.363 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:34.367 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.377 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.386 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.397 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.413 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.423 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.427 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26&allSlots=true - 204 null null 66.1439ms
+2026-05-27 11:49:34.428 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27&allSlots=true - 204 null null 66.6224ms
+2026-05-27 11:49:34.430 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-28&allSlots=true - 204 null null 67.5351ms
+2026-05-27 11:49:34.433 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-30&allSlots=true - 204 null null 70.6297ms
+2026-05-27 11:49:34.436 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-29&allSlots=true - 204 null null 73.3228ms
+2026-05-27 11:49:34.437 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-27 - 204 null null 74.2043ms
+2026-05-27 11:49:34.452 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26&allSlots=true - null null
+2026-05-27 11:49:34.461 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27&allSlots=true - null null
+2026-05-27 11:49:34.474 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-28&allSlots=true - null null
+2026-05-27 11:49:34.486 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-30&allSlots=true - null null
+2026-05-27 11:49:34.499 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - null null
+2026-05-27 11:49:34.511 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-29&allSlots=true - null null
+2026-05-27 11:49:34.522 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.530 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.541 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.553 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.563 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.570 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:34.573 +05:30 [INF] ef7bef55-7b84-456f-9c0c-3fa875c59bd1 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.575 +05:30 [INF] 648068d3-c91f-49b8-937c-357c73de5ea9 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.577 +05:30 [INF] 5adc4774-64f8-4f68-b8f7-3b04740eada4 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.581 +05:30 [INF] c0b93c49-ef21-419f-bfcc-75518d463b41 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.584 +05:30 [INF] 221ebe1a-d03e-47b3-9e87-6e23fe1dccac Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.587 +05:30 [INF] a40b97d1-67c0-487d-a3d4-20db8c6a710b Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.591 +05:30 [INF] ef7bef55-7b84-456f-9c0c-3fa875c59bd1 Setting HTTP status code 200.
+2026-05-27 11:49:34.596 +05:30 [INF] 648068d3-c91f-49b8-937c-357c73de5ea9 Setting HTTP status code 200.
+2026-05-27 11:49:34.600 +05:30 [INF] 5adc4774-64f8-4f68-b8f7-3b04740eada4 Setting HTTP status code 200.
+2026-05-27 11:49:34.605 +05:30 [INF] c0b93c49-ef21-419f-bfcc-75518d463b41 Setting HTTP status code 200.
+2026-05-27 11:49:34.608 +05:30 [INF] 221ebe1a-d03e-47b3-9e87-6e23fe1dccac Setting HTTP status code 200.
+2026-05-27 11:49:34.612 +05:30 [INF] a40b97d1-67c0-487d-a3d4-20db8c6a710b Setting HTTP status code 200.
+2026-05-27 11:49:34.615 +05:30 [INF] ef7bef55-7b84-456f-9c0c-3fa875c59bd1 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:34.620 +05:30 [INF] 648068d3-c91f-49b8-937c-357c73de5ea9 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:34.625 +05:30 [INF] 5adc4774-64f8-4f68-b8f7-3b04740eada4 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:34.629 +05:30 [INF] c0b93c49-ef21-419f-bfcc-75518d463b41 Writing value of type 'List`1' as Json.
+2026-05-27 11:49:34.630 +05:30 [INF] 221ebe1a-d03e-47b3-9e87-6e23fe1dccac Writing value of type 'List`1' as Json.
+2026-05-27 11:49:34.633 +05:30 [INF] a40b97d1-67c0-487d-a3d4-20db8c6a710b Writing value of type 'List`1' as Json.
+2026-05-27 11:49:34.638 +05:30 [INF] ef7bef55-7b84-456f-9c0c-3fa875c59bd1 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.640 +05:30 [INF] 648068d3-c91f-49b8-937c-357c73de5ea9 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.644 +05:30 [INF] 5adc4774-64f8-4f68-b8f7-3b04740eada4 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.647 +05:30 [INF] c0b93c49-ef21-419f-bfcc-75518d463b41 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.650 +05:30 [INF] 221ebe1a-d03e-47b3-9e87-6e23fe1dccac Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.656 +05:30 [INF] a40b97d1-67c0-487d-a3d4-20db8c6a710b Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-27 11:49:34.659 +05:30 [INF] ef7bef55-7b84-456f-9c0c-3fa875c59bd1 HTTP GET /slots responded 200 in 85.6918 ms
+2026-05-27 11:49:34.663 +05:30 [INF] 648068d3-c91f-49b8-937c-357c73de5ea9 HTTP GET /slots responded 200 in 87.8659 ms
+2026-05-27 11:49:34.667 +05:30 [INF] 5adc4774-64f8-4f68-b8f7-3b04740eada4 HTTP GET /slots responded 200 in 89.1625 ms
+2026-05-27 11:49:34.671 +05:30 [INF] c0b93c49-ef21-419f-bfcc-75518d463b41 HTTP GET /slots responded 200 in 90.4594 ms
+2026-05-27 11:49:34.674 +05:30 [INF] 221ebe1a-d03e-47b3-9e87-6e23fe1dccac HTTP GET /slots responded 200 in 90.7433 ms
+2026-05-27 11:49:34.707 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27 - 200 null application/json; charset=utf-8 208.3414ms
+2026-05-27 11:49:34.685 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26&allSlots=true - 200 null application/json; charset=utf-8 232.521ms
+2026-05-27 11:49:34.691 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-27&allSlots=true - 200 null application/json; charset=utf-8 230.0772ms
+2026-05-27 11:49:34.695 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-28&allSlots=true - 200 null application/json; charset=utf-8 220.9004ms
+2026-05-27 11:49:34.699 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-30&allSlots=true - 200 null application/json; charset=utf-8 213.3286ms
+2026-05-27 11:49:34.678 +05:30 [INF] a40b97d1-67c0-487d-a3d4-20db8c6a710b HTTP GET /slots responded 200 in 91.5807 ms
+2026-05-27 11:49:34.757 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-29&allSlots=true - 200 null application/json; charset=utf-8 245.7331ms
+2026-05-27 11:49:36.563 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-27 11:49:36.579 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:36.583 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 20.2671ms
+2026-05-27 11:49:36.589 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-27 11:49:36.601 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 11:49:36.605 +05:30 [INF] 533fd241-2da2-4d2b-b25d-f56af52fab8b Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:49:36.618 +05:30 [INF] 533fd241-2da2-4d2b-b25d-f56af52fab8b Executed DbCommand (4ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-27 11:49:36.634 +05:30 [INF] 533fd241-2da2-4d2b-b25d-f56af52fab8b Setting HTTP status code 200.
+2026-05-27 11:49:36.638 +05:30 [INF] 533fd241-2da2-4d2b-b25d-f56af52fab8b Writing value of type 'List`1' as Json.
+2026-05-27 11:49:36.642 +05:30 [INF] 533fd241-2da2-4d2b-b25d-f56af52fab8b Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 11:49:36.647 +05:30 [INF] 533fd241-2da2-4d2b-b25d-f56af52fab8b HTTP GET /appointments/mine responded 200 in 41.5308 ms
+2026-05-27 11:49:36.655 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 65.7503ms
+2026-05-27 11:50:14.847 +05:30 [INF]  Executed DbCommand (11ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:51:14.891 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:52:14.970 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:53:00.129 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:54:00.256 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:55:00.311 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:56:00.369 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:57:00.428 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 11:57:47.208 +05:30 [WRN]  Stopping the server due to DomainUnload or ProcessExit event...
+2026-05-27 11:57:47.209 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a caught stopping signal...
+2026-05-27 11:57:47.211 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a caught stopped signal...
+2026-05-27 11:57:47.222 +05:30 [WRN]  Server kanini-ltp-511:44304:65da492a caught shutdown signal...
+2026-05-27 11:57:47.235 +05:30 [WRN]  Server kanini-ltp-511:44304:65da492a stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-05-27 11:57:47.649 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a successfully reported itself as stopped in 390.1116 ms
+2026-05-27 11:57:47.660 +05:30 [INF]  Server kanini-ltp-511:44304:65da492a has been stopped in total 449.0963 ms
+2026-05-27 12:01:09.206 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 12:01:09.573 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 12:01:12.477 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:01:12.484 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:01:12.490 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:01:12.496 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:01:14.010 +05:30 [INF]  Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-27 12:01:14.067 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-27 12:01:14.087 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-27 12:01:14.096 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-27 12:01:14.184 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-27 12:01:15.507 +05:30 [INF]  Now listening on: https://localhost:7089
+2026-05-27 12:01:15.544 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-27 12:01:15.573 +05:30 [INF]  No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-27 12:01:15.761 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-27 12:01:15.764 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-27 12:01:15.768 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-27 12:01:15.771 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-27 12:01:15.774 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-27 12:01:15.777 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-27 12:01:15.843 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-27 12:01:15.883 +05:30 [INF]  Hosting environment: Development
+2026-05-27 12:01:15.897 +05:30 [INF]  Server kanini-ltp-511:38932:e94a3e91 successfully announced in 50.9328 ms
+2026-05-27 12:01:15.949 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-27 12:01:15.998 +05:30 [INF]  Server kanini-ltp-511:38932:e94a3e91 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-27 12:01:17.694 +05:30 [INF]  Removed 17 outdated record(s) from 'job' table.
+2026-05-27 12:01:17.963 +05:30 [INF]  Server kanini-ltp-511:38932:e94a3e91 all the dispatchers started
+2026-05-27 12:01:18.455 +05:30 [INF]  Request starting HTTP/2 GET https://localhost:7089/health - null null
+2026-05-27 12:01:19.790 +05:30 [INF] 491cf624-486c-40a5-9778-5a13aee42579 Executing endpoint 'Health checks'
+2026-05-27 12:01:19.908 +05:30 [INF] 491cf624-486c-40a5-9778-5a13aee42579 Executed endpoint 'Health checks'
+2026-05-27 12:01:19.931 +05:30 [INF] 491cf624-486c-40a5-9778-5a13aee42579 HTTP GET /health responded 200 in 142.8040 ms
+2026-05-27 12:01:19.994 +05:30 [INF]  Request finished HTTP/2 GET https://localhost:7089/health - 200 null application/json 1597.5922ms
+2026-05-27 12:01:24.918 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:01:42.615 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/extend-session - null null
+2026-05-27 12:01:42.629 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:01:42.660 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/extend-session - 204 null null 46.6494ms
+2026-05-27 12:01:42.669 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/extend-session - application/json 2
+2026-05-27 12:01:42.682 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:01:42.865 +05:30 [INF] 54a209af-833e-4b90-8dec-9c81ffd87541 Executing endpoint 'HTTP: POST /auth/extend-session => HandleExtendSession'
+2026-05-27 12:01:42.926 +05:30 [INF] 54a209af-833e-4b90-8dec-9c81ffd87541 Setting HTTP status code 200.
+2026-05-27 12:01:42.930 +05:30 [INF] 54a209af-833e-4b90-8dec-9c81ffd87541 Writing value of type 'ExtendSessionResponse' as Json.
+2026-05-27 12:01:42.939 +05:30 [INF] 54a209af-833e-4b90-8dec-9c81ffd87541 Executed endpoint 'HTTP: POST /auth/extend-session => HandleExtendSession'
+2026-05-27 12:01:42.942 +05:30 [INF] 54a209af-833e-4b90-8dec-9c81ffd87541 HTTP POST /auth/extend-session responded 200 in 77.1249 ms
+2026-05-27 12:01:42.947 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/extend-session - 200 null application/json; charset=utf-8 278.2603ms
+2026-05-27 12:01:42.957 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-27 12:01:42.967 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:01:42.969 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 11.9413ms
+2026-05-27 12:01:42.977 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-27 12:01:42.986 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:01:42.997 +05:30 [INF] 158c5c16-86c2-4ffe-a64d-b9f1e1a3faec Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 12:01:43.233 +05:30 [INF] 158c5c16-86c2-4ffe-a64d-b9f1e1a3faec Executed DbCommand (4ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-27 12:01:43.246 +05:30 [INF] 158c5c16-86c2-4ffe-a64d-b9f1e1a3faec Setting HTTP status code 200.
+2026-05-27 12:01:43.266 +05:30 [INF] 158c5c16-86c2-4ffe-a64d-b9f1e1a3faec Writing value of type 'List`1' as Json.
+2026-05-27 12:01:43.276 +05:30 [INF] 158c5c16-86c2-4ffe-a64d-b9f1e1a3faec Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 12:01:43.279 +05:30 [INF] 158c5c16-86c2-4ffe-a64d-b9f1e1a3faec HTTP GET /appointments/mine responded 200 in 281.9634 ms
+2026-05-27 12:01:43.287 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 309.9238ms
+2026-05-27 12:01:54.401 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:01:54.407 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:01:54.410 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 8.4218ms
+2026-05-27 12:01:54.416 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:01:54.424 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:01:54.430 +05:30 [INF] c55cf097-561f-44a1-9195-d103596ca07e Executing endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:01:54.460 +05:30 [INF] c55cf097-561f-44a1-9195-d103596ca07e Executed DbCommand (3ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."OriginalFileName", c."UploadedAt", c."OcrStatus"
+FROM "ClinicalDocuments" AS c
+WHERE NOT (c."IsDeleted") AND c."PatientId" = @__patientId_0 AND NOT (c."IsDeleted")
+ORDER BY c."UploadedAt" DESC
+2026-05-27 12:01:54.470 +05:30 [INF] c55cf097-561f-44a1-9195-d103596ca07e Setting HTTP status code 200.
+2026-05-27 12:01:54.496 +05:30 [INF] c55cf097-561f-44a1-9195-d103596ca07e Writing value of type 'List`1' as Json.
+2026-05-27 12:01:54.500 +05:30 [INF] c55cf097-561f-44a1-9195-d103596ca07e Executed endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:01:54.503 +05:30 [INF] c55cf097-561f-44a1-9195-d103596ca07e HTTP GET /patients/me/documents responded 200 in 73.0302 ms
+2026-05-27 12:01:54.508 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/me/documents - 200 null application/json; charset=utf-8 92.0978ms
+2026-05-27 12:02:02.730 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:02:02.740 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:02:02.743 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 12.6442ms
+2026-05-27 12:02:02.749 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/patients/me/documents - multipart/form-data; boundary=----WebKitFormBoundaryGovMrFLO0nVzpE9s 974228
+2026-05-27 12:02:02.753 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:02:02.756 +05:30 [INF] 9118fa76-e888-4ea1-93d4-ef388c3e5bfb Executing endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:10:34.828 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 12:10:35.165 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 12:10:37.635 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:10:37.639 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:10:37.642 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:10:37.646 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:10:38.813 +05:30 [INF]  Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-27 12:10:38.852 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-27 12:10:38.864 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-27 12:10:38.872 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-27 12:10:38.941 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-27 12:10:39.960 +05:30 [INF]  Now listening on: https://localhost:7089
+2026-05-27 12:10:39.995 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-27 12:10:40.069 +05:30 [INF]  No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-27 12:10:40.186 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-27 12:10:40.188 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-27 12:10:40.191 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-27 12:10:40.194 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-27 12:10:40.196 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-27 12:10:40.198 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-27 12:10:40.248 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-27 12:10:40.383 +05:30 [INF]  Hosting environment: Development
+2026-05-27 12:10:40.395 +05:30 [INF]  Server kanini-ltp-511:1472:a665e1b5 successfully announced in 140.7115 ms
+2026-05-27 12:10:40.446 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-27 12:10:40.507 +05:30 [INF]  Server kanini-ltp-511:1472:a665e1b5 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-27 12:10:40.608 +05:30 [INF]  1 servers were removed due to timeout
+2026-05-27 12:10:41.668 +05:30 [INF]  Removed 9 outdated record(s) from 'job' table.
+2026-05-27 12:10:41.957 +05:30 [INF]  Server kanini-ltp-511:1472:a665e1b5 all the dispatchers started
+2026-05-27 12:10:42.575 +05:30 [INF]  Request starting HTTP/2 GET https://localhost:7089/health - null null
+2026-05-27 12:10:43.574 +05:30 [INF] 6415266b-a95a-43e7-a714-dbea3f982a71 Executing endpoint 'Health checks'
+2026-05-27 12:10:43.647 +05:30 [INF] 6415266b-a95a-43e7-a714-dbea3f982a71 Executed endpoint 'Health checks'
+2026-05-27 12:10:43.657 +05:30 [INF] 6415266b-a95a-43e7-a714-dbea3f982a71 HTTP GET /health responded 200 in 83.1805 ms
+2026-05-27 12:10:43.674 +05:30 [INF]  Request finished HTTP/2 GET https://localhost:7089/health - 200 null application/json 1125.1009ms
+2026-05-27 12:10:47.116 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-27 12:10:47.141 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:10:47.179 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 63.4055ms
+2026-05-27 12:10:47.194 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-27 12:10:47.221 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:10:47.952 +05:30 [INF] 1d5513d0-c430-4e43-b24a-c8926bfa548d Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 12:10:48.481 +05:30 [INF] 1d5513d0-c430-4e43-b24a-c8926bfa548d Executed DbCommand (5ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-27 12:10:48.514 +05:30 [INF] 1d5513d0-c430-4e43-b24a-c8926bfa548d Setting HTTP status code 200.
+2026-05-27 12:10:48.532 +05:30 [INF] 1d5513d0-c430-4e43-b24a-c8926bfa548d Writing value of type 'List`1' as Json.
+2026-05-27 12:10:48.548 +05:30 [INF] 1d5513d0-c430-4e43-b24a-c8926bfa548d Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-27 12:10:48.551 +05:30 [INF] 1d5513d0-c430-4e43-b24a-c8926bfa548d HTTP GET /appointments/mine responded 200 in 599.0417 ms
+2026-05-27 12:10:48.563 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 1369.0708ms
+2026-05-27 12:10:48.619 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:10:51.085 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:10:51.091 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:10:51.093 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 8.6804ms
+2026-05-27 12:10:51.104 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:10:51.112 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:10:51.125 +05:30 [INF] 6c3ac277-737a-44e8-8191-23ad18d74325 Executing endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:10:51.159 +05:30 [INF] 6c3ac277-737a-44e8-8191-23ad18d74325 Executed DbCommand (4ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."OriginalFileName", c."UploadedAt", c."OcrStatus"
+FROM "ClinicalDocuments" AS c
+WHERE NOT (c."IsDeleted") AND c."PatientId" = @__patientId_0 AND NOT (c."IsDeleted")
+ORDER BY c."UploadedAt" DESC
+2026-05-27 12:10:51.168 +05:30 [INF] 6c3ac277-737a-44e8-8191-23ad18d74325 Setting HTTP status code 200.
+2026-05-27 12:10:51.192 +05:30 [INF] 6c3ac277-737a-44e8-8191-23ad18d74325 Writing value of type 'List`1' as Json.
+2026-05-27 12:10:51.196 +05:30 [INF] 6c3ac277-737a-44e8-8191-23ad18d74325 Executed endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:10:51.199 +05:30 [INF] 6c3ac277-737a-44e8-8191-23ad18d74325 HTTP GET /patients/me/documents responded 200 in 74.5844 ms
+2026-05-27 12:10:51.204 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/me/documents - 200 null application/json; charset=utf-8 100.3599ms
+2026-05-27 12:10:58.071 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:10:58.079 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:10:58.082 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 11.2512ms
+2026-05-27 12:10:58.100 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/patients/me/documents - multipart/form-data; boundary=----WebKitFormBoundary5SAAPGyc8X4vj6BA 974228
+2026-05-27 12:10:58.110 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:10:58.116 +05:30 [INF] c23db1c2-7c17-43aa-8619-a846a0103873 Executing endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:10:58.250 +05:30 [INF] c23db1c2-7c17-43aa-8619-a846a0103873 Setting HTTP status code 400.
+2026-05-27 12:10:58.255 +05:30 [INF] c23db1c2-7c17-43aa-8619-a846a0103873 Writing value of type '<>f__AnonymousType3`1' as Json.
+2026-05-27 12:10:58.261 +05:30 [INF] c23db1c2-7c17-43aa-8619-a846a0103873 Executed endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:10:58.264 +05:30 [INF] c23db1c2-7c17-43aa-8619-a846a0103873 HTTP POST /patients/me/documents responded 400 in 148.2024 ms
+2026-05-27 12:10:58.274 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/patients/me/documents - 400 null application/json; charset=utf-8 173.6467ms
+2026-05-27 12:11:03.481 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:11:26.468 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:11:26.473 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:11:26.477 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 9.0119ms
+2026-05-27 12:11:26.487 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:11:26.497 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:11:26.501 +05:30 [INF] 6e6329dd-f37b-4a2e-a2c2-19527b0a0092 Executing endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:11:26.514 +05:30 [INF] 6e6329dd-f37b-4a2e-a2c2-19527b0a0092 Executed DbCommand (3ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."OriginalFileName", c."UploadedAt", c."OcrStatus"
+FROM "ClinicalDocuments" AS c
+WHERE NOT (c."IsDeleted") AND c."PatientId" = @__patientId_0 AND NOT (c."IsDeleted")
+ORDER BY c."UploadedAt" DESC
+2026-05-27 12:11:26.521 +05:30 [INF] 6e6329dd-f37b-4a2e-a2c2-19527b0a0092 Setting HTTP status code 200.
+2026-05-27 12:11:26.523 +05:30 [INF] 6e6329dd-f37b-4a2e-a2c2-19527b0a0092 Writing value of type 'List`1' as Json.
+2026-05-27 12:11:26.527 +05:30 [INF] 6e6329dd-f37b-4a2e-a2c2-19527b0a0092 Executed endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:11:26.528 +05:30 [INF] 6e6329dd-f37b-4a2e-a2c2-19527b0a0092 HTTP GET /patients/me/documents responded 200 in 27.3189 ms
+2026-05-27 12:11:26.533 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/me/documents - 200 null application/json; charset=utf-8 45.8287ms
+2026-05-27 12:11:39.220 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:11:39.229 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:11:39.232 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 12.6257ms
+2026-05-27 12:11:39.238 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/patients/me/documents - multipart/form-data; boundary=----WebKitFormBoundaryNcoqOj6P3IpGBb4o 974228
+2026-05-27 12:11:39.264 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:11:39.267 +05:30 [INF] 18486a41-a88f-4953-9aa7-9d2df785ba39 Executing endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:11:39.319 +05:30 [INF] 18486a41-a88f-4953-9aa7-9d2df785ba39 Setting HTTP status code 400.
+2026-05-27 12:11:39.323 +05:30 [INF] 18486a41-a88f-4953-9aa7-9d2df785ba39 Writing value of type '<>f__AnonymousType3`1' as Json.
+2026-05-27 12:11:39.327 +05:30 [INF] 18486a41-a88f-4953-9aa7-9d2df785ba39 Executed endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:11:39.331 +05:30 [INF] 18486a41-a88f-4953-9aa7-9d2df785ba39 HTTP POST /patients/me/documents responded 400 in 63.8173 ms
+2026-05-27 12:11:39.339 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/patients/me/documents - 400 null application/json; charset=utf-8 100.781ms
+2026-05-27 12:12:03.541 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:12:25.138 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:12:25.145 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:12:25.147 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 8.8785ms
+2026-05-27 12:12:25.152 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/patients/me/documents - multipart/form-data; boundary=----WebKitFormBoundarybvB9HfM8ErRC2SmW 45619
+2026-05-27 12:12:25.157 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:12:25.161 +05:30 [INF] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 Executing endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:12:25.178 +05:30 [WRN] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 [DevClamAv] CLAMAV_HOST is not set — virus scan BYPASSED. File accepted without scanning. Set CLAMAV_HOST in production to enable real ClamAV scanning.
+2026-05-27 12:12:25.817 +05:30 [INF] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 Executed DbCommand (35ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ClinicalDocuments" ("EncryptedBlobPath", "OriginalFileName", "PatientId", "RawOcrText", "RetainUntil", "UploadedAt", "UploadedByStaffId", "VirusScanResult")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id", "IsDeleted", "OcrStatus", "RowVersion";
+2026-05-27 12:12:25.953 +05:30 [INF] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 Setting HTTP status code 201.
+2026-05-27 12:12:25.958 +05:30 [INF] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 Writing value of type '<>f__AnonymousType25`1' as Json.
+2026-05-27 12:12:25.965 +05:30 [INF] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 Executed endpoint 'HTTP: POST /patients/me/documents => HandleUpload'
+2026-05-27 12:12:25.969 +05:30 [INF] 2c306c95-2596-4d4c-9fd2-d2862e50dc40 HTTP POST /patients/me/documents responded 201 in 808.2454 ms
+2026-05-27 12:12:25.977 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/patients/me/documents - 201 null application/json; charset=utf-8 825.2298ms
+2026-05-27 12:12:26.005 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/me/documents - null null
+2026-05-27 12:12:26.015 +05:30 [INF]  CORS policy execution successful.
+2026-05-27 12:12:26.020 +05:30 [INF] d15eabe1-d291-4037-ad61-8ba391c823ec Executing endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:12:26.058 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__documentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."EncryptedBlobPath", c."IsDeleted", c."OcrStatus", c."OriginalFileName", c."PatientId", c."RawOcrText", c."RetainUntil", c."RowVersion", c."UploadedAt", c."UploadedByStaffId", c."VirusScanResult"
+FROM "ClinicalDocuments" AS c
+WHERE NOT (c."IsDeleted") AND c."Id" = @__documentId_0
+LIMIT 1
+2026-05-27 12:12:26.076 +05:30 [INF] d15eabe1-d291-4037-ad61-8ba391c823ec Executed DbCommand (50ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."OriginalFileName", c."UploadedAt", c."OcrStatus"
+FROM "ClinicalDocuments" AS c
+WHERE NOT (c."IsDeleted") AND c."PatientId" = @__patientId_0 AND NOT (c."IsDeleted")
+ORDER BY c."UploadedAt" DESC
+2026-05-27 12:12:26.087 +05:30 [INF] d15eabe1-d291-4037-ad61-8ba391c823ec Setting HTTP status code 200.
+2026-05-27 12:12:26.092 +05:30 [INF] d15eabe1-d291-4037-ad61-8ba391c823ec Writing value of type 'List`1' as Json.
+2026-05-27 12:12:26.103 +05:30 [INF] d15eabe1-d291-4037-ad61-8ba391c823ec Executed endpoint 'HTTP: GET /patients/me/documents => HandleList'
+2026-05-27 12:12:26.106 +05:30 [INF] d15eabe1-d291-4037-ad61-8ba391c823ec HTTP GET /patients/me/documents responded 200 in 86.2992 ms
+2026-05-27 12:12:26.113 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/me/documents - 200 null application/json; charset=utf-8 108.0983ms
+2026-05-27 12:12:27.794 +05:30 [INF]  OcrDocumentJob: document 1 processed — status="Extracted", confidence=0.90.
+2026-05-27 12:12:27.858 +05:30 [INF]  Executed DbCommand (45ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p3='?' (DbType = Binary)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "ClinicalDocuments" SET "OcrStatus" = @p0, "RawOcrText" = @p1
+WHERE "Id" = @p2 AND "RowVersion" = @p3
+RETURNING "RowVersion";
+2026-05-27 12:12:27.929 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__documentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."EncryptedBlobPath", c."IsDeleted", c."OcrStatus", c."OriginalFileName", c."PatientId", c."RawOcrText", c."RetainUntil", c."RowVersion", c."UploadedAt", c."UploadedByStaffId", c."VirusScanResult"
+FROM "ClinicalDocuments" AS c
+WHERE NOT (c."IsDeleted") AND c."Id" = @__documentId_0
+LIMIT 1
+2026-05-27 12:12:28.106 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__documentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "ExtractedClinicalFields" AS e
+    WHERE NOT (e."IsDeleted") AND e."DocumentId" = @__documentId_0)
+2026-05-27 12:12:28.362 +05:30 [INF]  ExtractClinicalFieldsJob: no fields extracted from document 1.
+2026-05-27 12:12:28.418 +05:30 [WRN]  Failed to process the job '1268': an exception occurred. Retry attempt 1 of 3 will be performed in 00:00:30.
+System.InvalidOperationException: Unable to resolve service for type 'StackExchange.Redis.IConnectionMultiplexer' while attempting to activate 'ClinicalHealthcare.Infrastructure.Jobs.DeduplicateClinicalFieldsJob'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Hangfire.AspNetCore.AspNetCoreJobActivatorScope.Resolve(Type type) in C:\projects\hangfire-525\src\Hangfire.NetCore\AspNetCore\AspNetCoreJobActivatorScope.cs:line 34
+   at Hangfire.Server.CoreBackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\CoreBackgroundJobPerformer.cs:line 60
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 133
+   at Hangfire.Server.BackgroundJobPerformer.InvokeServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 164
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 130
+   at Hangfire.Server.BackgroundJobPerformer.PerformJobWithFilters(PerformContext context, FilterCollection`1 filters) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 119
+   at Hangfire.Server.BackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 78
+   at Hangfire.Server.Worker.PerformJob(BackgroundProcessContext context, IStorageConnection connection, String jobId, BackgroundJob backgroundJob, IReadOnlyDictionary`2& customData) in C:\projects\hangfire-525\src\Hangfire.Core\Server\Worker.cs:line 320
+2026-05-27 12:13:03.047 +05:30 [WRN]  Failed to process the job '1268': an exception occurred. Retry attempt 2 of 3 will be performed in 00:01:00.
+System.InvalidOperationException: Unable to resolve service for type 'StackExchange.Redis.IConnectionMultiplexer' while attempting to activate 'ClinicalHealthcare.Infrastructure.Jobs.DeduplicateClinicalFieldsJob'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Hangfire.AspNetCore.AspNetCoreJobActivatorScope.Resolve(Type type) in C:\projects\hangfire-525\src\Hangfire.NetCore\AspNetCore\AspNetCoreJobActivatorScope.cs:line 34
+   at Hangfire.Server.CoreBackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\CoreBackgroundJobPerformer.cs:line 60
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 133
+   at Hangfire.Server.BackgroundJobPerformer.InvokeServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 164
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 130
+   at Hangfire.Server.BackgroundJobPerformer.PerformJobWithFilters(PerformContext context, FilterCollection`1 filters) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 119
+   at Hangfire.Server.BackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 78
+   at Hangfire.Server.Worker.PerformJob(BackgroundProcessContext context, IStorageConnection connection, String jobId, BackgroundJob backgroundJob, IReadOnlyDictionary`2& customData) in C:\projects\hangfire-525\src\Hangfire.Core\Server\Worker.cs:line 320
+2026-05-27 12:13:03.640 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:14:03.807 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:14:18.049 +05:30 [WRN]  Failed to process the job '1268': an exception occurred. Retry attempt 3 of 3 will be performed in 00:02:00.
+System.InvalidOperationException: Unable to resolve service for type 'StackExchange.Redis.IConnectionMultiplexer' while attempting to activate 'ClinicalHealthcare.Infrastructure.Jobs.DeduplicateClinicalFieldsJob'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Hangfire.AspNetCore.AspNetCoreJobActivatorScope.Resolve(Type type) in C:\projects\hangfire-525\src\Hangfire.NetCore\AspNetCore\AspNetCoreJobActivatorScope.cs:line 34
+   at Hangfire.Server.CoreBackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\CoreBackgroundJobPerformer.cs:line 60
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 133
+   at Hangfire.Server.BackgroundJobPerformer.InvokeServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 164
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 130
+   at Hangfire.Server.BackgroundJobPerformer.PerformJobWithFilters(PerformContext context, FilterCollection`1 filters) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 119
+   at Hangfire.Server.BackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 78
+   at Hangfire.Server.Worker.PerformJob(BackgroundProcessContext context, IStorageConnection connection, String jobId, BackgroundJob backgroundJob, IReadOnlyDictionary`2& customData) in C:\projects\hangfire-525\src\Hangfire.Core\Server\Worker.cs:line 320
+2026-05-27 12:15:04.037 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:16:04.122 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:16:18.671 +05:30 [ERR]  Failed to process the job '1268': an exception occurred.
+System.InvalidOperationException: Unable to resolve service for type 'StackExchange.Redis.IConnectionMultiplexer' while attempting to activate 'ClinicalHealthcare.Infrastructure.Jobs.DeduplicateClinicalFieldsJob'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Hangfire.AspNetCore.AspNetCoreJobActivatorScope.Resolve(Type type) in C:\projects\hangfire-525\src\Hangfire.NetCore\AspNetCore\AspNetCoreJobActivatorScope.cs:line 34
+   at Hangfire.Server.CoreBackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\CoreBackgroundJobPerformer.cs:line 60
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 133
+   at Hangfire.Server.BackgroundJobPerformer.InvokeServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 164
+   at Hangfire.Server.BackgroundJobPerformer.InvokeNextServerFilter(Enumerator& enumerator, IBackgroundJobPerformer innerPerformer, PerformContext context, PerformingContext preContext) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 130
+   at Hangfire.Server.BackgroundJobPerformer.PerformJobWithFilters(PerformContext context, FilterCollection`1 filters) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 119
+   at Hangfire.Server.BackgroundJobPerformer.Perform(PerformContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundJobPerformer.cs:line 78
+   at Hangfire.Server.Worker.PerformJob(BackgroundProcessContext context, IStorageConnection connection, String jobId, BackgroundJob backgroundJob, IReadOnlyDictionary`2& customData) in C:\projects\hangfire-525\src\Hangfire.Core\Server\Worker.cs:line 320
+2026-05-27 12:17:04.219 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:18:04.293 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:19:04.348 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:20:04.476 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:21:04.961 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:22:04.714 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:23:04.832 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:24:04.889 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:25:04.989 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:26:05.144 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:27:05.217 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:28:17.608 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-27 12:28:17.798 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-27 12:28:19.327 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:28:19.331 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:28:19.335 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:28:19.337 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-27 12:28:20.640 +05:30 [INF]  Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-27 12:28:20.693 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-27 12:28:20.708 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-27 12:28:20.713 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-27 12:28:20.785 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-27 12:28:21.397 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-27 12:28:21.404 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-27 12:28:21.406 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-27 12:28:21.408 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-27 12:28:21.409 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-27 12:28:21.410 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-27 12:28:21.412 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-27 12:28:21.434 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-27 12:28:21.435 +05:30 [INF]  Hosting environment: Development
+2026-05-27 12:28:21.437 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-27 12:28:21.474 +05:30 [INF]  Server kanini-ltp-511:10836:5cf2cb41 successfully announced in 37.7458 ms
+2026-05-27 12:28:21.487 +05:30 [INF]  Server kanini-ltp-511:10836:5cf2cb41 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-27 12:28:21.705 +05:30 [INF]  Server kanini-ltp-511:10836:5cf2cb41 all the dispatchers started
+2026-05-27 12:28:21.899 +05:30 [INF]  Removed 18 outdated record(s) from 'job' table.
+2026-05-27 12:28:22.037 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/health - null null
+2026-05-27 12:28:22.490 +05:30 [INF] 0a66f013-fd84-43d6-89c8-45cc337f4fd1 Executing endpoint 'Health checks'
+2026-05-27 12:28:22.570 +05:30 [INF] 0a66f013-fd84-43d6-89c8-45cc337f4fd1 Executed endpoint 'Health checks'
+2026-05-27 12:28:22.598 +05:30 [INF] 0a66f013-fd84-43d6-89c8-45cc337f4fd1 HTTP GET /health responded 200 in 110.9802 ms
+2026-05-27 12:28:22.602 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/health - 200 null application/json 566.5777ms
+2026-05-27 12:28:29.261 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:29:14.211 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:30:14.232 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:31:14.297 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:32:14.362 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:33:14.576 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:33:21.783 +05:30 [INF]  1 servers were removed due to timeout
+2026-05-27 12:34:14.583 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:35:14.635 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:36:14.718 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:37:14.817 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:38:14.873 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:39:15.055 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:40:00.108 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:41:00.167 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:42:00.258 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:43:00.400 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:44:00.636 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:45:00.606 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:46:00.692 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:47:00.753 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:48:00.853 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:49:00.987 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:50:01.005 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:51:01.064 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:52:01.139 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:53:01.254 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:54:01.376 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:55:01.431 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:56:01.515 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:57:01.632 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:58:01.770 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 12:59:01.840 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:00:01.899 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:01:01.960 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:02:02.053 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:03:02.109 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:04:02.287 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:05:02.328 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:06:02.398 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:07:02.487 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:08:02.555 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-27 13:09:02.697 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0

@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant BookSvc as Booking Service
+    participant SQL as SQL Server
+    participant Hangfire as Hangfire
+    participant Email as Email Service
+
+    Note over P,Email: UC-007 — Patient Cancels or Reschedules Appointment
+
+    P->>API: DELETE /appointments/{id} OR PATCH /appointments/{id}/reschedule {newSlotId}
+    API->>BookSvc: CancelOrReschedule(appointmentId, action, newSlotId?)
+    BookSvc->>SQL: SELECT Appointment WHERE id=? AND patientId=?
+    SQL-->>BookSvc: appointment
+    BookSvc->>BookSvc: CheckCancellationCutoff(appointment.cancellationCutoff)
+
+    alt Within allowed cancellation window
+        BookSvc->>SQL: UPDATE Appointment SET status=Cancelled (or new slot)
+        BookSvc->>SQL: UPDATE Slot SET isAvailable=true (released)
+        BookSvc->>Hangfire: CancelPendingReminders(appointmentId)
+        BookSvc->>Hangfire: TriggerSlotSwapCheck(slotId)
+        BookSvc->>Email: SendCancellationConfirmation(patient)
+        API-->>P: 200 {message:"Appointment cancelled/rescheduled"}
+    else Within cutoff window (too close)
+        BookSvc-->>API: 409 {error:"Cancellation cutoff reached — contact Staff"}
+        API-->>P: 409
+    end

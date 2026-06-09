@@ -1,0 +1,121 @@
+2026-05-25 19:47:02.938 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-25 19:47:03.196 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-25 19:47:06.603 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:47:06.968 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:47:07.218 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:47:07.228 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:47:09.739 +05:30 [INF]  Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-25 19:47:09.782 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-25 19:47:09.797 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-25 19:47:09.802 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-25 19:47:09.881 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-25 19:47:11.536 +05:30 [ERR]  Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5153: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-05-25 19:58:14.913 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-25 19:58:15.091 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-25 19:58:16.572 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:58:16.577 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:58:16.589 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:58:16.593 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-25 19:58:17.267 +05:30 [INF]  Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-25 19:58:17.291 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping account seed.
+2026-05-25 19:58:17.298 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Slots" AS s)
+2026-05-25 19:58:17.302 +05:30 [INF]  DevDataSeeder: slots already exist — skipping slot seed.
+2026-05-25 19:58:17.346 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-25 19:58:17.754 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-25 19:58:17.764 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-25 19:58:17.766 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-25 19:58:17.768 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-25 19:58:17.771 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-25 19:58:17.772 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-25 19:58:17.773 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-25 19:58:17.798 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-25 19:58:17.799 +05:30 [INF]  Hosting environment: Development
+2026-05-25 19:58:17.802 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-25 19:58:17.833 +05:30 [INF]  Server kanini-ltp-511:39624:49837b48 successfully announced in 30.1913 ms
+2026-05-25 19:58:17.844 +05:30 [INF]  Server kanini-ltp-511:39624:49837b48 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-25 19:58:17.957 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/health - null null
+2026-05-25 19:58:18.005 +05:30 [INF]  Server kanini-ltp-511:39624:49837b48 all the dispatchers started
+2026-05-25 19:58:18.471 +05:30 [INF] 6ae831a1-28c4-48c6-9c40-cb7d8379e2c4 Executing endpoint 'Health checks'
+2026-05-25 19:58:18.510 +05:30 [INF] 6ae831a1-28c4-48c6-9c40-cb7d8379e2c4 Executed endpoint 'Health checks'
+2026-05-25 19:58:18.530 +05:30 [INF] 6ae831a1-28c4-48c6-9c40-cb7d8379e2c4 HTTP GET /health responded 200 in 61.7908 ms
+2026-05-25 19:58:18.547 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/health - 200 null application/json 590.3234ms
+2026-05-25 19:58:25.016 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 19:59:09.741 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:00:09.855 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:01:09.901 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:02:09.971 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:03:10.058 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:03:18.419 +05:30 [INF]  1 servers were removed due to timeout
+2026-05-25 20:04:10.752 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:05:10.250 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-25 20:06:10.321 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0

@@ -1,0 +1,38 @@
+sequenceDiagram
+    participant P as Patient (Browser)
+    participant API as .NET 8 Web API
+    participant AuthSvc as Auth Service
+    participant SQL as SQL Server
+    participant Email as Email Service (MailKit)
+
+    Note over P,Email: UC-001 — Patient Self-Registration
+
+    P->>API: POST /auth/register {name, dob, phone, email, password}
+    API->>AuthSvc: Register(request)
+    AuthSvc->>SQL: SELECT UserAccount WHERE email=?
+    SQL-->>AuthSvc: null (not found)
+    AuthSvc->>SQL: INSERT UserAccount (role=Patient, status=Inactive, emailVerified=false)
+    AuthSvc->>Email: SendVerificationEmail(email, token, TTL=24h)
+    Email-->>AuthSvc: sent
+    AuthSvc-->>API: 201 {message:"Verification email sent"}
+    API-->>P: 201
+
+    P->>API: GET /auth/verify-email?token=xxx
+    API->>AuthSvc: VerifyEmail(token)
+    AuthSvc->>SQL: UPDATE UserAccount SET emailVerified=true, status=Active
+    AuthSvc-->>API: 200
+    API-->>P: 200 {redirect: "/login"}
+
+    alt Email already registered
+        SQL-->>AuthSvc: existing user found
+        AuthSvc-->>API: 409 Conflict
+        API-->>P: 409 {error:"Email already registered", hint:"Login or reset password"}
+    end
+
+    opt Token expired (>24h)
+        AuthSvc-->>API: 400 Bad Request
+        API-->>P: 400 {error:"Verification token expired"}
+        P->>API: POST /auth/resend-verification {email}
+        API->>AuthSvc: ResendVerification(email)
+        AuthSvc->>Email: SendVerificationEmail(email, newToken)
+    end

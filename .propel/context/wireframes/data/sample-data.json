@@ -1,0 +1,504 @@
+{
+  "_meta": {
+    "description": "Sample data for ClinicalHub hi-fi wireframes. Entities reflect the UC-001–UC-024 domain model. No database types — UX data only.",
+    "entities": {
+      "user": "A registered account. Role is patient | staff | admin. Patients book appointments; Staff manage schedules and clinical data; Admin manage accounts and audit logs.",
+      "appointment": "A scheduled encounter between a patient and a clinical provider. States: Scheduled, Confirmed, Arrived, No-Show, Cancelled.",
+      "slot": "An available appointment time block on a specific date. Available | Booked | Held.",
+      "waitlist_entry": "A patient's request to swap into a preferred slot when it becomes available. One active entry per patient.",
+      "intake_record": "Pre-appointment patient health data collected via AI chat or manual form. Status: Draft, Submitted, Edited.",
+      "clinical_document": "An uploaded PDF document linked to a patient. States: Pending OCR, Extracted, Low Confidence, No Data, Extraction Failed.",
+      "queue_entry": "A patient in the same-day walk-in queue. Ordered by position. Walk-in flag distinguishes from booked.",
+      "code_suggestion": "An AI-generated ICD-10 or CPT code for a patient encounter. Status: Pending, Accepted, Modified, Rejected.",
+      "audit_log_entry": "An immutable timestamped record of a user action. Cannot be edited or deleted.",
+      "insurance_record": "A dummy insurance validation record used for soft pre-check. Non-blocking."
+    }
+  },
+  "user": [
+    {
+      "id": "usr-001",
+      "first_name": "Alex",
+      "last_name": "Rivera",
+      "email": "alex.rivera@email.com",
+      "phone": "555-0142",
+      "dob": "1988-03-14",
+      "role": "patient",
+      "status": "active",
+      "created_at": "2025-11-03"
+    },
+    {
+      "id": "usr-002",
+      "first_name": "Maria",
+      "last_name": "Santos",
+      "email": "maria.santos@email.com",
+      "phone": "555-0178",
+      "dob": "1975-07-22",
+      "role": "patient",
+      "status": "active",
+      "created_at": "2025-12-01"
+    },
+    {
+      "id": "usr-003",
+      "first_name": "Derek",
+      "last_name": "Okafor",
+      "email": "derek.okafor@email.com",
+      "phone": "555-0231",
+      "dob": "1992-11-08",
+      "role": "patient",
+      "status": "active",
+      "no_show_count": 3,
+      "created_at": "2026-01-15"
+    },
+    {
+      "id": "usr-004",
+      "first_name": "Priya",
+      "last_name": "Nair",
+      "email": "priya.nair@email.com",
+      "phone": "555-0094",
+      "dob": "1965-05-30",
+      "role": "patient",
+      "status": "active",
+      "created_at": "2026-02-10"
+    },
+    {
+      "id": "usr-010",
+      "first_name": "Jordan",
+      "last_name": "Chen",
+      "email": "jordan.chen@clinichub.internal",
+      "phone": "555-0300",
+      "role": "staff",
+      "status": "active",
+      "created_at": "2025-06-01"
+    },
+    {
+      "id": "usr-011",
+      "first_name": "Samira",
+      "last_name": "Haddad",
+      "email": "samira.haddad@clinichub.internal",
+      "phone": "555-0301",
+      "role": "staff",
+      "status": "active",
+      "created_at": "2025-06-01"
+    },
+    {
+      "id": "usr-020",
+      "first_name": "Morgan",
+      "last_name": "Blake",
+      "email": "morgan.blake@clinichub.internal",
+      "phone": "555-0400",
+      "role": "admin",
+      "status": "active",
+      "created_at": "2025-05-01"
+    },
+    {
+      "id": "usr-021",
+      "first_name": "Taylor",
+      "last_name": "Kim",
+      "email": "taylor.kim@clinichub.internal",
+      "phone": "555-0401",
+      "role": "admin",
+      "status": "inactive",
+      "deactivated_at": "2026-03-15",
+      "created_at": "2025-05-01"
+    }
+  ],
+  "appointment": [
+    {
+      "id": "apt-001",
+      "patient_id": "usr-001",
+      "patient_name": "Alex Rivera",
+      "date": "2026-05-20",
+      "time": "10:30 AM",
+      "provider": "Dr. Elaine Torres",
+      "type": "General Consultation",
+      "status": "Confirmed",
+      "no_show_risk": "Low",
+      "intake_status": "Submitted",
+      "slot_id": "slt-012"
+    },
+    {
+      "id": "apt-002",
+      "patient_id": "usr-001",
+      "patient_name": "Alex Rivera",
+      "date": "2026-03-10",
+      "time": "2:00 PM",
+      "provider": "Dr. Elaine Torres",
+      "type": "Follow-up",
+      "status": "Arrived",
+      "no_show_risk": "Low",
+      "intake_status": "Submitted"
+    },
+    {
+      "id": "apt-003",
+      "patient_id": "usr-002",
+      "patient_name": "Maria Santos",
+      "date": "2026-05-20",
+      "time": "9:00 AM",
+      "provider": "Dr. Elaine Torres",
+      "type": "Annual Physical",
+      "status": "Confirmed",
+      "no_show_risk": "Low",
+      "intake_status": "Not Started"
+    },
+    {
+      "id": "apt-004",
+      "patient_id": "usr-003",
+      "patient_name": "Derek Okafor",
+      "date": "2026-05-20",
+      "time": "11:15 AM",
+      "provider": "Dr. Elaine Torres",
+      "type": "Medication Review",
+      "status": "Confirmed",
+      "no_show_risk": "High",
+      "intake_status": "Draft"
+    },
+    {
+      "id": "apt-005",
+      "patient_id": "usr-004",
+      "patient_name": "Priya Nair",
+      "date": "2026-05-20",
+      "time": "1:00 PM",
+      "provider": "Dr. Elaine Torres",
+      "type": "Post-Surgery Follow-up",
+      "status": "Confirmed",
+      "no_show_risk": "Low",
+      "intake_status": "Submitted"
+    },
+    {
+      "id": "apt-006",
+      "patient_id": "usr-001",
+      "patient_name": "Alex Rivera",
+      "date": "2026-01-08",
+      "time": "3:30 PM",
+      "provider": "Dr. Elaine Torres",
+      "type": "General Consultation",
+      "status": "Cancelled",
+      "no_show_risk": "Low"
+    }
+  ],
+  "slot": [
+    { "id": "slt-001", "date": "2026-05-14", "time": "9:00 AM", "status": "Available" },
+    { "id": "slt-002", "date": "2026-05-14", "time": "9:30 AM", "status": "Available" },
+    { "id": "slt-003", "date": "2026-05-14", "time": "10:00 AM", "status": "Booked" },
+    { "id": "slt-004", "date": "2026-05-14", "time": "10:30 AM", "status": "Booked" },
+    { "id": "slt-005", "date": "2026-05-14", "time": "11:00 AM", "status": "Available" },
+    { "id": "slt-006", "date": "2026-05-14", "time": "2:00 PM", "status": "Available" },
+    { "id": "slt-007", "date": "2026-05-14", "time": "2:30 PM", "status": "Booked" },
+    { "id": "slt-008", "date": "2026-05-14", "time": "3:00 PM", "status": "Available" },
+    { "id": "slt-009", "date": "2026-05-19", "time": "9:00 AM", "status": "Available" },
+    { "id": "slt-010", "date": "2026-05-19", "time": "11:30 AM", "status": "Available" },
+    { "id": "slt-011", "date": "2026-05-19", "time": "3:00 PM", "status": "Booked" },
+    { "id": "slt-012", "date": "2026-05-20", "time": "10:30 AM", "status": "Booked" },
+    { "id": "slt-013", "date": "2026-05-21", "time": "9:30 AM", "status": "Available" },
+    { "id": "slt-014", "date": "2026-05-21", "time": "10:00 AM", "status": "Available" },
+    { "id": "slt-015", "date": "2026-05-21", "time": "2:00 PM", "status": "Available" }
+  ],
+  "waitlist_entry": [
+    {
+      "id": "wl-001",
+      "patient_id": "usr-002",
+      "patient_name": "Maria Santos",
+      "preferred_date": "2026-05-14",
+      "preferred_time": "10:00 AM",
+      "registered_at": "2026-05-10 09:14",
+      "status": "Active"
+    },
+    {
+      "id": "wl-002",
+      "patient_id": "usr-004",
+      "patient_name": "Priya Nair",
+      "preferred_date": "2026-05-14",
+      "preferred_time": "10:00 AM",
+      "registered_at": "2026-05-10 11:32",
+      "status": "Active"
+    }
+  ],
+  "slot_swap_offer": {
+    "id": "swap-001",
+    "patient_id": "usr-002",
+    "patient_name": "Maria Santos",
+    "current_appointment": { "date": "2026-05-27", "time": "2:30 PM", "provider": "Dr. Elaine Torres" },
+    "offered_slot": { "date": "2026-05-14", "time": "10:00 AM", "provider": "Dr. Elaine Torres" },
+    "offer_expires_at": "2026-05-12 16:30",
+    "status": "Pending"
+  },
+  "intake_record": [
+    {
+      "id": "int-001",
+      "patient_id": "usr-001",
+      "appointment_id": "apt-001",
+      "status": "Submitted",
+      "submitted_at": "2026-05-11 14:22",
+      "method": "AI",
+      "chief_complaint": "Persistent lower back pain for 3 weeks, worse on standing",
+      "medical_history": "Type 2 Diabetes (2018), Hypertension (2020)",
+      "medications": "Metformin 500mg twice daily, Lisinopril 10mg once daily",
+      "allergies": "Penicillin (rash), Sulfa drugs (anaphylaxis)",
+      "insurance_provider": "BlueCross BlueShield",
+      "insurance_id": "BCB-0042891",
+      "insurance_status": "Validated"
+    },
+    {
+      "id": "int-002",
+      "patient_id": "usr-003",
+      "appointment_id": "apt-004",
+      "status": "Draft",
+      "method": "Manual",
+      "chief_complaint": "Routine medication review",
+      "medical_history": "Hypertension (2019), GERD (2021)",
+      "medications": "Amlodipine 5mg once daily, Omeprazole 20mg once daily",
+      "allergies": "None known",
+      "insurance_provider": "Aetna",
+      "insurance_id": "AET-7781234",
+      "insurance_status": "Not Verified"
+    }
+  ],
+  "clinical_document": [
+    {
+      "id": "doc-001",
+      "patient_id": "usr-001",
+      "filename": "Hospital_Discharge_Summary_2025.pdf",
+      "size_kb": 842,
+      "uploaded_at": "2026-05-08 10:15",
+      "status": "Extracted",
+      "ocr_confidence": 0.94
+    },
+    {
+      "id": "doc-002",
+      "patient_id": "usr-001",
+      "filename": "Blood_Work_Results_Apr2026.pdf",
+      "size_kb": 312,
+      "uploaded_at": "2026-05-09 15:40",
+      "status": "Extracted",
+      "ocr_confidence": 0.88
+    },
+    {
+      "id": "doc-003",
+      "patient_id": "usr-001",
+      "filename": "Specialist_Referral_Letter.pdf",
+      "size_kb": 128,
+      "uploaded_at": "2026-05-10 09:00",
+      "status": "Low Confidence",
+      "ocr_confidence": 0.61
+    }
+  ],
+  "patient_360": {
+    "patient_id": "usr-001",
+    "view_status": "Requires Review",
+    "last_updated": "2026-05-10",
+    "vitals": {
+      "blood_pressure": "138/88 mmHg",
+      "heart_rate": "76 bpm",
+      "weight": "84 kg",
+      "temperature": "36.7°C",
+      "source": "doc-001"
+    },
+    "medications": [
+      { "name": "Metformin", "dose": "500mg", "frequency": "Twice daily", "source": "doc-001", "conflict": false },
+      { "name": "Lisinopril", "dose": "10mg", "frequency": "Once daily", "source": "doc-001", "conflict": false },
+      { "name": "Lisinopril", "dose": "20mg", "frequency": "Once daily", "source": "doc-002", "conflict": true, "conflict_note": "Dosage conflict: doc-001 says 10mg, doc-002 says 20mg" }
+    ],
+    "allergies": [
+      { "allergen": "Penicillin", "reaction": "Rash", "severity": "Moderate", "source": "doc-001" },
+      { "allergen": "Sulfa drugs", "reaction": "Anaphylaxis", "severity": "Severe", "source": "doc-002" }
+    ],
+    "medical_history": [
+      { "condition": "Type 2 Diabetes", "diagnosed": "2018", "source": "doc-001" },
+      { "condition": "Hypertension", "diagnosed": "2020", "source": "doc-001" }
+    ],
+    "diagnoses": [
+      { "narrative": "Chronic lower back pain with lumbar muscle strain, likely mechanical origin", "source": "doc-001" },
+      { "narrative": "Poorly controlled T2DM with HbA1c 8.2% (Apr 2026)", "source": "doc-002" }
+    ],
+    "conflicts": [
+      {
+        "id": "cnf-001",
+        "field": "Lisinopril dosage",
+        "value_a": { "value": "10mg once daily", "source": "doc-001", "date": "2026-05-08" },
+        "value_b": { "value": "20mg once daily", "source": "doc-002", "date": "2026-05-09" },
+        "status": "Pending"
+      }
+    ]
+  },
+  "code_suggestion": [
+    {
+      "id": "cs-001",
+      "patient_id": "usr-001",
+      "type": "ICD-10",
+      "code": "M54.5",
+      "description": "Low back pain",
+      "confidence": 0.91,
+      "evidence": "Chronic lower back pain with lumbar muscle strain",
+      "status": "Pending"
+    },
+    {
+      "id": "cs-002",
+      "patient_id": "usr-001",
+      "type": "ICD-10",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "confidence": 0.87,
+      "evidence": "Poorly controlled T2DM with HbA1c 8.2%",
+      "status": "Pending"
+    },
+    {
+      "id": "cs-003",
+      "patient_id": "usr-001",
+      "type": "ICD-10",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "confidence": 0.95,
+      "evidence": "Hypertension diagnosed 2020, currently on Lisinopril",
+      "status": "Accepted"
+    },
+    {
+      "id": "cs-004",
+      "patient_id": "usr-001",
+      "type": "CPT",
+      "code": "99214",
+      "description": "Office or other outpatient visit, moderate medical decision making",
+      "confidence": 0.72,
+      "evidence": "Established patient, multiple chronic conditions reviewed",
+      "status": "Pending"
+    },
+    {
+      "id": "cs-005",
+      "patient_id": "usr-001",
+      "type": "CPT",
+      "code": "97110",
+      "description": "Therapeutic procedure, 1 or more areas; therapeutic exercises",
+      "confidence": 0.48,
+      "evidence": "Lower back pain treatment reference",
+      "status": "Pending"
+    }
+  ],
+  "queue_entry": [
+    {
+      "id": "q-001",
+      "position": 1,
+      "patient_id": "usr-001",
+      "patient_name": "Alex Rivera",
+      "type": "Booked",
+      "arrived_at": "08:47 AM",
+      "wait_minutes": 23,
+      "appointment_time": "9:00 AM"
+    },
+    {
+      "id": "q-002",
+      "position": 2,
+      "patient_id": null,
+      "patient_name": "James Whitmore",
+      "type": "Walk-in",
+      "arrived_at": "09:02 AM",
+      "wait_minutes": 38,
+      "appointment_time": "Walk-in"
+    },
+    {
+      "id": "q-003",
+      "position": 3,
+      "patient_id": "usr-004",
+      "patient_name": "Priya Nair",
+      "type": "Booked",
+      "arrived_at": "09:15 AM",
+      "wait_minutes": 55,
+      "appointment_time": "10:00 AM"
+    },
+    {
+      "id": "q-004",
+      "position": 4,
+      "patient_id": "usr-003",
+      "patient_name": "Derek Okafor",
+      "type": "Booked",
+      "arrived_at": "09:28 AM",
+      "wait_minutes": 72,
+      "appointment_time": "10:30 AM"
+    }
+  ],
+  "audit_log_entry": [
+    {
+      "id": "aud-001",
+      "timestamp": "2026-05-12 09:14:32",
+      "actor": "jordan.chen@clinichub.internal",
+      "actor_role": "Staff",
+      "action": "CHECK_IN",
+      "record_type": "Appointment",
+      "record_id": "apt-003",
+      "details": "Patient Maria Santos checked in for 9:00 AM appointment"
+    },
+    {
+      "id": "aud-002",
+      "timestamp": "2026-05-12 09:02:11",
+      "actor": "alex.rivera@email.com",
+      "actor_role": "Patient",
+      "action": "INTAKE_SUBMIT",
+      "record_type": "IntakeRecord",
+      "record_id": "int-001",
+      "details": "Intake record submitted via AI method"
+    },
+    {
+      "id": "aud-003",
+      "timestamp": "2026-05-11 16:45:03",
+      "actor": "jordan.chen@clinichub.internal",
+      "actor_role": "Staff",
+      "action": "CODE_ACCEPT",
+      "record_type": "CodeSuggestion",
+      "record_id": "cs-003",
+      "details": "ICD-10 I10 (Essential hypertension) accepted — confidence 95%"
+    },
+    {
+      "id": "aud-004",
+      "timestamp": "2026-05-11 14:22:07",
+      "actor": "morgan.blake@clinichub.internal",
+      "actor_role": "Admin",
+      "action": "USER_DEACTIVATE",
+      "record_type": "User",
+      "record_id": "usr-021",
+      "details": "Admin account taylor.kim@clinichub.internal deactivated"
+    },
+    {
+      "id": "aud-005",
+      "timestamp": "2026-05-10 11:05:44",
+      "actor": "alex.rivera@email.com",
+      "actor_role": "Patient",
+      "action": "DOCUMENT_UPLOAD",
+      "record_type": "ClinicalDocument",
+      "record_id": "doc-003",
+      "details": "Uploaded Specialist_Referral_Letter.pdf (128 KB)"
+    },
+    {
+      "id": "aud-006",
+      "timestamp": "2026-05-10 09:32:18",
+      "actor": "alex.rivera@email.com",
+      "actor_role": "Patient",
+      "action": "APPOINTMENT_CANCEL",
+      "record_type": "Appointment",
+      "record_id": "apt-006",
+      "details": "Appointment cancelled by patient — slot released"
+    },
+    {
+      "id": "aud-007",
+      "timestamp": "2026-05-09 15:40:22",
+      "actor": "alex.rivera@email.com",
+      "actor_role": "Patient",
+      "action": "DOCUMENT_UPLOAD",
+      "record_type": "ClinicalDocument",
+      "record_id": "doc-002",
+      "details": "Uploaded Blood_Work_Results_Apr2026.pdf (312 KB)"
+    },
+    {
+      "id": "aud-008",
+      "timestamp": "2026-05-08 10:15:09",
+      "actor": "alex.rivera@email.com",
+      "actor_role": "Patient",
+      "action": "DOCUMENT_UPLOAD",
+      "record_type": "ClinicalDocument",
+      "record_id": "doc-001",
+      "details": "Uploaded Hospital_Discharge_Summary_2025.pdf (842 KB)"
+    }
+  ],
+  "insurance_record": [
+    { "provider": "BlueCross BlueShield", "insurance_id": "BCB-0042891", "status": "Validated" },
+    { "provider": "Aetna", "insurance_id": "AET-5512890", "status": "Validated" },
+    { "provider": "United Health", "insurance_id": "UHC-3301122", "status": "Validated" }
+  ]
+}

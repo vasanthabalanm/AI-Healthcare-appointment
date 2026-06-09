@@ -1,0 +1,1056 @@
+2026-05-20 17:05:58.992 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.071 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.073 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.073 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.886 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.887 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.887 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:05:59.888 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:06:34.663 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:06:34.713 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:06:34.713 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:06:34.713 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:06:36.043 +05:30 [INF]  Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory_App'
+)
+2026-05-20 17:06:36.464 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory_App'
+)
+2026-05-20 17:06:37.036 +05:30 [INF]  Executed DbCommand (108ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory_App" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory_App" PRIMARY KEY ("MigrationId")
+);
+2026-05-20 17:06:37.350 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory_App'
+)
+2026-05-20 17:06:37.370 +05:30 [INF]  Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory_App"
+ORDER BY "MigrationId";
+2026-05-20 17:06:37.398 +05:30 [INF]  Applying migration '20260520113601_InitialCreate_App'.
+2026-05-20 17:06:37.578 +05:30 [INF]  Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AuditLogs" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "EntityType" character varying(128) NOT NULL,
+    "EntityId" integer NOT NULL,
+    "ActorId" integer,
+    "Action" character varying(64) NOT NULL,
+    "BeforeValue" text,
+    "AfterValue" text,
+    "OccurredAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    "CorrelationId" character varying(128),
+    CONSTRAINT "PK_AuditLogs" PRIMARY KEY ("Id")
+);
+2026-05-20 17:06:37.594 +05:30 [INF]  Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "InsuranceReferences" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "InsurerId" character varying(100) NOT NULL,
+    "InsurerName" character varying(256) NOT NULL,
+    "PlanCode" character varying(100) NOT NULL,
+    "IsActive" boolean NOT NULL DEFAULT TRUE,
+    CONSTRAINT "PK_InsuranceReferences" PRIMARY KEY ("Id")
+);
+2026-05-20 17:06:37.603 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Slots" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "SlotTime" timestamp with time zone NOT NULL,
+    "DurationMinutes" integer NOT NULL,
+    "IsAvailable" boolean NOT NULL,
+    "RowVersion" bytea NOT NULL,
+    CONSTRAINT "PK_Slots" PRIMARY KEY ("Id")
+);
+2026-05-20 17:06:37.613 +05:30 [INF]  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "UserAccounts" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Email" character varying(256) NOT NULL,
+    "PasswordHash" character varying(512) NOT NULL,
+    "Role" character varying(32) NOT NULL,
+    "IsActive" boolean NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    "FirstName" character varying(100) NOT NULL,
+    "LastName" character varying(100) NOT NULL,
+    "DateOfBirth" date,
+    "WalkIn" boolean NOT NULL,
+    "PhoneNumber" character varying(20),
+    "IsDeleted" boolean NOT NULL DEFAULT FALSE,
+    "RetainUntil" timestamp with time zone,
+    "FailedLoginAttempts" integer NOT NULL,
+    "LockoutEnd" timestamp with time zone,
+    "VerificationTokenHash" character varying(128),
+    "VerificationTokenExpiry" timestamp with time zone,
+    "PasswordResetTokenHash" text,
+    "PasswordResetTokenExpiry" timestamp with time zone,
+    "PasswordResetTokenUsed" boolean NOT NULL,
+    "PasswordResetTokenIssuedAt" timestamp with time zone,
+    "VerificationStatus" integer NOT NULL,
+    "VerifiedById" integer,
+    "VerifiedAt" timestamp with time zone,
+    "CodingStatus" integer NOT NULL,
+    CONSTRAINT "PK_UserAccounts" PRIMARY KEY ("Id")
+);
+2026-05-20 17:06:37.624 +05:30 [INF]  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Appointments" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "SlotId" integer NOT NULL,
+    "Status" integer NOT NULL,
+    "BookedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    "NoShowRiskScore" integer NOT NULL,
+    "IsHighRisk" boolean NOT NULL,
+    "ReminderJobId" character varying(100),
+    "SmsReminderJobId48h" character varying(100),
+    "SmsReminderJobId2h" character varying(100),
+    "EmailReminderJobId" character varying(100),
+    "CancellationLinkTokenHash" character varying(64),
+    "CancellationLinkExpiry" timestamp with time zone,
+    "CancellationLinkUsed" boolean NOT NULL,
+    "EmailReminderSentAt" timestamp with time zone,
+    "RowVersion" bytea NOT NULL,
+    CONSTRAINT "PK_Appointments" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_Appointments_Slots_SlotId" FOREIGN KEY ("SlotId") REFERENCES "Slots" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_Appointments_UserAccounts_PatientId" FOREIGN KEY ("PatientId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT
+);
+2026-05-20 17:06:37.643 +05:30 [INF]  Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ClinicalDocuments" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "UploadedByStaffId" integer,
+    "OriginalFileName" character varying(500) NOT NULL,
+    "EncryptedBlobPath" character varying(500) NOT NULL,
+    "VirusScanResult" integer NOT NULL DEFAULT 0,
+    "OcrStatus" integer NOT NULL DEFAULT 0,
+    "RawOcrText" text,
+    "UploadedAt" timestamp with time zone NOT NULL,
+    "RowVersion" bytea NOT NULL,
+    "IsDeleted" boolean NOT NULL DEFAULT FALSE,
+    "RetainUntil" timestamp with time zone,
+    CONSTRAINT "PK_ClinicalDocuments" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_ClinicalDocuments_UserAccounts_PatientId" FOREIGN KEY ("PatientId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_ClinicalDocuments_UserAccounts_UploadedByStaffId" FOREIGN KEY ("UploadedByStaffId") REFERENCES "UserAccounts" ("Id") ON DELETE SET NULL
+);
+2026-05-20 17:06:37.651 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "IntakeRecords" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "IntakeGroupId" uuid NOT NULL,
+    "PatientId" integer NOT NULL,
+    "Version" integer NOT NULL,
+    "IsLatest" boolean NOT NULL,
+    "Source" integer NOT NULL,
+    "SubmittedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    "ChiefComplaint" character varying(1000),
+    "CurrentMeds" character varying(2000),
+    "Allergies" character varying(1000),
+    "MedicalHistory" character varying(4000),
+    "InsuranceStatus" integer NOT NULL,
+    "IsDeleted" boolean NOT NULL DEFAULT FALSE,
+    "RetainUntil" timestamp with time zone,
+    CONSTRAINT "PK_IntakeRecords" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_IntakeRecords_UserAccounts_PatientId" FOREIGN KEY ("PatientId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT
+);
+2026-05-20 17:06:37.670 +05:30 [INF]  Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "QueueEntries" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "QueueDate" date NOT NULL,
+    "Position" integer NOT NULL,
+    "Status" integer NOT NULL,
+    "IsWalkIn" boolean NOT NULL,
+    "AddedByStaffId" integer NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    "RowVersion" bytea NOT NULL,
+    CONSTRAINT "PK_QueueEntries" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_QueueEntries_UserAccounts_AddedByStaffId" FOREIGN KEY ("AddedByStaffId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_QueueEntries_UserAccounts_PatientId" FOREIGN KEY ("PatientId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT
+);
+2026-05-20 17:06:37.678 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "WaitlistEntries" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "PreferredSlotId" integer,
+    "Status" integer NOT NULL,
+    "QueuedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    "OfferExpiresAt" timestamp with time zone,
+    "OfferedSlotId" integer,
+    "IsDeleted" boolean NOT NULL DEFAULT FALSE,
+    "RetainUntil" timestamp with time zone,
+    CONSTRAINT "PK_WaitlistEntries" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_WaitlistEntries_Slots_PreferredSlotId" FOREIGN KEY ("PreferredSlotId") REFERENCES "Slots" ("Id") ON DELETE SET NULL,
+    CONSTRAINT "FK_WaitlistEntries_UserAccounts_PatientId" FOREIGN KEY ("PatientId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT
+);
+2026-05-20 17:06:37.688 +05:30 [INF]  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "CalendarTokens" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "AppointmentId" integer NOT NULL,
+    "Provider" character varying(32) NOT NULL,
+    "EncryptedAccessToken" character varying(4000) NOT NULL,
+    "EncryptedRefreshToken" character varying(4000),
+    "CalendarEventId" character varying(200),
+    "ExpiresAt" timestamp with time zone NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    CONSTRAINT "PK_CalendarTokens" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_CalendarTokens_Appointments_AppointmentId" FOREIGN KEY ("AppointmentId") REFERENCES "Appointments" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_CalendarTokens_UserAccounts_PatientId" FOREIGN KEY ("PatientId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT
+);
+2026-05-20 17:06:37.701 +05:30 [INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "OutreachRecords" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "AppointmentId" integer NOT NULL,
+    "StaffId" integer NOT NULL,
+    "Notes" text,
+    "AttemptedAt" timestamp with time zone NOT NULL DEFAULT (now()),
+    CONSTRAINT "PK_OutreachRecords" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_OutreachRecords_Appointments_AppointmentId" FOREIGN KEY ("AppointmentId") REFERENCES "Appointments" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_OutreachRecords_UserAccounts_StaffId" FOREIGN KEY ("StaffId") REFERENCES "UserAccounts" ("Id") ON DELETE RESTRICT
+);
+2026-05-20 17:06:37.704 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Appointments_CancellationLinkTokenHash" ON "Appointments" ("CancellationLinkTokenHash") WHERE "CancellationLinkTokenHash" IS NOT NULL;
+2026-05-20 17:06:37.707 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Appointments_PatientId" ON "Appointments" ("PatientId");
+2026-05-20 17:06:37.711 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Appointments_SlotId" ON "Appointments" ("SlotId");
+2026-05-20 17:06:37.714 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AuditLogs_EntityType_EntityId" ON "AuditLogs" ("EntityType", "EntityId");
+2026-05-20 17:06:37.717 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AuditLogs_OccurredAt" ON "AuditLogs" ("OccurredAt");
+2026-05-20 17:06:37.720 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CalendarTokens_PatientId" ON "CalendarTokens" ("PatientId");
+2026-05-20 17:06:37.723 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UIX_CalendarTokens_AppointmentId_Provider" ON "CalendarTokens" ("AppointmentId", "Provider");
+2026-05-20 17:06:37.727 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ClinicalDocuments_PatientId" ON "ClinicalDocuments" ("PatientId");
+2026-05-20 17:06:37.731 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ClinicalDocuments_UploadedByStaffId" ON "ClinicalDocuments" ("UploadedByStaffId");
+2026-05-20 17:06:37.734 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UIX_InsuranceReferences_InsurerId_PlanCode" ON "InsuranceReferences" ("InsurerId", "PlanCode");
+2026-05-20 17:06:37.737 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_IntakeRecords_GroupId_IsLatest" ON "IntakeRecords" ("IntakeGroupId", "IsLatest");
+2026-05-20 17:06:37.741 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_IntakeRecords_PatientId" ON "IntakeRecords" ("PatientId");
+2026-05-20 17:06:37.745 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UIX_IntakeRecords_GroupId_Version" ON "IntakeRecords" ("IntakeGroupId", "Version");
+2026-05-20 17:06:37.749 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_OutreachRecords_AppointmentId" ON "OutreachRecords" ("AppointmentId");
+2026-05-20 17:06:37.751 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_OutreachRecords_StaffId" ON "OutreachRecords" ("StaffId");
+2026-05-20 17:06:37.754 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_QueueEntries_AddedByStaffId" ON "QueueEntries" ("AddedByStaffId");
+2026-05-20 17:06:37.758 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_QueueEntries_PatientId" ON "QueueEntries" ("PatientId");
+2026-05-20 17:06:37.762 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_QueueEntries_QueueDate_Status" ON "QueueEntries" ("QueueDate", "Status");
+2026-05-20 17:06:37.765 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_UserAccounts_Email" ON "UserAccounts" ("Email");
+2026-05-20 17:06:37.768 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_WaitlistEntries_PatientId_Status" ON "WaitlistEntries" ("PatientId", "Status");
+2026-05-20 17:06:37.771 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_WaitlistEntries_PreferredSlotId" ON "WaitlistEntries" ("PreferredSlotId");
+2026-05-20 17:06:37.775 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UIX_WaitlistEntries_PatientId_Active" ON "WaitlistEntries" ("PatientId") WHERE "Status" = 0;
+2026-05-20 17:06:37.777 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory_App" ("MigrationId", "ProductVersion")
+VALUES ('20260520113601_InitialCreate_App', '8.0.27');
+2026-05-20 17:07:26.752 +05:30 [INF]  Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-20 17:07:26.833 +05:30 [INF]  Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-05-20 17:07:27.168 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-20 17:07:27.479 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-20 17:07:27.480 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-05-20 17:07:27.496 +05:30 [INF]  No migrations were applied. The database is already up to date.
+2026-05-20 17:20:52.623 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-20 17:20:56.033 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-20 17:20:56.879 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 17:20:56.998 +05:30 [FTL]  Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'StackExchange.Redis.IConnectionMultiplexer' while attempting to activate 'ClinicalHealthcare.Api.Middleware.SessionTtlMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2026-05-20 17:20:57.020 +05:30 [ERR]  Hosting failed to start
+System.InvalidOperationException: Unable to resolve service for type 'StackExchange.Redis.IConnectionMultiplexer' while attempting to activate 'ClinicalHealthcare.Api.Middleware.SessionTtlMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-05-20 17:34:16.584 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-20 17:34:16.800 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-20 17:34:17.320 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 17:34:17.485 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-20 17:34:17.494 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-20 17:34:17.496 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-20 17:34:17.500 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-20 17:34:17.502 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-20 17:34:17.504 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-20 17:34:17.506 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-20 17:34:17.527 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-20 17:34:17.529 +05:30 [INF]  Hosting environment: Development
+2026-05-20 17:34:17.533 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-20 17:34:17.554 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 successfully announced in 23.9519 ms
+2026-05-20 17:34:17.559 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-20 17:34:17.600 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 all the dispatchers started
+2026-05-20 17:34:25.570 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:34:25.575 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:34:25.577 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:34:25.579 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:34:26.604 +05:30 [INF]  Executed DbCommand (20ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:35:08.822 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:36:08.837 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:37:08.859 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:38:08.924 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:39:09.133 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:40:09.189 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:41:09.268 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:42:09.333 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:43:09.412 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:44:09.485 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:45:09.608 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:46:09.663 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:47:09.733 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:48:09.782 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:49:09.859 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:50:09.970 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:51:10.019 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:52:10.161 +05:30 [INF]  Executed DbCommand (16ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:53:10.212 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:54:10.341 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:55:10.614 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:56:10.652 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:57:10.745 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:57:19.061 +05:30 [WRN]  Stopping the server due to DomainUnload or ProcessExit event...
+2026-05-20 17:57:19.063 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 caught stopping signal...
+2026-05-20 17:57:19.064 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 caught stopped signal...
+2026-05-20 17:57:19.066 +05:30 [WRN]  Server kanini-ltp-511:31840:ada9af24 caught shutdown signal...
+2026-05-20 17:57:19.068 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 All dispatchers stopped
+2026-05-20 17:57:19.431 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 successfully reported itself as stopped in 358.0789 ms
+2026-05-20 17:57:19.433 +05:30 [INF]  Server kanini-ltp-511:31840:ada9af24 has been stopped in total 369.2963 ms
+2026-05-20 17:58:14.512 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-20 17:58:14.710 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-20 17:58:16.026 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:58:16.052 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:58:16.116 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:58:16.122 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 17:58:16.852 +05:30 [INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-20 17:58:17.653 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (DbType = DateTime), @p11='?', @p12='?' (DbType = DateTime), @p13='?' (DbType = Boolean), @p14='?', @p15='?' (DbType = DateTime), @p16='?', @p17='?' (DbType = Int32), @p18='?' (DbType = DateTime), @p19='?', @p20='?' (DbType = DateTime), @p21='?' (DbType = Int32), @p22='?' (DbType = Boolean), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime), @p25='?' (DbType = Date), @p26='?', @p27='?' (DbType = Int32), @p28='?', @p29='?' (DbType = Boolean), @p30='?', @p31='?' (DbType = DateTime), @p32='?', @p33='?' (DbType = DateTime), @p34='?', @p35='?' (DbType = DateTime), @p36='?' (DbType = Boolean), @p37='?', @p38='?' (DbType = DateTime), @p39='?', @p40='?' (DbType = Int32), @p41='?' (DbType = DateTime), @p42='?', @p43='?' (DbType = DateTime), @p44='?' (DbType = Int32), @p45='?' (DbType = Boolean), @p46='?' (DbType = Int32), @p47='?' (DbType = DateTime), @p48='?' (DbType = Date), @p49='?', @p50='?' (DbType = Int32), @p51='?', @p52='?' (DbType = Boolean), @p53='?', @p54='?' (DbType = DateTime), @p55='?', @p56='?' (DbType = DateTime), @p57='?', @p58='?' (DbType = DateTime), @p59='?' (DbType = Boolean), @p60='?', @p61='?' (DbType = DateTime), @p62='?', @p63='?' (DbType = Int32), @p64='?' (DbType = DateTime), @p65='?', @p66='?' (DbType = DateTime), @p67='?' (DbType = Int32), @p68='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserAccounts" ("CodingStatus", "CreatedAt", "DateOfBirth", "Email", "FailedLoginAttempts", "FirstName", "IsActive", "LastName", "LockoutEnd", "PasswordHash", "PasswordResetTokenExpiry", "PasswordResetTokenHash", "PasswordResetTokenIssuedAt", "PasswordResetTokenUsed", "PhoneNumber", "RetainUntil", "Role", "VerificationStatus", "VerificationTokenExpiry", "VerificationTokenHash", "VerifiedAt", "VerifiedById", "WalkIn")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22)
+RETURNING "Id", "IsDeleted";
+INSERT INTO "UserAccounts" ("CodingStatus", "CreatedAt", "DateOfBirth", "Email", "FailedLoginAttempts", "FirstName", "IsActive", "LastName", "LockoutEnd", "PasswordHash", "PasswordResetTokenExpiry", "PasswordResetTokenHash", "PasswordResetTokenIssuedAt", "PasswordResetTokenUsed", "PhoneNumber", "RetainUntil", "Role", "VerificationStatus", "VerificationTokenExpiry", "VerificationTokenHash", "VerifiedAt", "VerifiedById", "WalkIn")
+VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45)
+RETURNING "Id", "IsDeleted";
+INSERT INTO "UserAccounts" ("CodingStatus", "CreatedAt", "DateOfBirth", "Email", "FailedLoginAttempts", "FirstName", "IsActive", "LastName", "LockoutEnd", "PasswordHash", "PasswordResetTokenExpiry", "PasswordResetTokenHash", "PasswordResetTokenIssuedAt", "PasswordResetTokenUsed", "PhoneNumber", "RetainUntil", "Role", "VerificationStatus", "VerificationTokenExpiry", "VerificationTokenHash", "VerifiedAt", "VerifiedById", "WalkIn")
+VALUES (@p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, @p68)
+RETURNING "Id", "IsDeleted";
+2026-05-20 17:58:17.716 +05:30 [INF]  DevDataSeeder: seeded 3 accounts → admin@clinicalhub.dev (Admin@1234) | staff@clinicalhub.dev (Staff@1234) | patient@clinicalhub.dev (Patient@1234)
+2026-05-20 17:58:17.752 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 17:58:17.843 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-20 17:58:17.849 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-20 17:58:17.851 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-20 17:58:17.852 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-20 17:58:17.854 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-20 17:58:17.856 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-20 17:58:17.858 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-20 17:58:17.872 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-20 17:58:17.874 +05:30 [INF]  Hosting environment: Development
+2026-05-20 17:58:17.876 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-20 17:58:17.892 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 successfully announced in 17.8703 ms
+2026-05-20 17:58:17.898 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-20 17:58:17.926 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 all the dispatchers started
+2026-05-20 17:58:23.902 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:58:49.675 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 17:58:49.714 +05:30 [WRN]  Failed to determine the https port for redirect.
+2026-05-20 17:58:49.767 +05:30 [INF] 67221fe9-0ab5-40a8-bea3-baba3769b54f HTTP POST /auth/login responded 404 in 0.5343 ms
+2026-05-20 17:58:49.782 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 404 0 null 106.9189ms
+2026-05-20 17:58:49.788 +05:30 [INF]  Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5153/auth/login, Response status code: 404
+2026-05-20 17:59:08.883 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 17:59:21.685 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 17:59:21.694 +05:30 [INF] b982c70a-5597-414d-a3f4-9cf735f42f01 HTTP POST /auth/login responded 404 in 0.0477 ms
+2026-05-20 17:59:21.698 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 404 0 null 12.6685ms
+2026-05-20 17:59:21.704 +05:30 [INF]  Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5153/auth/login, Response status code: 404
+2026-05-20 18:00:00.137 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/health - null null
+2026-05-20 18:00:00.156 +05:30 [INF] 91c73084-8ebe-4f41-8477-6560ba676e1c Executing endpoint 'Health checks'
+2026-05-20 18:00:00.180 +05:30 [INF] 91c73084-8ebe-4f41-8477-6560ba676e1c Executed endpoint 'Health checks'
+2026-05-20 18:00:00.184 +05:30 [INF] 91c73084-8ebe-4f41-8477-6560ba676e1c HTTP GET /health responded 200 in 29.0419 ms
+2026-05-20 18:00:00.188 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/health - 200 null application/json 50.7717ms
+2026-05-20 18:00:08.945 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:01:09.011 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:01:44.726 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 18:01:44.730 +05:30 [INF] 947c1b33-f47d-4512-9dca-a5f0fb6f8916 HTTP POST /auth/login responded 404 in 0.0170 ms
+2026-05-20 18:01:44.738 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 404 0 null 12.0033ms
+2026-05-20 18:01:44.746 +05:30 [INF]  Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5153/auth/login, Response status code: 404
+2026-05-20 18:01:44.756 +05:30 [INF]  Connection id "0HNLMDDC8KPMA", Request id "0HNLMDDC8KPMA:00000001": the application completed without reading the entire request body.
+2026-05-20 18:02:09.101 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:02:11.534 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 18:02:11.557 +05:30 [INF]  No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-05-20 18:02:11.588 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.2828ms
+2026-05-20 18:03:09.213 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:04:09.522 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:05:09.564 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:06:09.657 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:06:28.419 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 18:06:28.486 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 66.131ms
+2026-05-20 18:07:09.737 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:08:09.844 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:09:10.066 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:10:10.118 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:11:10.215 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:12:10.333 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:13:10.432 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:14:11.240 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:15:10.998 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:16:11.101 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:17:11.222 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:18:11.315 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:19:11.598 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:20:11.664 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:21:11.769 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:22:11.913 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:23:11.975 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:24:12.322 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:25:12.380 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:26:12.471 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:27:12.565 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:28:12.656 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:29:12.943 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:30:13.039 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:31:13.086 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:32:13.158 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:33:13.219 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:34:13.377 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:35:13.418 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:36:13.501 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:37:13.597 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:38:13.668 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:39:13.833 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:40:13.917 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:41:14.018 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:42:14.114 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:43:14.202 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:44:14.355 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:45:14.429 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:46:14.492 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:47:14.553 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:48:14.614 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:49:14.787 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:50:14.869 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:51:14.927 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:52:14.983 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:53:00.023 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:54:00.274 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:55:00.324 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:56:00.390 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:57:00.447 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:58:00.506 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 18:59:00.727 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:00:00.764 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:01:00.845 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:02:00.930 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:03:00.983 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:04:01.214 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:05:01.297 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:06:01.366 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:07:01.457 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:08:01.538 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:09:01.773 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:09:07.693 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 19:09:07.697 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 3.1743ms
+2026-05-20 19:09:17.722 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 19:09:17.727 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 4.4428ms
+2026-05-20 19:09:57.613 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 19:09:57.616 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 3.5783ms
+2026-05-20 19:10:01.816 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:10:11.269 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 19:10:11.274 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.1258ms
+2026-05-20 19:10:21.620 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - null null
+2026-05-20 19:10:21.623 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 2.8615ms
+2026-05-20 19:11:01.888 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:12:01.931 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:13:02.004 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:14:02.212 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:14:38.789 +05:30 [WRN]  Stopping the server due to DomainUnload or ProcessExit event...
+2026-05-20 19:14:38.796 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 caught stopping signal...
+2026-05-20 19:14:38.798 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 caught stopped signal...
+2026-05-20 19:14:38.802 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 All dispatchers stopped
+2026-05-20 19:14:38.806 +05:30 [WRN]  Server kanini-ltp-511:44560:695ee5d1 caught shutdown signal...
+2026-05-20 19:14:39.107 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 successfully reported itself as stopped in 296.9005 ms
+2026-05-20 19:14:39.108 +05:30 [INF]  Server kanini-ltp-511:44560:695ee5d1 has been stopped in total 310.8904 ms
+2026-05-20 19:15:20.458 +05:30 [INF]  Start installing Hangfire SQL objects...
+2026-05-20 19:15:20.645 +05:30 [INF]  Hangfire SQL objects installed.
+2026-05-20 19:15:21.779 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 19:15:21.782 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'CalendarToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 19:15:21.785 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'OutreachRecord'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 19:15:21.787 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'QueueEntry'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-20 19:15:22.656 +05:30 [INF]  Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted"))
+2026-05-20 19:15:22.681 +05:30 [INF]  DevDataSeeder: accounts already exist — skipping seed.
+2026-05-20 19:15:22.729 +05:30 [INF]  User profile is available. Using 'C:\Users\VasanthabalanMuruges\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 19:15:23.258 +05:30 [INF]  Now listening on: http://localhost:5153
+2026-05-20 19:15:23.264 +05:30 [INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: clinical_dev, Schema: hangfire'
+2026-05-20 19:15:23.266 +05:30 [INF]  Using the following options for PostgreSQL job storage:
+2026-05-20 19:15:23.268 +05:30 [INF]      Queue poll interval: 00:00:15.
+2026-05-20 19:15:23.269 +05:30 [INF]      Invisibility timeout: 00:30:00.
+2026-05-20 19:15:23.270 +05:30 [INF]      Use sliding invisibility timeout: False.
+2026-05-20 19:15:23.272 +05:30 [INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-20 19:15:23.285 +05:30 [INF]  Application started. Press Ctrl+C to shut down.
+2026-05-20 19:15:23.286 +05:30 [INF]  Hosting environment: Development
+2026-05-20 19:15:23.289 +05:30 [INF]  Content root path: D:\BRD-Healthcare\Clinical-Healthcare\src\ClinicalHealthcare.Api
+2026-05-20 19:15:23.305 +05:30 [INF]  Server kanini-ltp-511:10504:818a9eb4 successfully announced in 18.7886 ms
+2026-05-20 19:15:23.309 +05:30 [INF]  Server kanini-ltp-511:10504:818a9eb4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-20 19:15:23.332 +05:30 [INF]  Server kanini-ltp-511:10504:818a9eb4 all the dispatchers started
+2026-05-20 19:15:28.888 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:16:13.684 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:17:13.734 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:18:13.814 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:19:13.957 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:20:14.018 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:20:30.315 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 19:20:30.447 +05:30 [WRN]  Failed to determine the https port for redirect.
+2026-05-20 19:20:30.479 +05:30 [INF] cc644c09-e52e-4011-8778-6c3a481e0327 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:20:30.523 +05:30 [INF] cc644c09-e52e-4011-8778-6c3a481e0327 Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:20:30.747 +05:30 [INF] cc644c09-e52e-4011-8778-6c3a481e0327 Setting HTTP status code 200.
+2026-05-20 19:20:30.752 +05:30 [INF] cc644c09-e52e-4011-8778-6c3a481e0327 Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:20:30.768 +05:30 [INF] cc644c09-e52e-4011-8778-6c3a481e0327 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:20:30.774 +05:30 [INF] cc644c09-e52e-4011-8778-6c3a481e0327 HTTP POST /auth/login responded 200 in 295.3261 ms
+2026-05-20 19:20:30.781 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 465.7169ms
+2026-05-20 19:20:55.266 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 19:20:55.277 +05:30 [INF] 48596de5-5f68-437e-979f-8d6174983f40 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:20:55.283 +05:30 [INF] 48596de5-5f68-437e-979f-8d6174983f40 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:20:55.389 +05:30 [INF] 48596de5-5f68-437e-979f-8d6174983f40 Setting HTTP status code 200.
+2026-05-20 19:20:55.391 +05:30 [INF] 48596de5-5f68-437e-979f-8d6174983f40 Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:20:55.393 +05:30 [INF] 48596de5-5f68-437e-979f-8d6174983f40 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:20:55.395 +05:30 [INF] 48596de5-5f68-437e-979f-8d6174983f40 HTTP POST /auth/login responded 200 in 118.0831 ms
+2026-05-20 19:20:55.398 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 132.2076ms
+2026-05-20 19:20:55.401 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-20 19:20:55.407 +05:30 [INF] 7cd36bad-3b9a-44ca-96e9-d31c15ae8113 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:20:55.411 +05:30 [INF] 7cd36bad-3b9a-44ca-96e9-d31c15ae8113 Executed DbCommand (1ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:20:55.511 +05:30 [INF] 7cd36bad-3b9a-44ca-96e9-d31c15ae8113 Setting HTTP status code 200.
+2026-05-20 19:20:55.516 +05:30 [INF] 7cd36bad-3b9a-44ca-96e9-d31c15ae8113 Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:20:55.518 +05:30 [INF] 7cd36bad-3b9a-44ca-96e9-d31c15ae8113 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:20:55.520 +05:30 [INF] 7cd36bad-3b9a-44ca-96e9-d31c15ae8113 HTTP POST /auth/login responded 200 in 113.0264 ms
+2026-05-20 19:20:55.523 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 122.4146ms
+2026-05-20 19:21:14.122 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:22:14.165 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:23:14.218 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:24:14.280 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:25:14.364 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:26:14.772 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:27:14.818 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:28:14.930 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:29:14.977 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:30:00.049 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:31:00.567 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:32:00.594 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:32:22.357 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-20 19:32:22.369 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:32:22.371 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 13.9219ms
+2026-05-20 19:32:22.375 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-20 19:32:22.377 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:32:22.378 +05:30 [INF] 1fb9f53e-6612-4f6c-bfef-88a5803c6d77 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:32:22.384 +05:30 [INF] 1fb9f53e-6612-4f6c-bfef-88a5803c6d77 Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:32:22.473 +05:30 [INF] 1fb9f53e-6612-4f6c-bfef-88a5803c6d77 Setting HTTP status code 200.
+2026-05-20 19:32:22.476 +05:30 [INF] 1fb9f53e-6612-4f6c-bfef-88a5803c6d77 Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:32:22.478 +05:30 [INF] 1fb9f53e-6612-4f6c-bfef-88a5803c6d77 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:32:22.480 +05:30 [INF] 1fb9f53e-6612-4f6c-bfef-88a5803c6d77 HTTP POST /auth/login responded 200 in 101.2718 ms
+2026-05-20 19:32:22.482 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 106.716ms
+2026-05-20 19:32:29.383 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-20 19:32:29.386 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:32:29.387 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 4.0434ms
+2026-05-20 19:32:29.389 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-20 19:32:29.392 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:32:29.430 +05:30 [INF] 17bc3f18-a6f2-4e04-b881-76cc5871a5bf Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:32:29.435 +05:30 [INF] 17bc3f18-a6f2-4e04-b881-76cc5871a5bf Executed DbCommand (1ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:32:29.534 +05:30 [INF] 17bc3f18-a6f2-4e04-b881-76cc5871a5bf Setting HTTP status code 200.
+2026-05-20 19:32:29.536 +05:30 [INF] 17bc3f18-a6f2-4e04-b881-76cc5871a5bf Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:32:29.538 +05:30 [INF] 17bc3f18-a6f2-4e04-b881-76cc5871a5bf Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:32:29.539 +05:30 [INF] 17bc3f18-a6f2-4e04-b881-76cc5871a5bf HTTP POST /auth/login responded 200 in 108.7154 ms
+2026-05-20 19:32:29.540 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 150.8201ms
+2026-05-20 19:32:50.220 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-20 19:32:50.223 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:32:50.224 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 4.3397ms
+2026-05-20 19:32:50.229 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 19:32:50.232 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:32:50.234 +05:30 [INF] f64c8547-23c4-49f9-a1ca-59221868b355 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:32:50.240 +05:30 [INF] f64c8547-23c4-49f9-a1ca-59221868b355 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:32:50.347 +05:30 [INF] f64c8547-23c4-49f9-a1ca-59221868b355 Setting HTTP status code 200.
+2026-05-20 19:32:50.349 +05:30 [INF] f64c8547-23c4-49f9-a1ca-59221868b355 Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:32:50.351 +05:30 [INF] f64c8547-23c4-49f9-a1ca-59221868b355 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:32:50.352 +05:30 [INF] f64c8547-23c4-49f9-a1ca-59221868b355 HTTP POST /auth/login responded 200 in 118.1752 ms
+2026-05-20 19:32:50.356 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 126.5431ms
+2026-05-20 19:33:00.669 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:33:33.928 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-20 19:33:33.932 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:33:33.934 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 6.2181ms
+2026-05-20 19:33:33.952 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-20 19:33:33.957 +05:30 [INF]  CORS policy execution successful.
+2026-05-20 19:33:33.961 +05:30 [INF] 4e8daed8-55f5-4110-adbb-d598ed95cd00 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:33:33.965 +05:30 [INF] 4e8daed8-55f5-4110-adbb-d598ed95cd00 Executed DbCommand (1ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-20 19:33:34.127 +05:30 [INF] 4e8daed8-55f5-4110-adbb-d598ed95cd00 Setting HTTP status code 200.
+2026-05-20 19:33:34.129 +05:30 [INF] 4e8daed8-55f5-4110-adbb-d598ed95cd00 Writing value of type 'LoginResponse' as Json.
+2026-05-20 19:33:34.130 +05:30 [INF] 4e8daed8-55f5-4110-adbb-d598ed95cd00 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-20 19:33:34.132 +05:30 [INF] 4e8daed8-55f5-4110-adbb-d598ed95cd00 HTTP POST /auth/login responded 200 in 171.6866 ms
+2026-05-20 19:33:34.136 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 184.0112ms
+2026-05-20 19:34:00.746 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:35:00.837 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:36:01.029 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-20 19:37:01.064 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0

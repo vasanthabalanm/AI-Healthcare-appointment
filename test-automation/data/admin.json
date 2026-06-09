@@ -1,0 +1,11 @@
+{
+  "newStaff": {
+    "email": "newstaff@clinicalhub.dev",
+    "firstName": "New",
+    "lastName": "Staff",
+    "role": "staff"
+  },
+  "lastAdminError": "Cannot deactivate the last active administrator",
+  "expectedAuditActions": ["CREATE", "UPDATE"],
+  "auditModificationStatus": 405
+}

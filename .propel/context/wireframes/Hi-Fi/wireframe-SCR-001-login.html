@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Login — ClinicalHub</title>
+<!-- Navigation Map
+| Element               | Action | Target Screen                                      |
+|-----------------------|--------|----------------------------------------------------|
+| #btn-login (Patient)  | click  | wireframe-SCR-005-patient-dashboard.html           |
+| #btn-login (Staff)    | click  | wireframe-SCR-016-staff-daily-schedule.html        |
+| #btn-login (Admin)    | click  | wireframe-SCR-022-user-account-management.html     |
+| #link-forgot          | click  | wireframe-SCR-003-password-reset.html              |
+| #link-register        | click  | wireframe-SCR-002-patient-registration.html        |
+| FL-002: Login & Role-Based Redirect                                           |
+| UC-002: Patient/Staff/Admin Login & Session Management                        |
+-->
+<style>
+:root{
+  --cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;
+  --cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;
+  --ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--cti:#FFFFFF;
+  --ce:#C0392B;--ceb:#FDECEA;--cw:#D4820A;--cwb:#FEF5E7;
+  --cok:#1A7A4A;--cokb:#E8F5EE;--ci:#1C6EA4;--cib:#E8F0F8;
+  --ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;
+  --r1:2px;--r2:4px;--r3:8px;
+  --sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:20px;--sp6:24px;--sp8:32px;--sp10:40px;--sp12:48px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);min-height:100vh;display:flex;flex-direction:column;}
+/* Navbar */
+.navbar{height:56px;background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;position:fixed;top:0;left:0;right:0;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);letter-spacing:-0.02em;}
+/* Main */
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 24px 24px;}
+.card{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:var(--sp8);width:100%;max-width:400px;}
+.card__heading{font-size:24px;font-weight:600;margin-bottom:var(--sp1);color:var(--ct1);}
+.card__sub{font-size:14px;color:var(--ct2);margin-bottom:var(--sp8);}
+.form-group{margin-bottom:var(--sp4);}
+.form-label{display:block;font-size:14px;font-weight:500;color:var(--ct1);margin-bottom:var(--sp1);}
+.form-input{width:100%;padding:var(--sp2) var(--sp3);border:1px solid var(--cb);border-radius:var(--r1);font-size:14px;font-family:var(--ff);color:var(--ct1);background:var(--cs0);}
+.form-input:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.form-input--error{border-color:var(--ce);}
+.form-error{font-size:12px;color:var(--ce);margin-top:var(--sp1);display:flex;align-items:center;gap:var(--sp1);}
+.btn{display:flex;align-items:center;justify-content:center;gap:var(--sp2);width:100%;padding:10px var(--sp4);border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;text-decoration:none;transition:background-color .15s,border-color .15s;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:var(--cti);}
+.btn--primary:hover{background:var(--cph);}
+.divider{display:flex;align-items:center;gap:var(--sp3);margin:var(--sp5) 0;color:var(--ctd);font-size:12px;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--cb);}
+.links{display:flex;justify-content:space-between;margin-top:var(--sp5);}
+.link{font-size:13px;color:var(--cp);text-decoration:none;cursor:pointer;}
+.link:hover{text-decoration:underline;}
+.link:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);border-radius:2px;}
+/* Error alert */
+.alert{padding:var(--sp3) var(--sp4);border-radius:var(--r2);font-size:13px;display:flex;align-items:flex-start;gap:var(--sp3);margin-bottom:var(--sp4);}
+.alert--error{background:var(--ceb);color:var(--ce);border:1px solid var(--ce);}
+.alert--error svg{flex-shrink:0;margin-top:1px;}
+/* Role demo switcher */
+.demo-bar{background:var(--ci);color:var(--cti);padding:var(--sp2) var(--sp4);font-size:12px;text-align:center;}
+.demo-bar button{background:rgba(255,255,255,0.2);border:none;color:var(--cti);padding:2px var(--sp3);border-radius:var(--r1);cursor:pointer;font-size:12px;margin:0 4px;}
+.demo-bar button:hover{background:rgba(255,255,255,0.3);}
+/* State toggle */
+.state-toggle{position:fixed;bottom:16px;right:16px;display:flex;gap:8px;z-index:999;}
+.state-btn{padding:6px 12px;border-radius:var(--r2);font-size:12px;cursor:pointer;border:1px solid var(--cb);background:var(--cs0);}
+.state-btn.active{background:var(--cp);color:#fff;border-color:var(--cp);}
+[data-state]{display:none;}
+[data-state].active{display:block;}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  Wireframe Demo — Log in as:
+  <button onclick="loginAs('patient')">Patient</button>
+  <button onclick="loginAs('staff')">Staff</button>
+  <button onclick="loginAs('admin')">Admin</button>
+  <button onclick="showError()">Error state</button>
+</div>
+
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo" aria-label="ClinicalHub">ClinicalHub</span>
+</nav>
+
+<main class="main">
+  <div class="card" role="main">
+    <h1 class="card__heading">Sign in</h1>
+    <p class="card__sub">Use your ClinicalHub account credentials</p>
+
+    <!-- Error state (hidden by default) -->
+    <div id="login-error" class="alert alert--error" role="alert" aria-live="assertive" style="display:none;">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+      <span>The email or password you entered is incorrect. Please try again.</span>
+    </div>
+
+    <form id="login-form" novalidate onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label class="form-label" for="email">Email address</label>
+        <input class="form-input" id="email" type="email" name="email"
+          autocomplete="email" required aria-required="true"
+          placeholder="you@example.com">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-input" id="password" type="password" name="password"
+          autocomplete="current-password" required aria-required="true"
+          placeholder="••••••••">
+      </div>
+
+      <button class="btn btn--primary" id="btn-login" type="submit">Sign in</button>
+    </form>
+
+    <div class="links">
+      <a class="link" id="link-forgot" href="wireframe-SCR-003-password-reset.html">Forgot password?</a>
+      <a class="link" id="link-register" href="wireframe-SCR-002-patient-registration.html">Create account</a>
+    </div>
+  </div>
+</main>
+
+<!-- State toggle (demo only) -->
+<div class="state-toggle" aria-label="Wireframe state demo">
+  <button class="state-btn active" onclick="setDefault()">Default</button>
+  <button class="state-btn" onclick="showError()">Error</button>
+  <button class="state-btn" onclick="showLoading()">Loading</button>
+</div>
+
+<script>
+const ROLE_ROUTES = {
+  patient: 'wireframe-SCR-005-patient-dashboard.html',
+  staff:   'wireframe-SCR-016-staff-daily-schedule.html',
+  admin:   'wireframe-SCR-022-user-account-management.html'
+};
+const SAMPLE_CREDS = {
+  patient: { email: 'alex.rivera@email.com',            password: 'password' },
+  staff:   { email: 'jordan.chen@clinichub.internal',   password: 'password' },
+  admin:   { email: 'morgan.blake@clinichub.internal',  password: 'password' }
+};
+
+function loginAs(role) {
+  document.getElementById('email').value    = SAMPLE_CREDS[role].email;
+  document.getElementById('password').value = SAMPLE_CREDS[role].password;
+  document.getElementById('login-error').style.display = 'none';
+  document.getElementById('email').classList.remove('form-input--error');
+  document.getElementById('password').classList.remove('form-input--error');
+  setTimeout(() => { window.location.href = ROLE_ROUTES[role]; }, 400);
+}
+
+function handleLogin(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const pwd   = document.getElementById('password').value;
+  if (!email || !pwd) { showError(); return; }
+  // Demo: route by email domain
+  if (email.includes('clinichub.internal')) {
+    if (email.includes('morgan') || email.includes('taylor')) {
+      window.location.href = ROLE_ROUTES.admin;
+    } else {
+      window.location.href = ROLE_ROUTES.staff;
+    }
+  } else {
+    window.location.href = ROLE_ROUTES.patient;
+  }
+}
+
+function showError() {
+  document.getElementById('login-error').style.display = 'flex';
+  document.getElementById('email').classList.add('form-input--error');
+  document.getElementById('password').classList.add('form-input--error');
+  document.getElementById('password').value = '';
+}
+
+function setDefault() {
+  document.getElementById('login-error').style.display = 'none';
+  document.getElementById('email').classList.remove('form-input--error');
+  document.getElementById('password').classList.remove('form-input--error');
+}
+
+function showLoading() {
+  const btn = document.getElementById('btn-login');
+  btn.textContent = 'Signing in…';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  setTimeout(() => { btn.textContent = 'Sign in'; btn.disabled = false; btn.style.opacity = ''; }, 1500);
+}
+
+// State toggle button active class
+document.querySelectorAll('.state-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.state-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

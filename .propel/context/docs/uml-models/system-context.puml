@@ -1,0 +1,37 @@
+@startuml system-context
+!define RECTANGLE class
+
+skinparam actorStyle awesome
+skinparam backgroundColor #FAFAFA
+skinparam rectangleBorderColor #555
+skinparam rectangleFontSize 13
+skinparam arrowColor #333
+
+title System Context Diagram — Unified Patient Access & Clinical Intelligence Platform
+
+actor Patient as P
+actor Staff as S
+actor Admin as A
+
+rectangle "Unified Patient Access &\nClinical Intelligence Platform" as SYS {
+}
+
+cloud "Email Service\n(SMTP / Free Tier)" as EMAIL
+cloud "SMS Gateway\n(Free / OSS)" as SMS
+cloud "Google Calendar API\n(Free Tier)" as GCal
+cloud "Microsoft Graph API\n(Free Tier)" as OCAl
+component "OCR Engine\n(Internal / OSS)" as OCR
+component "AI Coding Engine\n(Internal / NLP)" as AI
+
+P --> SYS : Books appointments,\ncompletes intake,\nuploads documents
+S --> SYS : Manages arrivals,\nqueue, codes verification
+A --> SYS : Manages users,\nreviews audit logs
+
+SYS --> EMAIL : Sends confirmations\nand reminders
+SYS --> SMS : Sends SMS reminders
+SYS --> GCal : Creates calendar events
+SYS --> OCAl : Creates calendar events
+SYS --> OCR : Submits uploaded PDFs\nfor text extraction
+SYS --> AI : Sends extracted text\nfor ICD-10/CPT mapping
+
+@enduml

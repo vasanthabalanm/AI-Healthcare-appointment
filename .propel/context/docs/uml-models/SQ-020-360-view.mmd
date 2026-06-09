@@ -1,0 +1,40 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant ClinSvc as Clinical Service
+    participant Redis as Upstash Redis
+    participant PG as PostgreSQL
+
+    Note over S,PG: UC-020 — Staff Reviews 360° Patient View
+
+    S->>API: GET /patients/{id}/360-view
+    API->>ClinSvc: Get360View(patientId)
+    ClinSvc->>Redis: GET 360_view:{patientId}
+    alt Cache hit
+        Redis-->>ClinSvc: cachedView
+        ClinSvc-->>API: 200 {view, status, conflictFlags[]}
+    else Cache miss
+        ClinSvc->>PG: SELECT de-duplicated fields + conflict flags
+        PG-->>ClinSvc: view data
+        ClinSvc->>Redis: SET 360_view:{patientId} view EX 300
+        ClinSvc-->>API: 200 {view, status, conflictFlags[]}
+    end
+    API-->>S: 200
+
+    S->>API: PATCH /patients/{id}/360-view/verify {staffId}
+    API->>ClinSvc: MarkVerified(patientId, staffId)
+    ClinSvc->>PG: SELECT COUNT(*) FROM ConflictFlag WHERE patientId=? AND resolution=Unresolved
+    alt No unresolved conflicts
+        PG-->>ClinSvc: count=0
+        ClinSvc->>PG: UPDATE 360View SET status=Verified, verifiedById=staffId
+        API-->>S: 200 {status:"Verified"}
+    else Unresolved conflicts remain
+        PG-->>ClinSvc: count>0
+        ClinSvc-->>API: 409 {error:"Resolve all critical conflicts before verifying"}
+        API-->>S: 409
+    end
+
+    opt No documents on file
+        ClinSvc-->>API: 200 {view:null, message:"No clinical documents on file"}
+        API-->>S: 200 {hint:"Upload documents to begin extraction"}
+    end

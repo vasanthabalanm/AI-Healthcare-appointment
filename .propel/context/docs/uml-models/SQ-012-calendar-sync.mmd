@@ -1,0 +1,39 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant CalSvc as Calendar Service
+    participant GCal as Google Calendar API v3
+    participant MSGraph as Microsoft Graph API v1.0
+    participant SQL as SQL Server
+
+    Note over P,SQL: UC-012 — Calendar Sync
+
+    P->>API: POST /appointments/{id}/calendar-sync {provider:"google"|"outlook"}
+    API->>CalSvc: InitiateOAuthFlow(appointmentId, provider)
+    CalSvc-->>API: 302 redirect to OAuth consent URL (PKCE)
+    API-->>P: 302 {oauthUrl}
+
+    P->>GCal: User grants calendar write permission
+    GCal-->>P: redirect with authorization code
+    P->>API: GET /calendar/callback {code, state}
+    API->>CalSvc: ExchangeCode(code)
+    CalSvc->>GCal: POST /token {code, codeVerifier}
+    GCal-->>CalSvc: {accessToken, refreshToken}
+    CalSvc->>SQL: Store encrypted OAuth tokens (AES-256) per patient
+
+    CalSvc->>GCal: POST /calendars/primary/events {summary, start, end, location}
+    GCal-->>CalSvc: 201 {eventId}
+    CalSvc-->>API: 200 {message:"Added to Google Calendar"}
+    API-->>P: 200
+
+    alt Patient denies OAuth consent
+        GCal-->>P: redirect with error=access_denied
+        P->>API: GET /calendar/callback {error}
+        API-->>P: 200 {message:"Calendar sync cancelled — no event created"}
+    end
+
+    opt API rate limit or timeout
+        GCal-->>CalSvc: 429 / timeout
+        CalSvc-->>API: 503 {error:"Calendar sync failed — retry available"}
+        API-->>P: 503
+    end

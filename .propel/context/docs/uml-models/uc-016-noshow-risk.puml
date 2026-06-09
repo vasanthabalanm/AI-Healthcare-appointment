@@ -1,0 +1,19 @@
+@startuml uc-016-noshow-risk
+left to right direction
+skinparam actorStyle awesome
+
+actor Staff as S
+
+rectangle "No-Show Risk Review" {
+  usecase "View High-Risk Flagged Appointments" as UC1
+  usecase "Record Outreach Action" as UC2
+  usecase "Override Risk Flag" as UC3
+  usecase "Mark Appointment as No-Show" as UC4
+}
+
+S --> UC1
+S --> UC2
+S --> UC3
+S --> UC4
+UC4 ..> UC1 : <<extend>>
+@enduml

@@ -1,0 +1,18 @@
+@startuml uc-010-insurance-precheck
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+
+rectangle "Insurance Pre-Check" {
+  usecase "Submit Insurance Details" as UC1
+  usecase "Validate Against Dummy Records" as UC2
+  usecase "Display Validation Result" as UC3
+  usecase "Handle Blank Insurance Fields" as UC4
+}
+
+P --> UC1
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC3 : <<include>>
+UC4 ..> UC1 : <<extend>>
+@enduml

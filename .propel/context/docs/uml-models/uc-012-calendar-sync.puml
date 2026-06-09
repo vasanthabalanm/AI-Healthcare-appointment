@@ -1,0 +1,25 @@
+@startuml uc-012-calendar-sync
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+actor "Google Calendar API" as GCal
+actor "Microsoft Graph API" as MSGraph
+
+rectangle "Calendar Sync" {
+  usecase "Add to Google Calendar" as UC1
+  usecase "Add to Outlook Calendar" as UC2
+  usecase "OAuth Consent Flow" as UC3
+  usecase "Create Calendar Event" as UC4
+  usecase "Update Calendar Event on Reschedule" as UC5
+}
+
+P --> UC1
+P --> UC2
+UC1 ..> UC3 : <<include>>
+UC2 ..> UC3 : <<include>>
+UC3 ..> UC4 : <<include>>
+UC5 ..> UC4 : <<extend>>
+GCal --> UC4
+MSGraph --> UC4
+@enduml

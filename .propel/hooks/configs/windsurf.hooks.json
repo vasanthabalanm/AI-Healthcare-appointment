@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "pre_user_prompt": [
+      {
+        "command": "python .propel/hooks/context_tracker_tiktoken/windsurf.py pre_user_prompt",
+        "powershell": "python .propel/hooks/context_tracker_tiktoken/windsurf.py pre_user_prompt",
+        "show_output": false
+      }
+    ],
+    "post_cascade_response_with_transcript": [
+      {
+        "command": "python .propel/hooks/context_tracker_tiktoken/windsurf.py post_cascade_response_with_transcript",
+        "powershell": "python .propel/hooks/context_tracker_tiktoken/windsurf.py post_cascade_response_with_transcript",
+        "show_output": true
+      }
+    ]
+  }
+}

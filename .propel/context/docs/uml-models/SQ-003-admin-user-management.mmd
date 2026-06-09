@@ -1,0 +1,36 @@
+sequenceDiagram
+    participant A as Admin (Browser)
+    participant API as .NET 8 Web API
+    participant AdminSvc as Admin Service
+    participant SQL as SQL Server
+    participant Email as Email Service
+
+    Note over A,Email: UC-003 — Admin User Account Management
+
+    A->>API: POST /admin/users {name, email, role}
+    API->>AdminSvc: CreateUser(request)
+    AdminSvc->>SQL: SELECT UserAccount WHERE email=?
+    SQL-->>AdminSvc: null
+    AdminSvc->>SQL: INSERT UserAccount (status=Inactive, setupPending=true)
+    AdminSvc->>Email: SendCredentialSetupEmail(email, setupToken)
+    AdminSvc-->>API: 201 {userId}
+    API-->>A: 201
+
+    A->>API: PATCH /admin/users/{id} {name?, role?, status?}
+    API->>AdminSvc: UpdateUser(id, changes)
+    AdminSvc->>SQL: UPDATE UserAccount
+    AdminSvc-->>API: 200
+    API-->>A: 200
+
+    alt Deactivate last active Admin
+        AdminSvc->>SQL: SELECT COUNT(*) WHERE role=Admin AND status=Active
+        SQL-->>AdminSvc: count=1
+        AdminSvc-->>API: 409 {error:"Cannot deactivate last active Admin account"}
+        API-->>A: 409
+    end
+
+    alt Email already exists
+        SQL-->>AdminSvc: existing user
+        AdminSvc-->>API: 409 {error:"Email already registered"}
+        API-->>A: 409
+    end

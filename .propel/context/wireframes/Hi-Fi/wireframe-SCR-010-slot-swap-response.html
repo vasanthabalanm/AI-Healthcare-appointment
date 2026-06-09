@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Slot Swap Response — Patient | ClinicalHub</title>
+<!-- Navigation Map
+| Element         | Action | Target Screen                                  |
+|-----------------|--------|------------------------------------------------|
+| Accept offer    | click  | wireframe-SCR-007-appointment-confirmation.html |
+| Decline offer   | click  | wireframe-SCR-008-my-appointments.html (toast)  |
+| FL-006: Respond to Slot Swap Offer | UC-006                          |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cw:#D4820A;--cwb:#FEF5E7;--cok:#1A7A4A;--cokb:#E8F5EE;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:var(--cp);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));}
+h1{font-size:24px;font-weight:600;margin-bottom:4px;}
+.page-sub{font-size:14px;color:var(--ct2);margin-bottom:24px;}
+/* Countdown */
+.countdown-bar{background:var(--cwb);border:1px solid var(--cw);border-radius:var(--r2);padding:12px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px;font-size:14px;}
+.countdown-time{font-size:18px;font-weight:700;color:var(--cw);font-variant-numeric:tabular-nums;}
+/* Comparison cards */
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;align-items:start;}
+.slot-card{background:var(--cs0);border:2px solid var(--cb);border-radius:var(--r2);padding:20px;}
+.slot-card--offered{border-color:var(--cp);background:var(--cps);}
+.slot-card__label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;padding:2px 8px;border-radius:var(--r2);display:inline-block;}
+.slot-card--current .slot-card__label{background:var(--cs2);color:var(--ct2);}
+.slot-card--offered .slot-card__label{background:var(--cp);color:#fff;}
+.slot-card__date{font-size:18px;font-weight:700;color:var(--ct1);margin-bottom:4px;}
+.slot-card__time{font-size:14px;color:var(--ct2);margin-bottom:12px;}
+.slot-card__detail{font-size:13px;color:var(--ct2);}
+.slot-card__detail + .slot-card__detail{margin-top:4px;}
+/* Actions */
+.actions{display:flex;gap:12px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:#fff;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--secondary:hover{background:var(--cs1);}
+.info-note{font-size:13px;color:var(--ct2);margin-top:16px;padding:12px;background:var(--cs1);border-radius:var(--r2);border:1px solid var(--cs2);}
+/* Expired state */
+.expired-state{background:var(--ceb);border:1px solid var(--ce);border-radius:var(--r2);padding:24px;text-align:center;margin-top:24px;}
+.expired-state h3{font-size:16px;font-weight:600;color:var(--ce);margin-bottom:8px;}
+.expired-state p{font-size:14px;color:var(--ct2);}
+.state-toggle{position:fixed;bottom:16px;right:16px;display:flex;gap:8px;z-index:999;}
+.state-btn{padding:6px 12px;border-radius:var(--r2);font-size:12px;cursor:pointer;border:1px solid var(--cb);background:var(--cs0);}
+.state-btn.active{background:var(--cp);color:#fff;border-color:var(--cp);}
+@media(max-width:768px){.sidebar{display:none;}.page{margin-left:0;padding:16px;}.comparison{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Alex Rivera">AR</span>
+    <span>Alex Rivera</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Patient navigation">
+  <a class="nav-item" href="wireframe-SCR-005-patient-dashboard.html">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>Dashboard</a>
+  <a class="nav-item" href="wireframe-SCR-008-my-appointments.html">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>My Appointments</a>
+</aside>
+
+<main class="page" id="main-content">
+  <h1>Slot swap offer</h1>
+  <p class="page-sub">A slot that matches your waitlist preference is now available. Review and respond before the offer expires.</p>
+
+  <!-- Countdown (active state) -->
+  <div class="countdown-bar" id="countdown-bar" role="timer" aria-live="polite" aria-label="Offer expires in">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="#D4820A" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+    <span>Offer expires in <span class="countdown-time" id="countdown-display">1:45:22</span> — respond before it expires</span>
+  </div>
+
+  <!-- Side-by-side comparison -->
+  <div class="comparison" id="comparison-panel">
+    <div class="slot-card slot-card--current" role="region" aria-label="Your current appointment">
+      <span class="slot-card__label">Your current appointment</span>
+      <p class="slot-card__date">Tuesday, 27 May 2026</p>
+      <p class="slot-card__time">2:30 PM – 3:00 PM</p>
+      <p class="slot-card__detail">Provider: Dr. Elaine Torres</p>
+      <p class="slot-card__detail">Type: General Consultation</p>
+    </div>
+    <div class="slot-card slot-card--offered" role="region" aria-label="Offered slot — recommended">
+      <span class="slot-card__label">Offered slot</span>
+      <p class="slot-card__date">Thursday, 14 May 2026</p>
+      <p class="slot-card__time">10:00 AM – 10:30 AM</p>
+      <p class="slot-card__detail">Provider: Dr. Elaine Torres</p>
+      <p class="slot-card__detail">Type: General Consultation</p>
+      <p style="margin-top:10px;font-size:12px;font-weight:500;color:var(--cok);">✓ Earlier by 13 days</p>
+    </div>
+  </div>
+
+  <div class="actions" id="action-btns">
+    <a class="btn btn--primary" href="wireframe-SCR-007-appointment-confirmation.html" aria-label="Accept this slot swap">Accept offered slot</a>
+    <button class="btn btn--secondary" onclick="declineOffer()" aria-label="Decline this slot swap">Decline — keep my current slot</button>
+  </div>
+
+  <p class="info-note">Accepting will move your appointment from 27 May to 14 May 2026. Your current slot will be released back to the pool. This action cannot be undone.</p>
+
+  <!-- Expired state (hidden by default) -->
+  <div class="expired-state" id="expired-state" style="display:none;" role="alert">
+    <h3>This offer has expired</h3>
+    <p>The offered slot was not claimed in time and has been released. Your waitlist entry has been cleared. You may rejoin the waitlist at any time.</p>
+    <br>
+    <a class="btn btn--primary" href="wireframe-SCR-009-waitlist-registration.html" style="display:inline-flex;">Rejoin waitlist</a>
+  </div>
+</main>
+
+<div class="state-toggle">
+  <button class="state-btn active" onclick="setActive()">Active offer</button>
+  <button class="state-btn" onclick="setExpired()">Expired offer</button>
+</div>
+
+<script>
+let seconds = 6322; // 1:45:22
+let timer;
+
+function formatTime(s) {
+  const h = Math.floor(s/3600);
+  const m = Math.floor((s%3600)/60);
+  const sec = s%60;
+  return h+':'+(m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+}
+
+function startTimer() {
+  clearInterval(timer);
+  timer = setInterval(() => {
+    if (seconds > 0) { seconds--; document.getElementById('countdown-display').textContent = formatTime(seconds); }
+    else { clearInterval(timer); setExpired(); }
+  }, 1000);
+}
+startTimer();
+
+function declineOffer() {
+  clearInterval(timer);
+  window.location.href = 'wireframe-SCR-008-my-appointments.html';
+}
+
+function setActive() {
+  seconds = 6322;
+  document.getElementById('countdown-display').textContent = formatTime(seconds);
+  document.getElementById('countdown-bar').style.display = 'flex';
+  document.getElementById('comparison-panel').style.display = 'grid';
+  document.getElementById('action-btns').style.display = 'flex';
+  document.getElementById('expired-state').style.display = 'none';
+  startTimer();
+  document.querySelectorAll('.state-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+function setExpired() {
+  clearInterval(timer);
+  document.getElementById('countdown-bar').style.display = 'none';
+  document.getElementById('comparison-panel').style.display = 'none';
+  document.getElementById('action-btns').style.display = 'none';
+  document.getElementById('expired-state').style.display = 'block';
+  document.querySelectorAll('.state-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.state-btn')[1].classList.add('active');
+}
+</script>
+</body>
+</html>

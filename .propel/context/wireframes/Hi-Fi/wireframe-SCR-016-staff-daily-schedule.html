@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Staff Daily Schedule — Staff | ClinicalHub</title>
+<!-- Navigation Map
+| Element           | Action | Target Screen                                    |
+|-------------------|--------|--------------------------------------------------|
+| Patient name link | click  | wireframe-SCR-019-360-patient-view.html          |
+| Walk-in button    | click  | wireframe-SCR-017-walkin-registration.html       |
+| Check In action   | click  | same screen — status updated inline              |
+| FL-011: Staff Daily Schedule | UC-015, UC-016                             |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cw:#D4820A;--cwb:#FEF5E7;--cok:#1A7A4A;--cokb:#E8F5EE;--ci:#1C6EA4;--cib:#E8F0F8;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.navbar-user{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);}
+.user-chip{background:#5A0A7A;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.nav-item.active{border-left-color:var(--cp);background:var(--cps);color:var(--cp);font-weight:500;}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+h1{font-size:24px;font-weight:600;}
+.page-date{font-size:14px;color:var(--ct2);margin-top:2px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:var(--r2);font-size:13px;font-weight:500;cursor:pointer;border:1px solid transparent;text-decoration:none;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:#fff;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--secondary:hover{background:var(--cs1);}
+.btn--sm{padding:4px 12px;font-size:12px;}
+/* Filter bar */
+.filter-bar{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.filter-toggle{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ct2);}
+.toggle-switch{position:relative;width:36px;height:20px;background:var(--cs2);border-radius:10px;cursor:pointer;transition:background 0.2s;}
+.toggle-switch.on{background:var(--cp);}
+.toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left 0.2s;}
+.toggle-switch.on::after{left:18px;}
+/* Schedule table */
+.schedule-table{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);overflow:hidden;}
+.schedule-table-header{display:grid;grid-template-columns:80px 200px 160px 120px 120px 1fr 120px;padding:10px 20px;border-bottom:2px solid var(--cb);font-size:12px;font-weight:600;color:var(--ct2);text-transform:uppercase;letter-spacing:0.04em;}
+.schedule-row{display:grid;grid-template-columns:80px 200px 160px 120px 120px 1fr 120px;padding:16px 20px;border-bottom:1px solid var(--cs2);align-items:center;}
+.schedule-row:last-child{border-bottom:none;}
+.schedule-row:hover{background:var(--cs1);}
+.schedule-row.high-risk-row{background:var(--cwb);}
+.time-cell{font-size:14px;font-weight:600;color:var(--ct1);}
+.patient-link{color:var(--cp);text-decoration:none;font-weight:500;}
+.patient-link:hover{text-decoration:underline;}
+.patient-link:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);border-radius:2px;}
+.patient-dob{font-size:12px;color:var(--ct2);margin-top:2px;}
+/* Status badges */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--r2);font-size:12px;font-weight:500;}
+.badge--confirmed{background:var(--cib);color:var(--ci);}
+.badge--arrived{background:var(--cokb);color:var(--cok);}
+.badge--cancelled{background:var(--cs2);color:var(--ct2);}
+/* NoShow risk badge (C-NoShowRisk) */
+.risk-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--r2);font-size:12px;font-weight:600;background:var(--cwb);color:var(--cw);}
+.risk-badge--low{background:var(--cokb);color:var(--cok);}
+/* Actions column */
+.row-actions{display:flex;gap:8px;}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--ct1);color:#fff;padding:12px 20px;border-radius:var(--r2);font-size:13px;z-index:600;display:none;}
+.toast.show{display:block;}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div class="navbar-user">
+    <span class="user-chip" aria-label="Jordan Chen — Staff">JC</span>
+    <span>Jordan Chen</span>
+    <span style="font-size:12px;padding:2px 8px;background:var(--cps);color:var(--cp);border-radius:var(--r2);font-weight:500;">Staff</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Staff navigation">
+  <a class="nav-item active" href="wireframe-SCR-016-staff-daily-schedule.html" aria-current="page">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>Daily Schedule</a>
+  <a class="nav-item" href="wireframe-SCR-017-walkin-registration.html">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"/></svg>Walk-In Registration</a>
+  <a class="nav-item" href="wireframe-SCR-018-same-day-queue.html">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>Same-Day Queue</a>
+  <a class="nav-item" href="wireframe-SCR-021-code-verification.html">Code Verification</a>
+</aside>
+
+<main class="page" id="main-content">
+  <div class="page-header">
+    <div>
+      <h1>Daily schedule</h1>
+      <p class="page-date">Tuesday, 12 May 2026</p>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <a class="btn btn--secondary" href="wireframe-SCR-017-walkin-registration.html">Register walk-in</a>
+      <a class="btn btn--primary" href="wireframe-SCR-018-same-day-queue.html">View queue</a>
+    </div>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar" role="toolbar" aria-label="Schedule filters">
+    <span style="font-size:14px;font-weight:500;">Provider: Dr. Elaine Torres</span>
+    <div class="filter-toggle">
+      <div class="toggle-switch" id="risk-toggle" role="switch" aria-checked="false" tabindex="0" onclick="toggleRiskFilter(this)" onkeydown="if(event.key===' '||event.key==='Enter')toggleRiskFilter(this)"></div>
+      <label>High risk only</label>
+    </div>
+    <span style="font-size:13px;color:var(--ct2);margin-left:auto;">3 appointments today</span>
+  </div>
+
+  <div class="schedule-table" role="table" aria-label="Daily appointment schedule">
+    <div class="schedule-table-header" role="row">
+      <span role="columnheader">Time</span>
+      <span role="columnheader">Patient</span>
+      <span role="columnheader">Type</span>
+      <span role="columnheader">Status</span>
+      <span role="columnheader">No-show risk</span>
+      <span role="columnheader">Notes</span>
+      <span role="columnheader">Actions</span>
+    </div>
+
+    <!-- apt-003: Maria Santos — Arrived -->
+    <div class="schedule-row" id="row-apt003" role="row">
+      <span class="time-cell" role="cell">9:00 AM</span>
+      <div role="cell">
+        <a class="patient-link" href="wireframe-SCR-019-360-patient-view.html" aria-label="View 360° profile for Maria Santos">Maria Santos</a>
+        <p class="patient-dob">DOB: 22 Aug 1990</p>
+      </div>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">Follow-up</span>
+      <span role="cell"><span class="badge badge--arrived" role="status">Arrived</span></span>
+      <span role="cell"><span class="risk-badge risk-badge--low" role="status">Low</span></span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">Post-surgery follow-up</span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--secondary btn--sm" aria-label="View intake for Maria Santos" onclick="alert('View intake — Maria Santos')">Intake</button>
+      </span>
+    </div>
+
+    <!-- apt-004: Derek Okafor — Confirmed + HIGH RISK -->
+    <div class="schedule-row high-risk-row" id="row-apt004" role="row" aria-label="High risk patient row">
+      <span class="time-cell" role="cell">11:15 AM</span>
+      <div role="cell">
+        <a class="patient-link" href="wireframe-SCR-019-360-patient-view.html" aria-label="View 360° profile for Derek Okafor">Derek Okafor</a>
+        <p class="patient-dob">DOB: 5 Mar 1978</p>
+      </div>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">General Consultation</span>
+      <span role="cell"><span class="badge badge--confirmed" role="status">Confirmed</span></span>
+      <span role="cell">
+        <span class="risk-badge" role="status" aria-label="High no-show risk">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+          High Risk
+        </span>
+      </span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">2 prior no-shows — send reminder</span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--primary btn--sm" id="checkin-apt004" onclick="checkIn('apt004')" aria-label="Check in Derek Okafor">Check In</button>
+        <button class="btn btn--secondary btn--sm" onclick="alert('Send SMS reminder — Derek Okafor')">Remind</button>
+      </span>
+    </div>
+
+    <!-- apt-005: Priya Nair — Confirmed -->
+    <div class="schedule-row" id="row-apt005" role="row">
+      <span class="time-cell" role="cell">1:00 PM</span>
+      <div role="cell">
+        <a class="patient-link" href="wireframe-SCR-019-360-patient-view.html" aria-label="View 360° profile for Priya Nair">Priya Nair</a>
+        <p class="patient-dob">DOB: 14 Nov 1995</p>
+      </div>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">New Patient</span>
+      <span role="cell"><span class="badge badge--confirmed" role="status">Confirmed</span></span>
+      <span role="cell"><span class="risk-badge risk-badge--low" role="status">Low</span></span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">—</span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--primary btn--sm" id="checkin-apt005" onclick="checkIn('apt005')" aria-label="Check in Priya Nair">Check In</button>
+      </span>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+function checkIn(aptId) {
+  const btn = document.getElementById('checkin-' + aptId);
+  const row = document.getElementById('row-' + aptId);
+  const badge = row.querySelector('.badge');
+  badge.className = 'badge badge--arrived';
+  badge.textContent = 'Arrived';
+  btn.remove();
+  showToast('Patient checked in successfully.');
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+function toggleRiskFilter(el) {
+  const isOn = el.classList.toggle('on');
+  el.setAttribute('aria-checked', isOn.toString());
+  const rows = document.querySelectorAll('.schedule-row');
+  rows.forEach(row => {
+    if (isOn && !row.classList.contains('high-risk-row')) row.style.display = 'none';
+    else row.style.display = '';
+  });
+}
+</script>
+</body>
+</html>

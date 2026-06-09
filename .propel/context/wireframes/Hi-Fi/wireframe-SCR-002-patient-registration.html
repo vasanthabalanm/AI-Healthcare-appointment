@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Create Account — ClinicalHub</title>
+<!-- Navigation Map
+| Element           | Action  | Target Screen                               |
+|-------------------|---------|---------------------------------------------|
+| #btn-submit       | submit  | SCR-001 (email verification sent toast)     |
+| #link-login       | click   | wireframe-SCR-001-login.html                |
+| FL-001: Patient Self-Registration                                    |
+| UC-001: Patient Self-Registration                                    |
+-->
+<style>
+:root{
+  --cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;
+  --cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;
+  --ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--cti:#FFFFFF;
+  --ce:#C0392B;--ceb:#FDECEA;--cw:#D4820A;--cok:#1A7A4A;--cokb:#E8F5EE;--ci:#1C6EA4;
+  --ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;
+  --r1:2px;--r2:4px;--r3:8px;
+  --sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:20px;--sp6:24px;--sp8:32px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);min-height:100vh;}
+.navbar{height:56px;background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;position:fixed;top:0;left:0;right:0;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.main{padding:80px 24px 40px;display:flex;justify-content:center;}
+.card{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:var(--sp8);width:100%;max-width:560px;}
+h1{font-size:24px;font-weight:600;margin-bottom:4px;}
+.sub{font-size:14px;color:var(--ct2);margin-bottom:var(--sp8);}
+.section-title{font-size:12px;font-weight:500;color:var(--ct2);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--sp3);margin-top:var(--sp6);border-top:1px solid var(--cs2);padding-top:var(--sp6);}
+.section-title:first-of-type{margin-top:0;border-top:none;padding-top:0;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4);}
+.form-group{margin-bottom:var(--sp4);}
+.form-label{display:block;font-size:14px;font-weight:500;margin-bottom:var(--sp1);}
+.req{color:var(--ce);}
+.form-input{width:100%;padding:var(--sp2) var(--sp3);border:1px solid var(--cb);border-radius:var(--r1);font-size:14px;font-family:var(--ff);color:var(--ct1);background:var(--cs0);}
+.form-input:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.form-input--error{border-color:var(--ce)!important;}
+.form-error{font-size:12px;color:var(--ce);margin-top:var(--sp1);display:flex;align-items:center;gap:4px;}
+.hint{font-size:12px;color:var(--ct2);margin-top:var(--sp1);}
+.form-select{width:100%;padding:var(--sp2) var(--sp3);border:1px solid var(--cb);border-radius:var(--r1);font-size:14px;font-family:var(--ff);color:var(--ct1);background:var(--cs0);}
+.form-select:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.strength{display:flex;gap:4px;margin-top:var(--sp1);}
+.strength-bar{height:4px;flex:1;border-radius:2px;background:var(--cs2);}
+.strength-bar.filled-weak{background:var(--ce);}
+.strength-bar.filled-ok{background:var(--cw);}
+.strength-bar.filled-strong{background:var(--cok);}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:10px var(--sp4);border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:var(--cti);}
+.btn--primary:hover{background:var(--cph);}
+.footer-links{display:flex;justify-content:center;margin-top:var(--sp5);font-size:13px;color:var(--ct2);}
+.link{color:var(--cp);text-decoration:none;}
+.link:hover{text-decoration:underline;}
+/* Error summary */
+.error-summary{background:var(--ceb);border:1px solid var(--ce);border-radius:var(--r2);padding:var(--sp3) var(--sp4);margin-bottom:var(--sp4);font-size:13px;color:var(--ce);display:none;}
+.error-summary.visible{display:block;}
+.error-summary ul{margin-top:var(--sp2);padding-left:var(--sp4);}
+/* Success overlay */
+.success-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:none;align-items:center;justify-content:center;}
+.success-overlay.open{display:flex;}
+.success-card{background:var(--cs0);border-radius:var(--r3);padding:var(--sp8);max-width:400px;width:90%;text-align:center;}
+.success-icon{width:48px;height:48px;background:var(--cokb);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp4);}
+.success-title{font-size:20px;font-weight:600;margin-bottom:var(--sp2);}
+.success-body{font-size:14px;color:var(--ct2);margin-bottom:var(--sp6);}
+.state-toggle{position:fixed;bottom:16px;right:16px;display:flex;gap:8px;z-index:999;}
+.state-btn{padding:6px 12px;border-radius:var(--r2);font-size:12px;cursor:pointer;border:1px solid var(--cb);background:var(--cs0);}
+.state-btn.active{background:var(--cp);color:#fff;border-color:var(--cp);}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+</nav>
+
+<main class="main">
+  <div class="card" role="main">
+    <h1>Create your account</h1>
+    <p class="sub">Register as a patient to book appointments and manage your care</p>
+
+    <!-- Error summary (validation state) -->
+    <div id="error-summary" class="error-summary" role="alert" aria-live="assertive">
+      <strong>Please fix the following before continuing:</strong>
+      <ul>
+        <li id="err-email-dup">An account with this email address already exists</li>
+      </ul>
+    </div>
+
+    <form id="reg-form" novalidate onsubmit="handleSubmit(event)">
+      <p class="section-title">Personal information</p>
+      <div class="row">
+        <div class="form-group">
+          <label class="form-label" for="first-name">First name <span class="req" aria-label="required">*</span></label>
+          <input class="form-input" id="first-name" type="text" autocomplete="given-name" required placeholder="Alex">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="last-name">Last name <span class="req" aria-label="required">*</span></label>
+          <input class="form-input" id="last-name" type="text" autocomplete="family-name" required placeholder="Rivera">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label class="form-label" for="dob">Date of birth <span class="req" aria-label="required">*</span></label>
+          <input class="form-input" id="dob" type="date" required value="1988-03-14">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone number</label>
+          <input class="form-input" id="phone" type="tel" autocomplete="tel" placeholder="555-0142">
+        </div>
+      </div>
+
+      <p class="section-title">Account credentials</p>
+      <div class="form-group">
+        <label class="form-label" for="reg-email">Email address <span class="req" aria-label="required">*</span></label>
+        <input class="form-input" id="reg-email" type="email" autocomplete="email" required placeholder="you@example.com">
+        <p id="err-email-field" class="form-error" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+          Enter a valid email address
+        </p>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="password">Password <span class="req" aria-label="required">*</span></label>
+        <input class="form-input" id="reg-password" type="password" autocomplete="new-password" required placeholder="Minimum 8 characters" oninput="checkStrength(this.value)">
+        <div class="strength" aria-label="Password strength indicator" role="meter">
+          <div class="strength-bar" id="s1"></div>
+          <div class="strength-bar" id="s2"></div>
+          <div class="strength-bar" id="s3"></div>
+          <div class="strength-bar" id="s4"></div>
+        </div>
+        <p class="hint">Use at least 8 characters with a number and special character</p>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="confirm-password">Confirm password <span class="req" aria-label="required">*</span></label>
+        <input class="form-input" id="confirm-password" type="password" autocomplete="new-password" required placeholder="Re-enter your password">
+      </div>
+
+      <button class="btn btn--primary" id="btn-submit" type="submit">Create account</button>
+    </form>
+
+    <div class="footer-links">
+      Already have an account?&nbsp;<a class="link" id="link-login" href="wireframe-SCR-001-login.html">Sign in</a>
+    </div>
+  </div>
+</main>
+
+<!-- Success overlay -->
+<div class="success-overlay" id="success-overlay" role="dialog" aria-modal="true" aria-labelledby="success-title">
+  <div class="success-card">
+    <div class="success-icon" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="#1A7A4A"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+    </div>
+    <h2 class="success-title" id="success-title">Check your inbox</h2>
+    <p class="success-body">We've sent a verification link to <strong id="success-email"></strong>. Click the link to activate your account.</p>
+    <a class="btn btn--primary" href="wireframe-SCR-001-login.html" style="text-decoration:none;display:flex;">Back to sign in</a>
+  </div>
+</div>
+
+<div class="state-toggle" aria-label="Wireframe state demo">
+  <button class="state-btn active" onclick="resetState()">Default</button>
+  <button class="state-btn" onclick="showValidation()">Validation</button>
+  <button class="state-btn" onclick="showSuccess()">Success</button>
+</div>
+
+<script>
+function checkStrength(val) {
+  const bars = [document.getElementById('s1'),document.getElementById('s2'),document.getElementById('s3'),document.getElementById('s4')];
+  bars.forEach(b => { b.className = 'strength-bar'; });
+  let score = 0;
+  if (val.length >= 8) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^a-zA-Z0-9]/.test(val)) score++;
+  if (val.length >= 12) score++;
+  const cls = score <= 1 ? 'filled-weak' : score === 2 ? 'filled-ok' : 'filled-strong';
+  for (let i = 0; i < score; i++) bars[i].classList.add(cls);
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('reg-email').value.trim();
+  // Demo: simulate duplicate email
+  if (email === 'taken@example.com') { showDuplicateError(); return; }
+  if (!email) { showValidation(); return; }
+  showSuccess();
+}
+function showDuplicateError() {
+  document.getElementById('error-summary').classList.add('visible');
+  document.getElementById('err-email-dup').style.display = 'list-item';
+  document.getElementById('err-email-field').style.display = 'none';
+  document.getElementById('reg-email').classList.add('form-input--error');
+}
+function showValidation() {
+  document.getElementById('reg-email').classList.add('form-input--error');
+  document.getElementById('err-email-field').style.display = 'flex';
+  document.getElementById('error-summary').classList.remove('visible');
+}
+function showSuccess() {
+  const email = document.getElementById('reg-email').value.trim() || 'alex.rivera@email.com';
+  document.getElementById('success-email').textContent = email;
+  document.getElementById('success-overlay').classList.add('open');
+}
+function resetState() {
+  document.getElementById('reg-email').classList.remove('form-input--error');
+  document.getElementById('err-email-field').style.display = 'none';
+  document.getElementById('error-summary').classList.remove('visible');
+  document.getElementById('success-overlay').classList.remove('open');
+}
+document.querySelectorAll('.state-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.state-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

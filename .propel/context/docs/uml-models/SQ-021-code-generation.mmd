@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant CodeSvc as Coding Service
+    participant Hangfire as Hangfire
+    participant PG as PostgreSQL
+
+    Note over S,PG: UC-021 — ICD-10 & CPT Code Generation (summary)
+
+    S->>API: POST /coding/generate {patientId, appointmentId}
+    API->>CodeSvc: TriggerCodeGeneration(patientId)
+    CodeSvc->>PG: Verify 360° view status=Verified
+    CodeSvc->>Hangfire: EnqueueCodeGenJob(patientId)
+    API-->>S: 202 {jobId, message:"Code generation queued"}
+
+    Hangfire->>PG: Store MedicalCodeSuggestion[] (status=Pending)
+
+    S->>API: GET /coding/suggestions {appointmentId}
+    PG-->>API: suggestions[]
+    API-->>S: 200 {icd10[], cpt[]}
+
+    opt Engine unavailable after 3 retries
+        API-->>S: Staff dashboard: "Code generation pending"
+    end

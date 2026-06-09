@@ -1,0 +1,32 @@
+sequenceDiagram
+    participant A as Admin
+    participant API as .NET 8 Web API
+    participant AuditSvc as Audit Service
+    participant SQL as SQL Server
+
+    Note over A,SQL: UC-023 — Admin Reviews Audit Log
+
+    A->>API: GET /audit?dateFrom=&dateTo=&actor=&action=&page=1
+    API->>AuditSvc: QueryAuditLog(filters)
+    AuditSvc->>SQL: SELECT AuditLog WHERE filters ORDER BY timestamp DESC LIMIT 50 OFFSET n
+    SQL-->>AuditSvc: entries[], totalCount
+    AuditSvc-->>API: 200 {entries[], pagination}
+    API-->>A: 200
+
+    A->>API: GET /audit/export?dateFrom=&dateTo=
+    API->>AuditSvc: ExportAuditLog(filters)
+    AuditSvc->>AuditSvc: EstimateRowCount(filters)
+    alt <= 10,000 rows
+        AuditSvc->>SQL: SELECT all matching rows
+        AuditSvc->>AuditSvc: GenerateCsv(rows)
+        API-->>A: 200 {file: csv attachment}
+    else > 10,000 rows
+        AuditSvc->>Hangfire: EnqueueAsyncExport(filters, adminId)
+        API-->>A: 202 {message:"Export queued — you will be notified when ready"}
+    end
+
+    opt Attempt to modify/delete audit entry
+        A->>API: DELETE /audit/{id} or PATCH /audit/{id}
+        API-->>A: 405 Method Not Allowed
+        AuditSvc->>SQL: INSERT AuditLog (attempted modification — itself logged)
+    end

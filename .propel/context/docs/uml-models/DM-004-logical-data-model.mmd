@@ -1,0 +1,131 @@
+erDiagram
+    UserAccount {
+        uuid id PK
+        string fullName
+        date dateOfBirth
+        string email UK
+        string passwordHash
+        enum role "Patient|Staff|Admin"
+        enum status "Active|Inactive"
+        bool emailVerified
+        datetime createdAt
+    }
+
+    Slot {
+        uuid id PK
+        date slotDate
+        time slotTime
+        string location
+        int capacity
+        bool isAvailable
+        rowversion rowVer
+    }
+
+    Appointment {
+        uuid id PK
+        uuid patientId FK
+        uuid slotId FK
+        enum status "Scheduled|Arrived|InProgress|Completed|NoShow|Cancelled"
+        int noShowRiskScore
+        datetime cancellationCutoff
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    WaitlistEntry {
+        uuid id PK
+        uuid patientId FK
+        uuid preferredSlotId FK
+        uuid confirmedAppointmentId FK
+        enum status "Active|Offered|Accepted|Declined|Expired"
+        datetime registeredAt
+    }
+
+    IntakeRecord {
+        uuid id PK
+        uuid appointmentId FK
+        enum source "AI|Manual"
+        jsonb structuredFields
+        int version
+        uuid editorId FK
+        datetime submittedAt
+    }
+
+    InsuranceDummyRecord {
+        uuid id PK
+        string providerName
+        string insuranceId
+    }
+
+    ClinicalDocument {
+        uuid id PK
+        uuid patientId FK
+        string originalFilename
+        string mimeType
+        string encryptedBlobPath
+        enum virusScanResult "Pass|Fail|Pending"
+        enum extractionStatus "Pending|Extracted|LowConfidence|NoData|Failed"
+        uuid uploaderId FK
+        datetime uploadedAt
+    }
+
+    ExtractedClinicalField {
+        uuid id PK
+        uuid documentId FK
+        uuid patientId FK
+        enum fieldType "VitalSign|MedicalHistory|Medication|Allergy|Diagnosis"
+        text fieldValue
+        float confidenceScore
+        datetime extractedAt
+    }
+
+    ConflictFlag {
+        uuid id PK
+        uuid fieldId1 FK
+        uuid fieldId2 FK
+        enum resolution "Unresolved|Resolved|Dismissed"
+        uuid resolvedById FK
+        datetime resolvedAt
+    }
+
+    MedicalCodeSuggestion {
+        uuid id PK
+        uuid patientId FK
+        uuid appointmentId FK
+        enum codeType "ICD10|CPT"
+        string suggestedCode
+        string codeDescription
+        float confidenceScore
+        enum status "Pending|Accepted|Modified|Rejected"
+        uuid verifiedById FK
+        datetime verifiedAt
+        string committedCode
+    }
+
+    AuditLog {
+        bigint id PK
+        uuid actorId FK
+        enum actorRole "Patient|Staff|Admin"
+        enum actionType "CREATE|READ|UPDATE|DELETE|LOGIN|LOGOUT|EXPORT"
+        string entityType
+        uuid entityId
+        text beforeValue
+        text afterValue
+        string ipAddress
+        datetime timestamp
+    }
+
+    UserAccount ||--o{ Appointment : "books"
+    UserAccount ||--o{ WaitlistEntry : "has"
+    UserAccount ||--o{ IntakeRecord : "edits"
+    UserAccount ||--o{ ClinicalDocument : "uploads"
+    UserAccount ||--o{ MedicalCodeSuggestion : "verifies"
+    UserAccount ||--o{ AuditLog : "generates"
+    Slot ||--o{ Appointment : "filled-by"
+    Slot ||--o{ WaitlistEntry : "preferred-in"
+    Appointment ||--o| IntakeRecord : "has"
+    Appointment ||--o{ MedicalCodeSuggestion : "has"
+    Appointment ||--o| WaitlistEntry : "linked-from"
+    ClinicalDocument ||--o{ ExtractedClinicalField : "yields"
+    ExtractedClinicalField ||--o{ ConflictFlag : "conflicts-in"
+    UserAccount ||--o{ ConflictFlag : "resolves"

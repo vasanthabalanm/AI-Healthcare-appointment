@@ -1,0 +1,46 @@
+sequenceDiagram
+    participant S as Staff (Browser)
+    participant API as .NET 8 Web API
+    participant CodeSvc as Coding Service
+    participant Hangfire as Hangfire Job Worker
+    participant PG as PostgreSQL
+    participant Ollama as Ollama (BioMistral 7B) localhost:11434
+
+    Note over S,Ollama: UC-021 — ICD-10 & CPT Code Generation
+
+    S->>API: POST /coding/generate {patientId, appointmentId}
+    API->>CodeSvc: TriggerCodeGeneration(patientId, appointmentId)
+    CodeSvc->>PG: SELECT 360° verified fields (status=Verified)
+    PG-->>CodeSvc: diagnosisNarratives[], procedureEntries[]
+    CodeSvc->>Hangfire: EnqueueCodeGenJob(patientId, fields)
+    CodeSvc-->>API: 202 Accepted {jobId}
+    API-->>S: 202 {message:"Code generation queued", jobId}
+
+    Note over Hangfire,Ollama: Async code generation job
+    Hangfire->>Ollama: POST /api/chat {model:"biomistral", prompt: ICD10_TEMPLATE + narratives}
+    Ollama-->>Hangfire: {message:{content: icd10Suggestions[]}}
+    Hangfire->>Ollama: POST /api/chat {model:"biomistral", prompt: CPT_TEMPLATE + procedures}
+    Ollama-->>Hangfire: {message:{content: cptSuggestions[]}}
+    Hangfire->>PG: INSERT MedicalCodeSuggestion[] (status=Pending, confidenceScore)
+
+    S->>API: GET /coding/suggestions {appointmentId}
+    API->>PG: SELECT MedicalCodeSuggestion WHERE status=Pending
+    PG-->>API: suggestions[]
+    API-->>S: 200 {icd10Suggestions[], cptSuggestions[]}
+
+    alt Confidence score below threshold (configurable, default 0.6)
+        Note over Hangfire,PG: Suggestion flagged lowConfidence=true
+        API-->>S: suggestions with lowConfidence flag; Staff prompted for manual review
+    end
+
+    opt Ollama service unavailable
+        Hangfire->>Hangfire: RetryWithBackoff(maxRetries=3)
+        alt Max retries exhausted
+            Hangfire->>PG: UPDATE job status=Failed
+            Note over S: Staff dashboard: "Code generation pending — engine unavailable"
+        end
+    end
+
+    opt No CPT-mappable procedures
+        Note over Hangfire,PG: CPT section: "No procedures identified" — no suggestion inserted
+    end

@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant TrustGate as Trust-First Middleware
+    participant PG as PostgreSQL
+
+    Note over S,PG: UC-022 — Staff Verifies Medical Codes (summary)
+
+    S->>API: PATCH /coding/suggestions/{id} {action, verifiedById}
+    API->>TrustGate: ValidateVerification(verifiedById)
+    TrustGate->>PG: Commit code with verifiedById
+    API-->>S: 200
+
+    opt Missing verifiedById
+        TrustGate-->>API: 422
+        API-->>S: 422 {error:"Staff verification required"}
+    end

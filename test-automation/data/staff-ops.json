@@ -1,0 +1,14 @@
+{
+  "existingPatient": {
+    "name": "Alex Rivera",
+    "id": 3
+  },
+  "newWalkin": {
+    "name": "Walk In Patient",
+    "dob": "1975-08-20",
+    "phone": "555-9999"
+  },
+  "highRiskThreshold": 7,
+  "seededRiskScore": 9,
+  "outreachNote": "Called patient, confirmed attendance"
+}

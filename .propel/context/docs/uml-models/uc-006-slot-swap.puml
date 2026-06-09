@@ -1,0 +1,28 @@
+@startuml uc-006-slot-swap
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+actor "Email Service" as ES
+actor "SMS Gateway" as SMS
+
+rectangle "Preferred Slot Swap" {
+  usecase "Detect Slot Availability" as UC1
+  usecase "Notify Patient of Swap Offer" as UC2
+  usecase "Patient Accepts Swap" as UC3
+  usecase "Patient Declines / Timeout" as UC4
+  usecase "Update Appointment Record" as UC5
+  usecase "Send Updated Confirmation" as UC6
+}
+
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC3 : <<extend>>
+UC2 ..> UC4 : <<extend>>
+UC3 ..> UC5 : <<include>>
+UC5 ..> UC6 : <<include>>
+P --> UC3
+P --> UC4
+ES --> UC2
+SMS --> UC2
+ES --> UC6
+@enduml

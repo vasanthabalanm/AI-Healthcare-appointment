@@ -1,0 +1,28 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant BookSvc as Booking Service
+    participant SQL as SQL Server
+
+    Note over P,SQL: UC-005 — Patient Joins Waitlist for Preferred Slot
+
+    P->>API: POST /waitlist {patientId, preferredSlotId, confirmedAppointmentId}
+    API->>BookSvc: RegisterWaitlistEntry(request)
+    BookSvc->>SQL: SELECT Slot WHERE id=preferredSlotId AND date > NOW()
+    SQL-->>BookSvc: slot (isAvailable=false — correct, it's unavailable)
+    BookSvc->>SQL: SELECT WaitlistEntry WHERE patientId=? AND status=Active
+    alt Existing active entry
+        SQL-->>BookSvc: existing entry
+        BookSvc->>SQL: UPDATE WaitlistEntry SET preferredSlotId=new, status=Active
+        BookSvc-->>API: 200 {message:"Waitlist entry updated"}
+    else No existing entry
+        SQL-->>BookSvc: null
+        BookSvc->>SQL: INSERT WaitlistEntry (status=Active, registeredAt=NOW())
+        BookSvc-->>API: 201 {waitlistId}
+    end
+    API-->>P: 200/201 {message:"You are on the waitlist for [date/time]"}
+
+    alt Preferred slot in past or outside booking window
+        BookSvc-->>API: 400 {error:"Preferred slot must be a future available slot date"}
+        API-->>P: 400
+    end

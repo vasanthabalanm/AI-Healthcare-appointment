@@ -1,0 +1,78 @@
+@startuml deployment-architecture
+skinparam backgroundColor #FAFAFA
+skinparam nodeBorderColor #555
+skinparam componentBorderColor #555
+left to right direction
+
+title Deployment Architecture — Unified Patient Access & Clinical Intelligence Platform
+
+node "Client Browser" as Browser {
+  component "Angular 17 SPA" as SPA
+}
+
+cloud "Static Hosting\n(Netlify / Vercel — Free Tier)" as StaticHost {
+  artifact "Angular Build Artifacts\n(HTML/CSS/JS)" as StaticFiles
+}
+
+node "Windows Server Host\n(Self-hosted / GitHub Codespaces)" as WinServer {
+  node "IIS (HTTPS)" as IIS {
+    component ".NET 8 Web API" as API
+  }
+  node "Windows Services" as WinSvc {
+    component "Hangfire Worker\n(Background Jobs)" as Hangfire
+    component "ClamAV Daemon\n(clamd)" as ClamAV
+    component "Ollama Service\n(BioMistral 7B)" as Ollama
+    component "Rasa NLU Service\n(Python 3.10)" as Rasa
+  }
+  database "SQL Server 2022 Express" as SQLSRV {
+    frame "Primary DB" {
+      collections "Users, Appointments\nAudit, Slots, Waitlist"
+    }
+    frame "Hangfire DB" {
+      collections "Job Queue\nDead-letter"
+    }
+  }
+  database "PostgreSQL 16" as PG {
+    collections "Extracted Fields\nConflicts\nCode Suggestions"
+  }
+  folder "Encrypted File Store\n(AES-256)" as FS {
+    file "Clinical Document Blobs"
+  }
+}
+
+cloud "Upstash Redis\n(Serverless — Free Tier)" as Redis {
+  collections "Session Tokens (TTL 15m)\nSlot Cache (TTL 60s)\n360° View Cache (TTL 5m)"
+}
+
+cloud "External APIs" as ExtAPIs {
+  component "Google Calendar API v3" as GCal
+  component "Microsoft Graph API v1.0" as MSGraph
+  component "SMTP Server\n(MailKit)" as SMTP
+  component "SMS Gateway\n(Twilio / Vonage sandbox)" as SMS
+}
+
+Browser --> StaticHost : HTTPS
+Browser --> IIS : HTTPS / REST + JWT Bearer
+StaticHost --> StaticFiles
+
+IIS --> API
+API --> Hangfire : enqueue jobs
+API --> ClamAV : TCP (nClam)
+API --> Ollama : REST localhost:11434
+API --> Rasa : REST localhost:5005
+API --> SQLSRV : EF Core
+API --> PG : EF Core (Npgsql)
+API --> FS : AES-256 write/read
+API --> Redis : StackExchange.Redis
+
+Hangfire --> SQLSRV : job persistence
+Hangfire --> PG : clinical writes
+Hangfire --> Ollama : code generation jobs
+Hangfire --> SMTP : email delivery
+Hangfire --> SMS : SMS delivery
+
+API --> GCal : OAuth2 + REST
+API --> MSGraph : OAuth2 + REST
+API --> SMTP : MailKit SMTPS
+API --> SMS : HTTP webhook
+@enduml

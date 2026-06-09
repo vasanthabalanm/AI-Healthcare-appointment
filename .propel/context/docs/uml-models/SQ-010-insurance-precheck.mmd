@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant IntakeSvc as Intake Service
+    participant SQL as SQL Server
+
+    Note over P,SQL: UC-010 — Insurance Pre-Check
+
+    P->>API: POST /intake/insurance-check {providerName, insuranceId}
+    API->>IntakeSvc: ValidateInsurance(providerName, insuranceId)
+    IntakeSvc->>SQL: SELECT InsuranceDummyRecord WHERE providerName=? AND insuranceId=?
+    alt Record found
+        SQL-->>IntakeSvc: match
+        IntakeSvc-->>API: 200 {status:"Validated"}
+        API-->>P: 200 {indicator:"✓ Insurance details validated"}
+    else No match
+        SQL-->>IntakeSvc: null
+        IntakeSvc-->>API: 200 {status:"NotVerified"}
+        API-->>P: 200 {indicator:"⚠ Insurance details not verified", blocking:false}
+    end
+
+    opt Insurance fields blank
+        IntakeSvc-->>API: 200 {status:"Skipped"}
+        API-->>P: 200 {indicator: null}
+    end

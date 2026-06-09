@@ -1,0 +1,63 @@
+@startuml ai-inference-pipeline
+skinparam backgroundColor #FAFAFA
+skinparam arrowColor #333
+left to right direction
+
+title AI Inference Pipeline — Local OSS Inference with Trust-First Gate
+
+rectangle "Patient Upload" as PUpload
+rectangle "Hangfire: OCR Job" as OcrJob
+rectangle "Tesseract 5.x\n(LSTM OCR Engine)" as Tess
+rectangle "Confidence Check\n(threshold: 0.75)" as ConfCheck
+rectangle "ExtractedClinicalField\n(PostgreSQL)" as ECF
+rectangle "LowConfidence Flag\n→ Staff Manual Review" as LowConf
+
+rectangle "Hangfire: Aggregation Job" as AggJob
+rectangle "De-duplication\n& Conflict Detection" as DedupConf
+rectangle "ConflictFlag\n(PostgreSQL)" as CF
+rectangle "360° View Cache\n(Upstash Redis TTL 5m)" as ViewCache
+
+rectangle "Staff: Trigger Code Gen" as StaffTrigger
+rectangle "Hangfire: Code Gen Job" as CodeJob
+rectangle "Ollama\nBioMistral 7B (GGUF Q4_K_M)\nlocalhost:11434" as OllamaLLM
+rectangle "MedicalCodeSuggestion\nstatus=Pending\n(PostgreSQL)" as MCSPending
+
+rectangle "Trust-First API Gate\n(.NET Middleware)\n— requires verified_by Staff ID\n— rejects without HTTP 422" as TrustGate
+rectangle "Staff: Accept/Modify/Reject" as StaffVerify
+rectangle "MedicalCodeSuggestion\nstatus=Accepted|Modified|Rejected\n(PostgreSQL)" as MCSCommit
+
+rectangle "Patient: Intake Dialogue" as PIntake
+rectangle "Rasa NLU 3.x\nlocalhost:5005" as RasaNLU
+rectangle "Structured Intake Fields\n(SQL Server — IntakeRecord)" as IntakeStore
+rectangle "Patient Confirms Summary" as PConfirm
+
+' OCR pipeline
+PUpload --> OcrJob : document queued
+OcrJob --> Tess : PDF bytes (P/Invoke)
+Tess --> ConfCheck : text + page confidence
+ConfCheck --> ECF : confidence ≥ 0.75 → store
+ConfCheck --> LowConf : confidence < 0.75 → flag
+
+' Aggregation pipeline
+ECF --> AggJob : trigger after extraction
+AggJob --> DedupConf : compare fields
+DedupConf --> CF : write conflict flags
+DedupConf --> ViewCache : update cache (invalidate on new doc)
+
+' Code generation pipeline
+ViewCache --> StaffTrigger : 360° view ready
+StaffTrigger --> CodeJob : enqueue code gen
+CodeJob --> OllamaLLM : ICD-10/CPT prompt
+OllamaLLM --> MCSPending : suggestions + confidence scores
+
+' Trust-First verification gate
+MCSPending --> StaffVerify : display to Staff
+StaffVerify --> TrustGate : action + verified_by Staff ID
+TrustGate --> MCSCommit : validated commit
+
+' Conversational intake pipeline
+PIntake --> RasaNLU : patient utterance
+RasaNLU --> PIntake : structured candidates + clarification
+PIntake --> PConfirm : show structured summary
+PConfirm --> IntakeStore : patient confirms → store
+@enduml

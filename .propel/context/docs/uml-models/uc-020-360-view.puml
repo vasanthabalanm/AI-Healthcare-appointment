@@ -1,0 +1,20 @@
+@startuml uc-020-360-view
+left to right direction
+skinparam actorStyle awesome
+
+actor Staff as S
+
+rectangle "360° Patient View" {
+  usecase "Open 360° Patient View" as UC1
+  usecase "Review Consolidated Fields" as UC2
+  usecase "Resolve Conflict Flags" as UC3
+  usecase "Mark View as Verified" as UC4
+  usecase "Navigate to Document Upload" as UC5
+}
+
+S --> UC1
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC3 : <<extend>>
+UC2 ..> UC4 : <<include>>
+UC5 ..> UC1 : <<extend>>
+@enduml

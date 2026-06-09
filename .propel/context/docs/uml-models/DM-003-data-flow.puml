@@ -1,0 +1,123 @@
+@startuml data-flow
+skinparam backgroundColor #FAFAFA
+skinparam arrowColor #333
+skinparam rectangleBorderColor #555
+left to right direction
+
+title Data Flow Diagram — Unified Patient Access & Clinical Intelligence Platform
+
+actor Patient as P
+actor Staff as S
+actor Admin as A
+
+rectangle "Angular SPA" as SPA
+
+rectangle ".NET 8 Web API" as API {
+  rectangle "Auth Service" as AuthSvc
+  rectangle "Booking Service" as BookSvc
+  rectangle "Intake Service" as IntakeSvc
+  rectangle "Document Service" as DocSvc
+  rectangle "Clinical Service" as ClinSvc
+  rectangle "Coding Service" as CodingSvc
+  rectangle "Notification Service" as NotifSvc
+  rectangle "Staff Operations Service" as StaffSvc
+  rectangle "Audit Service" as AuditSvc
+}
+
+rectangle "Hangfire Jobs" as Jobs {
+  rectangle "OCR Job" as OcrJob
+  rectangle "Aggregation Job" as AggJob
+  rectangle "Code Gen Job" as CodeJob
+  rectangle "Notification Job" as NotifJob
+}
+
+database "SQL Server" as SQL
+database "PostgreSQL" as PG
+database "Redis Cache" as Redis
+storage "Encrypted FS" as FS
+
+rectangle "Tesseract" as Tess
+rectangle "Rasa NLU" as RasaNLU
+rectangle "Ollama LLM" as OllamaLLM
+rectangle "ClamAV" as CLAM
+rectangle "SMTP" as SMTP_EXT
+rectangle "SMS Gateway" as SMS_EXT
+rectangle "Calendar APIs" as CAL_EXT
+
+' Patient flows
+P --> SPA : User interactions
+SPA --> AuthSvc : Login / Register
+SPA --> BookSvc : Book / Cancel / Waitlist
+SPA --> IntakeSvc : Intake (AI or Manual)
+SPA --> DocSvc : Upload Clinical Docs
+SPA --> NotifSvc : Calendar Sync
+
+' Staff flows
+S --> SPA : Queue / Check-in / Codes
+SPA --> StaffSvc : Walk-in / Queue / Arrival
+SPA --> ClinSvc : View 360° Patient
+SPA --> CodingSvc : Verify Codes
+
+' Admin flows
+A --> SPA : User Mgmt / Audit Log
+SPA --> AuditSvc : Read Audit Entries
+SPA --> AuthSvc : User CRUD
+
+' Auth data flows
+AuthSvc --> SQL : Read/Write Users
+AuthSvc --> Redis : Token allowlist (TTL 15m)
+
+' Booking data flows
+BookSvc --> SQL : Slots, Appointments, Waitlist
+BookSvc --> Redis : Slot availability cache (TTL 60s)
+BookSvc --> Jobs : Schedule reminders / slot-swap
+
+' Intake data flows
+IntakeSvc --> RasaNLU : Dialogue turns (HTTP localhost)
+RasaNLU --> IntakeSvc : Structured field candidates
+IntakeSvc --> SQL : Store intake record
+
+' Document upload flow
+DocSvc --> CLAM : Virus scan (TCP)
+CLAM --> DocSvc : Scan result
+DocSvc --> FS : AES-256 encrypted blob
+DocSvc --> SQL : Document metadata
+DocSvc --> Jobs : Trigger OCR extraction
+
+' OCR extraction flow
+OcrJob --> FS : Read encrypted blob
+OcrJob --> Tess : Raw PDF bytes
+Tess --> OcrJob : Extracted text + confidence
+OcrJob --> PG : Store ExtractedClinicalField records
+OcrJob --> Jobs : Trigger aggregation
+
+' Aggregation + conflict detection flow
+AggJob --> PG : Read extracted fields
+AggJob --> PG : Write de-duplicated + ConflictFlag records
+AggJob --> Redis : Update 360° view cache (TTL 5m)
+
+' 360° view
+ClinSvc --> Redis : Read 360° view (cache hit)
+ClinSvc --> PG : Read aggregated fields (cache miss)
+
+' Code generation flow
+CodingSvc --> Jobs : Trigger code generation
+CodeJob --> PG : Read verified 360° fields
+CodeJob --> OllamaLLM : ICD-10/CPT prompt (HTTP localhost)
+OllamaLLM --> CodeJob : Code suggestions + confidence
+CodeJob --> PG : Store MedicalCodeSuggestion (Pending)
+
+' Code verification flow (Trust-First gate)
+CodingSvc --> PG : Read Pending suggestions
+S --> SPA : Accept / Modify / Reject
+SPA --> CodingSvc : Verified action + Staff ID
+CodingSvc --> PG : Commit code (verified_by required)
+
+' Notification flows
+NotifJob --> SMTP_EXT : Send email (MailKit SMTPS)
+NotifJob --> SMS_EXT : Send SMS
+BookSvc --> CAL_EXT : OAuth2 calendar event create/update
+
+' Audit flow
+AuditSvc --> SQL : Append audit entry (INSERT-only)
+@enduml

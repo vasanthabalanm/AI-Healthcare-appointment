@@ -1,0 +1,45 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant BookSvc as Booking Service
+    participant SQL as SQL Server
+    participant Redis as Upstash Redis
+    participant Hangfire as Hangfire
+
+    Note over P,Hangfire: UC-004 — Patient Books Available Appointment
+
+    P->>API: GET /slots?date=xxx
+    API->>Redis: GET slots:date:xxx
+    alt Cache hit
+        Redis-->>API: slotList[]
+    else Cache miss
+        API->>SQL: SELECT Slot WHERE isAvailable=true AND date=xxx
+        SQL-->>API: slotList[]
+        API->>Redis: SET slots:date:xxx slotList EX 60
+    end
+    API-->>P: 200 {slots[]}
+
+    P->>API: POST /appointments {slotId, patientId}
+    API->>BookSvc: BookAppointment(slotId, patientId)
+    BookSvc->>SQL: BEGIN TRANSACTION
+    BookSvc->>SQL: SELECT Slot WHERE id=slotId FOR UPDATE (optimistic lock via rowversion)
+    SQL-->>BookSvc: slot (isAvailable=true)
+    BookSvc->>SQL: UPDATE Slot SET isAvailable=false (checks rowversion)
+    BookSvc->>BookSvc: CalculateNoShowRiskScore(patientId)
+    BookSvc->>SQL: INSERT Appointment (status=Scheduled, noShowRiskScore)
+    BookSvc->>SQL: COMMIT
+    BookSvc->>Redis: DEL slots:date:xxx (invalidate cache)
+    BookSvc->>Hangfire: EnqueueConfirmationEmail(appointmentId)
+    BookSvc->>Hangfire: ScheduleReminders(appointmentId, 48h, 2h)
+    API-->>P: 201 {appointmentId}
+
+    alt Slot taken (rowversion mismatch)
+        SQL-->>BookSvc: DbUpdateConcurrencyException
+        BookSvc-->>API: 409 {error:"Slot no longer available"}
+        API-->>P: 409
+    end
+
+    opt Patient already has active appointment
+        BookSvc-->>API: 409 {error:"Cancel existing appointment first"}
+        API-->>P: 409
+    end

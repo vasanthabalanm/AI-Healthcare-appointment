@@ -1,0 +1,33 @@
+{
+  "intake": {
+    "chiefComplaint": "Chest pain",
+    "medicalHistory": "Hypertension",
+    "currentMeds": "Lisinopril 10mg",
+    "allergies": "None"
+  },
+  "aiIntake": {
+    "chiefComplaint": "Headache and fever for 3 days",
+    "medications": "Ibuprofen 400mg",
+    "allergies": "Penicillin",
+    "medicalHistory": "Hypertension",
+    "rasaConfidenceMock": 0.85
+  },
+  "ambiguousMessage": "uh maybe something",
+  "lowConfidenceMock": 0.55,
+  "clarificationThreshold": 0.70,
+  "insurance": {
+    "valid": {
+      "provider": "BlueCross",
+      "id": "BC123456",
+      "expectedResult": "Validated"
+    },
+    "invalid": {
+      "provider": "FakeInsurance",
+      "id": "FAKE999",
+      "expectedResult": "NotVerified"
+    }
+  },
+  "confirmationSlaMsec": 60000,
+  "pollIntervalMsec": 2000,
+  "maxPollAttempts": 30
+}

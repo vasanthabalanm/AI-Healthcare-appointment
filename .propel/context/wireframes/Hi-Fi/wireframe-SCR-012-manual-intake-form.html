@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Manual Intake Form — Patient | ClinicalHub</title>
+<!-- Navigation Map
+| Element         | Action | Target Screen                               |
+|-----------------|--------|---------------------------------------------|
+| AI intake link  | click  | wireframe-SCR-011-ai-intake.html            |
+| Form submit     | click  | wireframe-SCR-005-patient-dashboard.html    |
+| FL-009: Manual Intake | UC-009, UC-010                           |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cok:#1A7A4A;--cokb:#E8F5EE;--cw:#D4820A;--cwb:#FEF5E7;--ci:#1C6EA4;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:var(--cp);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.nav-item.active{border-left-color:var(--cp);background:var(--cps);color:var(--cp);font-weight:500;}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));}
+.page-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;}
+h1{font-size:24px;font-weight:600;margin-bottom:4px;}
+.ai-switch{font-size:13px;color:var(--cp);text-decoration:none;display:flex;align-items:center;gap:4px;}
+.ai-switch:hover{text-decoration:underline;}
+.form-container{max-width:700px;}
+/* Form sections */
+.form-section{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:20px;margin-bottom:16px;}
+.form-section__title{font-size:14px;font-weight:600;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--cs2);}
+.field{margin-bottom:16px;}
+.field:last-child{margin-bottom:0;}
+.field label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;}
+.field label .required{color:var(--ce);}
+.field input,.field select,.field textarea{width:100%;padding:8px 12px;border:1px solid var(--cb);border-radius:var(--r2);font-size:14px;font-family:var(--ff);background:var(--cs0);}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.field input.error,.field select.error{border-color:var(--ce);}
+.field-error{font-size:12px;color:var(--ce);margin-top:4px;display:none;}
+.field input.error + .field-error{display:block;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+/* Insurance validation indicator (C-010) */
+.insurance-indicator{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--r2);font-size:13px;margin-top:8px;}
+.insurance-indicator--verified{background:var(--cokb);color:var(--cok);}
+.insurance-indicator--pending{background:var(--cwb);color:var(--cw);}
+.insurance-indicator--none{background:var(--cs2);color:var(--ct2);}
+/* Medication row */
+.med-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;}
+.med-row input{flex:1;}
+.remove-btn{padding:8px 10px;border:1px solid var(--cb);border-radius:var(--r2);background:var(--cs0);cursor:pointer;color:var(--ct2);}
+.remove-btn:hover{background:var(--ceb);color:var(--ce);}
+.add-btn{padding:6px 14px;border:1px dashed var(--cb);border-radius:var(--r2);background:none;cursor:pointer;font-size:13px;color:var(--cp);}
+.add-btn:hover{background:var(--cps);}
+/* Submit area */
+.submit-area{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:16px;display:flex;align-items:center;justify-content:space-between;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:#fff;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--secondary:hover{background:var(--cs1);}
+.save-note{font-size:12px;color:var(--ct2);}
+@media(max-width:768px){.sidebar{display:none;}.page{margin-left:0;padding:16px;}.field-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Alex Rivera">AR</span>
+    <span>Alex Rivera</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Patient navigation">
+  <a class="nav-item" href="wireframe-SCR-005-patient-dashboard.html">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>Dashboard</a>
+  <a class="nav-item active" href="wireframe-SCR-012-manual-intake-form.html" aria-current="page">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>My Intake</a>
+  <a class="nav-item" href="wireframe-SCR-008-my-appointments.html">My Appointments</a>
+</aside>
+
+<main class="page" id="main-content">
+  <div class="page-header">
+    <div>
+      <h1>Intake form</h1>
+      <p style="font-size:14px;color:var(--ct2);">Pre-appointment intake for 20 May 2026 with Dr. Elaine Torres</p>
+    </div>
+    <a class="ai-switch" href="wireframe-SCR-011-ai-intake.html" aria-label="Switch to AI-assisted intake">
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" clip-rule="evenodd"/></svg>
+      Use AI-assisted intake
+    </a>
+  </div>
+
+  <form class="form-container" id="intake-form" onsubmit="submitForm(event)" novalidate>
+    <!-- Demographics -->
+    <div class="form-section" role="group" aria-labelledby="demo-title">
+      <h2 class="form-section__title" id="demo-title">Demographics</h2>
+      <div class="field-row">
+        <div class="field">
+          <label for="first-name">First name <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="first-name" value="Alex" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="last-name">Last name <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="last-name" value="Rivera" required aria-required="true">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="dob">Date of birth <span class="required" aria-hidden="true">*</span></label>
+          <input type="date" id="dob" value="1985-07-14" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" value="(555) 201-8844">
+        </div>
+      </div>
+    </div>
+
+    <!-- Chief Complaint -->
+    <div class="form-section" role="group" aria-labelledby="complaint-title">
+      <h2 class="form-section__title" id="complaint-title">Chief complaint</h2>
+      <div class="field">
+        <label for="chief-complaint">Reason for visit <span class="required" aria-hidden="true">*</span></label>
+        <textarea id="chief-complaint" rows="3" required aria-required="true" placeholder="Describe your main symptom or concern…">Lower back pain, worsening with prolonged sitting, duration 3 weeks, severity 5-6/10.</textarea>
+      </div>
+    </div>
+
+    <!-- Medications -->
+    <div class="form-section" role="group" aria-labelledby="meds-title">
+      <h2 class="form-section__title" id="meds-title">Current medications</h2>
+      <div id="med-list" aria-label="Medication list">
+        <div class="med-row">
+          <input type="text" value="Lisinopril 10mg — once daily" aria-label="Medication 1">
+          <button class="remove-btn" type="button" onclick="removeMed(this)" aria-label="Remove medication">✕</button>
+        </div>
+        <div class="med-row">
+          <input type="text" value="Metformin 500mg — twice daily" aria-label="Medication 2">
+          <button class="remove-btn" type="button" onclick="removeMed(this)" aria-label="Remove medication">✕</button>
+        </div>
+        <div class="med-row">
+          <input type="text" value="Ibuprofen 400mg — as needed" aria-label="Medication 3">
+          <button class="remove-btn" type="button" onclick="removeMed(this)" aria-label="Remove medication">✕</button>
+        </div>
+      </div>
+      <button class="add-btn" type="button" onclick="addMed()">+ Add medication</button>
+    </div>
+
+    <!-- Allergies -->
+    <div class="form-section" role="group" aria-labelledby="allergy-title">
+      <h2 class="form-section__title" id="allergy-title">Allergies</h2>
+      <div class="field">
+        <label for="allergies">Known allergies</label>
+        <textarea id="allergies" rows="2">Penicillin (severe anaphylaxis); Sulfa drugs (skin rash)</textarea>
+      </div>
+    </div>
+
+    <!-- Insurance (C-010 Insurance Validation Indicator) -->
+    <div class="form-section" role="group" aria-labelledby="ins-title">
+      <h2 class="form-section__title" id="ins-title">Insurance</h2>
+      <div class="field-row">
+        <div class="field">
+          <label for="ins-provider">Insurance provider</label>
+          <input type="text" id="ins-provider" value="BlueCross BlueShield" onblur="validateInsurance()">
+        </div>
+        <div class="field">
+          <label for="ins-id">Member ID</label>
+          <input type="text" id="ins-id" value="BCB-0042891" onblur="validateInsurance()">
+        </div>
+      </div>
+      <div class="insurance-indicator insurance-indicator--verified" id="ins-indicator" role="status" aria-live="polite">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Insurance verified — BlueCross BlueShield (BCB-0042891)
+      </div>
+    </div>
+
+    <div class="submit-area">
+      <span class="save-note">Form is auto-saved. You can return to complete it before your appointment.</span>
+      <div style="display:flex;gap:12px;">
+        <button class="btn btn--secondary" type="button" onclick="alert('Draft saved')">Save draft</button>
+        <button class="btn btn--primary" type="submit">Submit intake</button>
+      </div>
+    </div>
+  </form>
+</main>
+
+<script>
+let medCount = 4;
+function addMed() {
+  const list = document.getElementById('med-list');
+  const row = document.createElement('div');
+  row.className = 'med-row';
+  row.innerHTML = `<input type="text" placeholder="Medication name, dose, frequency" aria-label="Medication ${medCount++}"><button class="remove-btn" type="button" onclick="removeMed(this)" aria-label="Remove medication">✕</button>`;
+  list.appendChild(row);
+  row.querySelector('input').focus();
+}
+function removeMed(btn) { btn.closest('.med-row').remove(); }
+function validateInsurance() {
+  const ind = document.getElementById('ins-indicator');
+  const provider = document.getElementById('ins-provider').value.trim();
+  const memberId = document.getElementById('ins-id').value.trim();
+  if (provider && memberId) {
+    ind.className = 'insurance-indicator insurance-indicator--verified';
+    ind.innerHTML = `<svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Insurance verified — ${provider} (${memberId})`;
+  } else if (provider || memberId) {
+    ind.className = 'insurance-indicator insurance-indicator--pending';
+    ind.innerHTML = `<svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zm-1 4a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>Insurance details incomplete — provide both provider and member ID`;
+  } else {
+    ind.className = 'insurance-indicator insurance-indicator--none';
+    ind.innerHTML = 'No insurance information entered';
+  }
+}
+function submitForm(e) {
+  e.preventDefault();
+  window.location.href = 'wireframe-SCR-005-patient-dashboard.html';
+}
+</script>
+</body>
+</html>

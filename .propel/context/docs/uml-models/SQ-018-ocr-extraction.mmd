@@ -1,0 +1,33 @@
+sequenceDiagram
+    participant Hangfire as Hangfire (OCR Job)
+    participant DocSvc as Document Service
+    participant FS as Encrypted Filesystem
+    participant Tess as Tesseract 5.x
+    participant NLP as NLP Extraction
+    participant PG as PostgreSQL
+
+    Note over Hangfire,PG: UC-018 — Clinical Data Ingestion & Extraction (async)
+
+    Hangfire->>DocSvc: ExecuteOcrJob(documentId)
+    DocSvc->>FS: ReadAndDecryptBlob(documentId)
+    FS-->>DocSvc: pdfBytes
+    DocSvc->>Tess: ExtractText(pdfBytes)
+    Tess-->>DocSvc: {fullText, pageConfidences[]}
+    DocSvc->>NLP: ExtractFields(fullText)
+    NLP-->>DocSvc: fields[] with fieldType, value, confidence
+
+    alt confidence >= 0.75 for all pages
+        DocSvc->>PG: INSERT ExtractedClinicalField[] (status=Extracted)
+        DocSvc->>PG: UPDATE ClinicalDocument SET extractionStatus=Extracted
+    else any page confidence < 0.75
+        DocSvc->>PG: INSERT ExtractedClinicalField[] (confidence stored)
+        DocSvc->>PG: UPDATE ClinicalDocument SET extractionStatus=LowConfidence
+    end
+
+    opt No clinical fields found
+        DocSvc->>PG: UPDATE ClinicalDocument SET extractionStatus=NoData
+    end
+
+    opt OCR failure (retries exhausted)
+        DocSvc->>PG: UPDATE ClinicalDocument SET extractionStatus=Failed
+    end

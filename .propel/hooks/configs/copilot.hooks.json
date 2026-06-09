@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "hooks": {
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": "python .propel/hooks/context_tracker_tiktoken/copilot.py userPromptSubmitted",
+        "powershell": "python .propel/hooks/context_tracker_tiktoken/copilot.py userPromptSubmitted"
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": "python .propel/hooks/context_tracker_tiktoken/copilot.py sessionEnd",
+        "powershell": "python .propel/hooks/context_tracker_tiktoken/copilot.py sessionEnd"
+      }
+    ]
+  }
+}

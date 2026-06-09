@@ -1,0 +1,5 @@
+# Root Netlify config - points to clinical-hub subdirectory
+# All build settings are in clinical-hub/netlify.toml
+
+[build]
+  base = "clinical-hub"

@@ -1,0 +1,33 @@
+sequenceDiagram
+    participant Hangfire as Hangfire (Aggregation Job)
+    participant AggSvc as Aggregation Service
+    participant PG as PostgreSQL
+    participant Redis as Upstash Redis
+    participant S as Staff
+
+    Note over Hangfire,S: UC-019 — Data De-Duplication & Conflict Detection
+
+    Hangfire->>AggSvc: ExecuteAggregationJob(patientId)
+    AggSvc->>PG: SELECT ExtractedClinicalField WHERE patientId=? ORDER BY extractedAt DESC
+    PG-->>AggSvc: fields[]
+    AggSvc->>AggSvc: DeduplicateByFieldType(fields) — retain most recent non-conflicting
+
+    AggSvc->>AggSvc: DetectConflicts(fields)
+    alt Conflicts found (same field type, different values)
+        AggSvc->>PG: INSERT ConflictFlag (fieldId1, fieldId2, resolution=Unresolved)
+        AggSvc->>PG: UPDATE 360View status=RequiresReview
+    else No conflicts
+        AggSvc->>PG: UPDATE 360View status=ReadyForReview
+    end
+    AggSvc->>Redis: INVALIDATE 360_view:{patientId}
+
+    S->>AggSvc: PATCH /conflicts/{id}/resolve {selectedFieldId, staffId}
+    AggSvc->>PG: UPDATE ConflictFlag SET resolution=Resolved, resolvedById=staffId
+    AggSvc->>PG: INSERT AuditLog (Staff resolved conflict)
+    AggSvc-->>S: 200
+
+    opt Staff dismisses without resolution
+        S->>AggSvc: PATCH /conflicts/{id}/dismiss {staffId}
+        AggSvc->>PG: UPDATE ConflictFlag SET resolution=Dismissed
+        Note over AggSvc: Flag remains visible; dismissal logged
+    end

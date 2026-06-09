@@ -1,0 +1,22 @@
+@startuml uc-009-manual-intake
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+
+rectangle "Manual Intake Form" {
+  usecase "Complete Intake Form" as UC1
+  usecase "Edit Prior Intake Submission" as UC2
+  usecase "Validate Required Fields" as UC3
+  usecase "Store Intake Record" as UC4
+  usecase "Log Intake Edit to Audit" as UC5
+}
+
+P --> UC1
+P --> UC2
+UC1 ..> UC3 : <<include>>
+UC2 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC2 ..> UC4 : <<include>>
+UC2 ..> UC5 : <<include>>
+@enduml

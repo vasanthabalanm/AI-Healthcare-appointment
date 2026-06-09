@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Medical Code Verification — Staff | ClinicalHub</title>
+<!-- Navigation Map
+| Element              | Action | Target Screen                                   |
+|----------------------|--------|-------------------------------------------------|
+| Back to patient      | click  | wireframe-SCR-019-360-patient-view.html         |
+| MOD-005: Accept All  | click  | modal confirmation (same screen)                |
+| FL-014: Code Verification | UC-021, UC-022                                 |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cok:#1A7A4A;--cokb:#E8F5EE;--cw:#D4820A;--cwb:#FEF5E7;--ci:#1C6EA4;--cib:#E8F0F8;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:#5A0A7A;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.nav-item.active{border-left-color:var(--cp);background:var(--cps);color:var(--cp);font-weight:500;}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--cp);text-decoration:none;margin-bottom:16px;}
+.back-link:hover{text-decoration:underline;}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+h1{font-size:24px;font-weight:600;}
+.patient-context{font-size:14px;color:var(--ct2);margin-bottom:24px;}
+/* Code table */
+.code-section{margin-bottom:24px;}
+.code-section__title{font-size:16px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.code-label{font-size:12px;font-weight:500;padding:2px 8px;border-radius:var(--r2);}
+.code-label--icd{background:var(--cib);color:var(--ci);}
+.code-label--cpt{background:var(--cps);color:var(--cp);}
+.code-table{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);overflow:hidden;}
+.code-table-header{display:grid;grid-template-columns:100px 1fr 180px 100px 150px;padding:10px 16px;border-bottom:2px solid var(--cb);font-size:12px;font-weight:600;color:var(--ct2);text-transform:uppercase;letter-spacing:0.04em;}
+.code-row{display:grid;grid-template-columns:100px 1fr 180px 100px 150px;padding:14px 16px;border-bottom:1px solid var(--cs2);align-items:center;}
+.code-row:last-child{border-bottom:none;}
+.code-row:hover{background:var(--cs1);}
+.code-row.accepted{background:var(--cokb);}
+.code-row.rejected{background:var(--ceb);opacity:0.6;}
+.code-val{font-family:monospace;font-size:13px;font-weight:600;color:var(--ct1);}
+/* Confidence meter (C-020) */
+.confidence-meter{display:flex;flex-direction:column;gap:4px;}
+.confidence-bar-wrap{height:8px;background:var(--cs2);border-radius:4px;overflow:hidden;width:100px;}
+.confidence-fill{height:100%;border-radius:4px;}
+.confidence-fill--high{background:var(--cok);}
+.confidence-fill--medium{background:var(--cw);}
+.confidence-fill--low{background:var(--ce);}
+.confidence-pct{font-size:13px;font-weight:600;}
+.confidence-pct--high{color:var(--cok);}
+.confidence-pct--medium{color:var(--cw);}
+.confidence-pct--low{color:var(--ce);}
+/* Row actions */
+.row-actions{display:flex;gap:6px;}
+.btn{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:var(--r2);font-size:12px;font-weight:500;cursor:pointer;border:1px solid transparent;text-decoration:none;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--accept{background:var(--cokb);color:var(--cok);border-color:var(--cok);}
+.btn--accept:hover{background:var(--cok);color:#fff;}
+.btn--modify{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--modify:hover{background:var(--cs1);}
+.btn--reject{color:var(--ce);border-color:var(--ce);background:var(--cs0);}
+.btn--reject:hover{background:var(--ceb);}
+.btn--primary{background:var(--cp);color:#fff;padding:10px 20px;font-size:14px;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);padding:10px 20px;font-size:14px;}
+.btn--secondary:hover{background:var(--cs1);}
+.btn--disabled{opacity:0.5;cursor:not-allowed;}
+/* Status badges in table */
+.status-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;padding:2px 6px;border-radius:var(--r2);}
+.status-badge--accepted{background:var(--cokb);color:var(--cok);}
+.status-badge--pending{background:var(--cs2);color:var(--ct2);}
+.status-badge--low-conf{background:var(--ceb);color:var(--ce);}
+/* Footer bar */
+.action-footer{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;margin-top:24px;}
+.pending-count{font-size:14px;color:var(--ct2);}
+.pending-count strong{color:var(--ct1);}
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:none;align-items:center;justify-content:center;}
+.modal-backdrop.open{display:flex;}
+.modal{background:var(--cs0);border-radius:var(--r3);padding:24px;max-width:440px;width:90%;}
+.modal__title{font-size:18px;font-weight:600;margin-bottom:8px;}
+.modal__body{font-size:14px;color:var(--ct2);margin-bottom:24px;}
+.modal__actions{display:flex;gap:12px;justify-content:flex-end;}
+/* AI label */
+.ai-label{display:inline-flex;align-items:center;gap:4px;padding:1px 6px;border-radius:var(--r2);font-size:10px;font-weight:600;background:var(--cib);color:var(--ci);}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Jordan Chen">JC</span>
+    <span>Jordan Chen</span>
+    <span style="font-size:12px;padding:2px 8px;background:var(--cps);color:var(--cp);border-radius:4px;font-weight:500;">Staff</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Staff navigation">
+  <a class="nav-item" href="wireframe-SCR-016-staff-daily-schedule.html">Daily Schedule</a>
+  <a class="nav-item" href="wireframe-SCR-019-360-patient-view.html">360° Patient View</a>
+  <a class="nav-item active" href="wireframe-SCR-021-code-verification.html" aria-current="page">Code Verification</a>
+</aside>
+
+<main class="page" id="main-content">
+  <a class="back-link" href="wireframe-SCR-019-360-patient-view.html">← Back to patient view</a>
+  <div class="page-header">
+    <h1>Medical code verification</h1>
+    <div style="display:flex;gap:12px;">
+      <button class="btn btn--secondary" onclick="openAcceptAll()" style="padding:8px 16px;font-size:13px;">Accept all suggested</button>
+    </div>
+  </div>
+  <p class="patient-context">Patient: <strong>Alex Rivera</strong> (usr-001) · Appointment: 20 May 2026 · Codes generated by BioMistral 7B <span class="ai-label">AI Suggested</span></p>
+  <p style="font-size:13px;color:var(--ct2);margin-bottom:20px;">Review each code — accept, modify, or reject. No AI output is committed without your explicit action (Trust-First).</p>
+
+  <!-- ICD-10 codes -->
+  <div class="code-section">
+    <p class="code-section__title">
+      <span class="code-label code-label--icd">ICD-10</span>
+      Diagnoses — 3 suggestions
+    </p>
+    <div class="code-table" role="table" aria-label="ICD-10 code suggestions">
+      <div class="code-table-header" role="row">
+        <span role="columnheader">Code</span>
+        <span role="columnheader">Description</span>
+        <span role="columnheader">Confidence <span class="ai-label">AI</span></span>
+        <span role="columnheader">Status</span>
+        <span role="columnheader">Actions</span>
+      </div>
+      <!-- cs-001: M54.5 91% -->
+      <div class="code-row" id="row-cs001" role="row">
+        <span class="code-val" role="cell">M54.5</span>
+        <span role="cell" style="font-size:13px;">Low back pain</span>
+        <span role="cell">
+          <div class="confidence-meter">
+            <span class="confidence-pct confidence-pct--high">91%</span>
+            <div class="confidence-bar-wrap"><div class="confidence-fill confidence-fill--high" style="width:91%"></div></div>
+          </div>
+        </span>
+        <span role="cell"><span class="status-badge status-badge--pending" id="status-cs001">Pending</span></span>
+        <span class="row-actions" role="cell">
+          <button class="btn btn--accept" onclick="acceptCode('cs001')" aria-label="Accept M54.5">Accept</button>
+          <button class="btn btn--modify" onclick="modifyCode('M54.5')" aria-label="Modify M54.5">Modify</button>
+          <button class="btn btn--reject" onclick="rejectCode('cs001')" aria-label="Reject M54.5">Reject</button>
+        </span>
+      </div>
+      <!-- cs-002: E11.65 87% -->
+      <div class="code-row" id="row-cs002" role="row">
+        <span class="code-val" role="cell">E11.65</span>
+        <span role="cell" style="font-size:13px;">Type 2 diabetes with hyperglycaemia</span>
+        <span role="cell">
+          <div class="confidence-meter">
+            <span class="confidence-pct confidence-pct--high">87%</span>
+            <div class="confidence-bar-wrap"><div class="confidence-fill confidence-fill--high" style="width:87%"></div></div>
+          </div>
+        </span>
+        <span role="cell"><span class="status-badge status-badge--pending" id="status-cs002">Pending</span></span>
+        <span class="row-actions" role="cell">
+          <button class="btn btn--accept" onclick="acceptCode('cs002')" aria-label="Accept E11.65">Accept</button>
+          <button class="btn btn--modify" onclick="modifyCode('E11.65')" aria-label="Modify E11.65">Modify</button>
+          <button class="btn btn--reject" onclick="rejectCode('cs002')" aria-label="Reject E11.65">Reject</button>
+        </span>
+      </div>
+      <!-- cs-003: I10 95% — already accepted -->
+      <div class="code-row accepted" id="row-cs003" role="row">
+        <span class="code-val" role="cell">I10</span>
+        <span role="cell" style="font-size:13px;">Essential hypertension</span>
+        <span role="cell">
+          <div class="confidence-meter">
+            <span class="confidence-pct confidence-pct--high">95%</span>
+            <div class="confidence-bar-wrap"><div class="confidence-fill confidence-fill--high" style="width:95%"></div></div>
+          </div>
+        </span>
+        <span role="cell"><span class="status-badge status-badge--accepted" id="status-cs003">Accepted</span></span>
+        <span class="row-actions" role="cell">
+          <button class="btn btn--reject" onclick="rejectCode('cs003')" aria-label="Undo accept / reject I10">Reject</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CPT codes -->
+  <div class="code-section">
+    <p class="code-section__title">
+      <span class="code-label code-label--cpt">CPT</span>
+      Procedures — 2 suggestions
+    </p>
+    <div class="code-table" role="table" aria-label="CPT code suggestions">
+      <div class="code-table-header" role="row">
+        <span role="columnheader">Code</span>
+        <span role="columnheader">Description</span>
+        <span role="columnheader">Confidence <span class="ai-label">AI</span></span>
+        <span role="columnheader">Status</span>
+        <span role="columnheader">Actions</span>
+      </div>
+      <!-- cs-004: 99214 72% -->
+      <div class="code-row" id="row-cs004" role="row">
+        <span class="code-val" role="cell">99214</span>
+        <span role="cell" style="font-size:13px;">Office visit — moderate complexity</span>
+        <span role="cell">
+          <div class="confidence-meter">
+            <span class="confidence-pct confidence-pct--medium">72%</span>
+            <div class="confidence-bar-wrap"><div class="confidence-fill confidence-fill--medium" style="width:72%"></div></div>
+          </div>
+        </span>
+        <span role="cell"><span class="status-badge status-badge--pending" id="status-cs004">Pending</span></span>
+        <span class="row-actions" role="cell">
+          <button class="btn btn--accept" onclick="acceptCode('cs004')" aria-label="Accept 99214">Accept</button>
+          <button class="btn btn--modify" onclick="modifyCode('99214')" aria-label="Modify 99214">Modify</button>
+          <button class="btn btn--reject" onclick="rejectCode('cs004')" aria-label="Reject 99214">Reject</button>
+        </span>
+      </div>
+      <!-- cs-005: 97110 48% — low confidence flagged -->
+      <div class="code-row" id="row-cs005" role="row">
+        <span class="code-val" role="cell">97110</span>
+        <span role="cell" style="font-size:13px;">Therapeutic exercises (low confidence — manual review recommended)</span>
+        <span role="cell">
+          <div class="confidence-meter">
+            <span class="confidence-pct confidence-pct--low">48%</span>
+            <div class="confidence-bar-wrap"><div class="confidence-fill confidence-fill--low" style="width:48%"></div></div>
+          </div>
+        </span>
+        <span role="cell"><span class="status-badge status-badge--low-conf" id="status-cs005">Low confidence</span></span>
+        <span class="row-actions" role="cell">
+          <button class="btn btn--accept" onclick="acceptCode('cs005')" aria-label="Accept 97110 (low confidence)">Accept</button>
+          <button class="btn btn--modify" onclick="modifyCode('97110')" aria-label="Modify 97110">Modify</button>
+          <button class="btn btn--reject" onclick="rejectCode('cs005')" aria-label="Reject 97110">Reject</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action footer -->
+  <div class="action-footer">
+    <p class="pending-count" id="pending-msg" aria-live="polite">
+      <strong id="pending-num">3</strong> of 5 codes pending — resolve all codes before marking complete.
+    </p>
+    <button class="btn btn--primary btn--disabled" id="btn-complete" disabled aria-disabled="true" aria-label="Mark coding complete — pending codes remain">Mark coding complete</button>
+  </div>
+</main>
+
+<!-- MOD-005: Accept All Confirmation -->
+<div class="modal-backdrop" id="accept-all-modal" role="dialog" aria-modal="true" aria-labelledby="accept-all-title">
+  <div class="modal">
+    <h2 class="modal__title" id="accept-all-title">Accept all suggested codes?</h2>
+    <p class="modal__body">You are about to accept all 4 pending AI-suggested codes (M54.5, E11.65, 99214, 97110). Codes with low confidence (97110 — 48%) are included. This action will be recorded in the audit log with your staff ID.</p>
+    <div class="modal__actions">
+      <button class="btn btn--secondary" onclick="closeModal('accept-all-modal')">Review individually</button>
+      <button class="btn btn--primary" onclick="acceptAllCodes()">Accept all 4 codes</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let pendingCount = 3;
+
+function acceptCode(id) {
+  const row = document.getElementById('row-' + id);
+  const badge = document.getElementById('status-' + id);
+  row.classList.add('accepted');
+  row.classList.remove('rejected');
+  badge.className = 'status-badge status-badge--accepted';
+  badge.textContent = 'Accepted';
+  const actionsSpan = row.querySelector('.row-actions');
+  actionsSpan.innerHTML = `<button class="btn btn--reject" onclick="rejectCode('${id}')" aria-label="Undo accept">Reject</button>`;
+  decrementPending(id);
+}
+function rejectCode(id) {
+  const row = document.getElementById('row-' + id);
+  const badge = document.getElementById('status-' + id);
+  const wasAccepted = row.classList.contains('accepted');
+  row.classList.add('rejected');
+  row.classList.remove('accepted');
+  badge.className = 'status-badge status-badge--low-conf';
+  badge.textContent = 'Rejected';
+  const actionsSpan = row.querySelector('.row-actions');
+  actionsSpan.innerHTML = `<button class="btn btn--accept" onclick="acceptCode('${id}')" aria-label="Undo reject">Undo reject</button>`;
+  if (wasAccepted) incrementPending(); else decrementPending(id);
+}
+function modifyCode(code) { alert(`Modify code ${code} — opens a code search dialog in implementation. Enter an alternative code and description.`); }
+function decrementPending(id) {
+  if (pendingCount > 0) pendingCount--;
+  updatePending();
+}
+function incrementPending() {
+  pendingCount++;
+  updatePending();
+}
+function updatePending() {
+  document.getElementById('pending-num').textContent = pendingCount;
+  const msg = document.getElementById('pending-msg');
+  const btn = document.getElementById('btn-complete');
+  if (pendingCount === 0) {
+    msg.innerHTML = '<strong style="color:var(--cok);">All codes resolved</strong> — ready to mark complete.';
+    btn.classList.remove('btn--disabled');
+    btn.removeAttribute('disabled');
+    btn.removeAttribute('aria-disabled');
+    btn.onclick = () => alert('Coding marked complete — returning to patient schedule. Audit log entry created.');
+  } else {
+    msg.innerHTML = `<strong id="pending-num">${pendingCount}</strong> of 5 codes pending — resolve all codes before marking complete.`;
+  }
+}
+function openAcceptAll() { document.getElementById('accept-all-modal').classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function acceptAllCodes() {
+  closeModal('accept-all-modal');
+  ['cs001','cs002','cs004','cs005'].forEach(id => {
+    if (!document.getElementById('row-'+id).classList.contains('accepted')) acceptCode(id);
+  });
+}
+</script>
+</body>
+</html>

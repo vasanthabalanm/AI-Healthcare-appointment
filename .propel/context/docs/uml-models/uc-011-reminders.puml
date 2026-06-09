@@ -1,0 +1,25 @@
+@startuml uc-011-reminders
+left to right direction
+skinparam actorStyle awesome
+
+actor "Email Service" as ES
+actor "SMS Gateway" as SMS
+
+rectangle "Appointment Reminders & Confirmation" {
+  usecase "Send Confirmation Email with PDF" as UC1
+  usecase "Send 48-hour Reminder" as UC2
+  usecase "Send 2-hour Reminder" as UC3
+  usecase "Retry Failed Notification" as UC4
+  usecase "Cancel Pending Reminders" as UC5
+}
+
+ES --> UC1
+ES --> UC2
+ES --> UC3
+SMS --> UC2
+SMS --> UC3
+UC4 ..> UC1 : <<extend>>
+UC4 ..> UC2 : <<extend>>
+UC5 ..> UC2 : <<extend>>
+UC5 ..> UC3 : <<extend>>
+@enduml

@@ -1,0 +1,352 @@
+{
+    "projectName": "Project Name",
+    "description": "Project Description",
+    "basePropelPath": "./.propel/context",
+    "baseProjectPath": "./",
+    "artifacts": {
+        "brainstorm": {
+            "propelFileName": "brainstorm.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/brainstorm-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": []
+        },
+        "spec": {
+            "propelFileName": "spec.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/requirements-template.md"
+            },
+            "projectFileName": "spec.pdf",
+            "projectDirPath": "${baseProjectPath}/docs/",
+            "contentType": "pdf",
+            "mcpType": "local",
+            "references": ["codeanalysis", "prototype", "brainstorm"]
+        },
+        "design": {
+            "propelFileName": "design.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/design-specification-template.md"
+            },
+            "projectFileName": "design.docx",
+            "projectDirPath": "${baseProjectPath}/docs/",
+            "contentType": "docx",
+            "mcpType": "local",
+            "references": ["spec", "codeanalysis"]
+        },
+        "model": {
+            "propelFileName": "model.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/design-model-template.md"
+            },
+            "projectFileName": "model.pdf",
+            "projectDirPath": "${baseProjectPath}/docs/",
+            "contentType": "pdf",
+            "mcpType": "local",
+            "references": ["spec", "design", "codeanalysis"]
+        },
+        "task": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/tasks",
+            "templates": {
+                "default": ".propel/templates/task-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["spec", "design", "model", "figma_spec", "designsystem", "findings_registry"]
+        },
+        "figma_spec": {
+            "propelFileName": "figma_spec.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "figma_specification": ".propel/templates/figma-specification-template.md",
+                "design_reference": ".propel/templates/design-reference-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["spec", "design"]
+        },
+        "designsystem": {
+            "propelFileName": "designsystem.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/design-reference-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": []
+        },
+        "codeanalysis": {
+            "propelFileName": "codeanalysis.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/codebase-analysis-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": []
+        },
+        "codebase_maturity": {
+            "propelFileName": "codebase-maturity.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/codebase-maturity-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["codeanalysis"]
+        },
+        "findings_registry": {
+            "propelFileName": "findings-registry.md",
+            "propelDirPath": "./.propel/learnings",
+            "templates": {},
+            "schema": "./.propel/learnings/findings-registry-schema.md",
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": []
+        },
+        "signal_ledger": {
+            "propelFileName": "signal-ledger.md",
+            "propelDirPath": "./.propel/learnings",
+            "templates": {},
+            "schema": "./.propel/learnings/signal-ledger-schema.md",
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": [],
+            "_note": "Write-only during workflows. Read only by signal-health reports. Do not add to workflow references arrays."
+        },
+        "epics": {
+            "propelFileName": "epics.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/epics-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["spec", "design", "model", "codeanalysis", "figma_spec"]
+        },
+        "user_story": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/tasks",
+            "templates": {
+                "default": ".propel/templates/user-story-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["epics", "spec", "design", "model", "figma_spec"]
+        },
+        "wireframe": {
+            "propelFileName": "",
+            "propelDirPath": "./.propel/context/wireframes",
+            "templates": {
+                "information_architecture": ".propel/templates/wireframe-reference-template.md",
+                "component_inventory": ".propel/templates/component-inventory-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "html",
+            "mcpType": "local",
+            "references": ["figma_spec", "designsystem", "spec"]
+        },
+        "bug_resolution": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/tasks",
+            "templates": {
+                "default": ".propel/templates/issue-triage-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["findings_registry"]
+        },
+        "unit_test": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/tasks",
+            "templates": {
+                "default": ".propel/templates/unit-test-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["design"]
+        },
+        "automation_test": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/test",
+            "templates": {
+                "feature": ".propel/templates/automated-testing-template.md",
+                "e2e": ".propel/templates/automated-e2e-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["spec", "design", "test_plan", "figma_spec"]
+        },
+        "playwright_scripts": {
+            "propelFileName": "",
+            "propelDirPath": "./test-automation",
+            "templates": {},
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "code",
+            "mcpType": "local",
+            "references": ["automation_test"]
+        },
+        "test_plan": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/test-plan-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["spec", "design", "findings_registry"]
+        },
+        "implement_task": {
+            "propelFileName": "",
+            "propelDirPath": "",
+            "templates": {},
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "code",
+            "mcpType": "local",
+            "references": ["spec", "design", "model", "epics", "codeanalysis", "figma_spec", "designsystem", "findings_registry"]
+        },
+        "code_review": {
+            "propelFileName": "",
+            "propelDirPath": "./.propel/code-reviews",
+            "templates": {
+                "default": ".propel/templates/code-review-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["findings_registry"]
+        },
+        "execute_unittest": {
+            "propelFileName": "",
+            "propelDirPath": "",
+            "templates": {},
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "code",
+            "mcpType": "local",
+            "references": []
+        },
+        "challenge_artifact": {
+            "propelFileName": "",
+            "propelDirPath": "./.propel/challenge-reviews",
+            "templates": {
+                "default": ".propel/templates/challenge-artifact-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["findings_registry"]
+        },
+        "edge_case_review": {
+            "propelFileName": "",
+            "propelDirPath": "./.propel/edge-case-reviews",
+            "templates": {
+                "default": ".propel/templates/edge-case-review-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["findings_registry"]
+        },
+        "project_plan": {
+            "propelFileName": "project-plan.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/project-plan-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["spec", "design", "model", "figma_spec", "test_plan", "codeanalysis"]
+        },
+        "sprint_plan": {
+            "propelFileName": "sprint-plan.md",
+            "propelDirPath": "${basePropelPath}/docs",
+            "templates": {
+                "default": ".propel/templates/sprint-plan-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["project_plan", "epics", "user_story", "spec"]
+        },
+        "review_devops_security": {
+            "propelFileName": "",
+            "propelDirPath": "${basePropelPath}/devops/security-reviews",
+            "templates": {
+                "default": ".propel/templates/devops-security-review-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["findings_registry"]
+        },
+        "review_ux": {
+            "propelFileName": "",
+            "propelDirPath": "./.propel/reviews",
+            "templates": {
+                "default": ".propel/templates/review-ux-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "md",
+            "mcpType": "local",
+            "references": ["findings_registry"]
+        },
+        "prototype": {
+            "propelFileName": "mvp-scope-and-journeys.md",
+            "propelDirPath": "./mvp",
+            "templates": {
+                "default": ".propel/templates/mvp-scope-and-journeys-template.md"
+            },
+            "projectFileName": "",
+            "projectDirPath": "",
+            "contentType": "code",
+            "mcpType": "local",
+            "references": ["codeanalysis", "spec", "design"]
+        }
+    }
+}

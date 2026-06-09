@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Same-Day Queue — Staff | ClinicalHub</title>
+<!-- Navigation Map
+| Element              | Action | Target Screen                                   |
+|----------------------|--------|-------------------------------------------------|
+| Add walk-in          | click  | wireframe-SCR-017-walkin-registration.html      |
+| Patient name link    | click  | wireframe-SCR-019-360-patient-view.html         |
+| FL-012: Same-Day Queue Management | UC-014                              |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cok:#1A7A4A;--cokb:#E8F5EE;--cw:#D4820A;--cwb:#FEF5E7;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:#5A0A7A;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.nav-item.active{border-left-color:var(--cp);background:var(--cps);color:var(--cp);font-weight:500;}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+h1{font-size:24px;font-weight:600;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:var(--r2);font-size:13px;font-weight:500;cursor:pointer;border:1px solid transparent;text-decoration:none;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:#fff;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--secondary:hover{background:var(--cs1);}
+.btn--danger{color:var(--ce);border-color:var(--ce);background:var(--cs0);}
+.btn--danger:hover{background:var(--ceb);}
+.btn--sm{padding:4px 10px;font-size:12px;}
+/* Queue status bar */
+.queue-status{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:24px;}
+.queue-stat{text-align:center;}
+.queue-stat__num{font-size:24px;font-weight:700;color:var(--cp);}
+.queue-stat__label{font-size:12px;color:var(--ct2);}
+/* Queue table */
+.queue-table{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);overflow:hidden;}
+.queue-table-header{display:grid;grid-template-columns:40px 60px 200px 140px 120px 120px 100px 120px;padding:10px 16px;border-bottom:2px solid var(--cb);font-size:12px;font-weight:600;color:var(--ct2);text-transform:uppercase;letter-spacing:0.04em;}
+.queue-row{display:grid;grid-template-columns:40px 60px 200px 140px 120px 120px 100px 120px;padding:14px 16px;border-bottom:1px solid var(--cs2);align-items:center;cursor:grab;}
+.queue-row:last-child{border-bottom:none;}
+.queue-row:hover{background:var(--cs1);}
+.drag-handle{color:var(--ctd);cursor:grab;font-size:16px;user-select:none;}
+.pos-input{width:48px;padding:4px 8px;border:1px solid var(--cb);border-radius:var(--r2);font-size:13px;text-align:center;}
+.pos-input:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.patient-link{color:var(--cp);text-decoration:none;font-weight:500;}
+.patient-link:hover{text-decoration:underline;}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--r2);font-size:12px;font-weight:500;}
+.badge--walkin{background:var(--cwb);color:var(--cw);}
+.badge--appt{background:var(--cib);color:#1C6EA4;}
+.badge--waiting{background:var(--cs2);color:var(--ct2);}
+.badge--inprogress{background:var(--cokb);color:var(--cok);}
+.row-actions{display:flex;gap:6px;}
+/* Conflict toast */
+.toast{position:fixed;top:72px;left:50%;transform:translateX(-50%);background:var(--cw);color:#fff;padding:12px 20px;border-radius:var(--r2);font-size:13px;z-index:600;display:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.toast.show{display:block;}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Jordan Chen">JC</span>
+    <span>Jordan Chen</span>
+    <span style="font-size:12px;padding:2px 8px;background:var(--cps);color:var(--cp);border-radius:4px;font-weight:500;">Staff</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Staff navigation">
+  <a class="nav-item" href="wireframe-SCR-016-staff-daily-schedule.html">Daily Schedule</a>
+  <a class="nav-item" href="wireframe-SCR-017-walkin-registration.html">Walk-In Registration</a>
+  <a class="nav-item active" href="wireframe-SCR-018-same-day-queue.html" aria-current="page">Same-Day Queue</a>
+  <a class="nav-item" href="wireframe-SCR-021-code-verification.html">Code Verification</a>
+</aside>
+
+<main class="page" id="main-content">
+  <div class="page-header">
+    <h1>Same-day queue — 12 May 2026</h1>
+    <a class="btn btn--primary" href="wireframe-SCR-017-walkin-registration.html">+ Add walk-in</a>
+  </div>
+
+  <!-- Queue status summary -->
+  <div class="queue-status" role="region" aria-label="Queue summary">
+    <div class="queue-stat">
+      <p class="queue-stat__num">4</p>
+      <p class="queue-stat__label">Total in queue</p>
+    </div>
+    <div style="width:1px;height:40px;background:var(--cb);"></div>
+    <div class="queue-stat">
+      <p class="queue-stat__num">1</p>
+      <p class="queue-stat__label">In progress</p>
+    </div>
+    <div style="width:1px;height:40px;background:var(--cb);"></div>
+    <div class="queue-stat">
+      <p class="queue-stat__num" style="color:var(--cw);">1</p>
+      <p class="queue-stat__label">Walk-ins</p>
+    </div>
+    <div style="width:1px;height:40px;background:var(--cb);"></div>
+    <div class="queue-stat">
+      <p class="queue-stat__num">~15 min</p>
+      <p class="queue-stat__label">Est. wait per patient</p>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--ct2);margin-bottom:12px;">Drag rows to reorder, or enter a position number. Keyboard: Tab to position field, type number.</p>
+
+  <div class="queue-table" role="table" aria-label="Same-day queue">
+    <div class="queue-table-header" role="row">
+      <span role="columnheader" aria-label="Drag to reorder"></span>
+      <span role="columnheader">Pos.</span>
+      <span role="columnheader">Patient</span>
+      <span role="columnheader">Type</span>
+      <span role="columnheader">Arrived</span>
+      <span role="columnheader">Status</span>
+      <span role="columnheader">Walk-in</span>
+      <span role="columnheader">Actions</span>
+    </div>
+
+    <!-- q-001: Alex Rivera pos 1 -->
+    <div class="queue-row" draggable="true" id="qrow-1" role="row" aria-label="Position 1: Alex Rivera">
+      <span class="drag-handle" role="cell" aria-hidden="true">⠿</span>
+      <span role="cell"><input class="pos-input" type="number" value="1" min="1" max="4" aria-label="Queue position for Alex Rivera" onchange="reorderQueue(this, 'qrow-1')"></span>
+      <span role="cell"><a class="patient-link" href="wireframe-SCR-019-360-patient-view.html">Alex Rivera</a></span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">General Consultation</span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">9:05 AM</span>
+      <span role="cell"><span class="badge badge--inprogress" role="status">In progress</span></span>
+      <span role="cell">—</span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--danger btn--sm" onclick="removeFromQueue('qrow-1','Alex Rivera')" aria-label="Remove Alex Rivera from queue">Remove</button>
+      </span>
+    </div>
+
+    <!-- q-002: James Whitmore pos 2 (walk-in) -->
+    <div class="queue-row" draggable="true" id="qrow-2" role="row" aria-label="Position 2: James Whitmore — walk-in">
+      <span class="drag-handle" role="cell" aria-hidden="true">⠿</span>
+      <span role="cell"><input class="pos-input" type="number" value="2" min="1" max="4" aria-label="Queue position for James Whitmore" onchange="reorderQueue(this, 'qrow-2')"></span>
+      <span role="cell"><a class="patient-link" href="wireframe-SCR-019-360-patient-view.html">James Whitmore</a></span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">Walk-in</span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">9:40 AM</span>
+      <span role="cell"><span class="badge badge--waiting" role="status">Waiting</span></span>
+      <span role="cell"><span class="badge badge--walkin" role="status">Walk-in</span></span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--danger btn--sm" onclick="removeFromQueue('qrow-2','James Whitmore')" aria-label="Remove James Whitmore from queue">Remove</button>
+      </span>
+    </div>
+
+    <!-- q-003: Priya Nair pos 3 -->
+    <div class="queue-row" draggable="true" id="qrow-3" role="row" aria-label="Position 3: Priya Nair">
+      <span class="drag-handle" role="cell" aria-hidden="true">⠿</span>
+      <span role="cell"><input class="pos-input" type="number" value="3" min="1" max="4" aria-label="Queue position for Priya Nair" onchange="reorderQueue(this, 'qrow-3')"></span>
+      <span role="cell"><a class="patient-link" href="wireframe-SCR-019-360-patient-view.html">Priya Nair</a></span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">New Patient</span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">1:00 PM appt.</span>
+      <span role="cell"><span class="badge badge--waiting" role="status">Waiting</span></span>
+      <span role="cell"><span class="badge badge--appt" role="status">Scheduled</span></span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--danger btn--sm" onclick="removeFromQueue('qrow-3','Priya Nair')" aria-label="Remove Priya Nair from queue">Remove</button>
+      </span>
+    </div>
+
+    <!-- q-004: Derek Okafor pos 4 -->
+    <div class="queue-row" draggable="true" id="qrow-4" role="row" aria-label="Position 4: Derek Okafor">
+      <span class="drag-handle" role="cell" aria-hidden="true">⠿</span>
+      <span role="cell"><input class="pos-input" type="number" value="4" min="1" max="4" aria-label="Queue position for Derek Okafor" onchange="reorderQueue(this, 'qrow-4')"></span>
+      <span role="cell"><a class="patient-link" href="wireframe-SCR-019-360-patient-view.html">Derek Okafor</a></span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">General Consultation</span>
+      <span role="cell" style="font-size:13px;color:var(--ct2);">11:15 AM appt.</span>
+      <span role="cell"><span class="badge badge--waiting" role="status">Waiting</span></span>
+      <span role="cell"><span class="badge badge--appt" role="status">Scheduled</span></span>
+      <span class="row-actions" role="cell">
+        <button class="btn btn--danger btn--sm" onclick="removeFromQueue('qrow-4','Derek Okafor')" aria-label="Remove Derek Okafor from queue">Remove</button>
+      </span>
+    </div>
+  </div>
+</main>
+
+<!-- Concurrent edit conflict toast -->
+<div class="toast" id="conflict-toast" role="alert" aria-live="assertive">⚠ Queue was updated by another staff member — your view has been refreshed.</div>
+
+<script>
+function removeFromQueue(rowId, name) {
+  if (confirm(`Remove ${name} from the queue?`)) {
+    document.getElementById(rowId).style.display = 'none';
+    renumberQueue();
+  }
+}
+function reorderQueue(input, rowId) {
+  const newPos = parseInt(input.value);
+  if (isNaN(newPos) || newPos < 1 || newPos > 4) { input.value = input.dataset.prev || 1; return; }
+  input.dataset.prev = newPos;
+  // Simulate conflict detection
+  if (Math.random() < 0.3) {
+    showConflictToast();
+    setTimeout(renumberQueue, 800);
+  }
+}
+function renumberQueue() {
+  let pos = 1;
+  document.querySelectorAll('.queue-row:not([style*="display: none"])').forEach(row => {
+    const input = row.querySelector('.pos-input');
+    if (input) { input.value = pos; input.dataset.prev = pos; }
+    pos++;
+  });
+}
+function showConflictToast() {
+  const t = document.getElementById('conflict-toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 5000);
+}
+// Simulate conflict after 8 seconds
+setTimeout(showConflictToast, 8000);
+</script>
+</body>
+</html>

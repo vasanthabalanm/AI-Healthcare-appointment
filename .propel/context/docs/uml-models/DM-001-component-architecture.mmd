@@ -1,0 +1,94 @@
+graph TB
+    subgraph Client["Client Tier"]
+        SPA["Angular 17 SPA\n(Netlify / Vercel)"]
+    end
+
+    subgraph API["Backend Tier — .NET 8 ASP.NET Core Web API (IIS)"]
+        direction TB
+        AuthM["Auth Module\n(Identity + JWT)"]
+        BookM["Booking Module\n(Slots, Waitlist, Risk)"]
+        IntakeM["Intake Module\n(AI / Manual)"]
+        StaffM["Staff Operations Module\n(Queue, Check-in, Schedule)"]
+        NotifM["Notification Module\n(Email, SMS, Calendar)"]
+        DocM["Document Module\n(Upload, Encrypt, Scan)"]
+        ClinM["Clinical Module\n(Aggregation, 360° View)"]
+        CodeM["Coding Module\n(ICD-10, CPT, Verification)"]
+        AuditM["Audit Module\n(Append-only Log)"]
+        AdminM["Admin Module\n(User Mgmt, Config)"]
+    end
+
+    subgraph Jobs["Background Jobs — Hangfire (SQL Server backed)"]
+        OcrJob["OCR Extraction Job"]
+        AggJob["Clinical Aggregation Job"]
+        CodeJob["Code Generation Job"]
+        NotifJob["Notification Delivery Job"]
+        SwapJob["Slot Swap Monitor Job"]
+    end
+
+    subgraph AI["AI Services (localhost)"]
+        Rasa["Rasa NLU 3.x\n(Intake Dialogue)"]
+        Ollama["Ollama + BioMistral 7B\n(ICD-10/CPT Mapping)"]
+        Tess["Tesseract 5.x\n(OCR Engine)"]
+    end
+
+    subgraph Data["Data Tier"]
+        SQLSRV["SQL Server 2022\n(Primary — Users, Appointments,\nAudit, Slots, Waitlist)"]
+        PG["PostgreSQL 16\n(Clinical — Extracted Fields,\nConflicts, Code Suggestions)"]
+        Redis["Upstash Redis\n(Sessions, Slot Cache,\n360° View Cache)"]
+        FS["Encrypted Filesystem\n(Clinical Document Blobs)"]
+    end
+
+    subgraph Ext["External Integrations"]
+        SMTP["SMTP / MailKit\n(Email)"]
+        SMS["SMS Gateway\n(Twilio / Vonage)"]
+        GCal["Google Calendar API v3"]
+        MSGraph["Microsoft Graph API v1.0"]
+        ClamAV["ClamAV\n(Virus Scan)"]
+    end
+
+    SPA <-->|HTTPS / REST + JWT| API
+
+    API --> AuthM
+    API --> BookM
+    API --> IntakeM
+    API --> StaffM
+    API --> NotifM
+    API --> DocM
+    API --> ClinM
+    API --> CodeM
+    API --> AuditM
+    API --> AdminM
+
+    IntakeM -->|REST localhost| Rasa
+    CodeM -->|REST localhost /api/chat| Ollama
+    DocM -->|nClam TCP| ClamAV
+
+    BookM --> Jobs
+    DocM --> Jobs
+    ClinM --> Jobs
+    NotifM --> Jobs
+
+    OcrJob -->|P/Invoke| Tess
+    AggJob --> PG
+    CodeJob --> Ollama
+    NotifJob --> SMTP
+    NotifJob --> SMS
+    SwapJob --> SQLSRV
+
+    AuthM --> Redis
+    AuthM --> SQLSRV
+    BookM --> SQLSRV
+    BookM --> Redis
+    IntakeM --> SQLSRV
+    StaffM --> SQLSRV
+    NotifM --> SMTP
+    NotifM --> SMS
+    NotifM --> GCal
+    NotifM --> MSGraph
+    DocM --> FS
+    DocM --> SQLSRV
+    ClinM --> PG
+    ClinM --> Redis
+    CodeM --> PG
+    AuditM --> SQLSRV
+    AdminM --> SQLSRV

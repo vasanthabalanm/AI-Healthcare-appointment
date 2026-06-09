@@ -1,0 +1,16 @@
+@startuml uc-005-waitlist
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+
+rectangle "Preferred Slot Waitlist" {
+  usecase "Register Preferred Slot" as UC1
+  usecase "Replace Existing Waitlist Entry" as UC2
+  usecase "Validate Slot is Future and Open" as UC3
+}
+
+P --> UC1
+UC2 ..> UC1 : <<extend>>
+UC1 ..> UC3 : <<include>>
+@enduml

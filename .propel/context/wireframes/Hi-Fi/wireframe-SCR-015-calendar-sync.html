@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Calendar Sync — Patient | ClinicalHub</title>
+<!-- Navigation Map
+| Element              | Action | Target Screen                                    |
+|----------------------|--------|--------------------------------------------------|
+| Back link            | click  | wireframe-SCR-007-appointment-confirmation.html  |
+| Google Calendar btn  | click  | OAuth redirect placeholder (same page)           |
+| Outlook Calendar btn | click  | OAuth redirect placeholder (same page)           |
+| FL-004 extension: Add to calendar | UC-012                             |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--cok:#1A7A4A;--cokb:#E8F5EE;--ce:#C0392B;--ceb:#FDECEA;--ci:#1C6EA4;--cib:#E8F0F8;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:var(--cp);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:48px 32px;display:flex;justify-content:center;}
+.wrap{width:100%;max-width:520px;}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--cp);text-decoration:none;margin-bottom:20px;}
+.back-link:hover{text-decoration:underline;}
+h1{font-size:24px;font-weight:600;margin-bottom:4px;}
+.sub{font-size:14px;color:var(--ct2);margin-bottom:32px;}
+/* Appointment summary */
+.appt-summary{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:16px;margin-bottom:28px;}
+.appt-summary__label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--ct2);margin-bottom:10px;}
+.appt-row{display:flex;gap:8px;font-size:13px;color:var(--ct2);margin-bottom:4px;}
+.appt-row strong{color:var(--ct1);}
+/* Calendar buttons */
+.cal-options{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+.cal-btn{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid var(--cb);border-radius:var(--r2);background:var(--cs0);cursor:pointer;text-align:left;}
+.cal-btn:hover{border-color:var(--cp);background:var(--cps);}
+.cal-btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.cal-btn__icon{width:40px;height:40px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cal-btn__icon--google{background:#4285F4;}
+.cal-btn__icon--outlook{background:#0078D4;}
+.cal-btn__label{font-size:15px;font-weight:500;}
+.cal-btn__desc{font-size:12px;color:var(--ct2);}
+/* States */
+.alert{padding:12px 16px;border-radius:var(--r2);font-size:13px;display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;}
+.alert--success{background:var(--cokb);color:var(--cok);border:1px solid var(--cok);}
+.alert--error{background:var(--ceb);color:var(--ce);border:1px solid var(--ce);}
+.alert--info{background:var(--cib);color:var(--ci);border:1px solid var(--ci);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid var(--cb);background:var(--cs0);text-decoration:none;color:var(--ct1);}
+.btn:hover{background:var(--cs1);}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.state-toggle{position:fixed;bottom:16px;right:16px;display:flex;gap:8px;z-index:999;}
+.state-btn{padding:6px 12px;border-radius:var(--r2);font-size:12px;cursor:pointer;border:1px solid var(--cb);background:var(--cs0);}
+.state-btn.active{background:var(--cp);color:#fff;border-color:var(--cp);}
+@media(max-width:768px){.sidebar{display:none;}.page{margin-left:0;padding:16px;}}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Alex Rivera">AR</span>
+    <span>Alex Rivera</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Patient navigation">
+  <a class="nav-item" href="wireframe-SCR-005-patient-dashboard.html">Dashboard</a>
+  <a class="nav-item" href="wireframe-SCR-008-my-appointments.html">My Appointments</a>
+</aside>
+
+<main class="page" id="main-content">
+  <div class="wrap">
+    <a class="back-link" href="wireframe-SCR-007-appointment-confirmation.html">← Back to confirmation</a>
+    <h1>Add to calendar</h1>
+    <p class="sub">Sync your appointment with your preferred calendar so you don't miss it.</p>
+
+    <div class="appt-summary" role="region" aria-label="Appointment being synced">
+      <p class="appt-summary__label">Appointment</p>
+      <p class="appt-row"><strong>Wednesday, 20 May 2026 · 10:30 AM – 11:00 AM</strong></p>
+      <p class="appt-row"><span>Provider:</span><strong>Dr. Elaine Torres</strong></p>
+      <p class="appt-row"><span>Reference:</span><strong>APT-20260520-001</strong></p>
+    </div>
+
+    <!-- State: Default (choose calendar) -->
+    <div id="state-default">
+      <div class="cal-options" role="list" aria-label="Calendar providers">
+        <button class="cal-btn" id="btn-google" onclick="addToCalendar('google')" aria-label="Add to Google Calendar">
+          <div class="cal-btn__icon cal-btn__icon--google" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M6 6h12v12H6z" fill="white"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 7h2v2h-2V7zm0 4h2v6h-2v-6z" fill="rgba(255,255,255,0.3)"/></svg>
+          </div>
+          <div>
+            <p class="cal-btn__label">Google Calendar</p>
+            <p class="cal-btn__desc">Opens Google OAuth — you may be asked to sign in</p>
+          </div>
+        </button>
+        <button class="cal-btn" id="btn-outlook" onclick="addToCalendar('outlook')" aria-label="Add to Outlook Calendar">
+          <div class="cal-btn__icon cal-btn__icon--outlook" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 4L5 8v8l7 4 7-4V8l-7-4z" fill="rgba(255,255,255,0.9)" stroke="white" stroke-width="0.5"/></svg>
+          </div>
+          <div>
+            <p class="cal-btn__label">Outlook Calendar</p>
+            <p class="cal-btn__desc">Opens Microsoft OAuth — you may be asked to sign in</p>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- State: Success (hidden by default) -->
+    <div id="state-success" style="display:none;">
+      <div class="alert alert--success" role="status" aria-live="polite">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        <span id="success-msg">Appointment added to your Google Calendar.</span>
+      </div>
+      <a class="btn" href="wireframe-SCR-008-my-appointments.html">View my appointments</a>
+    </div>
+
+    <!-- State: Error/denied (hidden by default) -->
+    <div id="state-error" style="display:none;">
+      <div class="alert alert--error" role="alert" aria-live="assertive">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+        <span>Calendar sync declined — you can retry at any time.</span>
+      </div>
+      <button class="btn" onclick="setDefault()" style="margin-right:8px;">Retry</button>
+      <a class="btn" href="wireframe-SCR-008-my-appointments.html" style="display:inline-flex;">Skip for now</a>
+    </div>
+
+    <div style="margin-top:16px;">
+      <p style="font-size:12px;color:var(--ct2);">ClinicalHub does not store your calendar credentials. OAuth tokens are used only to create this single event.</p>
+    </div>
+  </div>
+</main>
+
+<div class="state-toggle">
+  <button class="state-btn active" onclick="setDefault()">Choose</button>
+  <button class="state-btn" onclick="setSuccess('google')">Google success</button>
+  <button class="state-btn" onclick="setSuccess('outlook')">Outlook success</button>
+  <button class="state-btn" onclick="setError()">Declined</button>
+</div>
+
+<script>
+function addToCalendar(provider) {
+  // Simulate OAuth redirect + success
+  setSuccess(provider);
+}
+function setDefault() {
+  document.getElementById('state-default').style.display = 'block';
+  document.getElementById('state-success').style.display = 'none';
+  document.getElementById('state-error').style.display = 'none';
+  document.querySelectorAll('.state-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.state-btn')[0].classList.add('active');
+}
+function setSuccess(provider) {
+  document.getElementById('state-default').style.display = 'none';
+  document.getElementById('state-success').style.display = 'block';
+  document.getElementById('state-error').style.display = 'none';
+  document.getElementById('success-msg').textContent = `Appointment added to your ${provider==='google'?'Google':'Outlook'} Calendar.`;
+}
+function setError() {
+  document.getElementById('state-default').style.display = 'none';
+  document.getElementById('state-success').style.display = 'none';
+  document.getElementById('state-error').style.display = 'block';
+}
+document.querySelectorAll('.state-btn').forEach(b => b.addEventListener('click',()=>{
+  document.querySelectorAll('.state-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+}));
+</script>
+</body>
+</html>

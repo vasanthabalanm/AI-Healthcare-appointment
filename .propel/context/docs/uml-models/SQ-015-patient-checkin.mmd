@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant StaffSvc as Staff Operations Service
+    participant SQL as SQL Server
+    participant AuditSvc as Audit Service
+
+    Note over S,AuditSvc: UC-015 — Staff Checks In Patient Arrival
+
+    S->>API: PATCH /appointments/{id}/checkin {staffId}
+    API->>StaffSvc: CheckInPatient(appointmentId, staffId)
+    StaffSvc->>SQL: SELECT Appointment WHERE id=? AND status=Scheduled
+    SQL-->>StaffSvc: appointment
+    StaffSvc->>SQL: UPDATE Appointment SET status=Arrived, arrivedAt=NOW()
+    StaffSvc->>SQL: DELETE QueueEntry WHERE appointmentId=? (auto-remove from queue)
+    StaffSvc->>AuditSvc: Log(STAFF, UPDATE, Appointment, staffId, before=Scheduled, after=Arrived)
+    AuditSvc->>SQL: INSERT AuditLog
+    API-->>S: 200 {appointmentId, status:"Arrived"}
+
+    alt Appointment already Arrived
+        SQL-->>StaffSvc: status=Arrived
+        StaffSvc-->>API: 409 {error:"Already checked in", canConfirm:true}
+        S->>API: PATCH /appointments/{id}/checkin {staffId, forceOverride:true}
+        StaffSvc->>AuditSvc: Log(STAFF, UPDATE, Appointment, override=true)
+        API-->>S: 200
+    end
+
+    opt Patient not found in schedule
+        StaffSvc-->>API: 404
+        API-->>S: 404 {hint:"Register as walk-in"}
+    end

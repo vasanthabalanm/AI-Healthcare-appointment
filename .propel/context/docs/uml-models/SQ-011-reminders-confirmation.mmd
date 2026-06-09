@@ -1,0 +1,41 @@
+sequenceDiagram
+    participant Hangfire as Hangfire Job Worker
+    participant NotifSvc as Notification Service
+    participant PDF as QuestPDF
+    participant Email as MailKit (SMTP)
+    participant SMS as SMS Gateway
+
+    Note over Hangfire,SMS: UC-011 — Appointment Reminders & Confirmation
+
+    Note over Hangfire: Triggered immediately after booking confirmation
+    Hangfire->>NotifSvc: SendConfirmationEmail(appointmentId)
+    NotifSvc->>PDF: GeneratePdf(appointmentDetails)
+    PDF-->>NotifSvc: pdfBytes (<500ms)
+    NotifSvc->>Email: Send(to, subject, body, attachment=pdfBytes)
+    Email-->>NotifSvc: sent
+
+    Note over Hangfire: Scheduled job fires at T-48h
+    Hangfire->>NotifSvc: Send48hReminder(appointmentId)
+    NotifSvc->>Email: Send(reminder email + cancel link)
+    NotifSvc->>SMS: Send(reminder SMS)
+
+    Note over Hangfire: Scheduled job fires at T-2h
+    Hangfire->>NotifSvc: Send2hReminder(appointmentId)
+    NotifSvc->>Email: Send(reminder email)
+    NotifSvc->>SMS: Send(reminder SMS)
+
+    opt PDF generation fails
+        PDF-->>NotifSvc: exception
+        Note over NotifSvc: Retry up to 3 times; then send email without PDF; log failure
+    end
+
+    opt SMS gateway unavailable
+        SMS-->>NotifSvc: timeout/error
+        Hangfire->>Hangfire: RetryWithBackoff(maxRetries=3)
+        Note over NotifSvc: Email proceeds independently
+    end
+
+    opt Appointment cancelled before reminder fires
+        Hangfire->>Hangfire: CancelJob(reminder jobId)
+        Note over Hangfire: Pending reminder jobs deleted
+    end

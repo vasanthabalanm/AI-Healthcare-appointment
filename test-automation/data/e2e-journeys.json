@@ -1,0 +1,86 @@
+{
+  "e2e001": {
+    "patient": {
+      "email": "e2e-newpatient@test.dev",
+      "password": "E2ePass@1",
+      "firstName": "E2E",
+      "lastName": "Patient",
+      "dob": "1988-04-22",
+      "phone": "555-E2E1"
+    },
+    "intake": {
+      "chiefComplaint": "Persistent cough for 2 weeks",
+      "medicalHistory": "Asthma diagnosed 2015",
+      "currentMeds": "Albuterol inhaler PRN",
+      "allergies": "Penicillin — rash",
+      "insuranceProvider": "BlueCross",
+      "insuranceId": "BC123456"
+    },
+    "confirmationSlaMsec": 60000
+  },
+  "e2e002": {
+    "patientA": {
+      "email": "patient@clinicalhub.dev",
+      "password": "Patient@1234",
+      "id": 3
+    },
+    "patientB": {
+      "email": "vasanthabalan.murugesan@kanini.com",
+      "id": 15
+    },
+    "swapWindowHours": 2
+  },
+  "e2e003": {
+    "staff": {
+      "email": "staff@clinicalhub.dev",
+      "password": "Staff@1234",
+      "id": 2
+    },
+    "patient": {
+      "id": 19,
+      "verificationStatus": 1
+    },
+    "testDocument": "clinical-report.pdf",
+    "ocrPollMaxSeconds": 30,
+    "codeGenPollMaxSeconds": 30,
+    "expectedIcd10Min": 1,
+    "expectedCptMin": 1,
+    "manualModification": {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  },
+  "e2e004": {
+    "staff": {
+      "email": "staff@clinicalhub.dev",
+      "password": "Staff@1234",
+      "id": 2
+    },
+    "existingPatient": {
+      "name": "Alex Rivera",
+      "id": 3
+    },
+    "newWalkin": {
+      "name": "Queue Test",
+      "dob": "1980-01-15",
+      "phone": "555-0001"
+    },
+    "highRiskThreshold": 7,
+    "outreachNote": "Called patient, confirmed attendance"
+  },
+  "e2e005": {
+    "admin": {
+      "email": "admin@clinicalhub.dev",
+      "password": "Admin@1234",
+      "id": 1
+    },
+    "newStaff": {
+      "email": "e2e-newstaff@test.dev",
+      "firstName": "E2E",
+      "lastName": "Staff",
+      "role": "staff"
+    },
+    "expectedAuditActions": ["CREATE", "UPDATE"],
+    "auditModificationExpectedStatus": 405
+  }
+}

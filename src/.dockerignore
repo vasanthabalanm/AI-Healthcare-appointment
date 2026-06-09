@@ -1,0 +1,29 @@
+# Logs
+**/logs/
+**/*.log
+
+# Build outputs
+**/bin/
+**/obj/
+**/out/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Test results
+**/TestResults/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+LICENSE
+
+# OS files
+Thumbs.db
+.DS_Store

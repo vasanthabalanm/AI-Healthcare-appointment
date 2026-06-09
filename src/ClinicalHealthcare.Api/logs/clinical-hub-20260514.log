@@ -1,0 +1,422 @@
+2026-05-14 11:48:25.102 +05:30 [INF]  Executed DbCommand (369ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [ClinicalHealthcare_Dev];
+2026-05-14 11:48:25.343 +05:30 [INF]  Executed DbCommand (174ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [ClinicalHealthcare_Dev] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-05-14 11:48:25.373 +05:30 [INF]  Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 11:48:25.498 +05:30 [INF]  Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-05-14 11:48:25.502 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 11:48:25.533 +05:30 [INF]  Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 11:48:25.570 +05:30 [INF]  Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 11:48:25.599 +05:30 [INF]  Applying migration '20260513164432_InitialCreate'.
+2026-05-14 11:48:25.631 +05:30 [INF]  Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260513164432_InitialCreate', N'8.0.27');
+2026-05-14 11:48:25.641 +05:30 [INF]  Applying migration '20260514061800_UserAccountSlotAppointment'.
+2026-05-14 11:48:25.696 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Slots] (
+    [Id] int NOT NULL IDENTITY,
+    [SlotTime] datetime2 NOT NULL,
+    [DurationMinutes] int NOT NULL,
+    [IsAvailable] bit NOT NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Slots] PRIMARY KEY ([Id])
+);
+2026-05-14 11:48:25.705 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserAccounts] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(256) NOT NULL,
+    [PasswordHash] nvarchar(512) NOT NULL,
+    [Role] nvarchar(32) NOT NULL,
+    [IsActive] bit NOT NULL,
+    [CreatedAt] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
+    CONSTRAINT [PK_UserAccounts] PRIMARY KEY ([Id])
+);
+2026-05-14 11:48:25.711 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Appointments] (
+    [Id] int NOT NULL IDENTITY,
+    [PatientId] int NOT NULL,
+    [SlotId] int NOT NULL,
+    [Status] int NOT NULL,
+    [BookedAt] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
+    CONSTRAINT [PK_Appointments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Appointments_Slots_SlotId] FOREIGN KEY ([SlotId]) REFERENCES [Slots] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Appointments_UserAccounts_PatientId] FOREIGN KEY ([PatientId]) REFERENCES [UserAccounts] ([Id]) ON DELETE NO ACTION
+);
+2026-05-14 11:48:25.719 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Appointments_PatientId] ON [Appointments] ([PatientId]);
+2026-05-14 11:48:25.721 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Appointments_SlotId] ON [Appointments] ([SlotId]);
+2026-05-14 11:48:25.725 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_UserAccounts_Email] ON [UserAccounts] ([Email]);
+2026-05-14 11:48:25.727 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514061800_UserAccountSlotAppointment', N'8.0.27');
+2026-05-14 12:11:34.668 +05:30 [INF]  Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:11:34.764 +05:30 [INF]  Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:11:34.768 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:11:34.770 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:11:34.800 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 12:11:34.828 +05:30 [INF]  Applying migration '20260514064109_WaitlistEntryIntakeRecord'.
+2026-05-14 12:11:34.935 +05:30 [INF]  Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [IntakeRecords] (
+    [Id] int NOT NULL IDENTITY,
+    [IntakeGroupId] uniqueidentifier NOT NULL,
+    [PatientId] int NOT NULL,
+    [Version] int NOT NULL,
+    [IsLatest] bit NOT NULL,
+    [Source] int NOT NULL,
+    [SubmittedAt] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
+    [ChiefComplaint] nvarchar(1000) NULL,
+    [CurrentMeds] nvarchar(2000) NULL,
+    [Allergies] nvarchar(1000) NULL,
+    [MedicalHistory] nvarchar(4000) NULL,
+    CONSTRAINT [PK_IntakeRecords] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_IntakeRecords_UserAccounts_PatientId] FOREIGN KEY ([PatientId]) REFERENCES [UserAccounts] ([Id]) ON DELETE NO ACTION
+);
+2026-05-14 12:11:34.942 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [WaitlistEntries] (
+    [Id] int NOT NULL IDENTITY,
+    [PatientId] int NOT NULL,
+    [PreferredSlotId] int NULL,
+    [Status] int NOT NULL,
+    [QueuedAt] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
+    CONSTRAINT [PK_WaitlistEntries] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_WaitlistEntries_Slots_PreferredSlotId] FOREIGN KEY ([PreferredSlotId]) REFERENCES [Slots] ([Id]) ON DELETE SET NULL,
+    CONSTRAINT [FK_WaitlistEntries_UserAccounts_PatientId] FOREIGN KEY ([PatientId]) REFERENCES [UserAccounts] ([Id]) ON DELETE NO ACTION
+);
+2026-05-14 12:11:34.945 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_IntakeRecords_GroupId_IsLatest] ON [IntakeRecords] ([IntakeGroupId], [IsLatest]);
+2026-05-14 12:11:34.947 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_IntakeRecords_PatientId] ON [IntakeRecords] ([PatientId]);
+2026-05-14 12:11:34.949 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UIX_IntakeRecords_GroupId_Version] ON [IntakeRecords] ([IntakeGroupId], [Version]);
+2026-05-14 12:11:34.950 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_WaitlistEntries_PreferredSlotId] ON [WaitlistEntries] ([PreferredSlotId]);
+2026-05-14 12:11:34.953 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UIX_WaitlistEntries_PatientId_Active] ON [WaitlistEntries] ([PatientId]) WHERE [Status] = 0;
+2026-05-14 12:11:34.956 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514064109_WaitlistEntryIntakeRecord', N'8.0.27');
+2026-05-14 12:21:58.086 +05:30 [INF]  Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:21:58.170 +05:30 [INF]  Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:21:58.174 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:21:58.175 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:21:58.199 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 12:21:58.219 +05:30 [INF]  Applying migration '20260514065136_AddWaitlistPatientStatusIndex'.
+2026-05-14 12:21:58.300 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_WaitlistEntries_PatientId_Status] ON [WaitlistEntries] ([PatientId], [Status]);
+2026-05-14 12:21:58.304 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514065136_AddWaitlistPatientStatusIndex', N'8.0.27');
+2026-05-14 12:41:04.462 +05:30 [INF]  Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:41:04.569 +05:30 [INF]  Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:41:04.573 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:41:04.574 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:41:04.598 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 12:41:04.620 +05:30 [INF]  Applying migration '20260514071006_ClinicalDocumentSchema'.
+2026-05-14 12:41:04.727 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ClinicalDocuments] (
+    [Id] int NOT NULL IDENTITY,
+    [PatientId] int NOT NULL,
+    [UploadedByStaffId] int NULL,
+    [OriginalFileName] nvarchar(500) NOT NULL,
+    [EncryptedBlobPath] nvarchar(500) NOT NULL,
+    [VirusScanResult] int NOT NULL DEFAULT 0,
+    [OcrStatus] int NOT NULL DEFAULT 0,
+    [UploadedAt] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
+    CONSTRAINT [PK_ClinicalDocuments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ClinicalDocuments_UserAccounts_PatientId] FOREIGN KEY ([PatientId]) REFERENCES [UserAccounts] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_ClinicalDocuments_UserAccounts_UploadedByStaffId] FOREIGN KEY ([UploadedByStaffId]) REFERENCES [UserAccounts] ([Id]) ON DELETE SET NULL
+);
+2026-05-14 12:41:04.730 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ClinicalDocuments_PatientId] ON [ClinicalDocuments] ([PatientId]);
+2026-05-14 12:41:04.732 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ClinicalDocuments_UploadedByStaffId] ON [ClinicalDocuments] ([UploadedByStaffId]);
+2026-05-14 12:41:04.734 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514071006_ClinicalDocumentSchema', N'8.0.27');
+2026-05-14 12:57:58.539 +05:30 [INF]  Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:57:58.629 +05:30 [INF]  Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:57:58.632 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 12:57:58.633 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 12:57:58.653 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 12:57:58.675 +05:30 [INF]  Applying migration '20260514072726_ClinicalDocumentRowVersion'.
+2026-05-14 12:57:58.826 +05:30 [INF]  Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[ClinicalDocuments]') AND [c].[name] = N'UploadedAt');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [ClinicalDocuments] DROP CONSTRAINT [' + @var0 + '];');
+2026-05-14 12:57:58.831 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [ClinicalDocuments] ADD [RowVersion] rowversion NOT NULL;
+2026-05-14 12:57:58.834 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514072726_ClinicalDocumentRowVersion', N'8.0.27');
+2026-05-14 13:45:03.055 +05:30 [INF]  Executed DbCommand (2,815ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE clinical_dev;
+2026-05-14 13:45:04.476 +05:30 [INF]  Executed DbCommand (124ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2026-05-14 13:45:04.880 +05:30 [INF]  Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-14 13:45:04.896 +05:30 [INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-05-14 13:45:04.918 +05:30 [INF]  Applying migration '20260513164450_InitialCreate'.
+2026-05-14 13:45:04.932 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20260513164450_InitialCreate', '8.0.27');
+2026-05-14 13:45:04.942 +05:30 [INF]  Applying migration '20260514080917_ClinicalEntities'.
+2026-05-14 13:45:05.016 +05:30 [INF]  Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ConflictFlags" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "FieldName" character varying(200) NOT NULL,
+    "Value1" text NOT NULL,
+    "Value2" text NOT NULL,
+    "Status" integer NOT NULL,
+    "ResolvedByStaffId" integer,
+    "CreatedAt" timestamp with time zone NOT NULL DEFAULT (NOW()),
+    CONSTRAINT "PK_ConflictFlags" PRIMARY KEY ("Id")
+);
+2026-05-14 13:45:05.078 +05:30 [ERR]  Failed executing DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ExtractedClinicalFields" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "DocumentId" integer NOT NULL,
+    "FieldType" integer NOT NULL,
+    "FieldName" character varying(200) NOT NULL,
+    "FieldValue" text NOT NULL,
+    "ConfidenceScore" double precision NOT NULL,
+    "ExtractionJobId" character varying(100) NOT NULL,
+    "ExtractedAt" timestamp with time zone NOT NULL DEFAULT (NOW()),
+    "IsDeleted" boolean NOT NULL DEFAULT FALSE,
+    CONSTRAINT "PK_ExtractedClinicalFields" PRIMARY KEY ("Id"),
+    CONSTRAINT "CK_ExtractedClinicalFields_ConfidenceScore" CHECK (confidence_score >= 0.0 AND confidence_score <= 1.0)
+);
+2026-05-14 13:46:55.076 +05:30 [INF]  Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-14 13:46:55.149 +05:30 [INF]  Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-05-14 13:47:53.901 +05:30 [INF]  Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-14 13:47:53.966 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-05-14 13:47:54.295 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-14 13:47:54.640 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2026-05-14 13:47:54.641 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-05-14 13:47:54.663 +05:30 [INF]  Applying migration '20260514081740_ClinicalEntities'.
+2026-05-14 13:47:54.747 +05:30 [INF]  Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ConflictFlags" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "FieldName" character varying(200) NOT NULL,
+    "Value1" text NOT NULL,
+    "Value2" text NOT NULL,
+    "Status" integer NOT NULL,
+    "ResolvedByStaffId" integer,
+    "CreatedAt" timestamp with time zone NOT NULL DEFAULT (NOW()),
+    CONSTRAINT "PK_ConflictFlags" PRIMARY KEY ("Id")
+);
+2026-05-14 13:47:54.756 +05:30 [INF]  Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ExtractedClinicalFields" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "DocumentId" integer NOT NULL,
+    "FieldType" integer NOT NULL,
+    "FieldName" character varying(200) NOT NULL,
+    "FieldValue" text NOT NULL,
+    "ConfidenceScore" double precision NOT NULL,
+    "ExtractionJobId" character varying(100) NOT NULL,
+    "ExtractedAt" timestamp with time zone NOT NULL DEFAULT (NOW()),
+    "IsDeleted" boolean NOT NULL DEFAULT FALSE,
+    CONSTRAINT "PK_ExtractedClinicalFields" PRIMARY KEY ("Id"),
+    CONSTRAINT "CK_ExtractedClinicalFields_ConfidenceScore" CHECK ("ConfidenceScore" >= 0.0 AND "ConfidenceScore" <= 1.0)
+);
+2026-05-14 13:47:54.765 +05:30 [INF]  Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "MedicalCodeSuggestions" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "PatientId" integer NOT NULL,
+    "CodeType" integer NOT NULL,
+    "SuggestedCode" character varying(20) NOT NULL,
+    "CommittedCode" character varying(20),
+    "CodeDescription" character varying(500) NOT NULL,
+    "ConfidenceScore" double precision NOT NULL,
+    "LowConfidenceFlag" boolean NOT NULL,
+    "Status" integer NOT NULL,
+    "VerifiedById" integer,
+    "VerifiedAt" timestamp with time zone,
+    CONSTRAINT "PK_MedicalCodeSuggestions" PRIMARY KEY ("Id"),
+    CONSTRAINT "CK_MedicalCodeSuggestions_ConfidenceScore" CHECK ("ConfidenceScore" >= 0.0 AND "ConfidenceScore" <= 1.0),
+    CONSTRAINT "CK_MedicalCodeSuggestions_TrustFirst" CHECK ("Status" != 1 OR "VerifiedById" IS NOT NULL)
+);
+2026-05-14 13:47:54.777 +05:30 [INF]  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ConflictFlags_PatientId" ON "ConflictFlags" ("PatientId");
+2026-05-14 13:47:54.781 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ExtractedClinicalFields_DocumentId" ON "ExtractedClinicalFields" ("DocumentId");
+2026-05-14 13:47:54.785 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ExtractedClinicalFields_PatientId" ON "ExtractedClinicalFields" ("PatientId");
+2026-05-14 13:47:54.788 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_MedicalCodeSuggestions_PatientId" ON "MedicalCodeSuggestions" ("PatientId");
+2026-05-14 13:47:54.790 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20260514081740_ClinicalEntities', '8.0.27');
+2026-05-14 14:24:42.031 +05:30 [INF]  Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 14:24:42.100 +05:30 [INF]  Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 14:24:42.103 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 14:24:42.104 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 14:24:42.138 +05:30 [INF]  Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 14:24:42.164 +05:30 [INF]  Applying migration '20260514085336_AuditLogPhiRetention'.
+2026-05-14 14:24:42.253 +05:30 [INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [WaitlistEntries] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-05-14 14:24:42.255 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [WaitlistEntries] ADD [RetainUntil] datetimeoffset NULL;
+2026-05-14 14:24:42.260 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAccounts] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-05-14 14:24:42.261 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAccounts] ADD [RetainUntil] datetimeoffset NULL;
+2026-05-14 14:24:42.264 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [IntakeRecords] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-05-14 14:24:42.265 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [IntakeRecords] ADD [RetainUntil] datetimeoffset NULL;
+2026-05-14 14:24:42.271 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [ClinicalDocuments] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-05-14 14:24:42.273 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [ClinicalDocuments] ADD [RetainUntil] datetimeoffset NULL;
+2026-05-14 14:24:42.278 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AuditLogs] (
+    [Id] int NOT NULL IDENTITY,
+    [EntityType] nvarchar(128) NOT NULL,
+    [EntityId] int NOT NULL,
+    [ActorId] int NULL,
+    [Action] nvarchar(64) NOT NULL,
+    [BeforeValue] nvarchar(max) NULL,
+    [AfterValue] nvarchar(max) NULL,
+    [OccurredAt] datetime2 NOT NULL DEFAULT (GETUTCDATE()),
+    [CorrelationId] nvarchar(128) NULL,
+    CONSTRAINT [PK_AuditLogs] PRIMARY KEY ([Id])
+);
+2026-05-14 14:24:42.281 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AuditLogs_EntityType_EntityId] ON [AuditLogs] ([EntityType], [EntityId]);
+2026-05-14 14:24:42.283 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AuditLogs_OccurredAt] ON [AuditLogs] ([OccurredAt]);
+2026-05-14 14:24:42.285 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+REVOKE UPDATE, DELETE ON [dbo].[AuditLogs] FROM [public];
+2026-05-14 14:24:42.288 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514085336_AuditLogPhiRetention', N'8.0.27');
+2026-05-14 17:13:20.347 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-14 17:13:21.033 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-14 17:20:16.396 +05:30 [WRN]  Entity 'UserAccount' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-05-14 17:20:16.964 +05:30 [INF]  Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 17:20:16.987 +05:30 [INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 17:20:16.989 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-14 17:20:16.990 +05:30 [INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-05-14 17:20:17.009 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-05-14 17:20:17.022 +05:30 [INF]  Applying migration '20260514114322_UserAccountRegistrationFields'.
+2026-05-14 17:20:17.072 +05:30 [INF]  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAccounts] ADD [FirstName] nvarchar(100) NOT NULL DEFAULT N'';
+2026-05-14 17:20:17.075 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAccounts] ADD [LastName] nvarchar(100) NOT NULL DEFAULT N'';
+2026-05-14 17:20:17.076 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAccounts] ADD [VerificationTokenExpiry] datetime2 NULL;
+2026-05-14 17:20:17.077 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAccounts] ADD [VerificationTokenHash] nvarchar(128) NULL;
+2026-05-14 17:20:17.078 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260514114322_UserAccountRegistrationFields', N'8.0.27');

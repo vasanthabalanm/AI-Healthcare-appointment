@@ -1,0 +1,30 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant StaffSvc as Staff Operations Service
+    participant SQL as SQL Server
+
+    Note over S,SQL: UC-016 — Staff Reviews No-Show Risk Alerts
+
+    S->>API: GET /schedule/today?filter=high-risk
+    API->>StaffSvc: GetHighRiskAppointments(date=TODAY())
+    StaffSvc->>SQL: SELECT Appointment WHERE date=TODAY() AND noShowRiskScore >= threshold
+    SQL-->>StaffSvc: appointments[]
+    API-->>S: 200 {appointments[]: patient, time, riskScore, riskFlag}
+
+    S->>API: PATCH /appointments/{id}/outreach {note, staffId}
+    API->>StaffSvc: RecordOutreach(appointmentId, note, staffId)
+    StaffSvc->>SQL: UPDATE Appointment SET outreachNote=note, outreachBy=staffId
+    API-->>S: 200
+
+    opt Mark no-show
+        S->>API: PATCH /appointments/{id}/status {status:"NoShow", staffId}
+        API->>StaffSvc: UpdateStatus(appointmentId, NoShow, staffId)
+        StaffSvc->>SQL: UPDATE Appointment SET status=NoShow
+        Note over StaffSvc: No-show history factored into future risk score calculations
+        API-->>S: 200
+    end
+
+    opt No high-risk appointments
+        StaffSvc-->>API: 200 {appointments:[], message:"No high-risk appointments today"}
+    end

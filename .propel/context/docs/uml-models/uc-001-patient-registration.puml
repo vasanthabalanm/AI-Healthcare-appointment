@@ -1,0 +1,22 @@
+@startuml uc-001-patient-registration
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+actor "Email Service" as ES
+
+rectangle "Patient Self-Registration" {
+  usecase "Register Account" as UC1
+  usecase "Verify Email" as UC2
+  usecase "Resend Verification Email" as UC3
+  usecase "Handle Duplicate Email" as UC4
+}
+
+P --> UC1
+P --> UC2
+P --> UC3
+UC1 ..> UC2 : <<include>>
+UC3 ..> UC1 : <<extend>>
+UC4 ..> UC1 : <<extend>>
+ES --> UC2 : delivers token
+@enduml

@@ -1,0 +1,1347 @@
+2026-05-21 00:00:06.110 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:01:06.210 +05:30 [INF]  Executed DbCommand (6ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:02:06.487 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:03:06.540 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:04:01.499 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:05:01.701 +05:30 [INF]  Executed DbCommand (4ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:06:01.822 +05:30 [INF]  Executed DbCommand (5ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:07:02.335 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:07:02.678 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-21 00:07:02.686 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:02.689 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 10.7728ms
+2026-05-21 00:07:02.698 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:07:02.712 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:02.718 +05:30 [INF] 39347515-4cfe-4bc0-aaf8-8437240ff69f Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:07:02.732 +05:30 [INF] 39347515-4cfe-4bc0-aaf8-8437240ff69f Executed DbCommand (5ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:07:03.134 +05:30 [INF] 39347515-4cfe-4bc0-aaf8-8437240ff69f Setting HTTP status code 200.
+2026-05-21 00:07:03.139 +05:30 [INF] 39347515-4cfe-4bc0-aaf8-8437240ff69f Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:07:03.144 +05:30 [INF] 39347515-4cfe-4bc0-aaf8-8437240ff69f Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:07:03.148 +05:30 [INF] 39347515-4cfe-4bc0-aaf8-8437240ff69f HTTP POST /auth/login responded 200 in 430.8366 ms
+2026-05-21 00:07:03.155 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 457.7266ms
+2026-05-21 00:07:03.269 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:07:03.276 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:03.281 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - 204 null null 11.3638ms
+2026-05-21 00:07:03.289 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:07:03.301 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:03.304 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:07:03.450 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 Executed DbCommand (10ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:07:03.594 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 Executed DbCommand (11ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:07:03.600 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 Setting HTTP status code 200.
+2026-05-21 00:07:03.606 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:07:03.617 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:07:03.621 +05:30 [INF] 73ef5911-ec2f-4b40-8958-4abe0feaecb3 HTTP GET /schedule/today responded 200 in 316.7469 ms
+2026-05-21 00:07:03.626 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - 200 null application/json; charset=utf-8 337.1398ms
+2026-05-21 00:07:07.950 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:07:07.965 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:07.971 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 20.478ms
+2026-05-21 00:07:08.001 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:07:08.016 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:08.024 +05:30 [INF] 59a94ad2-cf2a-46b1-9cb6-16f42df12f67 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:07:08.075 +05:30 [INF] 59a94ad2-cf2a-46b1-9cb6-16f42df12f67 Executed DbCommand (8ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:07:08.086 +05:30 [INF] 59a94ad2-cf2a-46b1-9cb6-16f42df12f67 Setting HTTP status code 200.
+2026-05-21 00:07:08.095 +05:30 [INF] 59a94ad2-cf2a-46b1-9cb6-16f42df12f67 Writing value of type 'List`1' as Json.
+2026-05-21 00:07:08.100 +05:30 [INF] 59a94ad2-cf2a-46b1-9cb6-16f42df12f67 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:07:08.105 +05:30 [INF] 59a94ad2-cf2a-46b1-9cb6-16f42df12f67 HTTP GET /staff/queue responded 200 in 80.9190 ms
+2026-05-21 00:07:08.113 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 111.5699ms
+2026-05-21 00:07:10.817 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:07:10.827 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:07:10.832 +05:30 [INF] 03c763e1-b7bd-4fb0-9862-12e14c0e5e16 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:07:10.845 +05:30 [INF] 03c763e1-b7bd-4fb0-9862-12e14c0e5e16 Executed DbCommand (6ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:07:10.855 +05:30 [INF] 03c763e1-b7bd-4fb0-9862-12e14c0e5e16 Setting HTTP status code 200.
+2026-05-21 00:07:10.860 +05:30 [INF] 03c763e1-b7bd-4fb0-9862-12e14c0e5e16 Writing value of type 'List`1' as Json.
+2026-05-21 00:07:10.863 +05:30 [INF] 03c763e1-b7bd-4fb0-9862-12e14c0e5e16 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:07:10.868 +05:30 [INF] 03c763e1-b7bd-4fb0-9862-12e14c0e5e16 HTTP GET /staff/queue responded 200 in 35.7666 ms
+2026-05-21 00:07:10.876 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 58.9531ms
+2026-05-21 00:08:02.465 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:09:00.935 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/health - null null
+2026-05-21 00:09:00.945 +05:30 [INF] 90fd9c4e-7d77-47bf-a45f-af00694412c0 Executing endpoint 'Health checks'
+2026-05-21 00:09:00.965 +05:30 [INF] 90fd9c4e-7d77-47bf-a45f-af00694412c0 Executed endpoint 'Health checks'
+2026-05-21 00:09:00.970 +05:30 [INF] 90fd9c4e-7d77-47bf-a45f-af00694412c0 HTTP GET /health responded 200 in 25.2604 ms
+2026-05-21 00:09:00.975 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/health - 200 null application/json 40.5828ms
+2026-05-21 00:09:02.658 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:10:02.708 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:10:04.517 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-21 00:10:04.534 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:10:04.545 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 28.3357ms
+2026-05-21 00:10:04.555 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-21 00:10:04.564 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:10:04.567 +05:30 [INF] 0c58b371-de0b-48fa-9ce3-e4b94c964461 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:10:04.578 +05:30 [INF] 0c58b371-de0b-48fa-9ce3-e4b94c964461 Executed DbCommand (6ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:10:04.791 +05:30 [INF] 0c58b371-de0b-48fa-9ce3-e4b94c964461 Setting HTTP status code 200.
+2026-05-21 00:10:04.796 +05:30 [INF] 0c58b371-de0b-48fa-9ce3-e4b94c964461 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:10:04.806 +05:30 [INF] 0c58b371-de0b-48fa-9ce3-e4b94c964461 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:10:04.824 +05:30 [INF] 0c58b371-de0b-48fa-9ce3-e4b94c964461 HTTP POST /auth/login responded 200 in 256.3027 ms
+2026-05-21 00:10:04.836 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 280.3758ms
+2026-05-21 00:10:04.977 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-21 00:10:05.054 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:10:05.061 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 83.3824ms
+2026-05-21 00:10:05.074 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:10:05.085 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:10:05.089 +05:30 [INF] b7037e47-4245-44cb-833f-963e62a0cf44 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:10:05.106 +05:30 [INF] b7037e47-4245-44cb-833f-963e62a0cf44 Executed DbCommand (6ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:10:05.114 +05:30 [INF] b7037e47-4245-44cb-833f-963e62a0cf44 Setting HTTP status code 200.
+2026-05-21 00:10:05.117 +05:30 [INF] b7037e47-4245-44cb-833f-963e62a0cf44 Writing value of type 'List`1' as Json.
+2026-05-21 00:10:05.120 +05:30 [INF] b7037e47-4245-44cb-833f-963e62a0cf44 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:10:05.125 +05:30 [INF] b7037e47-4245-44cb-833f-963e62a0cf44 HTTP GET /appointments/mine responded 200 in 36.2115 ms
+2026-05-21 00:10:05.131 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 56.4308ms
+2026-05-21 00:10:45.752 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - null null
+2026-05-21 00:10:45.817 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:10:45.819 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - 204 null null 66.2108ms
+2026-05-21 00:10:45.836 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/start - application/json 2
+2026-05-21 00:10:45.868 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:10:45.872 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Executing endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-21 00:10:45.882 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:10:45.886 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:10:46.427 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Received HTTP response headers after 532.5558ms - 200
+2026-05-21 00:10:46.465 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd End processing HTTP request after 583.3264ms - 200
+2026-05-21 00:10:46.478 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Setting HTTP status code 200.
+2026-05-21 00:10:46.480 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Writing value of type '<>f__AnonymousType35`2' as Json.
+2026-05-21 00:10:46.486 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd Executed endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-21 00:10:46.498 +05:30 [INF] 6d9f5c62-8ebe-4bc2-8981-8325e29ed5dd HTTP POST /intake/ai/start responded 200 in 626.3533 ms
+2026-05-21 00:10:46.509 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/start - 200 null application/json; charset=utf-8 672.6185ms
+2026-05-21 00:11:02.798 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:11:38.026 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-21 00:11:38.042 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:11:38.048 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 21.5072ms
+2026-05-21 00:11:38.073 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:11:38.093 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:11:38.097 +05:30 [INF] 0e6a444e-6dfa-47da-8400-34949a9d2a00 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:11:38.127 +05:30 [INF] 0e6a444e-6dfa-47da-8400-34949a9d2a00 Executed DbCommand (2ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:11:38.141 +05:30 [INF] 0e6a444e-6dfa-47da-8400-34949a9d2a00 Setting HTTP status code 200.
+2026-05-21 00:11:38.148 +05:30 [INF] 0e6a444e-6dfa-47da-8400-34949a9d2a00 Writing value of type 'List`1' as Json.
+2026-05-21 00:11:38.157 +05:30 [INF] 0e6a444e-6dfa-47da-8400-34949a9d2a00 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:11:38.163 +05:30 [INF] 0e6a444e-6dfa-47da-8400-34949a9d2a00 HTTP GET /appointments/mine responded 200 in 65.8475 ms
+2026-05-21 00:11:38.172 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 99.1276ms
+2026-05-21 00:12:02.865 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:12:43.067 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-21 00:12:43.076 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:12:43.080 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 13.2763ms
+2026-05-21 00:12:43.087 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:12:43.096 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:12:43.098 +05:30 [INF] 6e04e340-9500-41ba-b8bf-e01f51530702 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:12:43.103 +05:30 [INF] 6e04e340-9500-41ba-b8bf-e01f51530702 Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:12:43.273 +05:30 [INF] 6e04e340-9500-41ba-b8bf-e01f51530702 Setting HTTP status code 200.
+2026-05-21 00:12:43.277 +05:30 [INF] 6e04e340-9500-41ba-b8bf-e01f51530702 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:12:43.280 +05:30 [INF] 6e04e340-9500-41ba-b8bf-e01f51530702 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:12:43.285 +05:30 [INF] 6e04e340-9500-41ba-b8bf-e01f51530702 HTTP POST /auth/login responded 200 in 187.1487 ms
+2026-05-21 00:12:43.287 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 199.9941ms
+2026-05-21 00:12:43.403 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:12:43.410 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:12:43.423 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - 204 null null 20.0624ms
+2026-05-21 00:12:43.440 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:12:43.447 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:12:43.452 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:12:43.466 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 Executed DbCommand (7ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:12:43.487 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 Executed DbCommand (10ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:12:43.492 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 Setting HTTP status code 200.
+2026-05-21 00:12:43.497 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:12:43.502 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:12:43.505 +05:30 [INF] 48577f40-60ce-4853-87a1-d664cccd74b5 HTTP GET /schedule/today responded 200 in 52.8664 ms
+2026-05-21 00:12:43.508 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - 200 null application/json; charset=utf-8 68.0026ms
+2026-05-21 00:13:02.947 +05:30 [INF]  Executed DbCommand (8ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:13:32.303 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/3/view360 - null null
+2026-05-21 00:13:32.317 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:13:32.321 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/3/view360 - 204 null null 17.9639ms
+2026-05-21 00:13:32.337 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/3/view360 - null null
+2026-05-21 00:13:32.369 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:13:32.376 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Executing endpoint 'HTTP: GET /patients/{id:int}/view360 => HandleGet360View'
+2026-05-21 00:13:32.476 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Id" = @__id_0 AND NOT (u."IsDeleted")
+LIMIT 1
+2026-05-21 00:13:32.918 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."ConfidenceScore", e."DocumentId", e."ExtractedAt", e."ExtractionJobId", e."FieldName", e."FieldType", e."FieldValue", e."IsDeleted", e."PatientId"
+FROM "ExtractedClinicalFields" AS e
+WHERE NOT (e."IsDeleted") AND e."PatientId" = @__id_0
+ORDER BY e."ExtractedAt" DESC
+2026-05-21 00:13:32.945 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "ConflictFlags" AS c
+WHERE c."PatientId" = @__id_0 AND c."Status" = 0
+2026-05-21 00:13:32.970 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "ClinicalDocuments" AS c
+    WHERE NOT (c."IsDeleted") AND c."PatientId" = @__id_0 AND NOT (c."IsDeleted"))
+2026-05-21 00:13:32.981 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Setting HTTP status code 200.
+2026-05-21 00:13:33.033 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Writing value of type 'PatientView360Dto' as Json.
+2026-05-21 00:13:33.045 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 Executed endpoint 'HTTP: GET /patients/{id:int}/view360 => HandleGet360View'
+2026-05-21 00:13:33.050 +05:30 [INF] cb04e78f-7c9f-42ed-a1ac-4374259c2860 HTTP GET /patients/3/view360 responded 200 in 674.7749 ms
+2026-05-21 00:13:33.058 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/3/view360 - 200 null application/json; charset=utf-8 720.9278ms
+2026-05-21 00:14:03.220 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:14:18.979 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:14:18.990 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:14:18.994 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 14.13ms
+2026-05-21 00:14:19.006 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:14:19.015 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:14:19.018 +05:30 [INF] 9c688e1e-093b-46ce-87eb-2f50e8c2ee07 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:14:19.029 +05:30 [INF] 9c688e1e-093b-46ce-87eb-2f50e8c2ee07 Executed DbCommand (6ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:14:19.035 +05:30 [INF] 9c688e1e-093b-46ce-87eb-2f50e8c2ee07 Setting HTTP status code 200.
+2026-05-21 00:14:19.037 +05:30 [INF] 9c688e1e-093b-46ce-87eb-2f50e8c2ee07 Writing value of type 'List`1' as Json.
+2026-05-21 00:14:19.042 +05:30 [INF] 9c688e1e-093b-46ce-87eb-2f50e8c2ee07 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:14:19.046 +05:30 [INF] 9c688e1e-093b-46ce-87eb-2f50e8c2ee07 HTTP GET /staff/queue responded 200 in 27.9955 ms
+2026-05-21 00:14:19.051 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 45.0232ms
+2026-05-21 00:14:57.669 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:14:57.685 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:14:57.686 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 16.6562ms
+2026-05-21 00:14:57.700 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:14:57.714 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:14:57.718 +05:30 [INF] 003f678b-3ac2-48f3-92a6-41f796e7909f Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:14:57.726 +05:30 [INF] 003f678b-3ac2-48f3-92a6-41f796e7909f Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:14:57.732 +05:30 [INF] 003f678b-3ac2-48f3-92a6-41f796e7909f Setting HTTP status code 200.
+2026-05-21 00:14:57.735 +05:30 [INF] 003f678b-3ac2-48f3-92a6-41f796e7909f Writing value of type 'List`1' as Json.
+2026-05-21 00:14:57.739 +05:30 [INF] 003f678b-3ac2-48f3-92a6-41f796e7909f Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:14:57.742 +05:30 [INF] 003f678b-3ac2-48f3-92a6-41f796e7909f HTTP GET /staff/queue responded 200 in 24.3431 ms
+2026-05-21 00:14:57.747 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 46.6835ms
+2026-05-21 00:15:03.279 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:15:54.025 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 75
+2026-05-21 00:15:54.032 +05:30 [INF] 23cc51dc-fa40-4eca-8ded-8cd99deb9e41 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:15:54.039 +05:30 [INF] 23cc51dc-fa40-4eca-8ded-8cd99deb9e41 Executed DbCommand (4ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:15:54.243 +05:30 [INF] 23cc51dc-fa40-4eca-8ded-8cd99deb9e41 Setting HTTP status code 200.
+2026-05-21 00:15:54.246 +05:30 [INF] 23cc51dc-fa40-4eca-8ded-8cd99deb9e41 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:15:54.250 +05:30 [INF] 23cc51dc-fa40-4eca-8ded-8cd99deb9e41 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:15:54.255 +05:30 [INF] 23cc51dc-fa40-4eca-8ded-8cd99deb9e41 HTTP POST /auth/login responded 200 in 223.0841 ms
+2026-05-21 00:15:54.261 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 236.1934ms
+2026-05-21 00:15:54.676 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today - null null
+2026-05-21 00:15:54.688 +05:30 [INF]  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (staff|admin)
+2026-05-21 00:15:54.693 +05:30 [INF]  AuthenticationScheme: Bearer was challenged.
+2026-05-21 00:15:54.698 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today - 401 0 null 21.4478ms
+2026-05-21 00:15:54.952 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:15:54.960 +05:30 [INF]  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (staff|admin)
+2026-05-21 00:15:54.964 +05:30 [INF]  AuthenticationScheme: Bearer was challenged.
+2026-05-21 00:15:54.970 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 401 0 null 17.4172ms
+2026-05-21 00:16:03.367 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:16:04.906 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:16:04.912 +05:30 [INF] 6355e502-f229-4b71-9889-707b271662ac Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:04.922 +05:30 [INF] 6355e502-f229-4b71-9889-707b271662ac Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:16:05.084 +05:30 [INF] 6355e502-f229-4b71-9889-707b271662ac Setting HTTP status code 200.
+2026-05-21 00:16:05.088 +05:30 [INF] 6355e502-f229-4b71-9889-707b271662ac Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:16:05.092 +05:30 [INF] 6355e502-f229-4b71-9889-707b271662ac Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:05.101 +05:30 [INF] 6355e502-f229-4b71-9889-707b271662ac HTTP POST /auth/login responded 200 in 188.3677 ms
+2026-05-21 00:16:05.106 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 199.5825ms
+2026-05-21 00:16:19.059 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:16:19.069 +05:30 [INF] bdd45eef-31f1-4068-82a6-4d4adff16e51 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:19.076 +05:30 [INF] bdd45eef-31f1-4068-82a6-4d4adff16e51 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:16:19.274 +05:30 [INF] bdd45eef-31f1-4068-82a6-4d4adff16e51 Setting HTTP status code 200.
+2026-05-21 00:16:19.278 +05:30 [INF] bdd45eef-31f1-4068-82a6-4d4adff16e51 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:16:19.282 +05:30 [INF] bdd45eef-31f1-4068-82a6-4d4adff16e51 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:19.284 +05:30 [INF] bdd45eef-31f1-4068-82a6-4d4adff16e51 HTTP POST /auth/login responded 200 in 215.4650 ms
+2026-05-21 00:16:19.287 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 228.8728ms
+2026-05-21 00:16:28.402 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:16:28.412 +05:30 [INF] 524248cd-9e55-41ca-9777-a121401d5f92 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:28.421 +05:30 [INF] 524248cd-9e55-41ca-9777-a121401d5f92 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:16:28.603 +05:30 [INF] 524248cd-9e55-41ca-9777-a121401d5f92 Setting HTTP status code 200.
+2026-05-21 00:16:28.605 +05:30 [INF] 524248cd-9e55-41ca-9777-a121401d5f92 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:16:28.607 +05:30 [INF] 524248cd-9e55-41ca-9777-a121401d5f92 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:28.609 +05:30 [INF] 524248cd-9e55-41ca-9777-a121401d5f92 HTTP POST /auth/login responded 200 in 197.9671 ms
+2026-05-21 00:16:28.616 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 213.2492ms
+2026-05-21 00:16:28.722 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today - null null
+2026-05-21 00:16:28.733 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:16:28.746 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 Executed DbCommand (6ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:16:28.762 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 Executed DbCommand (8ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:16:28.771 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 Setting HTTP status code 200.
+2026-05-21 00:16:28.774 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:16:28.778 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:16:28.783 +05:30 [INF] a8d23b2b-e1ec-41a7-a700-98d4ee10ab36 HTTP GET /schedule/today responded 200 in 50.3793 ms
+2026-05-21 00:16:28.789 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today - 200 null application/json; charset=utf-8 66.9526ms
+2026-05-21 00:16:28.856 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:16:28.862 +05:30 [INF] 82bf683f-4903-4fbd-ac1a-1996493e0dea Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:16:28.869 +05:30 [INF] 82bf683f-4903-4fbd-ac1a-1996493e0dea Executed DbCommand (4ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:16:28.876 +05:30 [INF] 82bf683f-4903-4fbd-ac1a-1996493e0dea Setting HTTP status code 200.
+2026-05-21 00:16:28.881 +05:30 [INF] 82bf683f-4903-4fbd-ac1a-1996493e0dea Writing value of type 'List`1' as Json.
+2026-05-21 00:16:28.882 +05:30 [INF] 82bf683f-4903-4fbd-ac1a-1996493e0dea Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:16:28.885 +05:30 [INF] 82bf683f-4903-4fbd-ac1a-1996493e0dea HTTP GET /staff/queue responded 200 in 22.1690 ms
+2026-05-21 00:16:28.887 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 31.5594ms
+2026-05-21 00:16:40.251 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:16:40.258 +05:30 [INF] 87d4b809-125a-4994-a22e-319a9610bea0 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:40.266 +05:30 [INF] 87d4b809-125a-4994-a22e-319a9610bea0 Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:16:40.479 +05:30 [INF] 87d4b809-125a-4994-a22e-319a9610bea0 Setting HTTP status code 200.
+2026-05-21 00:16:40.486 +05:30 [INF] 87d4b809-125a-4994-a22e-319a9610bea0 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:16:40.488 +05:30 [INF] 87d4b809-125a-4994-a22e-319a9610bea0 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:40.491 +05:30 [INF] 87d4b809-125a-4994-a22e-319a9610bea0 HTTP POST /auth/login responded 200 in 232.5371 ms
+2026-05-21 00:16:40.498 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 246.5712ms
+2026-05-21 00:16:40.508 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today - null null
+2026-05-21 00:16:40.519 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:16:40.528 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 Executed DbCommand (6ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:16:40.542 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 Executed DbCommand (6ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:16:40.551 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 Setting HTTP status code 200.
+2026-05-21 00:16:40.554 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:16:40.557 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:16:40.562 +05:30 [INF] 14f0db44-4c22-4bef-b9f4-ec96b66d3920 HTTP GET /schedule/today responded 200 in 42.6803 ms
+2026-05-21 00:16:40.568 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today - 200 null application/json; charset=utf-8 59.8996ms
+2026-05-21 00:16:52.837 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:16:52.849 +05:30 [INF] f2c81ea5-5c20-4b90-9b68-8c6afefcc600 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:52.855 +05:30 [INF] f2c81ea5-5c20-4b90-9b68-8c6afefcc600 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:16:53.041 +05:30 [INF] f2c81ea5-5c20-4b90-9b68-8c6afefcc600 Setting HTTP status code 200.
+2026-05-21 00:16:53.046 +05:30 [INF] f2c81ea5-5c20-4b90-9b68-8c6afefcc600 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:16:53.049 +05:30 [INF] f2c81ea5-5c20-4b90-9b68-8c6afefcc600 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:16:53.051 +05:30 [INF] f2c81ea5-5c20-4b90-9b68-8c6afefcc600 HTTP POST /auth/login responded 200 in 202.1651 ms
+2026-05-21 00:16:53.053 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 216.1918ms
+2026-05-21 00:16:53.365 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:16:53.370 +05:30 [INF] 148174fa-b34c-42f2-96d3-9e5c4ab04d4f Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:16:53.378 +05:30 [INF] 148174fa-b34c-42f2-96d3-9e5c4ab04d4f Executed DbCommand (4ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:16:53.381 +05:30 [INF] 148174fa-b34c-42f2-96d3-9e5c4ab04d4f Setting HTTP status code 200.
+2026-05-21 00:16:53.383 +05:30 [INF] 148174fa-b34c-42f2-96d3-9e5c4ab04d4f Writing value of type 'List`1' as Json.
+2026-05-21 00:16:53.387 +05:30 [INF] 148174fa-b34c-42f2-96d3-9e5c4ab04d4f Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:16:53.389 +05:30 [INF] 148174fa-b34c-42f2-96d3-9e5c4ab04d4f HTTP GET /staff/queue responded 200 in 19.2203 ms
+2026-05-21 00:16:53.392 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 26.8669ms
+2026-05-21 00:16:53.405 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=alex - null null
+2026-05-21 00:16:53.412 +05:30 [INF] dbd3ef05-6a84-4969-9757-fb9fad50f297 Executing endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:16:53.440 +05:30 [INF] dbd3ef05-6a84-4969-9757-fb9fad50f297 Executed DbCommand (3ms) [Parameters=[@__pattern_1='?', @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."FirstName" || ' ' || u."LastName", u."DateOfBirth", u."Email"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Role" = 'patient' AND (u."FirstName" || ' ' || u."LastName" LIKE @__pattern_1 ESCAPE '' OR u."LastName" || ' ' || u."FirstName" LIKE @__pattern_1 ESCAPE '')
+ORDER BY u."LastName", u."FirstName"
+LIMIT @__p_2
+2026-05-21 00:16:53.449 +05:30 [INF] dbd3ef05-6a84-4969-9757-fb9fad50f297 Setting HTTP status code 200.
+2026-05-21 00:16:53.456 +05:30 [INF] dbd3ef05-6a84-4969-9757-fb9fad50f297 Writing value of type 'List`1' as Json.
+2026-05-21 00:16:53.459 +05:30 [INF] dbd3ef05-6a84-4969-9757-fb9fad50f297 Executed endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:16:53.462 +05:30 [INF] dbd3ef05-6a84-4969-9757-fb9fad50f297 HTTP GET /staff/patients/search responded 200 in 49.3325 ms
+2026-05-21 00:16:53.466 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=alex - 200 null application/json; charset=utf-8 60.6132ms
+2026-05-21 00:16:53.473 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/3/view360 - null null
+2026-05-21 00:16:53.478 +05:30 [INF] bdb426a3-af25-4230-9666-da37ee686bc6 Executing endpoint 'HTTP: GET /patients/{id:int}/view360 => HandleGet360View'
+2026-05-21 00:16:53.482 +05:30 [INF] bdb426a3-af25-4230-9666-da37ee686bc6 Setting HTTP status code 200.
+2026-05-21 00:16:53.484 +05:30 [INF] bdb426a3-af25-4230-9666-da37ee686bc6 Writing value of type 'PatientView360Dto' as Json.
+2026-05-21 00:16:53.486 +05:30 [INF] bdb426a3-af25-4230-9666-da37ee686bc6 Executed endpoint 'HTTP: GET /patients/{id:int}/view360 => HandleGet360View'
+2026-05-21 00:16:53.488 +05:30 [INF] bdb426a3-af25-4230-9666-da37ee686bc6 HTTP GET /patients/3/view360 responded 200 in 9.5244 ms
+2026-05-21 00:16:53.492 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/3/view360 - 200 null application/json; charset=utf-8 19.0461ms
+2026-05-21 00:17:03.473 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:17:04.049 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:17:04.051 +05:30 [INF] 12983a09-e787-4705-b904-3716b50d35ea Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:04.058 +05:30 [INF] 12983a09-e787-4705-b904-3716b50d35ea Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:17:04.224 +05:30 [INF] 12983a09-e787-4705-b904-3716b50d35ea Setting HTTP status code 200.
+2026-05-21 00:17:04.229 +05:30 [INF] 12983a09-e787-4705-b904-3716b50d35ea Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:17:04.231 +05:30 [INF] 12983a09-e787-4705-b904-3716b50d35ea Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:04.233 +05:30 [INF] 12983a09-e787-4705-b904-3716b50d35ea HTTP POST /auth/login responded 200 in 181.2664 ms
+2026-05-21 00:17:04.235 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 186.1462ms
+2026-05-21 00:17:04.245 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:17:04.252 +05:30 [INF] 5bfa9a6f-5532-4f1f-9243-93d461a282b6 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:17:04.261 +05:30 [INF] 5bfa9a6f-5532-4f1f-9243-93d461a282b6 Executed DbCommand (3ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:17:04.266 +05:30 [INF] 5bfa9a6f-5532-4f1f-9243-93d461a282b6 Setting HTTP status code 200.
+2026-05-21 00:17:04.267 +05:30 [INF] 5bfa9a6f-5532-4f1f-9243-93d461a282b6 Writing value of type 'List`1' as Json.
+2026-05-21 00:17:04.272 +05:30 [INF] 5bfa9a6f-5532-4f1f-9243-93d461a282b6 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:17:04.278 +05:30 [INF] 5bfa9a6f-5532-4f1f-9243-93d461a282b6 HTTP GET /staff/queue responded 200 in 25.8107 ms
+2026-05-21 00:17:04.284 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 39.6613ms
+2026-05-21 00:17:14.384 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:17:14.395 +05:30 [INF] f2ebcf07-713b-42d4-b0f5-ed6ceae6ed80 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:14.401 +05:30 [INF] f2ebcf07-713b-42d4-b0f5-ed6ceae6ed80 Executed DbCommand (1ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:17:14.579 +05:30 [INF] f2ebcf07-713b-42d4-b0f5-ed6ceae6ed80 Setting HTTP status code 200.
+2026-05-21 00:17:14.582 +05:30 [INF] f2ebcf07-713b-42d4-b0f5-ed6ceae6ed80 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:17:14.585 +05:30 [INF] f2ebcf07-713b-42d4-b0f5-ed6ceae6ed80 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:14.587 +05:30 [INF] f2ebcf07-713b-42d4-b0f5-ed6ceae6ed80 HTTP POST /auth/login responded 200 in 192.7852 ms
+2026-05-21 00:17:14.591 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 206.8377ms
+2026-05-21 00:17:14.600 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=alex - null null
+2026-05-21 00:17:14.608 +05:30 [INF] ec9622ae-3af7-4c0a-b1d7-72a4dd72c5f1 Executing endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:17:14.615 +05:30 [INF] ec9622ae-3af7-4c0a-b1d7-72a4dd72c5f1 Executed DbCommand (2ms) [Parameters=[@__pattern_1='?', @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."FirstName" || ' ' || u."LastName", u."DateOfBirth", u."Email"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Role" = 'patient' AND (u."FirstName" || ' ' || u."LastName" LIKE @__pattern_1 ESCAPE '' OR u."LastName" || ' ' || u."FirstName" LIKE @__pattern_1 ESCAPE '')
+ORDER BY u."LastName", u."FirstName"
+LIMIT @__p_2
+2026-05-21 00:17:14.623 +05:30 [INF] ec9622ae-3af7-4c0a-b1d7-72a4dd72c5f1 Setting HTTP status code 200.
+2026-05-21 00:17:14.628 +05:30 [INF] ec9622ae-3af7-4c0a-b1d7-72a4dd72c5f1 Writing value of type 'List`1' as Json.
+2026-05-21 00:17:14.633 +05:30 [INF] ec9622ae-3af7-4c0a-b1d7-72a4dd72c5f1 Executed endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:17:14.636 +05:30 [INF] ec9622ae-3af7-4c0a-b1d7-72a4dd72c5f1 HTTP GET /staff/patients/search responded 200 in 28.3029 ms
+2026-05-21 00:17:14.642 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=alex - 200 null application/json; charset=utf-8 41.6367ms
+2026-05-21 00:17:24.446 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:17:24.452 +05:30 [INF] 70672bf6-da6d-4f14-bc3d-58d91f42ec26 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:24.462 +05:30 [INF] 70672bf6-da6d-4f14-bc3d-58d91f42ec26 Executed DbCommand (3ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:17:24.639 +05:30 [INF] 70672bf6-da6d-4f14-bc3d-58d91f42ec26 Setting HTTP status code 200.
+2026-05-21 00:17:24.647 +05:30 [INF] 70672bf6-da6d-4f14-bc3d-58d91f42ec26 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:17:24.648 +05:30 [INF] 70672bf6-da6d-4f14-bc3d-58d91f42ec26 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:24.650 +05:30 [INF] 70672bf6-da6d-4f14-bc3d-58d91f42ec26 HTTP POST /auth/login responded 200 in 198.1015 ms
+2026-05-21 00:17:24.653 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 207.2235ms
+2026-05-21 00:17:24.663 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/3/view360 - null null
+2026-05-21 00:17:24.669 +05:30 [INF] 507f5ef1-ed14-47fb-bed9-c4ea41871836 Executing endpoint 'HTTP: GET /patients/{id:int}/view360 => HandleGet360View'
+2026-05-21 00:17:24.681 +05:30 [INF] 507f5ef1-ed14-47fb-bed9-c4ea41871836 Setting HTTP status code 200.
+2026-05-21 00:17:24.685 +05:30 [INF] 507f5ef1-ed14-47fb-bed9-c4ea41871836 Writing value of type 'PatientView360Dto' as Json.
+2026-05-21 00:17:24.690 +05:30 [INF] 507f5ef1-ed14-47fb-bed9-c4ea41871836 Executed endpoint 'HTTP: GET /patients/{id:int}/view360 => HandleGet360View'
+2026-05-21 00:17:24.694 +05:30 [INF] 507f5ef1-ed14-47fb-bed9-c4ea41871836 HTTP GET /patients/3/view360 responded 200 in 24.1776 ms
+2026-05-21 00:17:24.698 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/3/view360 - 200 null application/json; charset=utf-8 35.549ms
+2026-05-21 00:17:34.199 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-21 00:17:34.207 +05:30 [INF] 565df5d3-d6ff-4ea0-8b7b-e8f3f545866d Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:34.213 +05:30 [INF] 565df5d3-d6ff-4ea0-8b7b-e8f3f545866d Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:17:34.404 +05:30 [INF] 565df5d3-d6ff-4ea0-8b7b-e8f3f545866d Setting HTTP status code 200.
+2026-05-21 00:17:34.406 +05:30 [INF] 565df5d3-d6ff-4ea0-8b7b-e8f3f545866d Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:17:34.410 +05:30 [INF] 565df5d3-d6ff-4ea0-8b7b-e8f3f545866d Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:34.413 +05:30 [INF] 565df5d3-d6ff-4ea0-8b7b-e8f3f545866d HTTP POST /auth/login responded 200 in 206.4298 ms
+2026-05-21 00:17:34.418 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 218.7618ms
+2026-05-21 00:17:34.428 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:17:34.435 +05:30 [INF] c125390b-55eb-43ce-b449-05dd44b98dd5 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:17:34.442 +05:30 [INF] c125390b-55eb-43ce-b449-05dd44b98dd5 Executed DbCommand (2ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:17:34.448 +05:30 [INF] c125390b-55eb-43ce-b449-05dd44b98dd5 Setting HTTP status code 200.
+2026-05-21 00:17:34.451 +05:30 [INF] c125390b-55eb-43ce-b449-05dd44b98dd5 Writing value of type 'List`1' as Json.
+2026-05-21 00:17:34.454 +05:30 [INF] c125390b-55eb-43ce-b449-05dd44b98dd5 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:17:34.457 +05:30 [INF] c125390b-55eb-43ce-b449-05dd44b98dd5 HTTP GET /appointments/mine responded 200 in 22.0090 ms
+2026-05-21 00:17:34.462 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 34.3278ms
+2026-05-21 00:17:49.934 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-21 00:17:49.943 +05:30 [INF] 1dc86c0b-9e99-4783-8a11-7fd3e5773af9 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:49.950 +05:30 [INF] 1dc86c0b-9e99-4783-8a11-7fd3e5773af9 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:17:50.109 +05:30 [INF] 1dc86c0b-9e99-4783-8a11-7fd3e5773af9 Setting HTTP status code 200.
+2026-05-21 00:17:50.111 +05:30 [INF] 1dc86c0b-9e99-4783-8a11-7fd3e5773af9 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:17:50.114 +05:30 [INF] 1dc86c0b-9e99-4783-8a11-7fd3e5773af9 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:50.117 +05:30 [INF] 1dc86c0b-9e99-4783-8a11-7fd3e5773af9 HTTP POST /auth/login responded 200 in 174.1035 ms
+2026-05-21 00:17:50.123 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 188.3116ms
+2026-05-21 00:17:50.128 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:17:50.135 +05:30 [INF] b17f42a9-fda2-4332-90ac-0fad9f95b50e Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:17:50.143 +05:30 [INF] b17f42a9-fda2-4332-90ac-0fad9f95b50e Executed DbCommand (2ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:17:50.150 +05:30 [INF] b17f42a9-fda2-4332-90ac-0fad9f95b50e Setting HTTP status code 200.
+2026-05-21 00:17:50.154 +05:30 [INF] b17f42a9-fda2-4332-90ac-0fad9f95b50e Writing value of type 'List`1' as Json.
+2026-05-21 00:17:50.158 +05:30 [INF] b17f42a9-fda2-4332-90ac-0fad9f95b50e Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:17:50.159 +05:30 [INF] b17f42a9-fda2-4332-90ac-0fad9f95b50e HTTP GET /appointments/mine responded 200 in 24.6335 ms
+2026-05-21 00:17:50.161 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 32.7092ms
+2026-05-21 00:17:59.827 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 57
+2026-05-21 00:17:59.833 +05:30 [INF] abd043cc-0c13-4fe4-81f1-a1c112e70200 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:17:59.843 +05:30 [INF] abd043cc-0c13-4fe4-81f1-a1c112e70200 Executed DbCommand (4ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:18:00.307 +05:30 [INF] abd043cc-0c13-4fe4-81f1-a1c112e70200 Setting HTTP status code 200.
+2026-05-21 00:18:00.333 +05:30 [INF] abd043cc-0c13-4fe4-81f1-a1c112e70200 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:18:00.343 +05:30 [INF] abd043cc-0c13-4fe4-81f1-a1c112e70200 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:18:00.345 +05:30 [INF] abd043cc-0c13-4fe4-81f1-a1c112e70200 HTTP POST /auth/login responded 200 in 511.8274 ms
+2026-05-21 00:18:00.353 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 525.847ms
+2026-05-21 00:18:00.360 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=Rivera - null null
+2026-05-21 00:18:00.369 +05:30 [INF] 8cfb19ec-8790-4621-be46-404ed9353fda Executing endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:18:00.375 +05:30 [INF] 8cfb19ec-8790-4621-be46-404ed9353fda Executed DbCommand (1ms) [Parameters=[@__pattern_1='?', @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."FirstName" || ' ' || u."LastName", u."DateOfBirth", u."Email"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Role" = 'patient' AND (u."FirstName" || ' ' || u."LastName" LIKE @__pattern_1 ESCAPE '' OR u."LastName" || ' ' || u."FirstName" LIKE @__pattern_1 ESCAPE '')
+ORDER BY u."LastName", u."FirstName"
+LIMIT @__p_2
+2026-05-21 00:18:00.383 +05:30 [INF] 8cfb19ec-8790-4621-be46-404ed9353fda Setting HTTP status code 200.
+2026-05-21 00:18:00.468 +05:30 [INF] 8cfb19ec-8790-4621-be46-404ed9353fda Writing value of type 'List`1' as Json.
+2026-05-21 00:18:00.473 +05:30 [INF] 8cfb19ec-8790-4621-be46-404ed9353fda Executed endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:18:00.476 +05:30 [INF] 8cfb19ec-8790-4621-be46-404ed9353fda HTTP GET /staff/patients/search responded 200 in 107.1005 ms
+2026-05-21 00:18:00.480 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=Rivera - 200 null application/json; charset=utf-8 119.2739ms
+2026-05-21 00:18:03.685 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:19:03.860 +05:30 [INF]  Executed DbCommand (2ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:19:23.972 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:19:24.016 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:19:24.018 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 46.1548ms
+2026-05-21 00:19:24.024 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:19:24.037 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:19:24.039 +05:30 [INF] 06055fd6-f7c2-4f2e-92ca-de34bdcc636d Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:19:24.049 +05:30 [INF] 06055fd6-f7c2-4f2e-92ca-de34bdcc636d Executed DbCommand (7ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:19:24.055 +05:30 [INF] 06055fd6-f7c2-4f2e-92ca-de34bdcc636d Setting HTTP status code 200.
+2026-05-21 00:19:24.057 +05:30 [INF] 06055fd6-f7c2-4f2e-92ca-de34bdcc636d Writing value of type 'List`1' as Json.
+2026-05-21 00:19:24.058 +05:30 [INF] 06055fd6-f7c2-4f2e-92ca-de34bdcc636d Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:19:24.061 +05:30 [INF] 06055fd6-f7c2-4f2e-92ca-de34bdcc636d HTTP GET /staff/queue responded 200 in 22.3448 ms
+2026-05-21 00:19:24.064 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 39.7515ms
+2026-05-21 00:20:03.918 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:20:11.262 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:20:11.267 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:20:11.269 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 6.3433ms
+2026-05-21 00:20:11.283 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:20:11.295 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:20:11.297 +05:30 [INF] 0451a5d0-4377-450a-bdce-2b8c19dcbcf8 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:20:11.314 +05:30 [INF] 0451a5d0-4377-450a-bdce-2b8c19dcbcf8 Executed DbCommand (6ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:20:11.317 +05:30 [INF] 0451a5d0-4377-450a-bdce-2b8c19dcbcf8 Setting HTTP status code 200.
+2026-05-21 00:20:11.320 +05:30 [INF] 0451a5d0-4377-450a-bdce-2b8c19dcbcf8 Writing value of type 'List`1' as Json.
+2026-05-21 00:20:11.321 +05:30 [INF] 0451a5d0-4377-450a-bdce-2b8c19dcbcf8 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:20:11.324 +05:30 [INF] 0451a5d0-4377-450a-bdce-2b8c19dcbcf8 HTTP GET /staff/queue responded 200 in 27.6576 ms
+2026-05-21 00:20:11.335 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 52.5812ms
+2026-05-21 00:20:45.546 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/patients/search?q=Rivera - null null
+2026-05-21 00:20:45.560 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:20:45.563 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/patients/search?q=Rivera - 204 null null 16.2371ms
+2026-05-21 00:20:45.571 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=Rivera - null null
+2026-05-21 00:20:45.581 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:20:45.585 +05:30 [INF] 0a96f212-2e99-49e7-99f2-6fa8a9d11161 Executing endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:20:45.594 +05:30 [INF] 0a96f212-2e99-49e7-99f2-6fa8a9d11161 Executed DbCommand (3ms) [Parameters=[@__pattern_1='?', @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."FirstName" || ' ' || u."LastName", u."DateOfBirth", u."Email"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Role" = 'patient' AND (u."FirstName" || ' ' || u."LastName" LIKE @__pattern_1 ESCAPE '' OR u."LastName" || ' ' || u."FirstName" LIKE @__pattern_1 ESCAPE '')
+ORDER BY u."LastName", u."FirstName"
+LIMIT @__p_2
+2026-05-21 00:20:45.601 +05:30 [INF] 0a96f212-2e99-49e7-99f2-6fa8a9d11161 Setting HTTP status code 200.
+2026-05-21 00:20:45.604 +05:30 [INF] 0a96f212-2e99-49e7-99f2-6fa8a9d11161 Writing value of type 'List`1' as Json.
+2026-05-21 00:20:45.607 +05:30 [INF] 0a96f212-2e99-49e7-99f2-6fa8a9d11161 Executed endpoint 'HTTP: GET /staff/patients/search => HandleSearch'
+2026-05-21 00:20:45.610 +05:30 [INF] 0a96f212-2e99-49e7-99f2-6fa8a9d11161 HTTP GET /staff/patients/search responded 200 in 24.8420 ms
+2026-05-21 00:20:45.616 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/patients/search?q=Rivera - 200 null application/json; charset=utf-8 45.1644ms
+2026-05-21 00:21:04.032 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:21:54.443 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:21:54.456 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:21:54.457 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - 204 null null 14.3763ms
+2026-05-21 00:21:54.467 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:21:54.476 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:21:54.479 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:21:54.488 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e Executed DbCommand (4ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:21:54.502 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e Executed DbCommand (7ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:21:54.518 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e Setting HTTP status code 200.
+2026-05-21 00:21:54.536 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:21:54.579 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:21:54.584 +05:30 [INF] 7fc39493-28a3-4e7b-89e8-a17b04cdfa5e HTTP GET /schedule/today responded 200 in 104.5521 ms
+2026-05-21 00:21:54.602 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - 200 null application/json; charset=utf-8 134.6876ms
+2026-05-21 00:21:55.771 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:21:55.776 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:21:55.777 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 6.3568ms
+2026-05-21 00:21:55.788 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:21:55.795 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:21:55.798 +05:30 [INF] 6c591a08-2240-4bbf-ae88-e646b614cc54 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:21:55.809 +05:30 [INF] 6c591a08-2240-4bbf-ae88-e646b614cc54 Executed DbCommand (5ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:21:55.816 +05:30 [INF] 6c591a08-2240-4bbf-ae88-e646b614cc54 Setting HTTP status code 200.
+2026-05-21 00:21:55.817 +05:30 [INF] 6c591a08-2240-4bbf-ae88-e646b614cc54 Writing value of type 'List`1' as Json.
+2026-05-21 00:21:55.820 +05:30 [INF] 6c591a08-2240-4bbf-ae88-e646b614cc54 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:21:55.822 +05:30 [INF] 6c591a08-2240-4bbf-ae88-e646b614cc54 HTTP GET /staff/queue responded 200 in 24.1692 ms
+2026-05-21 00:21:55.827 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 39.2147ms
+2026-05-21 00:21:56.908 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:21:56.912 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:21:56.915 +05:30 [INF] 4d1c16ef-57e0-44c1-a18a-681b2736f5bc Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:21:56.927 +05:30 [INF] 4d1c16ef-57e0-44c1-a18a-681b2736f5bc Executed DbCommand (5ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:21:56.932 +05:30 [INF] 4d1c16ef-57e0-44c1-a18a-681b2736f5bc Setting HTTP status code 200.
+2026-05-21 00:21:56.933 +05:30 [INF] 4d1c16ef-57e0-44c1-a18a-681b2736f5bc Writing value of type 'List`1' as Json.
+2026-05-21 00:21:56.935 +05:30 [INF] 4d1c16ef-57e0-44c1-a18a-681b2736f5bc Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:21:56.938 +05:30 [INF] 4d1c16ef-57e0-44c1-a18a-681b2736f5bc HTTP GET /staff/queue responded 200 in 23.5075 ms
+2026-05-21 00:21:56.942 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 33.2254ms
+2026-05-21 00:22:03.881 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:22:03.889 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:03.891 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - 204 null null 8.9812ms
+2026-05-21 00:22:03.900 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:22:03.909 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:03.913 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:22:03.924 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa Executed DbCommand (5ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:22:03.936 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa Executed DbCommand (5ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:22:03.944 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa Setting HTTP status code 200.
+2026-05-21 00:22:03.948 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:22:03.952 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:22:03.955 +05:30 [INF] 6e11895f-5e48-4f7e-994e-5cb880d14faa HTTP GET /schedule/today responded 200 in 42.3228 ms
+2026-05-21 00:22:03.961 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - 200 null application/json; charset=utf-8 61.0466ms
+2026-05-21 00:22:04.178 +05:30 [INF]  Executed DbCommand (3ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:22:06.927 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:22:06.934 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:06.936 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 9.9085ms
+2026-05-21 00:22:06.945 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:22:06.949 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:06.951 +05:30 [INF] 54f71297-3421-4b5e-a22c-c717f5c77a9f Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:06.958 +05:30 [INF] 54f71297-3421-4b5e-a22c-c717f5c77a9f Executed DbCommand (4ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:22:06.966 +05:30 [INF] 54f71297-3421-4b5e-a22c-c717f5c77a9f Setting HTTP status code 200.
+2026-05-21 00:22:06.969 +05:30 [INF] 54f71297-3421-4b5e-a22c-c717f5c77a9f Writing value of type 'List`1' as Json.
+2026-05-21 00:22:06.972 +05:30 [INF] 54f71297-3421-4b5e-a22c-c717f5c77a9f Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:06.975 +05:30 [INF] 54f71297-3421-4b5e-a22c-c717f5c77a9f HTTP GET /staff/queue responded 200 in 24.3107 ms
+2026-05-21 00:22:06.980 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 35.179ms
+2026-05-21 00:22:09.156 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:22:09.166 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:09.168 +05:30 [INF] c181c680-0de9-4ba9-9c62-a642ff1a7526 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:09.174 +05:30 [INF] c181c680-0de9-4ba9-9c62-a642ff1a7526 Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:22:09.179 +05:30 [INF] c181c680-0de9-4ba9-9c62-a642ff1a7526 Setting HTTP status code 200.
+2026-05-21 00:22:09.181 +05:30 [INF] c181c680-0de9-4ba9-9c62-a642ff1a7526 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:09.183 +05:30 [INF] c181c680-0de9-4ba9-9c62-a642ff1a7526 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:09.186 +05:30 [INF] c181c680-0de9-4ba9-9c62-a642ff1a7526 HTTP GET /staff/queue responded 200 in 17.9901 ms
+2026-05-21 00:22:09.191 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 35.1135ms
+2026-05-21 00:22:10.350 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:22:10.355 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:10.357 +05:30 [INF] 30ce9138-93dd-44f4-bf27-c72d6f3f4d92 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:10.362 +05:30 [INF] 30ce9138-93dd-44f4-bf27-c72d6f3f4d92 Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:22:10.368 +05:30 [INF] 30ce9138-93dd-44f4-bf27-c72d6f3f4d92 Setting HTTP status code 200.
+2026-05-21 00:22:10.371 +05:30 [INF] 30ce9138-93dd-44f4-bf27-c72d6f3f4d92 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:10.374 +05:30 [INF] 30ce9138-93dd-44f4-bf27-c72d6f3f4d92 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:10.376 +05:30 [INF] 30ce9138-93dd-44f4-bf27-c72d6f3f4d92 HTTP GET /staff/queue responded 200 in 18.8421 ms
+2026-05-21 00:22:10.384 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 33.2989ms
+2026-05-21 00:22:12.658 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:22:12.665 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:12.668 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/schedule/today?date=2026-05-20 - 204 null null 10.056ms
+2026-05-21 00:22:12.678 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - null null
+2026-05-21 00:22:12.687 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:12.690 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 Executing endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:22:12.700 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 Executed DbCommand (3ms) [Parameters=[@__targetDate_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+2026-05-21 00:22:12.712 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 Executed DbCommand (2ms) [Parameters=[@__targetDate_0='?' (DbType = Date), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."PatientId", t1."FirstName" || ' ' || t1."LastName", t."SlotTime", t."Status", CASE
+    WHEN t0."Id" IS NOT NULL THEN 'Submitted'
+    WHEN t1."WalkIn" THEN 'NA'
+    ELSE 'Pending'
+END, t."IsHighRisk"
+FROM (
+    SELECT a."Id", a."IsHighRisk", a."PatientId", a."Status", s."SlotTime"
+    FROM "Appointments" AS a
+    INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+    WHERE a."Status" <> 3 AND CAST(s."SlotTime" AT TIME ZONE 'UTC' AS date) = @__targetDate_0
+    ORDER BY s."SlotTime"
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."PatientId"
+    FROM "IntakeRecords" AS i
+    WHERE i."IsLatest" AND NOT (i."IsDeleted")
+) AS t0 ON t."PatientId" = t0."PatientId"
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName", u."WalkIn"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t1 ON t."PatientId" = t1."Id"
+ORDER BY t."SlotTime"
+2026-05-21 00:22:12.721 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 Setting HTTP status code 200.
+2026-05-21 00:22:12.723 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 Writing value of type 'SchedulePageResponse' as Json.
+2026-05-21 00:22:12.726 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 Executed endpoint 'HTTP: GET /schedule/today => HandleGetDailySchedule'
+2026-05-21 00:22:12.730 +05:30 [INF] 3b0eac9f-7ff5-43cb-82b6-cfdcb16ad934 HTTP GET /schedule/today responded 200 in 39.9873 ms
+2026-05-21 00:22:12.737 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/schedule/today?date=2026-05-20 - 200 null application/json; charset=utf-8 58.2138ms
+2026-05-21 00:22:13.974 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - null null
+2026-05-21 00:22:13.981 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:13.984 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/staff/queue - 204 null null 9.7004ms
+2026-05-21 00:22:13.993 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/staff/queue - null null
+2026-05-21 00:22:13.998 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:14.000 +05:30 [INF] ecab85be-35e9-46d8-a90f-4e0cd854f797 Executing endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:14.007 +05:30 [INF] ecab85be-35e9-46d8-a90f-4e0cd854f797 Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT q."Id", q."PatientId", t."FirstName" || ' ' || t."LastName", q."Position", q."IsWalkIn", q."RowVersion"
+FROM "QueueEntries" AS q
+INNER JOIN (
+    SELECT u."Id", u."FirstName", u."LastName"
+    FROM "UserAccounts" AS u
+    WHERE NOT (u."IsDeleted")
+) AS t ON q."PatientId" = t."Id"
+WHERE q."QueueDate" = @__today_0 AND q."Status" = 0
+ORDER BY q."Position"
+2026-05-21 00:22:14.014 +05:30 [INF] ecab85be-35e9-46d8-a90f-4e0cd854f797 Setting HTTP status code 200.
+2026-05-21 00:22:14.018 +05:30 [INF] ecab85be-35e9-46d8-a90f-4e0cd854f797 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:14.021 +05:30 [INF] ecab85be-35e9-46d8-a90f-4e0cd854f797 Executed endpoint 'HTTP: GET /staff/queue => HandleGetQueue'
+2026-05-21 00:22:14.024 +05:30 [INF] ecab85be-35e9-46d8-a90f-4e0cd854f797 HTTP GET /staff/queue responded 200 in 24.0179 ms
+2026-05-21 00:22:14.030 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/staff/queue - 200 null application/json; charset=utf-8 36.71ms
+2026-05-21 00:22:14.863 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/logout - null null
+2026-05-21 00:22:14.868 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:14.872 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/logout - 204 null null 8.5252ms
+2026-05-21 00:22:14.879 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/logout - application/json 2
+2026-05-21 00:22:14.887 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:14.893 +05:30 [INF] 46447da0-40e6-4b3c-900d-1771bc398cba Executing endpoint 'HTTP: POST /auth/logout => HandleLogout'
+2026-05-21 00:22:14.896 +05:30 [INF] 46447da0-40e6-4b3c-900d-1771bc398cba Setting HTTP status code 200.
+2026-05-21 00:22:14.900 +05:30 [INF] 46447da0-40e6-4b3c-900d-1771bc398cba Executed endpoint 'HTTP: POST /auth/logout => HandleLogout'
+2026-05-21 00:22:14.905 +05:30 [INF] 46447da0-40e6-4b3c-900d-1771bc398cba HTTP POST /auth/logout responded 200 in 12.2789 ms
+2026-05-21 00:22:14.910 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/logout - 200 0 null 30.3331ms
+2026-05-21 00:22:25.395 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/auth/login - null null
+2026-05-21 00:22:25.404 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:25.406 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/auth/login - 204 null null 10.9891ms
+2026-05-21 00:22:25.413 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/auth/login - application/json 61
+2026-05-21 00:22:25.424 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:25.425 +05:30 [INF] 044c2b28-d5c0-40df-90a9-992886c3f050 Executing endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:22:25.430 +05:30 [INF] 044c2b28-d5c0-40df-90a9-992886c3f050 Executed DbCommand (2ms) [Parameters=[@__ToLowerInvariant_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CodingStatus", u."CreatedAt", u."DateOfBirth", u."Email", u."FailedLoginAttempts", u."FirstName", u."IsActive", u."IsDeleted", u."LastName", u."LockoutEnd", u."PasswordHash", u."PasswordResetTokenExpiry", u."PasswordResetTokenHash", u."PasswordResetTokenIssuedAt", u."PasswordResetTokenUsed", u."PhoneNumber", u."RetainUntil", u."Role", u."VerificationStatus", u."VerificationTokenExpiry", u."VerificationTokenHash", u."VerifiedAt", u."VerifiedById", u."WalkIn"
+FROM "UserAccounts" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__ToLowerInvariant_0
+LIMIT 1
+2026-05-21 00:22:25.733 +05:30 [INF] 044c2b28-d5c0-40df-90a9-992886c3f050 Setting HTTP status code 200.
+2026-05-21 00:22:25.736 +05:30 [INF] 044c2b28-d5c0-40df-90a9-992886c3f050 Writing value of type 'LoginResponse' as Json.
+2026-05-21 00:22:25.740 +05:30 [INF] 044c2b28-d5c0-40df-90a9-992886c3f050 Executed endpoint 'HTTP: POST /auth/login => HandleLogin'
+2026-05-21 00:22:25.744 +05:30 [INF] 044c2b28-d5c0-40df-90a9-992886c3f050 HTTP POST /auth/login responded 200 in 319.4671 ms
+2026-05-21 00:22:25.749 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/auth/login - 200 null application/json; charset=utf-8 336.3287ms
+2026-05-21 00:22:25.805 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-21 00:22:25.816 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:25.830 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 25.1797ms
+2026-05-21 00:22:25.844 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:22:25.853 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:25.856 +05:30 [INF] 59b7b4f0-0b16-476c-a488-7a68a3c04659 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:22:25.863 +05:30 [INF] 59b7b4f0-0b16-476c-a488-7a68a3c04659 Executed DbCommand (2ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:22:25.868 +05:30 [INF] 59b7b4f0-0b16-476c-a488-7a68a3c04659 Setting HTTP status code 200.
+2026-05-21 00:22:25.872 +05:30 [INF] 59b7b4f0-0b16-476c-a488-7a68a3c04659 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:25.875 +05:30 [INF] 59b7b4f0-0b16-476c-a488-7a68a3c04659 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:22:25.878 +05:30 [INF] 59b7b4f0-0b16-476c-a488-7a68a3c04659 HTTP GET /appointments/mine responded 200 in 21.8591 ms
+2026-05-21 00:22:25.880 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 35.3225ms
+2026-05-21 00:22:32.044 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-21 00:22:32.058 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:32.065 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 20.3074ms
+2026-05-21 00:22:32.072 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:22:32.079 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:32.084 +05:30 [INF] a9c3015b-3478-4e95-a2c2-9a37b2706d41 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:22:32.091 +05:30 [INF] a9c3015b-3478-4e95-a2c2-9a37b2706d41 Executed DbCommand (2ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:22:32.096 +05:30 [INF] a9c3015b-3478-4e95-a2c2-9a37b2706d41 Setting HTTP status code 200.
+2026-05-21 00:22:32.099 +05:30 [INF] a9c3015b-3478-4e95-a2c2-9a37b2706d41 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:32.102 +05:30 [INF] a9c3015b-3478-4e95-a2c2-9a37b2706d41 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:22:32.107 +05:30 [INF] a9c3015b-3478-4e95-a2c2-9a37b2706d41 HTTP GET /appointments/mine responded 200 in 22.2212 ms
+2026-05-21 00:22:32.112 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 39.4279ms
+2026-05-21 00:22:36.885 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-20 - null null
+2026-05-21 00:22:36.890 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-21 - null null
+2026-05-21 00:22:36.897 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-22 - null null
+2026-05-21 00:22:36.955 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-23 - null null
+2026-05-21 00:22:36.989 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-24 - null null
+2026-05-21 00:22:37.003 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-25 - null null
+2026-05-21 00:22:37.030 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.038 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.047 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.058 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.064 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.075 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.077 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-20 - 204 null null 192.5458ms
+2026-05-21 00:22:37.080 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-21 - 204 null null 190.1514ms
+2026-05-21 00:22:37.082 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-22 - 204 null null 185.0643ms
+2026-05-21 00:22:37.085 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-23 - 204 null null 130.2452ms
+2026-05-21 00:22:37.088 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-24 - 204 null null 99.1738ms
+2026-05-21 00:22:37.090 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-25 - 204 null null 86.9284ms
+2026-05-21 00:22:37.097 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26 - null null
+2026-05-21 00:22:37.107 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-20 - null null
+2026-05-21 00:22:37.118 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-21 - null null
+2026-05-21 00:22:37.127 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-22 - null null
+2026-05-21 00:22:37.137 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-23 - null null
+2026-05-21 00:22:37.146 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-24 - null null
+2026-05-21 00:22:37.154 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.161 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.169 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.177 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.185 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.192 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.195 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-26 - 204 null null 97.8175ms
+2026-05-21 00:22:37.197 +05:30 [INF] ac0cde4a-1f22-490e-93f3-8af684eac933 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.200 +05:30 [INF] edb4cfa3-2fe3-4282-ae20-33b87be21c76 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.202 +05:30 [INF] c48ecceb-5411-4cf3-a3da-105d5c8d1cfa Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.205 +05:30 [INF] 3b958715-890c-4e66-898e-49bfcdbcfe1d Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.206 +05:30 [INF] bf9dcb60-2ec4-4cf3-8714-fbc77ae6c4af Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.215 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-25 - null null
+2026-05-21 00:22:37.221 +05:30 [INF] ac0cde4a-1f22-490e-93f3-8af684eac933 Executed DbCommand (1ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.223 +05:30 [INF] edb4cfa3-2fe3-4282-ae20-33b87be21c76 Executed DbCommand (1ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.226 +05:30 [INF] c48ecceb-5411-4cf3-a3da-105d5c8d1cfa Executed DbCommand (1ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.229 +05:30 [INF] 3b958715-890c-4e66-898e-49bfcdbcfe1d Executed DbCommand (2ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.235 +05:30 [INF] bf9dcb60-2ec4-4cf3-8714-fbc77ae6c4af Executed DbCommand (2ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.237 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.245 +05:30 [INF] ac0cde4a-1f22-490e-93f3-8af684eac933 Setting HTTP status code 200.
+2026-05-21 00:22:37.249 +05:30 [INF] edb4cfa3-2fe3-4282-ae20-33b87be21c76 Setting HTTP status code 200.
+2026-05-21 00:22:37.255 +05:30 [INF] c48ecceb-5411-4cf3-a3da-105d5c8d1cfa Setting HTTP status code 200.
+2026-05-21 00:22:37.266 +05:30 [INF] 3b958715-890c-4e66-898e-49bfcdbcfe1d Setting HTTP status code 200.
+2026-05-21 00:22:37.271 +05:30 [INF] bf9dcb60-2ec4-4cf3-8714-fbc77ae6c4af Setting HTTP status code 200.
+2026-05-21 00:22:37.274 +05:30 [INF] b481f5d2-1d5e-4e8a-9f8a-0461f8cd9776 Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.277 +05:30 [INF] ac0cde4a-1f22-490e-93f3-8af684eac933 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.280 +05:30 [INF] edb4cfa3-2fe3-4282-ae20-33b87be21c76 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.284 +05:30 [INF] c48ecceb-5411-4cf3-a3da-105d5c8d1cfa Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.287 +05:30 [INF] 3b958715-890c-4e66-898e-49bfcdbcfe1d Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.290 +05:30 [INF] bf9dcb60-2ec4-4cf3-8714-fbc77ae6c4af Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.296 +05:30 [INF] ac0cde4a-1f22-490e-93f3-8af684eac933 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.297 +05:30 [INF] b481f5d2-1d5e-4e8a-9f8a-0461f8cd9776 Executed DbCommand (1ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.313 +05:30 [INF] b481f5d2-1d5e-4e8a-9f8a-0461f8cd9776 Setting HTTP status code 200.
+2026-05-21 00:22:37.301 +05:30 [INF] c48ecceb-5411-4cf3-a3da-105d5c8d1cfa Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.303 +05:30 [INF] 3b958715-890c-4e66-898e-49bfcdbcfe1d Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.334 +05:30 [INF] 3b958715-890c-4e66-898e-49bfcdbcfe1d HTTP GET /slots responded 200 in 129.0298 ms
+2026-05-21 00:22:37.309 +05:30 [INF] ac0cde4a-1f22-490e-93f3-8af684eac933 HTTP GET /slots responded 200 in 112.1877 ms
+2026-05-21 00:22:37.298 +05:30 [INF] edb4cfa3-2fe3-4282-ae20-33b87be21c76 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.315 +05:30 [INF] b481f5d2-1d5e-4e8a-9f8a-0461f8cd9776 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.317 +05:30 [INF] c48ecceb-5411-4cf3-a3da-105d5c8d1cfa HTTP GET /slots responded 200 in 114.9535 ms
+2026-05-21 00:22:37.306 +05:30 [INF] bf9dcb60-2ec4-4cf3-8714-fbc77ae6c4af Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.340 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-23 - 200 null application/json; charset=utf-8 202.1878ms
+2026-05-21 00:22:37.352 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-20 - 200 null application/json; charset=utf-8 244.8071ms
+2026-05-21 00:22:37.357 +05:30 [INF] edb4cfa3-2fe3-4282-ae20-33b87be21c76 HTTP GET /slots responded 200 in 157.1099 ms
+2026-05-21 00:22:37.393 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-21 - 200 null application/json; charset=utf-8 275.6484ms
+2026-05-21 00:22:37.368 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-22 - 200 null application/json; charset=utf-8 240.8979ms
+2026-05-21 00:22:37.371 +05:30 [INF] bf9dcb60-2ec4-4cf3-8714-fbc77ae6c4af HTTP GET /slots responded 200 in 164.5066 ms
+2026-05-21 00:22:37.428 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-24 - 200 null application/json; charset=utf-8 281.9545ms
+2026-05-21 00:22:37.360 +05:30 [INF] b481f5d2-1d5e-4e8a-9f8a-0461f8cd9776 Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.383 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26 - null null
+2026-05-21 00:22:37.467 +05:30 [INF] b481f5d2-1d5e-4e8a-9f8a-0461f8cd9776 HTTP GET /slots responded 200 in 192.7816 ms
+2026-05-21 00:22:37.476 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-25 - 200 null application/json; charset=utf-8 261.2496ms
+2026-05-21 00:22:37.472 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:37.490 +05:30 [INF] b030a8eb-7f47-4cf2-82ed-de194f67c50c Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.499 +05:30 [INF] b030a8eb-7f47-4cf2-82ed-de194f67c50c Executed DbCommand (1ms) [Parameters=[@__dayStart_0='?' (DbType = DateTime), @__dayEnd_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."SlotTime", s."DurationMinutes"
+FROM "Slots" AS s
+WHERE s."IsAvailable" AND s."SlotTime" >= @__dayStart_0 AND s."SlotTime" < @__dayEnd_1
+ORDER BY s."SlotTime"
+2026-05-21 00:22:37.506 +05:30 [INF] b030a8eb-7f47-4cf2-82ed-de194f67c50c Setting HTTP status code 200.
+2026-05-21 00:22:37.507 +05:30 [INF] b030a8eb-7f47-4cf2-82ed-de194f67c50c Writing value of type 'List`1' as Json.
+2026-05-21 00:22:37.514 +05:30 [INF] b030a8eb-7f47-4cf2-82ed-de194f67c50c Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:37.517 +05:30 [INF] b030a8eb-7f47-4cf2-82ed-de194f67c50c HTTP GET /slots responded 200 in 26.6955 ms
+2026-05-21 00:22:37.520 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-26 - 200 null application/json; charset=utf-8 137.9591ms
+2026-05-21 00:22:39.373 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-20 - null null
+2026-05-21 00:22:39.379 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:39.383 +05:30 [INF] cdb09c52-0be6-4f85-af28-fc95cff0bb7c Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:39.387 +05:30 [INF] cdb09c52-0be6-4f85-af28-fc95cff0bb7c Setting HTTP status code 200.
+2026-05-21 00:22:39.389 +05:30 [INF] cdb09c52-0be6-4f85-af28-fc95cff0bb7c Writing value of type 'List`1' as Json.
+2026-05-21 00:22:39.391 +05:30 [INF] cdb09c52-0be6-4f85-af28-fc95cff0bb7c Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:39.394 +05:30 [INF] cdb09c52-0be6-4f85-af28-fc95cff0bb7c HTTP GET /slots responded 200 in 10.8527 ms
+2026-05-21 00:22:39.398 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-20 - 200 null application/json; charset=utf-8 24.8943ms
+2026-05-21 00:22:44.631 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-21 - null null
+2026-05-21 00:22:44.638 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:44.639 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/slots?date=2026-05-21 - 204 null null 7.6892ms
+2026-05-21 00:22:44.645 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-21 - null null
+2026-05-21 00:22:44.652 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:44.656 +05:30 [INF] e6634d9f-0c7e-4bd6-b733-80b6126f906f Executing endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:44.659 +05:30 [INF] e6634d9f-0c7e-4bd6-b733-80b6126f906f Setting HTTP status code 200.
+2026-05-21 00:22:44.662 +05:30 [INF] e6634d9f-0c7e-4bd6-b733-80b6126f906f Writing value of type 'List`1' as Json.
+2026-05-21 00:22:44.664 +05:30 [INF] e6634d9f-0c7e-4bd6-b733-80b6126f906f Executed endpoint 'HTTP: GET /slots => HandleGetSlots'
+2026-05-21 00:22:44.669 +05:30 [INF] e6634d9f-0c7e-4bd6-b733-80b6126f906f HTTP GET /slots responded 200 in 13.6935 ms
+2026-05-21 00:22:44.674 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/slots?date=2026-05-21 - 200 null application/json; charset=utf-8 29.0797ms
+2026-05-21 00:22:47.998 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments - null null
+2026-05-21 00:22:48.006 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:48.008 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments - 204 null null 9.6756ms
+2026-05-21 00:22:48.015 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/appointments - application/json 14
+2026-05-21 00:22:48.021 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:48.023 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf Executing endpoint 'HTTP: POST /appointments => HandleBookAppointment'
+2026-05-21 00:22:48.033 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf Executed DbCommand (1ms) [Parameters=[@__request_SlotId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."DurationMinutes", s."IsAvailable", s."RowVersion", s."SlotTime"
+FROM "Slots" AS s
+WHERE s."Id" = @__request_SlotId_0
+LIMIT 1
+2026-05-21 00:22:48.052 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf Executed DbCommand (1ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Appointments" AS a
+    WHERE a."PatientId" = @__patientId_0 AND a."Status" = 0)
+2026-05-21 00:22:48.061 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf Setting HTTP status code 409.
+2026-05-21 00:22:48.065 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf Writing value of type '<>f__AnonymousType3`1' as Json.
+2026-05-21 00:22:48.067 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf Executed endpoint 'HTTP: POST /appointments => HandleBookAppointment'
+2026-05-21 00:22:48.070 +05:30 [INF] e8b67a5b-066d-4a5b-8d87-1bd881008aaf HTTP POST /appointments responded 409 in 46.8950 ms
+2026-05-21 00:22:48.075 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/appointments - 409 null application/json; charset=utf-8 59.5451ms
+2026-05-21 00:22:55.837 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - null null
+2026-05-21 00:22:55.842 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:55.846 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/appointments/mine - 204 null null 8.9145ms
+2026-05-21 00:22:55.854 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/appointments/mine - null null
+2026-05-21 00:22:55.858 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:22:55.864 +05:30 [INF] a9f319bf-4589-4536-ae35-8234375eda27 Executing endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:22:55.872 +05:30 [INF] a9f319bf-4589-4536-ae35-8234375eda27 Executed DbCommand (2ms) [Parameters=[@__patientId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."SlotId", s."SlotTime", a."Status", a."BookedAt", a."NoShowRiskScore", a."IsHighRisk"
+FROM "Appointments" AS a
+INNER JOIN "Slots" AS s ON a."SlotId" = s."Id"
+WHERE a."PatientId" = @__patientId_0
+ORDER BY s."SlotTime" DESC
+2026-05-21 00:22:55.879 +05:30 [INF] a9f319bf-4589-4536-ae35-8234375eda27 Setting HTTP status code 200.
+2026-05-21 00:22:55.883 +05:30 [INF] a9f319bf-4589-4536-ae35-8234375eda27 Writing value of type 'List`1' as Json.
+2026-05-21 00:22:55.887 +05:30 [INF] a9f319bf-4589-4536-ae35-8234375eda27 Executed endpoint 'HTTP: GET /appointments/mine => HandleGetMyAppointments'
+2026-05-21 00:22:55.891 +05:30 [INF] a9f319bf-4589-4536-ae35-8234375eda27 HTTP GET /appointments/mine responded 200 in 27.0954 ms
+2026-05-21 00:22:55.899 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/appointments/mine - 200 null application/json; charset=utf-8 44.2286ms
+2026-05-21 00:23:04.330 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:23:06.031 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - null null
+2026-05-21 00:23:06.035 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:06.037 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/start - 204 null null 5.327ms
+2026-05-21 00:23:06.049 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/start - application/json 2
+2026-05-21 00:23:06.052 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:06.056 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Executing endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-21 00:23:06.062 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:23:06.067 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:23:06.531 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Received HTTP response headers after 462.3417ms - 200
+2026-05-21 00:23:06.535 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca End processing HTTP request after 473.0926ms - 200
+2026-05-21 00:23:06.539 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Setting HTTP status code 200.
+2026-05-21 00:23:06.542 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Writing value of type '<>f__AnonymousType35`2' as Json.
+2026-05-21 00:23:06.544 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca Executed endpoint 'HTTP: POST /intake/ai/start => HandleStartAiIntake'
+2026-05-21 00:23:06.546 +05:30 [INF] a256b6ec-680f-411b-87f4-47cf80acfaca HTTP POST /intake/ai/start responded 200 in 490.6343 ms
+2026-05-21 00:23:06.551 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/start - 200 null application/json; charset=utf-8 501.9682ms
+2026-05-21 00:23:15.219 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/message - null null
+2026-05-21 00:23:15.227 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:15.230 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/message - 204 null null 10.3907ms
+2026-05-21 00:23:15.243 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/message - application/json 82
+2026-05-21 00:23:15.252 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:15.254 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Executing endpoint 'HTTP: POST /intake/ai/message => HandleSendAiMessage'
+2026-05-21 00:23:15.260 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:23:15.265 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:23:15.829 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Received HTTP response headers after 559.9143ms - 200
+2026-05-21 00:23:15.835 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 End processing HTTP request after 574.8442ms - 200
+2026-05-21 00:23:15.839 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Setting HTTP status code 200.
+2026-05-21 00:23:15.842 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Writing value of type '<>f__AnonymousType34`5' as Json.
+2026-05-21 00:23:15.847 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 Executed endpoint 'HTTP: POST /intake/ai/message => HandleSendAiMessage'
+2026-05-21 00:23:15.850 +05:30 [INF] 490c7ea0-7271-460c-baa0-82a6222024d5 HTTP POST /intake/ai/message responded 200 in 596.2572 ms
+2026-05-21 00:23:15.856 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/message - 200 null application/json; charset=utf-8 613.0865ms
+2026-05-21 00:23:27.183 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/message - null null
+2026-05-21 00:23:27.188 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:27.192 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/intake/ai/message - 204 null null 10.0095ms
+2026-05-21 00:23:27.204 +05:30 [INF]  Request starting HTTP/1.1 POST http://localhost:5153/intake/ai/message - application/json 67
+2026-05-21 00:23:27.213 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:27.216 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Executing endpoint 'HTTP: POST /intake/ai/message => HandleSendAiMessage'
+2026-05-21 00:23:27.219 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Start processing HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:23:27.223 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Sending HTTP request POST https://api.groq.com/openai/v1/chat/completions
+2026-05-21 00:23:27.601 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Received HTTP response headers after 371.9507ms - 200
+2026-05-21 00:23:27.605 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 End processing HTTP request after 385.9538ms - 200
+2026-05-21 00:23:27.608 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Setting HTTP status code 200.
+2026-05-21 00:23:27.611 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Writing value of type '<>f__AnonymousType34`5' as Json.
+2026-05-21 00:23:27.613 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 Executed endpoint 'HTTP: POST /intake/ai/message => HandleSendAiMessage'
+2026-05-21 00:23:27.615 +05:30 [INF] ed897e05-4ca8-4e61-b6e5-b471b1576551 HTTP POST /intake/ai/message responded 200 in 399.4405 ms
+2026-05-21 00:23:27.619 +05:30 [INF]  Request finished HTTP/1.1 POST http://localhost:5153/intake/ai/message - 200 null application/json; charset=utf-8 414.3506ms
+2026-05-21 00:23:38.069 +05:30 [INF]  Request starting HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - null null
+2026-05-21 00:23:38.094 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:38.099 +05:30 [INF]  Request finished HTTP/1.1 OPTIONS http://localhost:5153/patients/me/documents - 204 null null 29.9561ms
+2026-05-21 00:23:38.107 +05:30 [INF]  Request starting HTTP/1.1 GET http://localhost:5153/patients/me/documents - null null
+2026-05-21 00:23:38.111 +05:30 [INF]  CORS policy execution successful.
+2026-05-21 00:23:38.112 +05:30 [INF] 907bc0a8-4edf-4291-a839-428c04b81463 Executing endpoint '405 HTTP Method Not Supported'
+2026-05-21 00:23:38.115 +05:30 [INF] 907bc0a8-4edf-4291-a839-428c04b81463 Executed endpoint '405 HTTP Method Not Supported'
+2026-05-21 00:23:38.118 +05:30 [INF] 907bc0a8-4edf-4291-a839-428c04b81463 HTTP GET /patients/me/documents responded 405 in 5.5567 ms
+2026-05-21 00:23:38.124 +05:30 [INF]  Request finished HTTP/1.1 GET http://localhost:5153/patients/me/documents - 405 0 null 17.2217ms
+2026-05-21 00:24:04.542 +05:30 [INF]  Executed DbCommand (7ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:25:04.589 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 00:26:04.678 +05:30 [INF]  Executed DbCommand (1ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0
+2026-05-21 04:51:19.708 +05:30 [INF]  Executed DbCommand (326ms) [Parameters=[@__now_0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."IsDeleted", w."OfferExpiresAt", w."OfferedSlotId", w."PatientId", w."PreferredSlotId", w."QueuedAt", w."RetainUntil", w."Status"
+FROM "WaitlistEntries" AS w
+WHERE NOT (w."IsDeleted") AND w."Status" = 3 AND w."OfferExpiresAt" <= @__now_0

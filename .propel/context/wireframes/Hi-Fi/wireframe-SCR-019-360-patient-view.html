@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>360° Patient View — Staff | ClinicalHub</title>
+<!-- Navigation Map
+| Element              | Action | Target Screen                                    |
+|----------------------|--------|--------------------------------------------------|
+| Conflict flag link   | click  | Opens SCR-020 slide-out panel                    |
+| Generate codes btn   | click  | wireframe-SCR-021-code-verification.html         |
+| Back to schedule     | click  | wireframe-SCR-016-staff-daily-schedule.html      |
+| FL-013: 360 Patient View + Conflict | UC-019, UC-020                   |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cw:#D4820A;--cwb:#FEF5E7;--cok:#1A7A4A;--cokb:#E8F5EE;--ci:#1C6EA4;--cib:#E8F0F8;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);overflow-x:hidden;}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:#5A0A7A;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.nav-item.active{border-left-color:var(--cp);background:var(--cps);color:var(--cp);font-weight:500;}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));transition:margin-right 0.3s;}
+.page.panel-open{margin-right:420px;}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--cp);text-decoration:none;margin-bottom:16px;}
+.back-link:hover{text-decoration:underline;}
+/* Patient header */
+.patient-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
+.patient-avatar{width:48px;height:48px;border-radius:50%;background:var(--cp);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0;}
+.patient-name{font-size:24px;font-weight:700;}
+.patient-meta{font-size:13px;color:var(--ct2);}
+/* Conflict banner */
+.conflict-banner{background:var(--cwb);border:1px solid var(--cw);border-radius:var(--r2);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.conflict-banner__left{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--cw);font-weight:500;}
+.conflict-banner__action{font-size:13px;color:var(--cp);cursor:pointer;text-decoration:underline;}
+/* Section cards */
+.section-card{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);margin-bottom:12px;overflow:hidden;}
+.section-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;cursor:pointer;border-bottom:1px solid var(--cs2);}
+.section-header:hover{background:var(--cs1);}
+.section-header h2{font-size:15px;font-weight:600;}
+.section-header svg{transition:transform 0.2s;}
+.section-header.collapsed svg{transform:rotate(-90deg);}
+.section-body{padding:16px 20px;}
+/* Data rows */
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--cs2);font-size:13px;}
+.data-row:last-child{border-bottom:none;}
+.data-label{color:var(--ct2);}
+.data-value{font-weight:500;color:var(--ct1);}
+/* Conflict flag inline */
+.conflict-flag{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--ce);cursor:pointer;text-decoration:underline;margin-left:8px;}
+.conflict-flag:hover{color:var(--cw);}
+/* Action bar */
+.action-bar{display:flex;gap:12px;margin-top:20px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;text-decoration:none;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:#fff;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--secondary:hover{background:var(--cs1);}
+.btn--disabled{opacity:0.5;cursor:not-allowed;}
+/* Slide-out panel (SCR-020) */
+.conflict-panel{position:fixed;top:var(--nh);right:0;bottom:0;width:420px;background:var(--cs0);border-left:1px solid var(--cb);z-index:400;transform:translateX(100%);transition:transform 0.3s;overflow-y:auto;padding:24px;}
+.conflict-panel.open{transform:translateX(0);}
+.panel-title{font-size:18px;font-weight:600;margin-bottom:4px;}
+.panel-sub{font-size:13px;color:var(--ct2);margin-bottom:20px;}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.diff-card{padding:16px;border-radius:var(--r2);}
+.diff-card--a{background:var(--ceb);border:1px solid var(--ce);}
+.diff-card--b{background:var(--cwb);border:1px solid var(--cw);}
+.diff-card__source{font-size:11px;font-weight:600;text-transform:uppercase;margin-bottom:8px;}
+.diff-card--a .diff-card__source{color:var(--ce);}
+.diff-card--b .diff-card__source{color:var(--cw);}
+.diff-card__value{font-size:22px;font-weight:700;margin-bottom:4px;}
+.diff-card__meta{font-size:12px;color:var(--ct2);}
+.use-btn{width:100%;padding:8px;border-radius:var(--r2);border:1px solid var(--cb);background:var(--cs0);cursor:pointer;font-size:13px;font-weight:500;margin-top:10px;}
+.use-btn:hover{background:var(--cp);color:#fff;border-color:var(--cp);}
+.use-btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.dismiss-link{font-size:13px;color:var(--ct2);cursor:pointer;text-decoration:underline;margin-top:12px;display:block;text-align:center;}
+.dismiss-link:hover{color:var(--ct1);}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Jordan Chen">JC</span>
+    <span>Jordan Chen</span>
+    <span style="font-size:12px;padding:2px 8px;background:var(--cps);color:var(--cp);border-radius:4px;font-weight:500;">Staff</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Staff navigation">
+  <a class="nav-item" href="wireframe-SCR-016-staff-daily-schedule.html">Daily Schedule</a>
+  <a class="nav-item" href="wireframe-SCR-017-walkin-registration.html">Walk-In Registration</a>
+  <a class="nav-item" href="wireframe-SCR-018-same-day-queue.html">Same-Day Queue</a>
+  <a class="nav-item active" href="wireframe-SCR-019-360-patient-view.html" aria-current="page">360° Patient View</a>
+</aside>
+
+<main class="page" id="main-content" aria-label="360° Patient view for Alex Rivera">
+  <a class="back-link" href="wireframe-SCR-016-staff-daily-schedule.html">← Back to schedule</a>
+
+  <div class="patient-header">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="patient-avatar" aria-hidden="true">AR</div>
+      <div>
+        <h1 class="patient-name">Alex Rivera</h1>
+        <p class="patient-meta">DOB: 14 Jul 1985 · Age 40 · ID: usr-001 · MRN: MRN-2024-001</p>
+        <p class="patient-meta">Phone: (555) 201-8844 · alex.rivera@email.com</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <a class="btn btn--secondary" href="wireframe-SCR-021-code-verification.html">Generate codes</a>
+      <button class="btn btn--primary btn--disabled" id="btn-verify" disabled aria-disabled="true" aria-label="Mark as verified — resolve conflicts first">Mark as verified</button>
+    </div>
+  </div>
+
+  <!-- Conflict banner (cnf-001) -->
+  <div class="conflict-banner" id="conflict-banner" role="alert">
+    <div class="conflict-banner__left">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+      Requires review — 1 data conflict detected (Lisinopril dosage discrepancy)
+    </div>
+    <button class="conflict-banner__action" onclick="openConflictPanel()" aria-label="Review conflict cnf-001">Review conflict →</button>
+  </div>
+
+  <!-- Vitals -->
+  <div class="section-card">
+    <div class="section-header" onclick="toggleSection(this)" aria-expanded="true" aria-controls="vitals-body">
+      <h2>Vitals — 12 May 2026</h2>
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </div>
+    <div class="section-body" id="vitals-body">
+      <div class="data-row"><span class="data-label">Blood pressure</span><span class="data-value">138/88 mmHg <span style="color:var(--cw);font-size:12px;font-weight:400;">(borderline high)</span></span></div>
+      <div class="data-row"><span class="data-label">Heart rate</span><span class="data-value">76 bpm</span></div>
+      <div class="data-row"><span class="data-label">Temperature</span><span class="data-value">36.8°C</span></div>
+      <div class="data-row"><span class="data-label">O₂ saturation</span><span class="data-value">98%</span></div>
+      <div class="data-row"><span class="data-label">Weight</span><span class="data-value">82 kg</span></div>
+    </div>
+  </div>
+
+  <!-- Medications (with conflict flag) -->
+  <div class="section-card">
+    <div class="section-header" onclick="toggleSection(this)" aria-expanded="true" aria-controls="meds-body">
+      <h2>Medications <span style="background:var(--ceb);color:var(--ce);font-size:11px;padding:2px 6px;border-radius:2px;font-weight:500;margin-left:8px;">1 conflict</span></h2>
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </div>
+    <div class="section-body" id="meds-body">
+      <div class="data-row" id="lisinopril-row">
+        <span class="data-label">Lisinopril</span>
+        <span class="data-value">
+          10mg or 20mg daily
+          <button class="conflict-flag" onclick="openConflictPanel()" aria-label="View Lisinopril dosage conflict cnf-001">⚠ Conflict</button>
+        </span>
+      </div>
+      <div class="data-row"><span class="data-label">Metformin</span><span class="data-value">500mg twice daily</span></div>
+      <div class="data-row"><span class="data-label">Ibuprofen</span><span class="data-value">400mg as needed</span></div>
+    </div>
+  </div>
+
+  <!-- Allergies -->
+  <div class="section-card">
+    <div class="section-header" onclick="toggleSection(this)" aria-expanded="true" aria-controls="allergy-body">
+      <h2>Allergies</h2>
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </div>
+    <div class="section-body" id="allergy-body">
+      <div class="data-row"><span class="data-label">Penicillin</span><span class="data-value" style="color:var(--ce);font-weight:600;">Severe anaphylaxis</span></div>
+      <div class="data-row"><span class="data-label">Sulfa drugs</span><span class="data-value">Skin rash</span></div>
+    </div>
+  </div>
+
+  <!-- Medical History -->
+  <div class="section-card">
+    <div class="section-header" onclick="toggleSection(this)" aria-expanded="true" aria-controls="hx-body">
+      <h2>Medical history</h2>
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </div>
+    <div class="section-body" id="hx-body">
+      <div class="data-row"><span class="data-label">Type 2 Diabetes</span><span class="data-value">Diagnosed 2018</span></div>
+      <div class="data-row"><span class="data-label">Hypertension</span><span class="data-value">Diagnosed 2020</span></div>
+      <div class="data-row"><span class="data-label">Chronic lower back pain</span><span class="data-value">Ongoing — 2024</span></div>
+    </div>
+  </div>
+</main>
+
+<!-- SCR-020: Conflict Resolution Panel (slide-out) -->
+<aside class="conflict-panel" id="conflict-panel" role="complementary" aria-label="Conflict resolution: Lisinopril dosage" aria-hidden="true">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+    <p class="panel-title">Conflict: Lisinopril dosage</p>
+    <button onclick="closeConflictPanel()" aria-label="Close conflict panel" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--ct2);">×</button>
+  </div>
+  <p class="panel-sub">Two source documents disagree on the current Lisinopril dose. Select which value to use — your choice will be logged.</p>
+
+  <div class="diff-grid">
+    <div class="diff-card diff-card--a">
+      <p class="diff-card__source">Source A — doc-001</p>
+      <p class="diff-card__value">10mg</p>
+      <p class="diff-card__meta">Prescription — Dr. Torres<br>8 May 2026</p>
+      <button class="use-btn" onclick="resolveConflict('10mg')" aria-label="Use 10mg from doc-001">Use this value (10mg)</button>
+    </div>
+    <div class="diff-card diff-card--b">
+      <p class="diff-card__source">Source B — doc-002</p>
+      <p class="diff-card__value">20mg</p>
+      <p class="diff-card__meta">Specialist letter — Dr. Kim<br>9 May 2026</p>
+      <button class="use-btn" onclick="resolveConflict('20mg')" aria-label="Use 20mg from doc-002">Use this value (20mg)</button>
+    </div>
+  </div>
+
+  <button class="dismiss-link" onclick="dismissConflict()">Dismiss conflict (conflict flag remains in audit log)</button>
+</aside>
+
+<script>
+function toggleSection(header) {
+  const body = document.getElementById(header.getAttribute('aria-controls'));
+  const isExpanded = header.getAttribute('aria-expanded') === 'true';
+  header.setAttribute('aria-expanded', (!isExpanded).toString());
+  if (isExpanded) { body.style.display = 'none'; header.classList.add('collapsed'); }
+  else { body.style.display = 'block'; header.classList.remove('collapsed'); }
+}
+
+function openConflictPanel() {
+  document.getElementById('conflict-panel').classList.add('open');
+  document.getElementById('conflict-panel').setAttribute('aria-hidden','false');
+  document.getElementById('main-content').classList.add('panel-open');
+}
+function closeConflictPanel() {
+  document.getElementById('conflict-panel').classList.remove('open');
+  document.getElementById('conflict-panel').setAttribute('aria-hidden','true');
+  document.getElementById('main-content').classList.remove('panel-open');
+}
+function resolveConflict(value) {
+  document.getElementById('lisinopril-row').querySelector('.data-value').innerHTML = value + ' daily <span style="color:var(--cok);font-size:12px;">✓ Resolved</span>';
+  document.getElementById('conflict-banner').style.display = 'none';
+  closeConflictPanel();
+  // Enable verify button
+  const btn = document.getElementById('btn-verify');
+  btn.classList.remove('btn--disabled');
+  btn.removeAttribute('disabled');
+  btn.removeAttribute('aria-disabled');
+}
+function dismissConflict() {
+  closeConflictPanel();
+  document.getElementById('conflict-banner').style.background = 'var(--cs1)';
+  document.getElementById('conflict-banner').style.borderColor = 'var(--cb)';
+  document.getElementById('conflict-banner').innerHTML = '<span style="font-size:13px;color:var(--ct2);">Conflict dismissed — flag retained in audit log.</span>';
+}
+</script>
+</body>
+</html>

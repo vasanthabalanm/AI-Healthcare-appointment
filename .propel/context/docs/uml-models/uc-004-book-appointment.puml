@@ -1,0 +1,26 @@
+@startuml uc-004-book-appointment
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+actor "Email Service" as ES
+actor "SMS Gateway" as SMS
+
+rectangle "Book Available Appointment" {
+  usecase "View Available Slots" as UC1
+  usecase "Select and Confirm Slot" as UC2
+  usecase "Calculate No-Show Risk Score" as UC3
+  usecase "Send Confirmation Email (PDF)" as UC4
+  usecase "Schedule Reminders" as UC5
+  usecase "Handle Slot Conflict" as UC6
+}
+
+P --> UC1
+P --> UC2
+UC2 ..> UC3 : <<include>>
+UC2 ..> UC4 : <<include>>
+UC2 ..> UC5 : <<include>>
+UC6 ..> UC2 : <<extend>>
+ES --> UC4
+SMS --> UC5
+@enduml

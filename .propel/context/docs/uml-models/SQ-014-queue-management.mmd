@@ -1,0 +1,32 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant StaffSvc as Staff Operations Service
+    participant SQL as SQL Server
+
+    Note over S,SQL: UC-014 — Staff Manages Same-Day Queue
+
+    S->>API: GET /queue/today
+    API->>StaffSvc: GetTodayQueue()
+    StaffSvc->>SQL: SELECT QueueEntry WHERE date=TODAY() ORDER BY position ASC
+    SQL-->>StaffSvc: queueEntries[]
+    StaffSvc->>StaffSvc: CalculateEstimatedWaits(queueEntries)
+    API-->>S: 200 {queue[]: position, patient, estimatedWait, walkInFlag}
+
+    S->>API: PATCH /queue/reorder {newOrder:[]}
+    API->>StaffSvc: ReorderQueue(newOrder)
+    StaffSvc->>SQL: UPDATE QueueEntry positions (optimistic lock check)
+    alt No concurrent conflict
+        SQL-->>StaffSvc: ok
+        StaffSvc-->>API: 200 {queue[]}
+    else Concurrent edit conflict
+        SQL-->>StaffSvc: conflict (stale data)
+        StaffSvc-->>API: 409 {error:"Queue updated by another user — please refresh"}
+        API-->>S: 409
+    end
+
+    S->>API: DELETE /queue/{entryId}
+    API->>StaffSvc: RemoveFromQueue(entryId)
+    StaffSvc->>SQL: DELETE QueueEntry WHERE id=entryId
+    StaffSvc->>SQL: Reorder remaining positions
+    API-->>S: 200

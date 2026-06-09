@@ -1,0 +1,21 @@
+@startuml uc-017-document-upload
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+
+rectangle "Clinical Document Upload" {
+  usecase "Select and Upload Document" as UC1
+  usecase "Validate File Type and Size" as UC2
+  usecase "Virus Scan" as UC3
+  usecase "Encrypt and Store Document" as UC4
+  usecase "Reject Invalid File" as UC5
+}
+
+P --> UC1
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC3 : <<include>>
+UC3 ..> UC4 : <<include>>
+UC5 ..> UC2 : <<extend>>
+UC5 ..> UC3 : <<extend>>
+@enduml

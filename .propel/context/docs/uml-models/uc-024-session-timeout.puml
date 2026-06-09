@@ -1,0 +1,26 @@
+@startuml uc-024-session-timeout
+left to right direction
+skinparam actorStyle awesome
+
+actor Patient as P
+actor Staff as S
+actor Admin as A
+
+rectangle "Session Timeout" {
+  usecase "Monitor Session Inactivity" as UC1
+  usecase "Warn User Before Timeout" as UC2
+  usecase "Extend Session on Activity" as UC3
+  usecase "Invalidate Session Token" as UC4
+  usecase "Redirect to Login" as UC5
+  usecase "Reject Stale Token (401)" as UC6
+}
+
+UC1 ..> UC2 : <<extend>>
+UC2 ..> UC3 : <<extend>>
+UC1 ..> UC4 : <<include>>
+UC4 ..> UC5 : <<include>>
+UC4 ..> UC6 : <<include>>
+P --> UC3
+S --> UC3
+A --> UC3
+@enduml

@@ -1,0 +1,20 @@
+@startuml uc-015-checkin
+left to right direction
+skinparam actorStyle awesome
+
+actor Staff as S
+
+rectangle "Patient Arrival Check-In" {
+  usecase "View Daily Schedule" as UC1
+  usecase "Check In Patient" as UC2
+  usecase "Update Appointment Status" as UC3
+  usecase "Remove from Same-Day Queue" as UC4
+  usecase "Register as Walk-In" as UC5
+}
+
+S --> UC1
+S --> UC2
+UC2 ..> UC3 : <<include>>
+UC3 ..> UC4 : <<extend>>
+UC5 ..> UC2 : <<extend>>
+@enduml

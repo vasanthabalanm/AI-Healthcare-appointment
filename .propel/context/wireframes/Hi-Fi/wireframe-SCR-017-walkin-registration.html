@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Walk-In Registration — Staff | ClinicalHub</title>
+<!-- Navigation Map
+| Element          | Action | Target Screen                                |
+|------------------|--------|----------------------------------------------|
+| After add        | click  | wireframe-SCR-018-same-day-queue.html        |
+| Back             | click  | wireframe-SCR-016-staff-daily-schedule.html  |
+| FL-012: Walk-In Registration | UC-013                               |
+-->
+<style>
+:root{--cp:#0F6B6B;--cph:#0A5050;--cps:#E6F2F2;--cs0:#FFFFFF;--cs1:#F5F5F5;--cs2:#EBEBEB;--cb:#D0D0D0;--ct1:#1A1A1A;--ct2:#5A5A5A;--ctd:#9A9A9A;--ce:#C0392B;--ceb:#FDECEA;--cok:#1A7A4A;--cokb:#E8F5EE;--cw:#D4820A;--cwb:#FEF5E7;--ff:system-ui,"IBM Plex Sans",-apple-system,sans-serif;--r2:4px;--r3:8px;--nh:56px;--sw:240px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff);font-size:14px;color:var(--ct1);background:var(--cs1);}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nh);background:var(--cs0);border-bottom:1px solid var(--cb);display:flex;align-items:center;padding:0 24px;justify-content:space-between;z-index:300;}
+.logo{font-size:18px;font-weight:600;color:var(--cp);}
+.user-chip{background:#5A0A7A;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.sidebar{position:fixed;top:var(--nh);left:0;bottom:0;width:var(--sw);background:var(--cs0);border-right:1px solid var(--cb);z-index:200;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:8px 16px;font-size:14px;color:var(--ct2);text-decoration:none;border-left:3px solid transparent;}
+.nav-item:hover{background:var(--cs1);}
+.nav-item.active{border-left-color:var(--cp);background:var(--cps);color:var(--cp);font-weight:500;}
+.page{margin-top:var(--nh);margin-left:var(--sw);padding:32px;min-height:calc(100vh - var(--nh));}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--cp);text-decoration:none;margin-bottom:16px;}
+.back-link:hover{text-decoration:underline;}
+h1{font-size:24px;font-weight:600;margin-bottom:4px;}
+.page-sub{font-size:14px;color:var(--ct2);margin-bottom:24px;}
+.layout{display:grid;grid-template-columns:1fr 360px;gap:24px;max-width:1000px;}
+/* Search */
+.search-card{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:24px;margin-bottom:16px;}
+.search-card h2{font-size:16px;font-weight:600;margin-bottom:14px;}
+.search-row{display:flex;gap:8px;}
+.search-input{flex:1;padding:10px 14px;border:1px solid var(--cb);border-radius:var(--r2);font-size:14px;font-family:var(--ff);}
+.search-input:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:var(--r2);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;text-decoration:none;}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.btn--primary{background:var(--cp);color:#fff;}
+.btn--primary:hover{background:var(--cph);}
+.btn--secondary{background:var(--cs0);border-color:var(--cb);color:var(--ct1);}
+.btn--secondary:hover{background:var(--cs1);}
+/* Search result card */
+.result-card{background:var(--cps);border:1px solid var(--cp);border-radius:var(--r2);padding:16px;display:flex;align-items:center;justify-content:space-between;margin-top:12px;}
+.result-info p{font-size:13px;color:var(--ct2);}
+.result-info strong{font-size:15px;color:var(--ct1);}
+/* Not found state */
+.not-found{background:var(--cs1);border:1px dashed var(--cb);border-radius:var(--r2);padding:20px;margin-top:12px;text-align:center;}
+.not-found p{font-size:14px;color:var(--ct2);margin-bottom:12px;}
+/* Minimal profile form */
+.minimal-form{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:20px;}
+.minimal-form h2{font-size:16px;font-weight:600;margin-bottom:16px;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;}
+.field input,.field select{width:100%;padding:8px 12px;border:1px solid var(--cb);border-radius:var(--r2);font-size:14px;font-family:var(--ff);}
+.field input:focus,.field select:focus{outline:none;border-color:var(--cp);box-shadow:0 0 0 3px rgba(15,107,107,0.35);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+/* Queue summary panel */
+.queue-summary{background:var(--cs0);border:1px solid var(--cb);border-radius:var(--r2);padding:20px;}
+.queue-summary h3{font-size:14px;font-weight:600;margin-bottom:16px;}
+.queue-entry{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--cs2);}
+.queue-entry:last-child{border-bottom:none;}
+.queue-pos{width:28px;height:28px;border-radius:50%;background:var(--cp);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;}
+.queue-entry-info strong{font-size:13px;}
+.queue-entry-info p{font-size:12px;color:var(--ct2);}
+/* Modal (MOD-006 capacity override) */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:none;align-items:center;justify-content:center;}
+.modal-backdrop.open{display:flex;}
+.modal{background:var(--cs0);border-radius:var(--r3);padding:24px;max-width:440px;width:90%;}
+.modal__title{font-size:18px;font-weight:600;margin-bottom:8px;}
+.modal__body{font-size:14px;color:var(--ct2);margin-bottom:24px;}
+.modal__actions{display:flex;gap:12px;justify-content:flex-end;}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main navigation">
+  <span class="logo">ClinicalHub</span>
+  <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ct2);">
+    <span class="user-chip" aria-label="Jordan Chen">JC</span>
+    <span>Jordan Chen</span>
+    <span style="font-size:12px;padding:2px 8px;background:var(--cps);color:var(--cp);border-radius:4px;font-weight:500;">Staff</span>
+  </div>
+</nav>
+<aside class="sidebar" aria-label="Staff navigation">
+  <a class="nav-item" href="wireframe-SCR-016-staff-daily-schedule.html">Daily Schedule</a>
+  <a class="nav-item active" href="wireframe-SCR-017-walkin-registration.html" aria-current="page">Walk-In Registration</a>
+  <a class="nav-item" href="wireframe-SCR-018-same-day-queue.html">Same-Day Queue</a>
+  <a class="nav-item" href="wireframe-SCR-021-code-verification.html">Code Verification</a>
+</aside>
+
+<main class="page" id="main-content">
+  <a class="back-link" href="wireframe-SCR-016-staff-daily-schedule.html">← Back to schedule</a>
+  <h1>Walk-in registration</h1>
+  <p class="page-sub">Search for an existing patient or create a minimal profile for a new walk-in.</p>
+
+  <div class="layout">
+    <div>
+      <!-- Step 1: Search -->
+      <div class="search-card" role="search" aria-label="Patient search">
+        <h2>Search patient</h2>
+        <div class="search-row">
+          <input class="search-input" id="search-input" type="search" placeholder="Name, DOB, or patient ID…" aria-label="Search by name, date of birth, or patient ID" value="Alex Rivera">
+          <button class="btn btn--primary" onclick="doSearch()">Search</button>
+        </div>
+
+        <!-- Search result (shown after search) -->
+        <div id="search-result" class="result-card" role="status" aria-live="polite" aria-label="Patient found">
+          <div class="result-info">
+            <strong>Alex Rivera</strong>
+            <p>DOB: 14 Jul 1985 · ID: usr-001</p>
+            <p>Phone: (555) 201-8844</p>
+          </div>
+          <button class="btn btn--primary" onclick="addToQueue('Alex Rivera')" aria-label="Add Alex Rivera to same-day queue">Add to queue</button>
+        </div>
+
+        <!-- Not found (hidden by default) -->
+        <div id="not-found" class="not-found" style="display:none;">
+          <p>No patient found matching your search. Create a minimal profile for this walk-in.</p>
+          <button class="btn btn--secondary" onclick="showMinimalForm()">Create minimal profile</button>
+        </div>
+      </div>
+
+      <!-- Minimal profile form (conditional) -->
+      <div class="minimal-form" id="minimal-form" style="display:none;">
+        <h2>Create minimal profile</h2>
+        <div class="field-row">
+          <div class="field">
+            <label for="walkin-first">First name <span style="color:var(--ce);" aria-hidden="true">*</span></label>
+            <input type="text" id="walkin-first" required aria-required="true">
+          </div>
+          <div class="field">
+            <label for="walkin-last">Last name <span style="color:var(--ce);" aria-hidden="true">*</span></label>
+            <input type="text" id="walkin-last" required aria-required="true">
+          </div>
+        </div>
+        <div class="field">
+          <label for="walkin-dob">Date of birth <span style="color:var(--ce);" aria-hidden="true">*</span></label>
+          <input type="date" id="walkin-dob" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="walkin-phone">Phone</label>
+          <input type="tel" id="walkin-phone" placeholder="(555) 000-0000">
+        </div>
+        <div style="display:flex;gap:8px;margin-top:4px;">
+          <button class="btn btn--primary" onclick="addToQueue('New patient')">Add to queue</button>
+          <button class="btn btn--secondary" onclick="document.getElementById('minimal-form').style.display='none'">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel: current queue snapshot -->
+    <div class="queue-summary" role="complementary" aria-label="Current same-day queue">
+      <h3>Current queue — 12 May 2026</h3>
+      <div class="queue-entry">
+        <div class="queue-pos">1</div>
+        <div class="queue-entry-info">
+          <strong>Alex Rivera</strong>
+          <p>Arrived 9:05 AM</p>
+        </div>
+      </div>
+      <div class="queue-entry">
+        <div class="queue-pos">2</div>
+        <div class="queue-entry-info">
+          <strong>James Whitmore</strong>
+          <p>Walk-in · 9:40 AM</p>
+        </div>
+      </div>
+      <div class="queue-entry">
+        <div class="queue-pos">3</div>
+        <div class="queue-entry-info">
+          <strong>Priya Nair</strong>
+          <p>Confirmed appointment</p>
+        </div>
+      </div>
+      <div style="margin-top:16px;">
+        <a class="btn btn--secondary" href="wireframe-SCR-018-same-day-queue.html" style="width:100%;justify-content:center;">View full queue</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- MOD-006: Capacity Override Dialog -->
+<div class="modal-backdrop" id="capacity-modal" role="dialog" aria-modal="true" aria-labelledby="cap-title">
+  <div class="modal">
+    <h2 class="modal__title" id="cap-title">Queue at capacity</h2>
+    <p class="modal__body">The same-day queue is currently at its maximum of <strong>10 patients</strong>. Do you want to override the capacity limit to add this patient? This action will be logged for review.</p>
+    <div class="modal__actions">
+      <button class="btn btn--secondary" onclick="closeCapModal()">Cancel</button>
+      <button class="btn btn--primary" style="background:var(--cw);border-color:var(--cw);" onclick="overrideCapacity()">Override and add</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let queueCount = 3;
+
+function doSearch() {
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+  const result = document.getElementById('search-result');
+  const notFound = document.getElementById('not-found');
+  if (q === 'alex rivera' || q === 'alex' || q === 'rivera') {
+    result.style.display = 'flex';
+    notFound.style.display = 'none';
+  } else {
+    result.style.display = 'none';
+    notFound.style.display = 'block';
+  }
+}
+function showMinimalForm() { document.getElementById('minimal-form').style.display = 'block'; }
+function addToQueue(name) {
+  if (queueCount >= 10) { document.getElementById('capacity-modal').classList.add('open'); return; }
+  window.location.href = 'wireframe-SCR-018-same-day-queue.html';
+}
+function closeCapModal() { document.getElementById('capacity-modal').classList.remove('open'); }
+function overrideCapacity() { closeCapModal(); window.location.href = 'wireframe-SCR-018-same-day-queue.html'; }
+</script>
+</body>
+</html>

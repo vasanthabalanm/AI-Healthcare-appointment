@@ -1,0 +1,40 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant DocSvc as Document Service
+    participant ClamAV as ClamAV (nClam)
+    participant FS as Encrypted Filesystem
+    participant SQL as SQL Server
+    participant Hangfire as Hangfire
+
+    Note over P,Hangfire: UC-017 — Patient Uploads Clinical Documents
+
+    P->>API: POST /documents/upload {file (multipart), patientId}
+    API->>DocSvc: HandleUpload(file, patientId)
+    DocSvc->>DocSvc: ValidateFileType(mimeType) — PDF allowed
+    DocSvc->>DocSvc: ValidateFileSize(bytes <= configuredLimit)
+
+    DocSvc->>ClamAV: ScanStream(fileStream)
+    ClamAV-->>DocSvc: scanResult {clean/infected}
+
+    alt File clean
+        DocSvc->>DocSvc: EncryptAES256(fileBytes, key)
+        DocSvc->>FS: WriteEncryptedBlob(encryptedBytes, path)
+        DocSvc->>SQL: INSERT ClinicalDocument (path, status=Pending, virusScan=Pass)
+        DocSvc->>Hangfire: EnqueueOcrJob(documentId)
+        API-->>P: 201 {documentId, status:"Uploaded"}
+    else File infected
+        DocSvc->>SQL: INSERT ClinicalDocument (status=Rejected, virusScan=Fail)
+        API-->>P: 422 {error:"File rejected — malware detected"}
+    end
+
+    opt ClamAV daemon unreachable
+        ClamAV-->>DocSvc: connection error
+        API-->>P: 503 {error:"Virus scan service unavailable — upload rejected"}
+        Note over DocSvc: Silent bypass of scan is not permitted (TR-016)
+    end
+
+    opt Unsupported file format
+        DocSvc-->>API: 415 {error:"Unsupported format", supported:["application/pdf"]}
+        API-->>P: 415
+    end

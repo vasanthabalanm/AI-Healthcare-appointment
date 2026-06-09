@@ -1,0 +1,18 @@
+@startuml uc-014-queue-mgmt
+left to right direction
+skinparam actorStyle awesome
+
+actor Staff as S
+
+rectangle "Same-Day Queue Management" {
+  usecase "View Queue Dashboard" as UC1
+  usecase "Reorder Queue Entries" as UC2
+  usecase "Remove Patient from Queue" as UC3
+  usecase "Handle Concurrent Edit Conflict" as UC4
+}
+
+S --> UC1
+S --> UC2
+S --> UC3
+UC4 ..> UC2 : <<extend>>
+@enduml

@@ -1,0 +1,45 @@
+sequenceDiagram
+    participant P as Patient (Browser)
+    participant API as .NET 8 Web API
+    participant IntakeSvc as Intake Service
+    participant Rasa as Rasa NLU (localhost:5005)
+    participant SQL as SQL Server
+
+    Note over P,SQL: UC-008 — AI Conversational Intake
+
+    P->>API: POST /intake/ai/start {appointmentId}
+    API->>IntakeSvc: StartAiIntakeSession(appointmentId)
+    IntakeSvc->>Rasa: POST /webhooks/rest/webhook {sender, message:"start"}
+    Rasa-->>IntakeSvc: [{text:"Hello! What brings you in today?"}]
+    IntakeSvc-->>API: dialogue turn 1
+    API-->>P: 200 {message, sessionId}
+
+    loop Each dialogue turn
+        P->>API: POST /intake/ai/turn {sessionId, message}
+        API->>IntakeSvc: ProcessTurn(sessionId, message)
+        IntakeSvc->>Rasa: POST /webhooks/rest/webhook {sender, message}
+        Rasa-->>IntakeSvc: [{text, entities}]
+        IntakeSvc-->>API: next prompt + captured fields
+        API-->>P: 200 {message, capturedFields}
+    end
+
+    Note over P,SQL: Patient reviews structured summary
+    P->>API: POST /intake/ai/confirm {sessionId, fields}
+    API->>IntakeSvc: ConfirmIntake(sessionId, fields)
+    IntakeSvc->>SQL: INSERT IntakeRecord (source=AI, structuredFields, version=1)
+    SQL-->>IntakeSvc: ok
+    IntakeSvc-->>API: intake stored
+    API-->>P: 200 {intakeId, status:"Complete"}
+
+    alt Ambiguous response — clarification needed
+        Rasa-->>IntakeSvc: [{text:"Could you clarify — do you mean...?", confidence<0.7}]
+        IntakeSvc-->>API: clarification prompt
+        API-->>P: 200 {message: "Could you clarify..."}
+    end
+
+    opt Patient switches to manual form mid-flow
+        P->>API: POST /intake/ai/switch-to-manual {sessionId}
+        API->>IntakeSvc: TransitionToManual(sessionId, capturedFields)
+        IntakeSvc-->>API: partial fields preserved
+        API-->>P: 200 {redirect: "/intake/manual", prefilled: capturedFields}
+    end

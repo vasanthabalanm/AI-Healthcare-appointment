@@ -1,0 +1,53 @@
+sequenceDiagram
+    participant S as Staff (Browser)
+    participant API as .NET 8 Web API
+    participant TrustGate as Trust-First API Middleware
+    participant CodeSvc as Coding Service
+    participant PG as PostgreSQL
+    participant AuditSvc as Audit Service
+    participant SQL as SQL Server (AuditLog)
+
+    Note over S,SQL: UC-022 — Staff Verifies Medical Codes (Trust-First Gate)
+
+    S->>API: GET /coding/suggestions {appointmentId}
+    API->>PG: SELECT MedicalCodeSuggestion WHERE status=Pending
+    PG-->>API: suggestions[]
+    API-->>S: 200 {suggestions[]: code, description, confidence, lowConfidence}
+
+    loop For each suggestion
+        S->>API: PATCH /coding/suggestions/{id} {action, verifiedById, committedCode?}
+        API->>TrustGate: ValidateVerification(verifiedById, action)
+        TrustGate->>TrustGate: Assert verifiedById is non-null Staff user
+        alt verifiedById present and valid
+            TrustGate->>CodeSvc: ProcessVerification(id, action, verifiedById, committedCode)
+            CodeSvc->>PG: UPDATE MedicalCodeSuggestion SET status=action, verifiedById, verifiedAt
+            PG-->>CodeSvc: ok
+            CodeSvc->>AuditSvc: LogAction(STAFF, UPDATE, MedicalCodeSuggestion, id)
+            AuditSvc->>SQL: INSERT AuditLog (append-only)
+            CodeSvc-->>API: 200 {suggestionId, status}
+            API-->>S: 200 confirmed
+        else verifiedById missing or invalid
+            TrustGate-->>API: 422 Unprocessable Entity
+            API-->>S: 422 {error:"Staff verification required — verifiedById must be present"}
+        end
+    end
+
+    S->>API: POST /coding/complete {appointmentId, verifiedById}
+    API->>CodeSvc: MarkCodingComplete(appointmentId, verifiedById)
+    CodeSvc->>PG: SELECT COUNT(*) WHERE status=Pending
+    alt All suggestions actioned
+        PG-->>CodeSvc: count=0
+        CodeSvc->>PG: UPDATE appointment coding_status=Complete
+        API-->>S: 200 {message:"Coding task complete"}
+    else Unreviewed suggestions remain
+        PG-->>CodeSvc: count>0
+        CodeSvc-->>API: 409 Conflict
+        API-->>S: 409 {error:"Unreviewed suggestions remain", pendingIds[]}
+    end
+
+    opt Staff accepts all
+        S->>API: POST /coding/accept-all {appointmentId, verifiedById}
+        API->>TrustGate: ValidateVerification(verifiedById, "AcceptAll")
+        TrustGate->>CodeSvc: AcceptAll(appointmentId, verifiedById)
+        Note over CodeSvc,PG: Confirmation prompt enforced client-side; server commits all
+    end

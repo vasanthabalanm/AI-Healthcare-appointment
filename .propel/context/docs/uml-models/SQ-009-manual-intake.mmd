@@ -1,0 +1,28 @@
+sequenceDiagram
+    participant P as Patient
+    participant API as .NET 8 Web API
+    participant IntakeSvc as Intake Service
+    participant SQL as SQL Server
+
+    Note over P,SQL: UC-009 — Manual Intake Form
+
+    P->>API: POST /intake/manual {appointmentId, fields{}}
+    API->>IntakeSvc: SubmitManualIntake(appointmentId, fields)
+    IntakeSvc->>IntakeSvc: ValidateRequiredFields(fields)
+    alt All required fields present
+        IntakeSvc->>SQL: INSERT IntakeRecord (source=Manual, structuredFields, version=1)
+        SQL-->>IntakeSvc: ok
+        IntakeSvc-->>API: 201 {intakeId}
+        API-->>P: 201
+    else Missing required fields
+        IntakeSvc-->>API: 422 {missingFields:[]}
+        API-->>P: 422
+    end
+
+    P->>API: PATCH /intake/{intakeId} {updatedFields{}}
+    API->>IntakeSvc: EditIntake(intakeId, updatedFields)
+    IntakeSvc->>SQL: SELECT IntakeRecord WHERE id=intakeId
+    SQL-->>IntakeSvc: existing record
+    IntakeSvc->>SQL: INSERT IntakeRecord (version=n+1, previousVersionId=intakeId)
+    IntakeSvc->>SQL: INSERT AuditLog (CRUD=UPDATE, before, after)
+    API-->>P: 200 {intakeId, version}

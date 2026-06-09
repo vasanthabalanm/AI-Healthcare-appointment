@@ -1,0 +1,35 @@
+sequenceDiagram
+    participant S as Staff
+    participant API as .NET 8 Web API
+    participant StaffSvc as Staff Operations Service
+    participant SQL as SQL Server
+    participant AuditSvc as Audit Service
+
+    Note over S,AuditSvc: UC-013 — Staff Registers Walk-In Patient
+
+    S->>API: GET /patients/search?q=name/dob
+    API->>StaffSvc: SearchPatient(query)
+    StaffSvc->>SQL: SELECT UserAccount WHERE name LIKE ? OR dob=?
+    SQL-->>StaffSvc: results[]
+    API-->>S: 200 {patients[]}
+
+    S->>API: POST /queue/walkin {patientId OR newPatient{}, staffId}
+    API->>StaffSvc: RegisterWalkIn(patientId, staffId)
+    StaffSvc->>SQL: SELECT COUNT(*) FROM SameDayQueue WHERE date=TODAY()
+    alt Queue below capacity
+        StaffSvc->>SQL: INSERT QueueEntry (patientId, walkInFlag=true, enteredAt=NOW())
+        StaffSvc->>AuditSvc: Log(STAFF, CREATE, QueueEntry, staffId)
+        API-->>S: 201 {queuePosition}
+    else Queue at capacity
+        StaffSvc-->>API: 409 {error:"Queue at capacity", canOverride:true}
+        S->>API: POST /queue/walkin {override:true}
+        StaffSvc->>SQL: INSERT QueueEntry (overrideFlag=true)
+        API-->>S: 201 {queuePosition, note:"Capacity override applied"}
+    end
+
+    opt New minimal patient profile needed
+        S->>API: POST /patients/minimal {name, dob, contact}
+        API->>StaffSvc: CreateMinimalProfile(data)
+        StaffSvc->>SQL: INSERT UserAccount (status=Active, needsFullRegistration=true)
+        API-->>S: 201 {patientId}
+    end

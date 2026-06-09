@@ -1,0 +1,33 @@
+sequenceDiagram
+    participant U as User (Any Role)
+    participant SPA as Angular SPA
+    participant API as .NET 8 Web API
+    participant Redis as Upstash Redis
+
+    Note over U,Redis: UC-024 — System Handles Session Timeout
+
+    Note over SPA: Frontend timer: warns at T-2min before 15min mark
+    SPA->>SPA: StartInactivityTimer(900s)
+    SPA->>SPA: WarnAt(780s): "Session expiring in 2 minutes"
+    U->>SPA: Click "Extend Session"
+    SPA->>API: POST /auth/extend-session (Bearer jwt)
+    API->>Redis: EXPIRE token:{jti} 900
+    Redis-->>API: ok
+    API-->>SPA: 200 {message:"Session extended"}
+
+    alt User inactive — timeout fires
+        SPA->>SPA: Timer reaches 900s
+        SPA->>API: Any request (stale JWT)
+        API->>Redis: GET token:{jti}
+        Redis-->>API: nil (expired TTL)
+        API-->>SPA: 401 Unauthorized
+        SPA->>SPA: Redirect to /login?reason=timeout
+        SPA-->>U: Login page with "Session expired" message
+    end
+
+    opt In-flight request at timeout boundary
+        API->>Redis: GET token:{jti}
+        Redis-->>API: nil
+        API-->>SPA: 401
+        Note over SPA: Any state-changing operation rejected; read-only cache may still serve
+    end

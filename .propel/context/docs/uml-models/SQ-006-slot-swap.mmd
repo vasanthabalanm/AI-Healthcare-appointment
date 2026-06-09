@@ -1,0 +1,38 @@
+sequenceDiagram
+    participant Hangfire as Hangfire (SwapMonitor Job)
+    participant BookSvc as Booking Service
+    participant SQL as SQL Server
+    participant Email as Email Service
+    participant SMS as SMS Gateway
+    participant P as Patient
+
+    Note over Hangfire,P: UC-006 — System Executes Preferred Slot Swap (automated)
+
+    Note over Hangfire: Triggered when a slot is released (cancel/reschedule)
+    Hangfire->>BookSvc: CheckWaitlistForSlot(slotId)
+    BookSvc->>SQL: SELECT WaitlistEntry WHERE preferredSlotId=? AND status=Active ORDER BY registeredAt ASC
+    SQL-->>BookSvc: waitlistEntry (first eligible)
+    BookSvc->>Email: SendSwapOffer(patient, slotDetails, responseWindowHours=2)
+    BookSvc->>SMS: SendSwapOfferSms(patient, slotDetails)
+    BookSvc->>SQL: UPDATE WaitlistEntry SET status=Offered, offeredAt=NOW()
+
+    P->>BookSvc: POST /waitlist/{id}/accept
+    BookSvc->>SQL: BEGIN TRANSACTION
+    BookSvc->>SQL: SELECT Slot WHERE id=preferredSlotId FOR UPDATE
+    alt Slot still available
+        BookSvc->>SQL: UPDATE Slot SET isAvailable=false (new slot)
+        BookSvc->>SQL: UPDATE Slot SET isAvailable=true (old slot)
+        BookSvc->>SQL: UPDATE Appointment SET slotId=preferredSlotId
+        BookSvc->>SQL: UPDATE WaitlistEntry SET status=Accepted
+        BookSvc->>SQL: COMMIT
+        BookSvc->>Email: SendUpdatedConfirmation(patient, newSlot)
+    else Slot taken by another booking
+        BookSvc->>SQL: ROLLBACK
+        BookSvc->>SQL: UPDATE WaitlistEntry SET status=Expired
+        BookSvc->>Email: NotifyPatient("Preferred slot no longer available")
+    end
+
+    opt Patient declines or response window expires
+        BookSvc->>SQL: UPDATE WaitlistEntry SET status=Declined/Expired
+        Note over BookSvc: Next waitlisted patient notified (if any)
+    end
